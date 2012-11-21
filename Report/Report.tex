@@ -8,12 +8,74 @@
 \tableofcontents
 \newpage
 
-\section{Vision \& Business case}
+\section{Vision}
+\subsection{Introduction}
+Our goal is to make an interactive document sharing system, Slice of Pie,  which allows multiple users to share and edit documents both online and offline.
+\subsection{Problem statement}
+Sharing and editing documents can be cumbersome. \\
+Sending a document back and forth between multiple users can lead to a lot of errors. Users can overwrite what another user has done, and if they aren't all using the same text editing system this can lead to formatting issues in the document.
+\subsection{Summary of system features}
+\begin{enumerate}
+\item Multiple users must be able to share and edit documents online.
+\item Synchronization for offline usage.
+\item Merging of documents.
+\item History. Which allows the user to see all recent changes made to the document.
+\item Documents can be categorized into folders or projects in order to get a better overview when working on a larger project with multiple files.
+\end{enumerate}
 
 \section{Use cases}
+\begin{enumerate}
+\item UC1: Create new document
+\item UC2: Edit document
+\item UC3: Delete document
+\item UC4: Merging documents
+\item UC5: Offline sync
+\item UC6: New folder
+\item UC7: New project
+\item UC8: Find old version of document
+\end{enumerate}
 
 \section{Glossary}
 
 \section{Supplementary Specification (FURPS+)}
+\begin{itemize}
+\item Functionality
+	\begin{itemize}
+	\item The system must be able to store documents.
+	\item The system must support multiple users.
+	\end{itemize}
+\item Usability
+	\begin{itemize}
+	\item The system must have a clean and simple user interface.
+	\item Users must be able to use the application without training.
+	\item System features must be simple and straight forward. No complicated work flows.
+	\item The overall system must be easy to use. 8 out of 10 users must be able to use the system without any training.
+	\end{itemize}
+\item Reliability
+	\begin{itemize}
+	\item The system must be able to restore it's state in case of a server failure.
+	\end{itemize}
+\item Performance
+	\begin{itemize}
+	\item The system must be fast and responsive. A request to the system can't take longer than 3 seconds. (not counting the external internet connection)
+	\end{itemize}
+\item Supportability
+\end{itemize}
+
+\newpage
+\section{Revision Table}
+\begin{table}[ht]
+\caption{Revision Table}
+\begin{center}
+\begin{tabular}{c|c|c}
+\hline 
+Revision & Changes & Section \\ \hline 
+21-11-12 & Created Vision & 1 \\ 
+21-11-12 & Created Use cases & 2 \\
+21-11-12 & Created Glossary & 3 \\
+21-11-12 & Created Supplementary Specifications & 4 \\ \hline 
+\end{tabular} 
+\end{center}
+\end{table}
 	
 \end{document}
