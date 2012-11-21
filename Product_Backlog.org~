@@ -1,0 +1,25 @@
+* Product backlog
+
+** Inception
+*** Vision & Business case
+    - Introduction
+    - Problem statement
+    - Summary of system features
+*** Use cases
+    - Use cases (text)
+    - Use case model (UML)
+*** Supplementary specification (FURPS+)
+    - Functionality
+    - Usability
+    - Reliability
+    - Performance
+    - Supportability
+*** Glossary
+** Elaboration
+*** System sequence diagram
+
+*** Domain Model
+
+*** Package Diagram
+
+

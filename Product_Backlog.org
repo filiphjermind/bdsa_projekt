@@ -1,0 +1,37 @@
+* Inception
+** Vision & Business case
+   - Introduction
+   - Problem statement
+   - Summary of system features
+** Use cases
+*** Use cases (text)
+**** UC1: Create new document
+**** UC2: Edit document
+**** UC3: Delete document
+**** UC4: Merging documents
+**** UC5: Offline sync
+**** UC6: New folder
+**** UC7: New project
+**** UC8: Find old version of document
+*** Use case model (UML)
+** Supplementary specification (FURPS+)
+   - Functionality
+   - Usability
+   - Reliability
+   - Performance
+   - Supportability
+** Glossary
+* Elaboration
+** System sequence diagram
+
+** Domain Model
+
+** Package Diagram
+
+** Operation contract
+
+** Interaction Diagram
+
+** Software Attributes / Qualities
+
+** Class diagram
