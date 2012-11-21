@@ -3,6 +3,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage[pdftex]{graphicx}
 \setlength{\parindent}{0in}
 \begin{document}
 \tableofcontents
@@ -28,14 +29,14 @@ Sending a document back and forth between multiple users can lead to a lot of er
 \item UC1: Create new document
 \item UC2: Edit document
 \item UC3: Delete document
-\item UC4: Merging documents
+\item UC4: Merging documents (resolve conflict)
 \item UC5: Offline sync
 \item UC6: New folder
 \item UC7: New project
 \item UC8: Find old version of document
 \end{enumerate}
 
-
+% Use case 1
 \fbox{\begin{minipage}{\columnwidth}
 		\textbf{Use case UC1: Create new document} \\ 
 		\textbf{Scope:} Slice-of-pie application \\
@@ -66,9 +67,9 @@ Sending a document back and forth between multiple users can lead to a lot of er
 			\end{enumerate}
 		\textbf{Special requirements:} \\
 		- The document should be displayed properly on any devices such as smart phones and tablets. \\
-		
-	\end{minipage}}
-	
+\end{minipage}}
+
+% Use case 2
 \fbox{\begin{minipage}{\columnwidth}
 		\textbf{Use case UC2: Edit document} \\ 
 		\textbf{Scope:} Slice-of-pie application \\
@@ -94,7 +95,91 @@ Sending a document back and forth between multiple users can lead to a lot of er
 			\end{enumerate}
 		\textbf{Special requirements:} \\
 		- The document should be displayed properly on any devices such as smart phones and tablets. \\		
-	\end{minipage}}
+\end{minipage}}
+
+% Use case 3
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC3: Delete document } \\ 
+		\textbf{Scope:} \\
+		\textbf{Level:}  \\
+		\textbf{Primary actor:} \\
+		\textbf{Preconditions:} \\
+		\textbf{Postconditions:} \\
+		
+		\textbf{Basic flow:} 
+		\textbf{Extensions:}
+		\textbf{Special requirements:} \\
+\end{minipage}}	
+
+% Use case 4
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC4: Merging documents (Resolve conflict)} \\ 
+		\textbf{Scope:} \\
+		\textbf{Level:}  \\
+		\textbf{Primary actor:} \\
+		\textbf{Preconditions:} \\
+		\textbf{Postconditions:} \\
+		
+		\textbf{Basic flow:} \\
+		\textbf{Extensions:} \\
+		\textbf{Special requirements:} \\
+\end{minipage}}
+
+% Use case 5
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC5: Offline synchronization} \\ 
+		\textbf{Scope:} \\
+		\textbf{Level:}  \\
+		\textbf{Primary actor:} \\
+		\textbf{Preconditions:} \\
+		\textbf{Postconditions:} \\
+		
+		\textbf{Basic flow:} \\
+		\textbf{Extensions:} \\
+		\textbf{Special requirements:} \\
+\end{minipage}}
+
+% Use case 6
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC6: Create new folder} \\ 
+		\textbf{Scope:} \\
+		\textbf{Level:}  \\
+		\textbf{Primary actor:} \\
+		\textbf{Preconditions:} \\
+		\textbf{Postconditions:} \\
+		
+		\textbf{Basic flow:} \\
+		\textbf{Extensions:} \\
+		\textbf{Special requirements:} \\
+\end{minipage}}
+
+% Use case 7
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC7: Create new project} \\ 
+		\textbf{Scope:} \\
+		\textbf{Level:}  \\
+		\textbf{Primary actor:} \\
+		\textbf{Preconditions:} \\
+		\textbf{Postconditions:} \\
+		
+		\textbf{Basic flow:} \\
+		\textbf{Extensions:} \\
+		\textbf{Special requirements:} \\
+\end{minipage}}
+
+% Use case 8
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC8: View old version of document} \\ 
+		\textbf{Scope:} \\
+		\textbf{Level:}  \\
+		\textbf{Primary actor:} \\
+		\textbf{Preconditions:} \\
+		\textbf{Postconditions:} \\
+		
+		\textbf{Basic flow:} \\
+		\textbf{Extensions:} \\
+		\textbf{Special requirements:} \\
+\end{minipage}}
 
 \section{Glossary}
 
@@ -123,6 +208,20 @@ Sending a document back and forth between multiple users can lead to a lot of er
 \item Supportability
 \end{itemize}
 
+\section{Domain Model}
+	\begin{figure}[h!]
+  		\centering
+    	\includegraphics[width=300px]{images/DomainModel.jpg}
+    	\caption{Domain Model}
+	\end{figure}
+	
+\section{Logical Architecture}
+	\begin{figure}[h!]
+  		\centering
+    	\includegraphics[width=300px]{images/LogicalArchitecture.jpg}
+    	\caption{Logical Architecture}
+	\end{figure}
+
 \newpage
 \section{Revision Table}
 \begin{table}[ht]
@@ -134,7 +233,10 @@ Revision & Changes & Section \\ \hline
 21-11-12 & Created Vision & 1 \\ 
 21-11-12 & Created Use cases & 2 \\
 21-11-12 & Created Glossary & 3 \\
-21-11-12 & Created Supplementary Specifications & 4 \\ \hline 
+21-11-12 & Created Supplementary Specifications & 4 \\ 
+21-11-12 & Created Domain Model diagram & 5 \\
+21-11-12 & Created Logical Architecture diagram & 6 \\
+\hline 
 \end{tabular} 
 \end{center}
 \end{table}

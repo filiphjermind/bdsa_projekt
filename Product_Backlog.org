@@ -1,37 +1,39 @@
 * Inception
-** Vision & Business case
+** DONE Vision & Business case
+   CLOSED: [2012-11-21 Wed 13:00]
    - Introduction
    - Problem statement
    - Summary of system features
-** Use cases
-*** Use cases (text)
-**** UC1: Create new document
-**** UC2: Edit document
-**** UC3: Delete document
-**** UC4: Merging documents
-**** UC5: Offline sync
-**** UC6: New folder
-**** UC7: New project
-**** UC8: Find old version of document
-*** Use case model (UML)
-** Supplementary specification (FURPS+)
+** TODO Use cases
+*** TODO  Use cases (text)
+**** DONE UC1: Create new document
+     CLOSED: [2012-11-21 Wed 13:00]
+**** DONE UC2: Edit document
+     CLOSED: [2012-11-21 Wed 13:00]
+**** TODO UC3: Delete document
+**** TODO UC4: Merging documents (resolve conflict)
+**** TODO UC5: Offline sync
+**** TODO UC6: New folder
+**** TODO UC7: New project
+**** TODO UC8: Find old version of document
+*** TODO Use Case Model (UML)
+** DONE Supplementary specification (FURPS+)
+   CLOSED: [2012-11-21 Wed 13:00]
    - Functionality
    - Usability
    - Reliability
    - Performance
    - Supportability
-** Glossary
+** DONE Glossary
+   CLOSED: [2012-11-21 Wed 13:01]
 * Elaboration
-** System sequence diagram
-
-** Domain Model
-
-** Package Diagram
-
-** Operation contract
-
-** Interaction Diagram
-
-** Software Attributes / Qualities
-
-** Class diagram
+** TODO System sequence diagram
+** DONE Domain Model
+   CLOSED: [2012-11-21 Wed 13:29]
+** DONE Logical architecture
+   CLOSED: [2012-11-21 Wed 13:58]
+** TODO Operation contract
+** TODO Interaction Diagram
+** TODO Software Attributes / Qualities
+** TODO Package Diagram
+** TODO Class diagram
