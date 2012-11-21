@@ -11,7 +11,65 @@
 \section{Vision \& Business case}
 
 \section{Use cases}
-
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC1: Create new document} \\ 
+		\textbf{Scope:} Slice-of-pie application \\
+		\textbf{Level:} User goal \\
+		\textbf{Primary actor:} Regular user \\
+		\textbf{Stakeholders and Interests: } \\
+		- Regular user: Wants to create a new document without any complications. \\
+		\textbf{Preconditions:} none. \\
+		\textbf{Postconditions:} The document must be created\\
+		
+		\textbf{Basic flow:} 
+		\begin{enumerate}
+			\item The user needs a document that can be shared with others.
+			\item The user chooses a client program (web or desktop client).
+			\item The user presses the "New Document" button.
+			\item The client presents a dialogue box.
+			\item The user types information about the document and press OK.
+			\item The client sends a request to the server and the document gets stored by the server.
+			\item The client displays the document for the user.
+		\end{enumerate} 
+		\textbf{Extensions:}
+			\begin{enumerate}
+				\item[6.]  The server is not responding \\
+				\begin{enumerate}
+					\item The document is saved locally.
+					\item The client requests the server in regular intervals to see if it has recovered.
+				\end{enumerate}
+			\end{enumerate}
+		\textbf{Special requirements:} \\
+		- The document should be displayed properly on any devices such as smart phones and tablets. \\
+		
+	\end{minipage}}
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC2: Edit document} \\ 
+		\textbf{Scope:} Slice-of-pie application \\
+		\textbf{Level:} User goal \\
+		\textbf{Primary actor:} Regular user \\
+		\textbf{Preconditions:} A document must have been created \\
+		\textbf{Postconditions:} The document must be edited the way the user desires and the change must be recorded by the server too\\
+		
+		\textbf{Basic flow:} 
+		\begin{enumerate}
+			\item The user opens a document.
+			\item The user edits the content of the document.
+			\item The client sends a request to the server.
+			\item The document is changed on the server.
+		\end{enumerate} 
+		\textbf{Extensions:}
+			\begin{enumerate}
+				\item[3.]  The server is not responding \\
+				\begin{enumerate}
+					\item The document is saved locally.
+					\item The client requests the server in regular intervals to see if it has recovered.
+				\end{enumerate}
+			\end{enumerate}
+		\textbf{Special requirements:} \\
+		- The document should be displayed properly on any devices such as smart phones and tablets. \\
+		
+	\end{minipage}}
 \section{Glossary}
 
 \section{Supplementary Specification (FURPS+)}
