@@ -101,32 +101,14 @@ Sending a document back and forth between multiple users can lead to a lot of er
 % Use case 3
 \fbox{\begin{minipage}{\columnwidth}
 		\textbf{Use case UC3: Delete document } \\ 
-		\textbf{Scope:} Slice-of-pie application\\
-		\textbf{Level:}  User goal\\
-		\textbf{Primary actor:} Regular user\\
-		\textbf{Preconditions:} A document must have been created. The user trying to delete a document must have sufficient rights to delete selected document\\
-		\textbf{Postconditions:} The document is now deleted from the users local repository, and will be deleted when user commits\\
+		\textbf{Scope:} \\
+		\textbf{Level:}  \\
+		\textbf{Primary actor:} \\
+		\textbf{Preconditions:} \\
+		\textbf{Postconditions:} \\
 		
-		\textbf{Basic flow:}
-		\begin{enumerate}
-			\item The user selects a document
-			\item The user tries to delete the document
-			\item The client sends a request to the server
-			\item Server checks for authentication
-			\item Document is deleted
-		\end{enumerate}
+		\textbf{Basic flow:} 
 		\textbf{Extensions:}
-		\begin{enumerate}
-			\item[3.] The server is not responding
-			\begin{enumerate}
-				\item The document is saved locally
-				\item The client requests the server in regular intervals to see if it has recovered
-			\end{enumerate}
-			\item[4.] The user lacks the right to delete the selected document
-			\begin{enumerate}
-				\item User is told that he has not got the rights to delete selected document
-			\end{enumerate}
-		\end{enumerate}
 		\textbf{Special requirements:} \\
 \end{minipage}}	
 
@@ -147,35 +129,14 @@ Sending a document back and forth between multiple users can lead to a lot of er
 % Use case 5
 \fbox{\begin{minipage}{\columnwidth}
 		\textbf{Use case UC5: Offline synchronization} \\ 
-		\textbf{Scope:} Slice-of-pie application\\
-		\textbf{Level:}  User goal\\
-		\textbf{Primary actor:} Regular user\\
-		\textbf{Preconditions:} User must be logged in. Client must be connected to the server\\
-		\textbf{Postconditions:} The users offline repository will be synchronized with his online repository\\
+		\textbf{Scope:} \\
+		\textbf{Level:}  \\
+		\textbf{Primary actor:} \\
+		\textbf{Preconditions:} \\
+		\textbf{Postconditions:} \\
 		
-		\textbf{Basic flow:} 
-		\begin{enumerate}
-			\item The user selects offline synchronization
-			\item The client sends a request to the server
-			\item The the server copies the user's online repository and sends it to the client
-			\item The client sends verification upon receiving the documents 
-		\end{enumerate}
-		\textbf{Extensions:} 
-		\begin{enumerate}
-			\item[2.] The server is not responding
-			\begin{enumerate}
-				\item The user gets an error message (no connection)
-			\end{enumerate}
-			\item[3.] No connection between server and client
-			\begin{enumerate}
-				\item Request times out if server does not receive a verification form the client
-				\item The user gets an error message (request timed out / no connection)
-			\end{enumerate}
-			\item[4.] The server is not responding
-			\begin{enumerate}
-				\item the client tries to reestablish a connection to the server at regular intervals, and then sends the verification
-			\end{enumerate}
-		\end{enumerate}
+		\textbf{Basic flow:} \\
+		\textbf{Extensions:} \\
 		\textbf{Special requirements:} \\
 \end{minipage}}
 
