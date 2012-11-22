@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 12:19
+=======
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.2)  22 NOV 2012 12:21
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -350,16 +354,19 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
+<<<<<<< HEAD
 (/usr/local/texlive/2011/texmf-dist/tex/latex/float/float.sty
+=======
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count100
 \float@exts=\toks22
 \float@box=\box28
 \@float@everytoks=\toks23
 \@floatcapt=\box29
-) (./Report.aux)
-\openout1 = `Report.aux'.
-
+)
+(C:\Users\Morten\Documents\GitHub\bdsa_projekt\Report\Report.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
@@ -373,7 +380,11 @@ LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 
+<<<<<<< HEAD
 (/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
+=======
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count101
 \scratchdimen=\dimen114
@@ -386,6 +397,7 @@ LaTeX Font Info:    ... okay on input line 9.
 \MPnumerator=\count105
 \makeMPintoPDFobject=\count106
 \everyMPtoPDFconversion=\toks25
+<<<<<<< HEAD
 ) (/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/04/22 v0.16 Utilities of pdfTeX for LuaTeX (HO)
 
@@ -434,6 +446,9 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 (./Report.toc
+=======
+) (C:\Users\Morten\Documents\GitHub\bdsa_projekt\Report\Report.toc
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
  (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
@@ -448,7 +463,11 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
  [1
 
+<<<<<<< HEAD
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+=======
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 Underfull \hbox (badness 10000) in paragraph at lines 71--71
 
  []
@@ -489,11 +508,16 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 99--100
  []
 
 [3]
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 113--113
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 113--113
 
  []
@@ -505,25 +529,52 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 113--114
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 127--127
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 131--131
 
  []
 
 
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 131--132
+[][] 
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
+
+ []
+
+
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 127--127
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 145--145
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 127--128
 [][] 
  []
 
 [4]
 Underfull \hbox (badness 10000) in paragraph at lines 141--141
+=======
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 145--146
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--180
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 141--141
 
  []
@@ -535,45 +586,89 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 141--142
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 155--155
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 180--180
 
  []
 
 
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 180--181
+[][] 
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
+
+ []
+
+
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 155--155
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 194--194
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 155--156
 [][] 
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 169--169
+=======
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 194--195
+[][] 
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 169--169
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 169--170
 [][] 
  []
 
 [5]
 Underfull \hbox (badness 10000) in paragraph at lines 183--183
+=======
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 208--209
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
  []
 
 
+<<<<<<< HEAD
 Underfull \hbox (badness 10000) in paragraph at lines 183--183
+=======
+Underfull \hbox (badness 10000) in paragraph at lines 222--222
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
  []
 
 
+<<<<<<< HEAD
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 183--184
 [][] 
  []
@@ -598,23 +693,58 @@ File: images/LogicalArchitecture.jpg Graphic file (type jpg)
 
 <use images/LogicalArchitecture.jpg>
 Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 225.
+=======
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 222--223
+[][] 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 226.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 226.
+ [7]
+<images/DomainModel.jpg, id=28, 487.8225pt x 396.48125pt>
+File: images/DomainModel.jpg Graphic file (type jpg)
+
+<use images/DomainModel.jpg>
+Package pdftex.def Info: images/DomainModel.jpg used on input line 257.
+(pdftex.def)             Requested size: 301.1261pt x 244.74501pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<images/LogicalArchitecture.jpg, id=29, 480.79625pt x 837.1275pt>
+File: images/LogicalArchitecture.jpg Graphic file (type jpg)
+
+<use images/LogicalArchitecture.jpg>
+Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 264.
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
 
 (pdftex.def)             Requested size: 301.1261pt x 524.30193pt.
- [7 <./images/DomainModel.jpg>]
-<images/SSQ_NewDocument.jpg, id=31, 422.57875pt x 385.44pt>
+ [8]
+Overfull \vbox (305.19205pt too high) has occurred while \output is active []
+
+
+[9 <C:/Users/Morten/Documents/GitHub/bdsa_projekt/Report/images/DomainModel.jpg
+> <C:/Users/Morten/Documents/GitHub/bdsa_projekt/Report/images/LogicalArchitect
+ure.jpg>] <images/SSQ_NewDocument.jpg, id=36, 422.57875pt x 385.44pt>
 File: images/SSQ_NewDocument.jpg Graphic file (type jpg)
 
 <use images/SSQ_NewDocument.jpg>
-Package pdftex.def Info: images/SSQ_NewDocument.jpg used on input line 232.
+Package pdftex.def Info: images/SSQ_NewDocument.jpg used on input line 271.
 (pdftex.def)             Requested size: 301.1261pt x 274.67001pt.
- [8 <./images/LogicalArchitecture.jpg>]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 246--247
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 285--286
 [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+<<<<<<< HEAD
 [9 <./images/SSQ_NewDocument.jpg>] [10] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
  2635 strings out of 493633
@@ -633,6 +763,26 @@ Output written on Report.pdf (10 pages, 141424 bytes).
 PDF statistics:
  56 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream
+=======
+[10 <C:/Users/Morten/Documents/GitHub/bdsa_projekt/Report/images/SSQ_NewDocumen
+t.jpg>] [11] (C:\Users\Morten\Documents\GitHub\bdsa_projekt\Report\Report.aux) 
+) 
+Here is how much of TeX's memory you used:
+ 2308 strings out of 494045
+ 28131 string characters out of 3148384
+ 84692 words of memory out of 3000000
+ 5580 multiletter control sequences out of 15000+200000
+ 9806 words of font info for 37 fonts, out of 3000000 for 9000
+ 715 hyphenation exceptions out of 8191
+ 27i,7n,22p,257b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Report.pdf (11 pages, 149233 bytes).
+PDF statistics:
+ 57 PDF objects out of 1000 (max. 8388607)
+>>>>>>> 502415e42366b1ad2e6ccb4b21e8cd85249db8b5
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
