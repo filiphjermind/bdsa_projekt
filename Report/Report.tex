@@ -4,6 +4,7 @@
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage[pdftex]{graphicx}
+\usepackage{float}
 \setlength{\parindent}{0in}
 \begin{document}
 \tableofcontents
@@ -212,22 +213,41 @@ Sending a document back and forth between multiple users can lead to a lot of er
 \end{itemize}
 
 \section{Domain Model}
-	\begin{figure}[h!]
+	\begin{figure}[h]
   		\centering
     	\includegraphics[width=300px]{images/DomainModel.jpg}
     	\caption{Domain Model}
 	\end{figure}
 	
 \section{Logical Architecture}
-	\begin{figure}[h!]
+	\begin{figure}[H]
   		\centering
     	\includegraphics[width=300px]{images/LogicalArchitecture.jpg}
     	\caption{Logical Architecture}
 	\end{figure}
 
-\newpage
+\section{System Sequence Diagram}
+	\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/SSQ_NewDocument.jpg}
+    	\caption{SSD - New document}
+	\end{figure}
+	
+\section{Operation Contracts}
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Contract CO1:} Synchronize \\ 
+		\textbf{Operation:} Synchronize \\
+		\textbf{Cross References:} UC1, UC2, UC5 \\
+		\textbf{Preconditions:} Some documents and/or must have been created on the system. \\
+		\textbf{Postconditions:} \\
+		 - All documents and folders on the client must be uploaded to the server. \\
+		- All documents and folders on the server must be downloaded to the client. \\
+		- Document version must be the same on the client and server.
+\end{minipage}}
+
+
 \section{Revision Table}
-\begin{table}[ht]
+\begin{table}[h]
 \caption{Revision Table}
 \begin{center}
 \begin{tabular}{c|c|c}

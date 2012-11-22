@@ -6,5 +6,7 @@
 \contentsline {section}{\numberline {3}Glossary}{6}
 \contentsline {section}{\numberline {4}Supplementary Specification (FURPS+)}{6}
 \contentsline {section}{\numberline {5}Domain Model}{7}
-\contentsline {section}{\numberline {6}Logical Architecture}{7}
-\contentsline {section}{\numberline {7}Revision Table}{8}
+\contentsline {section}{\numberline {6}Logical Architecture}{8}
+\contentsline {section}{\numberline {7}System Sequence Diagram}{9}
+\contentsline {section}{\numberline {8}Operation Contracts}{9}
+\contentsline {section}{\numberline {9}Revision Table}{9}
