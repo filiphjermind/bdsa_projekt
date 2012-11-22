@@ -17,7 +17,8 @@
      CLOSED: [2012-11-22 Thu 11:45]
 **** DONE UC6: New folder
      CLOSED: [2012-11-22 Thu 12:47]
-**** TODO UC7: New project
+**** DONE UC7: New project
+     CLOSED: [2012-11-22 Thu 13:05]
 **** TODO UC8: Find old version of document
 *** DONE Use Case Model (UML)
     CLOSED: [2012-11-22 Thu 12:47]

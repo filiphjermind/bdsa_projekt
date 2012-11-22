@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 12:55
-=======
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.2)  22 NOV 2012 12:52
-=======
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 12:25
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 13:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,252 +489,171 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 99--100
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 113--113
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 113--113
-
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 113--114
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 127--127
-
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 127--128
-[][] 
- []
-
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--141
-
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 141--142
-[][] 
- []
-
-<<<<<<< HEAD
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-=======
-
-Underfull \hbox (badness 10000) in paragraph at lines 155--155
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
-
- []
-
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 211--211
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 155--155
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
-
- []
-
-
-<<<<<<< HEAD
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 211--212
-[][] 
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
-=======
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 155--156
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 169--169
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
-
- []
-
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 241--241
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 169--169
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
-
- []
-
-
-<<<<<<< HEAD
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 241--242
-[][] 
- []
-
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
-=======
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 169--170
-[][] 
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 183--183
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
-
- []
-
-
-<<<<<<< HEAD
-Underfull \hbox (badness 10000) in paragraph at lines 255--255
-=======
-Underfull \hbox (badness 10000) in paragraph at lines 183--183
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
-
- []
-
-
-<<<<<<< HEAD
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 255--256
-[][] 
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 259.
-=======
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 183--184
-[][] 
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 187.
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 130.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-<<<<<<< HEAD
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 259.
- [8]
-<images/DomainModel.jpg, id=30, 487.8225pt x 396.48125pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 130.
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--130
+
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 130--131
+[][] 
+ []
+
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--144
+
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 144--145
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
+
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 174--175
+[][] 
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--205
+
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 205--206
+[][] 
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 235--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--235
+
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 235--236
+[][] 
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 249--249
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 249--249
+
+ []
+
+
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 249--250
+[][] 
+ []
+
+[8] <images/DomainModel.jpg, id=32, 487.8225pt x 396.48125pt>
 File: images/DomainModel.jpg Graphic file (type jpg)
 
 <use images/DomainModel.jpg>
-Package pdftex.def Info: images/DomainModel.jpg used on input line 290.
+Package pdftex.def Info: images/DomainModel.jpg used on input line 284.
 (pdftex.def)             Requested size: 301.1261pt x 244.74501pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<images/LogicalArchitecture.jpg, id=31, 480.79625pt x 837.1275pt>
+<images/LogicalArchitecture.jpg, id=33, 480.79625pt x 837.1275pt>
 File: images/LogicalArchitecture.jpg Graphic file (type jpg)
 
 <use images/LogicalArchitecture.jpg>
-Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 297.
+Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 291.
 
 (pdftex.def)             Requested size: 301.1261pt x 524.30193pt.
  [9]
 Overfull \vbox (305.19205pt too high) has occurred while \output is active []
 
 
-[10 <C:/Users/Morten/Documents/GitHub/bdsa_projekt/Report/images/DomainModel.jp
-g> <C:/Users/Morten/Documents/GitHub/bdsa_projekt/Report/images/LogicalArchitec
-ture.jpg>] <images/SSQ_NewDocument.jpg, id=39, 422.57875pt x 385.44pt>
+[10 <./images/DomainModel.jpg> <./images/LogicalArchitecture.jpg>]
+<images/SSQ_NewDocument.jpg, id=40, 422.57875pt x 385.44pt>
 File: images/SSQ_NewDocument.jpg Graphic file (type jpg)
 
 <use images/SSQ_NewDocument.jpg>
-Package pdftex.def Info: images/SSQ_NewDocument.jpg used on input line 304.
+Package pdftex.def Info: images/SSQ_NewDocument.jpg used on input line 298.
 (pdftex.def)             Requested size: 301.1261pt x 274.67001pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 318--319
-=======
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
- [6]
-<images/DomainModel.jpg, id=25, 487.8225pt x 396.48125pt>
-File: images/DomainModel.jpg Graphic file (type jpg)
-
-<use images/DomainModel.jpg>
-Package pdftex.def Info: images/DomainModel.jpg used on input line 218.
-(pdftex.def)             Requested size: 301.1261pt x 244.74501pt.
-
-<images/LogicalArchitecture.jpg, id=26, 480.79625pt x 837.1275pt>
-File: images/LogicalArchitecture.jpg Graphic file (type jpg)
-
-<use images/LogicalArchitecture.jpg>
-Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 225.
-
-(pdftex.def)             Requested size: 301.1261pt x 524.30193pt.
- [7 <./images/DomainModel.jpg>]
-<images/SSQ_NewDocument.jpg, id=31, 422.57875pt x 385.44pt>
-File: images/SSQ_NewDocument.jpg Graphic file (type jpg)
-
-<use images/SSQ_NewDocument.jpg>
-Package pdftex.def Info: images/SSQ_NewDocument.jpg used on input line 232.
-(pdftex.def)             Requested size: 301.1261pt x 274.67001pt.
- [8 <./images/LogicalArchitecture.jpg>]
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 246--247
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 312--313
 [] 
  []
 
 
-Overfull \hbox (24.50003pt too wide) in paragraph at lines 253--268
+Overfull \hbox (24.50003pt too wide) in paragraph at lines 319--335
  [] 
  []
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<<<<<<< HEAD
-[11 <C:/Users/Morten/Documents/GitHub/bdsa_projekt/Report/images/SSQ_NewDocumen
-t.jpg>] [12] (C:\Users\Morten\Documents\GitHub\bdsa_projekt\Report\Report.aux) 
-) 
-=======
-[9 <./images/SSQ_NewDocument.jpg>] [10] (./Report.aux) ) 
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
+[11 <./images/SSQ_NewDocument.jpg>] [12] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
  2635 strings out of 493633
  34270 string characters out of 3143377
  93626 words of memory out of 3000000
  5883 multiletter control sequences out of 15000+200000
  9806 words of font info for 37 fonts, out of 3000000 for 9000
-<<<<<<< HEAD
- 715 hyphenation exceptions out of 8191
- 27i,7n,22p,257b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pro
-gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fil
-es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report.pdf (12 pages, 150989 bytes).
-PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
-=======
  831 hyphenation exceptions out of 8191
- 37i,7n,23p,256b,251s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/201
-1/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2011
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2011/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report.pdf (10 pages, 141894 bytes).
+ 37i,7n,23p,256b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/20
+11/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/201
+1/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2011
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Report.pdf (12 pages, 145615 bytes).
 PDF statistics:
- 56 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
+ 62 PDF objects out of 1000 (max. 8388607)
+ 40 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
