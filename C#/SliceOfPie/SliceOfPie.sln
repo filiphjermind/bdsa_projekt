@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SliceOfPie", "SliceOfPie\SliceOfPie.csproj", "{872AF6B5-8D44-4AD8-A96F-6EF671CDD815}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopUI", "DesktopUI\DesktopUI.csproj", "{A429CA04-CB58-4495-BE15-8F8AABB2D2E0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{872AF6B5-8D44-4AD8-A96F-6EF671CDD815}.Debug|x86.ActiveCfg = Debug|x86
+		{872AF6B5-8D44-4AD8-A96F-6EF671CDD815}.Debug|x86.Build.0 = Debug|x86
+		{872AF6B5-8D44-4AD8-A96F-6EF671CDD815}.Release|x86.ActiveCfg = Release|x86
+		{872AF6B5-8D44-4AD8-A96F-6EF671CDD815}.Release|x86.Build.0 = Release|x86
+		{A429CA04-CB58-4495-BE15-8F8AABB2D2E0}.Debug|x86.ActiveCfg = Debug|x86
+		{A429CA04-CB58-4495-BE15-8F8AABB2D2E0}.Debug|x86.Build.0 = Debug|x86
+		{A429CA04-CB58-4495-BE15-8F8AABB2D2E0}.Release|x86.ActiveCfg = Release|x86
+		{A429CA04-CB58-4495-BE15-8F8AABB2D2E0}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
