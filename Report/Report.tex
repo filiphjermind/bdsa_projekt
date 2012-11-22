@@ -46,7 +46,7 @@ Sending a document back and forth between multiple users can lead to a lot of er
 		\textbf{Stakeholders and Interests: } \\
 		- Regular user: Wants to create a new document without any complications. \\
 		\textbf{Preconditions:} none. \\
-		\textbf{Postconditions:} The document must be created\\
+		\textbf{Postconditions:} The document will be created\\
 		
 		\textbf{Basic flow:} 
 		\begin{enumerate}
@@ -182,28 +182,61 @@ Sending a document back and forth between multiple users can lead to a lot of er
 % Use case 6
 \fbox{\begin{minipage}{\columnwidth}
 		\textbf{Use case UC6: Create new folder} \\ 
-		\textbf{Scope:} \\
-		\textbf{Level:}  \\
-		\textbf{Primary actor:} \\
-		\textbf{Preconditions:} \\
-		\textbf{Postconditions:} \\
+		\textbf{Scope:} Slice-of-pie application\\
+		\textbf{Level:} User goal\\
+		\textbf{Primary actor:} Regular user\\
+		\textbf{Preconditions:} none.\\
+		\textbf{Postconditions:} The folder will have been created\\
 		
-		\textbf{Basic flow:} \\
-		\textbf{Extensions:} \\
+		\textbf{Basic flow:} 
+		\begin{enumerate}
+			\item User clicks on "create new folder" button
+			\item User fills in valid folder information and clicks "OK"
+			\item Client sends a request to server and server stores the folder
+			\item Client displays the new folder
+		\end{enumerate}
+		\textbf{Extensions:} 
+		\begin{enumerate}
+			\item[2.] Information is not valid
+			\begin{enumerate}
+				\item User gets an error message describing what information is invalid
+			\end{enumerate}
+			\item[3.] Server does not respond
+			\begin{enumerate}
+				\item folder is stored locally
+				\item The client requests the server in regular intervals to see if it has recovered, then resends the request to create a folder.
+			\end{enumerate}
+		\end{enumerate}
 		\textbf{Special requirements:} \\
 \end{minipage}}
 
 % Use case 7
 \fbox{\begin{minipage}{\columnwidth}
 		\textbf{Use case UC7: Create new project} \\ 
-		\textbf{Scope:} \\
-		\textbf{Level:}  \\
-		\textbf{Primary actor:} \\
-		\textbf{Preconditions:} \\
-		\textbf{Postconditions:} \\
+		\textbf{Scope:} Slice-of-pie application\\
+		\textbf{Level:}  User goal\\
+		\textbf{Primary actor:} Regular user\\
+		\textbf{Preconditions:} none.\\
+		\textbf{Postconditions:} a Project will have been created\\
 		
-		\textbf{Basic flow:} \\
-		\textbf{Extensions:} \\
+		\textbf{Basic flow:} \begin{enumerate}
+			\item User clicks on "Create New Project" button
+			\item User fills in valid Project information and clicks "OK"
+			\item Client sends a request to server and server stores the Project
+			\item Client displays the new folder
+		\end{enumerate}
+		\textbf{Extensions:} 
+		\begin{enumerate}
+			\item[2.] Information is not valid
+			\begin{enumerate}
+				\item User gets an error message describing what information is invalid
+			\end{enumerate}
+			\item[3.] Server does not respond
+			\begin{enumerate}
+				\item Project is stored locally
+				\item The client requests the server in regular intervals to see if it has recovered, then resends the request to create a Project.
+			\end{enumerate}
+		\end{enumerate}
 		\textbf{Special requirements:} \\
 \end{minipage}}
 
