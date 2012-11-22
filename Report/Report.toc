@@ -3,6 +3,18 @@
 \contentsline {subsection}{\numberline {1.2}Problem statement}{2}
 \contentsline {subsection}{\numberline {1.3}Summary of system features}{2}
 \contentsline {section}{\numberline {2}Use cases}{2}
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+\contentsline {section}{\numberline {3}Use Case Diagram}{6}
+\contentsline {section}{\numberline {4}Glossary}{7}
+\contentsline {section}{\numberline {5}Supplementary Specification (FURPS+)}{7}
+\contentsline {section}{\numberline {6}Domain Model}{7}
+\contentsline {section}{\numberline {7}Logical Architecture}{7}
+\contentsline {section}{\numberline {8}Revision Table}{8}
+=======
+<<<<<<< HEAD
+>>>>>>> dd3bd57d73cef039fc0c88e85ff140f1768a0112
 \contentsline {section}{\numberline {3}Glossary}{9}
 \contentsline {section}{\numberline {4}Supplementary Specification (FURPS+)}{9}
 \contentsline {section}{\numberline {5}Domain Model}{10}
@@ -10,3 +22,16 @@
 \contentsline {section}{\numberline {7}System Sequence Diagram}{11}
 \contentsline {section}{\numberline {8}Operation Contracts}{11}
 \contentsline {section}{\numberline {9}Revision Table}{11}
+<<<<<<< HEAD
+=======
+=======
+\contentsline {section}{\numberline {3}Glossary}{6}
+\contentsline {section}{\numberline {4}Supplementary Specification (FURPS+)}{6}
+\contentsline {section}{\numberline {5}Domain Model}{7}
+\contentsline {section}{\numberline {6}Logical Architecture}{8}
+\contentsline {section}{\numberline {7}System Sequence Diagram}{9}
+\contentsline {section}{\numberline {8}Operation Contracts}{9}
+\contentsline {section}{\numberline {9}Revision Table}{9}
+>>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
+>>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
+>>>>>>> dd3bd57d73cef039fc0c88e85ff140f1768a0112
