@@ -15,10 +15,12 @@
 **** TODO UC4: Merging documents (resolve conflict)
 **** DONE UC5: Offline sync
      CLOSED: [2012-11-22 Thu 11:45]
-**** TODO UC6: New folder
+**** DONE UC6: New folder
+     CLOSED: [2012-11-22 Thu 12:47]
 **** TODO UC7: New project
 **** TODO UC8: Find old version of document
-*** TODO Use Case Model (UML)
+*** DONE Use Case Model (UML)
+    CLOSED: [2012-11-22 Thu 12:47]
 ** DONE Supplementary specification (FURPS+)
    CLOSED: [2012-11-21 Wed 13:00]
    - Functionality
@@ -35,7 +37,8 @@
    CLOSED: [2012-11-21 Wed 13:29]
 ** DONE Logical architecture
    CLOSED: [2012-11-21 Wed 13:58]
-** TODO Operation contract
+** DONE Operation contract
+   CLOSED: [2012-11-22 Thu 12:47]
 ** TODO Interaction Diagram
 ** TODO Software Attributes / Qualities
 ** TODO Package Diagram

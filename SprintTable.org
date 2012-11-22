@@ -6,8 +6,8 @@
 | Use cases                       | UC3         | Morten    |
 |                                 | UC4         | -         |
 |                                 | UC5         | Morten    |
-|                                 | UC6         | -         |
-|                                 | UC7         | -         |
+|                                 | UC6         | Morten    |
+|                                 | UC7         | Morten    |
 |                                 | UC8         | -         |
 |---------------------------------+-------------+-----------|
 | Use case model                  |             | Filip     |
