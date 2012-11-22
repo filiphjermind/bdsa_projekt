@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 13:23
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 13:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -635,7 +635,7 @@ File: images/UseCaseDiagram.jpg Graphic file (type jpg)
 Package pdftex.def Info: images/UseCaseDiagram.jpg used on input line 317.
 (pdftex.def)             Requested size: 301.1261pt x 297.54308pt.
  [11 <./images/SSQ_NewDocument.jpg>]
-Overfull \hbox (24.50003pt too wide) in paragraph at lines 327--343
+Overfull \hbox (24.50003pt too wide) in paragraph at lines 327--344
  [] 
  []
 
@@ -656,7 +656,7 @@ Here is how much of TeX's memory you used:
 /texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2011/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011/te
 xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report.pdf (13 pages, 164932 bytes).
+Output written on Report.pdf (13 pages, 164993 bytes).
 PDF statistics:
  67 PDF objects out of 1000 (max. 8388607)
  43 compressed objects within 1 object stream

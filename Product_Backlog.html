@@ -1,0 +1,436 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Product<sub>Backlog</sub></title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Product<sub>Backlog</sub>"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-22 14:25:16 CET"/>
+<meta name="author" content="Bergar Simonsen"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Product<sub>Backlog</sub></h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Inception</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Vision &amp; Business case</a></li>
+<li><a href="#sec-1-2">1.2 Use cases</a>
+<ul>
+<li><a href="#sec-1-2-1">1.2.1 Use cases (text)</a></li>
+<li><a href="#sec-1-2-2">1.2.2 Use Case Model (UML)</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3 Supplementary specification (FURPS+)</a></li>
+<li><a href="#sec-1-4">1.4 Glossary</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 Elaboration</a>
+<ul>
+<li><a href="#sec-2-1">2.1 System sequence diagram</a></li>
+<li><a href="#sec-2-2">2.2 Domain Model</a></li>
+<li><a href="#sec-2-3">2.3 Logical architecture</a></li>
+<li><a href="#sec-2-4">2.4 Operation contract</a></li>
+<li><a href="#sec-2-5">2.5 Interaction Diagram</a></li>
+<li><a href="#sec-2-6">2.6 Software Attributes / Qualities</a></li>
+<li><a href="#sec-2-7">2.7 Package Diagram</a></li>
+<li><a href="#sec-2-8">2.8 Class diagram</a></li>
+<li><a href="#sec-2-9">2.9 SAD</a></li>
+<li><a href="#sec-2-10">2.10 N+1</a></li>
+<li><a href="#sec-2-11">2.11 ER-Diagram</a></li>
+<li><a href="#sec-2-12">2.12 C# Basic architecture</a></li>
+<li><a href="#sec-2-13">2.13 Client</a></li>
+<li><a href="#sec-2-14">2.14 System</a>
+<ul>
+<li><a href="#sec-2-14-1">2.14.1 Define central methods.</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-15">2.15 Server</a>
+<ul>
+<li><a href="#sec-2-15-1">2.15.1 Define central methods</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Inception</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> <span class="done DONE">DONE</span> Vision &amp; Business case</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-21 Wed 13:00</span></span><br/>
+</p><ul>
+<li>Introduction
+</li>
+<li>Problem statement
+</li>
+<li>Summary of system features
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> <span class="todo TODO">TODO</span> Use cases</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> <span class="todo TODO">TODO</span> Use cases (text)</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<ul>
+<li id="sec-1-2-1-1"><span class="done DONE">DONE</span> UC1: Create new document<br/>
+      <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-21 Wed 13:00</span></span><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-2"><span class="done DONE">DONE</span> UC2: Edit document<br/>
+      <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-21 Wed 13:00</span></span><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-3"><span class="done DONE">DONE</span> UC3: Delete document<br/>
+      <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-22 Thu 11:45</span></span><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-4"><span class="todo TODO">TODO</span> UC4: Merging documents (resolve conflict)<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-5"><span class="done DONE">DONE</span> UC5: Offline sync<br/>
+      <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-22 Thu 11:45</span></span><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-6"><span class="done DONE">DONE</span> UC6: New folder<br/>
+      <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-22 Thu 12:47</span></span><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-7"><span class="done DONE">DONE</span> UC7: New project<br/>
+      <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-22 Thu 13:05</span></span><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1-2-1-8"><span class="todo TODO">TODO</span> UC8: Find old version of document<br/>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> <span class="done DONE">DONE</span> Use Case Model (UML)</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<p>     <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-22 Thu 12:47</span></span><br/>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> <span class="done DONE">DONE</span> Supplementary specification (FURPS+)</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-21 Wed 13:00</span></span><br/>
+</p><ul>
+<li>Functionality
+</li>
+<li>Usability
+</li>
+<li>Reliability
+</li>
+<li>Performance
+</li>
+<li>Supportability
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> <span class="done DONE">DONE</span> Glossary</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-21 Wed 13:01</span></span><br/>
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Elaboration</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> <span class="done DONE">DONE</span> System sequence diagram</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-22 Thu 12:05</span></span><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> <span class="done DONE">DONE</span> Domain Model</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-21 Wed 13:29</span></span><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> <span class="done DONE">DONE</span> Logical architecture</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-21 Wed 13:58</span></span><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> <span class="done DONE">DONE</span> Operation contract</h3>
+<div class="outline-text-3" id="text-2-4">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-22 Thu 12:47</span></span><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> <span class="todo TODO">TODO</span> Interaction Diagram</h3>
+<div class="outline-text-3" id="text-2-5">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-6" class="outline-3">
+<h3 id="sec-2-6"><span class="section-number-3">2.6</span> <span class="todo TODO">TODO</span> Software Attributes / Qualities</h3>
+<div class="outline-text-3" id="text-2-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-7" class="outline-3">
+<h3 id="sec-2-7"><span class="section-number-3">2.7</span> <span class="todo TODO">TODO</span> Package Diagram</h3>
+<div class="outline-text-3" id="text-2-7">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-8" class="outline-3">
+<h3 id="sec-2-8"><span class="section-number-3">2.8</span> <span class="todo TODO">TODO</span> Class diagram</h3>
+<div class="outline-text-3" id="text-2-8">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-9" class="outline-3">
+<h3 id="sec-2-9"><span class="section-number-3">2.9</span> <span class="todo TODO">TODO</span> SAD</h3>
+<div class="outline-text-3" id="text-2-9">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-10" class="outline-3">
+<h3 id="sec-2-10"><span class="section-number-3">2.10</span> <span class="todo TODO">TODO</span> N+1</h3>
+<div class="outline-text-3" id="text-2-10">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-11" class="outline-3">
+<h3 id="sec-2-11"><span class="section-number-3">2.11</span> <span class="todo TODO">TODO</span> ER-Diagram</h3>
+<div class="outline-text-3" id="text-2-11">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-12" class="outline-3">
+<h3 id="sec-2-12"><span class="section-number-3">2.12</span> <span class="done DONE">DONE</span> C# Basic architecture</h3>
+<div class="outline-text-3" id="text-2-12">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2012-11-22 Thu 14:11</span></span><br/>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-13" class="outline-3">
+<h3 id="sec-2-13"><span class="section-number-3">2.13</span> <span class="todo TODO">TODO</span> Client</h3>
+<div class="outline-text-3" id="text-2-13">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-14" class="outline-3">
+<h3 id="sec-2-14"><span class="section-number-3">2.14</span> <span class="todo TODO">TODO</span> System</h3>
+<div class="outline-text-3" id="text-2-14">
+
+
+</div>
+
+<div id="outline-container-2-14-1" class="outline-4">
+<h4 id="sec-2-14-1"><span class="section-number-4">2.14.1</span> <span class="todo TODO">TODO</span> Define central methods.</h4>
+<div class="outline-text-4" id="text-2-14-1">
+
+<ul>
+<li>Method signature
+</li>
+<li>Document
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-15" class="outline-3">
+<h3 id="sec-2-15"><span class="section-number-3">2.15</span> <span class="todo TODO">TODO</span> Server</h3>
+<div class="outline-text-3" id="text-2-15">
+
+
+</div>
+
+<div id="outline-container-2-15-1" class="outline-4">
+<h4 id="sec-2-15-1"><span class="section-number-4">2.15.1</span> <span class="todo TODO">TODO</span> Define central methods</h4>
+<div class="outline-text-4" id="text-2-15-1">
+
+<ul>
+<li>Method signature
+</li>
+<li>Document
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-11-22 14:25:16 CET</p>
+<p class="author">Author: Bergar Simonsen</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
