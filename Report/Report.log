@@ -1,33 +1,24 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 13:19
-=======
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-1.40.11 (MiKTeX 2.9) (preloaded format=pdflatex 2012.9.18)  22 NOV 2012 12:58
-=======
-<<<<<<< HEAD
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.10.2)  22 NOV 2012 12:52
-=======
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 12:25
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
->>>>>>> dd3bd57d73cef039fc0c88e85ff140f1768a0112
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 13:23
 entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
 **Report.tex
-(C:\Users\Filip\Documents\GitHub\bdsa_projekt\Report\Report.tex
+(./Report.tex
 LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
+Babel <v3.8l> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2009-06-19, ngerman-x-2009-06-19, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, galician, german, ngerman, swissgerman, monogreek, greek, hungarian,
+ icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, marathi, or
+iya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, kurmanji,
+ lao, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk, pol
+ish, portuguese, romanian, russian, sanskrit, serbian, serbianc, slovak, sloven
+ian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, welsh, loaded
+.
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/size11.clo
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -42,19 +33,19 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -204,7 +195,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -235,7 +226,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -259,24 +250,24 @@ Now handling font encoding U ...
    defining Unicode char U+2122 (decimal 8482)
    defining Unicode char U+2423 (decimal 9251)
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen103
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen104
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count87
@@ -317,56 +308,48 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
-File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+(/usr/local/texlive/2011/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2010/09/14 v0.05b Graphics/color for pdfTeX
+(/usr/local/texlive/2011/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(/usr/local/texlive/2011/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count99
 ))
 \Gin@req@height=\dimen112
 \Gin@req@width=\dimen113
 )
-<<<<<<< HEAD
-(C:\Users\Filip\Documents\GitHub\bdsa_projekt\Report\Report.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-=======
 (/usr/local/texlive/2011/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count100
@@ -389,9 +372,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+(/usr/local/texlive/2011/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count101
 \scratchdimen=\dimen114
@@ -401,11 +383,6 @@ LaTeX Font Info:    ... okay on input line 9.
 \everyMPshowfont=\toks24
 \MPscratchCnt=\count104
 \MPscratchDim=\dimen115
-<<<<<<< HEAD
-\MPnumerator=\count104
-\everyMPtoPDFconversion=\toks23
-) (C:\Users\Filip\Documents\GitHub\bdsa_projekt\Report\Report.toc
-=======
 \MPnumerator=\count105
 \makeMPintoPDFobject=\count106
 \everyMPtoPDFconversion=\toks25
@@ -457,27 +434,22 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 (./Report.toc
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
 LaTeX Font Info:    Try loading font information for U+msa on input line 2.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+ (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 2.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+(/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ))
 \tf@toc=\write3
+\openout3 = `Report.toc'.
+
  [1
 
-<<<<<<< HEAD
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 70--70
-=======
 {/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 71--71
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
 
  []
 
@@ -619,54 +591,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--249
  []
 
 
-<<<<<<< HEAD
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 249--250
 [][] 
  []
 
 [8] <images/DomainModel.jpg, id=32, 487.8225pt x 396.48125pt>
-=======
-<<<<<<< HEAD
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 255--256
-[][] 
- []
-
-<<<<<<< HEAD
-<images/UseCaseDiagram.jpg, id=20, 421.575pt x 416.55624pt>
-File: images/UseCaseDiagram.jpg Graphic file (type jpg)
-
-<use images/UseCaseDiagram.jpg>
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 195.
-=======
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 259.
-=======
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 183--184
-[][] 
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 187.
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
-
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-<<<<<<< HEAD
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 195.
- [6 <C:/Users/Filip/Documents/GitHub/bdsa_projekt/Report/images/UseCaseDiagram.
-jpg>]
-<images/DomainModel.jpg, id=24, 487.8225pt x 396.48125pt>
-File: images/DomainModel.jpg Graphic file (type jpg)
-
-<use images/DomainModel.jpg>
-=======
-<<<<<<< HEAD
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 259.
- [8]
-<images/DomainModel.jpg, id=30, 487.8225pt x 396.48125pt>
->>>>>>> dd3bd57d73cef039fc0c88e85ff140f1768a0112
 File: images/DomainModel.jpg Graphic file (type jpg)
 
 <use images/DomainModel.jpg>
@@ -695,99 +624,42 @@ File: images/SSQ_NewDocument.jpg Graphic file (type jpg)
 Package pdftex.def Info: images/SSQ_NewDocument.jpg used on input line 298.
 (pdftex.def)             Requested size: 301.1261pt x 274.67001pt.
 
-<<<<<<< HEAD
 Overfull \hbox (6.79999pt too wide) in paragraph at lines 312--313
 [] 
  []
-=======
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 318--319
-=======
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 187.
- [6]
-<images/DomainModel.jpg, id=25, 487.8225pt x 396.48125pt>
-File: images/DomainModel.jpg Graphic file (type jpg)
 
-<use images/DomainModel.jpg>
-Package pdftex.def Info: images/DomainModel.jpg used on input line 218.
-(pdftex.def)             Requested size: 301.1261pt x 244.74501pt.
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
+<images/UseCaseDiagram.jpg, id=41, 421.575pt x 416.55624pt>
+File: images/UseCaseDiagram.jpg Graphic file (type jpg)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<images/LogicalArchitecture.jpg, id=25, 480.79625pt x 837.1275pt>
-File: images/LogicalArchitecture.jpg Graphic file (type jpg)
-
-<use images/LogicalArchitecture.jpg>
-<<<<<<< HEAD
-=======
-Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 225.
->>>>>>> dd3bd57d73cef039fc0c88e85ff140f1768a0112
-
-
-Overfull \hbox (24.50003pt too wide) in paragraph at lines 319--335
+<use images/UseCaseDiagram.jpg>
+Package pdftex.def Info: images/UseCaseDiagram.jpg used on input line 317.
+(pdftex.def)             Requested size: 301.1261pt x 297.54308pt.
+ [11 <./images/SSQ_NewDocument.jpg>]
+Overfull \hbox (24.50003pt too wide) in paragraph at lines 327--343
  [] 
  []
 
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<<<<<<< HEAD
-[11 <./images/SSQ_NewDocument.jpg>] [12] (./Report.aux) ) 
-=======
-<<<<<<< HEAD
-[7] [8 <C:/Users/Filip/Documents/GitHub/bdsa_projekt/Report/images/DomainModel.
-jpg>] [9 <C:/Users/Filip/Documents/GitHub/bdsa_projekt/Report/images/LogicalArc
-hitecture.jpg>] (C:\Users\Filip\Documents\GitHub\bdsa_projekt\Report\Report.aux
-) ) 
+[12 <./images/UseCaseDiagram.jpg>] [13] (./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 2081 strings out of 494019
- 25096 string characters out of 3143882
- 81907 words of memory out of 3000000
- 5360 multiletter control sequences out of 15000+200000
- 9806 words of font info for 37 fonts, out of 3000000 for 9000
- 714 hyphenation exceptions out of 8191
- 27i,7n,22p,257b,245s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><
-C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report.pdf (9 pages, 152822 bytes).
-PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
-=======
-<<<<<<< HEAD
-[11 <C:/Users/Morten/Documents/GitHub/bdsa_projekt/Report/images/SSQ_NewDocumen
-t.jpg>] [12] (C:\Users\Morten\Documents\GitHub\bdsa_projekt\Report\Report.aux) 
-) 
-=======
-[9 <./images/SSQ_NewDocument.jpg>] [10] (./Report.aux) ) 
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
->>>>>>> dd3bd57d73cef039fc0c88e85ff140f1768a0112
-Here is how much of TeX's memory you used:
- 2635 strings out of 493633
- 34270 string characters out of 3143377
+ 2640 strings out of 493633
+ 34407 string characters out of 3143377
  93626 words of memory out of 3000000
- 5883 multiletter control sequences out of 15000+200000
+ 5887 multiletter control sequences out of 15000+200000
  9806 words of font info for 37 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  37i,7n,23p,256b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/20
-11/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/201
-1/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2011
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on Report.pdf (12 pages, 145615 bytes).
+</usr/local/texlive/201
+1/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2011
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2011/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2011/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on Report.pdf (13 pages, 164932 bytes).
 PDF statistics:
-<<<<<<< HEAD
- 62 PDF objects out of 1000 (max. 8388607)
- 40 compressed objects within 1 object stream
-=======
- 56 PDF objects out of 1000 (max. 8388607)
- 36 compressed objects within 1 object stream
->>>>>>> ab38c8bbd54320dadd859e94fbde7706c03ea65d
->>>>>>> 10c026ff64fba456fa1fbf3281236e56272f3b7c
->>>>>>> dd3bd57d73cef039fc0c88e85ff140f1768a0112
+ 67 PDF objects out of 1000 (max. 8388607)
+ 43 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
