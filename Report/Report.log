@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  21 NOV 2012 14:29
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  22 NOV 2012 10:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -571,26 +571,26 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 182--183
 [][] 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 188.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 186.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 188.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 186.
  [6]
 <images/DomainModel.jpg, id=25, 487.8225pt x 396.48125pt>
 File: images/DomainModel.jpg Graphic file (type jpg)
 
 <use images/DomainModel.jpg>
-Package pdftex.def Info: images/DomainModel.jpg used on input line 214.
+Package pdftex.def Info: images/DomainModel.jpg used on input line 217.
 (pdftex.def)             Requested size: 301.1261pt x 244.74501pt.
 
 <images/LogicalArchitecture.jpg, id=26, 480.79625pt x 837.1275pt>
 File: images/LogicalArchitecture.jpg Graphic file (type jpg)
 
 <use images/LogicalArchitecture.jpg>
-Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 221.
+Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 224.
 
 (pdftex.def)             Requested size: 301.1261pt x 524.30193pt.
 
@@ -612,7 +612,7 @@ Here is how much of TeX's memory you used:
 cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb>
-Output written on Report.pdf (9 pages, 128738 bytes).
+Output written on Report.pdf (9 pages, 128847 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  34 compressed objects within 1 object stream
