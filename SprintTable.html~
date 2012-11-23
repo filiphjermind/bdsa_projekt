@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>SprintTable</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="SprintTable"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2012-11-22 10:44:15 CET"/>
+<meta name="generated" content="2012-11-22 14:25:02 CET"/>
 <meta name="author" content="Bergar Simonsen"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -98,66 +98,88 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 Sprint</a></li>
+<li><a href="#sec-1">1 Sprint</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Table</a></li>
+<li><a href="#sec-1-2">1.2 Deadline</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1"><span class="section-number-2">1</span> Sprint</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Sprint <span class="timestamp-wrapper"> <span class="timestamp">2012-11-22 Thu</span></span></h2>
 <div class="outline-text-2" id="text-1">
 
 
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Table</h3>
+<div class="outline-text-3" id="text-1-1">
+
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <caption></caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" />
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" />
 </colgroup>
 <thead>
-<tr><th scope="col" class="left">Product backlog item</th><th scope="col" class="left">Sprint task</th><th scope="col" class="left">Volunteer</th></tr>
+<tr><th scope="col" class="left">Product backlog item</th><th scope="col" class="left">Sprint task</th><th scope="col" class="left">Volunteer</th><th scope="col" class="left">Status</th></tr>
 </thead>
 <tbody>
-<tr><td class="left">Use cases</td><td class="left">UC3</td><td class="left"></td></tr>
-<tr><td class="left"></td><td class="left">UC4</td><td class="left"></td></tr>
-<tr><td class="left"></td><td class="left">UC5</td><td class="left"></td></tr>
-<tr><td class="left"></td><td class="left">UC6</td><td class="left"></td></tr>
-<tr><td class="left"></td><td class="left">UC7</td><td class="left"></td></tr>
-<tr><td class="left"></td><td class="left">UC8</td><td class="left"></td></tr>
+<tr><td class="left">Use cases</td><td class="left">UC3</td><td class="left">Morten</td><td class="left">Done</td></tr>
+<tr><td class="left"></td><td class="left">UC4</td><td class="left">-</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">UC5</td><td class="left">Morten</td><td class="left">Done</td></tr>
+<tr><td class="left"></td><td class="left">UC6</td><td class="left">Morten</td><td class="left">Done</td></tr>
+<tr><td class="left"></td><td class="left">UC7</td><td class="left">Morten</td><td class="left">Done</td></tr>
+<tr><td class="left"></td><td class="left">UC8</td><td class="left">-</td><td class="left"></td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">Use case model</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Use case model</td><td class="left"></td><td class="left">Filip</td><td class="left">Done</td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">SSQ</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">SSD</td><td class="left"></td><td class="left">Bergar</td><td class="left">Done</td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">Operation contract</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Operation contract</td><td class="left"></td><td class="left">Bergar</td><td class="left">Done</td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">Interaction diagram</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Interaction diagram</td><td class="left">Communication Diagram</td><td class="left">Morten</td><td class="left"></td></tr>
+<tr><td class="left"></td><td class="left">Sequence Diagram</td><td class="left">Filip</td><td class="left"></td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">Software attributes / qualities</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Package Diagram</td><td class="left"></td><td class="left">Bergar</td><td class="left"></td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">Package diagram</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Class Diagram</td><td class="left"></td><td class="left">Bergar</td><td class="left"></td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">Class diagram</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">C# Basic architecture</td><td class="left"></td><td class="left">Morten</td><td class="left">Done</td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">SAD</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">System</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </tbody>
 <tbody>
-<tr><td class="left">N+1</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Server</td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
 </tbody>
 </table>
 
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Deadline <span class="timestamp-wrapper"> <span class="timestamp">2012-11-27 Tue</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
+
+</div>
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2012-11-22 10:44:15 CET</p>
+<p class="date">Date: 2012-11-22 14:25:02 CET</p>
 <p class="author">Author: Bergar Simonsen</p>
 <p class="creator">Org version 7.8.11 with Emacs version 24</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>

@@ -19,9 +19,9 @@
 | Interaction diagram   | Communication Diagram | Morten    |        |
 |                       | Sequence Diagram      | Filip     |        |
 |-----------------------+-----------------------+-----------+--------|
-| Package Diagram       |                       | Bergar    |        |
+| Package Diagram       |                       | Bergar    | Done   |
 |-----------------------+-----------------------+-----------+--------|
-| Class Diagram         |                       | Bergar    |        |
+| Class Diagram         |                       | Bergar    | Done   |
 |-----------------------+-----------------------+-----------+--------|
 | C# Basic architecture |                       | Morten    | Done   |
 |-----------------------+-----------------------+-----------+--------|

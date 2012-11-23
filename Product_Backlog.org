@@ -43,9 +43,13 @@
 ** DONE Operation contract
    CLOSED: [2012-11-22 Thu 12:47]
 ** TODO Interaction Diagram
+*** TODO Communication Diagram
+*** TODO Sequence Diagram
 ** TODO Software Attributes / Qualities
-** TODO Package Diagram
-** TODO Class diagram
+** DONE Package Diagram
+   CLOSED: [2012-11-23 Fri 15:16]
+** DONE Class diagram
+   CLOSED: [2012-11-23 Fri 15:17]
 ** TODO SAD
 ** TODO N+1
 ** TODO ER-Diagram
