@@ -10,13 +10,18 @@
      CLOSED: [2012-11-21 Wed 13:00]
 **** DONE UC2: Edit document
      CLOSED: [2012-11-21 Wed 13:00]
-**** TODO UC3: Delete document
+**** DONE UC3: Delete document
+     CLOSED: [2012-11-22 Thu 11:45]
 **** TODO UC4: Merging documents (resolve conflict)
-**** TODO UC5: Offline sync
-**** TODO UC6: New folder
-**** TODO UC7: New project
+**** DONE UC5: Offline sync
+     CLOSED: [2012-11-22 Thu 11:45]
+**** DONE UC6: New folder
+     CLOSED: [2012-11-22 Thu 12:47]
+**** DONE UC7: New project
+     CLOSED: [2012-11-22 Thu 13:05]
 **** TODO UC8: Find old version of document
-*** TODO Use Case Model (UML)
+*** DONE Use Case Model (UML)
+    CLOSED: [2012-11-22 Thu 12:47]
 ** DONE Supplementary specification (FURPS+)
    CLOSED: [2012-11-21 Wed 13:00]
    - Functionality
@@ -27,13 +32,29 @@
 ** DONE Glossary
    CLOSED: [2012-11-21 Wed 13:01]
 * Elaboration
-** TODO System sequence diagram
+** DONE System sequence diagram
+   CLOSED: [2012-11-22 Thu 12:05]
 ** DONE Domain Model
    CLOSED: [2012-11-21 Wed 13:29]
 ** DONE Logical architecture
    CLOSED: [2012-11-21 Wed 13:58]
-** TODO Operation contract
+** DONE Operation contract
+   CLOSED: [2012-11-22 Thu 12:47]
 ** TODO Interaction Diagram
 ** TODO Software Attributes / Qualities
 ** TODO Package Diagram
 ** TODO Class diagram
+** TODO SAD
+** TODO N+1
+** TODO ER-Diagram
+** DONE C# Basic architecture
+   CLOSED: [2012-11-22 Thu 14:11]
+** TODO Client
+** TODO System
+*** TODO Define central methods.
+    - Method signature
+    - Document
+** TODO Server
+*** TODO Define central methods
+    - Method signature
+    - Document

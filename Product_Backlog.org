@@ -1,4 +1,4 @@
-* Inception
+* Report
 ** DONE Vision & Business case
    CLOSED: [2012-11-21 Wed 13:00]
    - Introduction
@@ -31,13 +31,15 @@
    - Supportability
 ** DONE Glossary
    CLOSED: [2012-11-21 Wed 13:01]
-* Elaboration
 ** DONE System sequence diagram
    CLOSED: [2012-11-22 Thu 12:05]
+
 ** DONE Domain Model
    CLOSED: [2012-11-21 Wed 13:29]
+
 ** DONE Logical architecture
    CLOSED: [2012-11-21 Wed 13:58]
+
 ** DONE Operation contract
    CLOSED: [2012-11-22 Thu 12:47]
 ** TODO Interaction Diagram
@@ -47,14 +49,15 @@
 ** TODO SAD
 ** TODO N+1
 ** TODO ER-Diagram
+* C#
 ** DONE C# Basic architecture
    CLOSED: [2012-11-22 Thu 14:11]
-** TODO Client
-** TODO System
-*** TODO Define central methods.
-    - Method signature
-    - Document
 ** TODO Server
 *** TODO Define central methods
     - Method signature
     - Document
+** TODO System
+*** TODO Define central methods.
+    - Method signature
+    - Document
+** TODO Client

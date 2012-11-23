@@ -10,4 +10,6 @@
 \contentsline {section}{\numberline {7}System Sequence Diagram}{11}
 \contentsline {section}{\numberline {8}Operation Contracts}{11}
 \contentsline {section}{\numberline {9}Use Case Diagram}{12}
-\contentsline {section}{\numberline {10}Revision Table}{12}
+\contentsline {section}{\numberline {10}UML Package Diagram}{13}
+\contentsline {section}{\numberline {11}UML Class Diagram}{13}
+\contentsline {section}{\numberline {12}Revision Table}{13}
