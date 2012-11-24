@@ -39,6 +39,15 @@ namespace SliceOfPie
             set;
         }
 
+        /// <summary>
+        /// Content of the document.
+        /// </summary>
+        public string content
+        {
+            get;
+            set;
+        }
+
         public Document(User owner, string title)
         {
             this.owner = owner;

@@ -23,7 +23,16 @@ namespace SliceOfPie
         /// </summary>
         /// <param name="user">Owner of the documents</param>
         /// <returns>List of all documents that belong to the user.</returns>
-        public List<Document> GetAllDocuments(User user)
+        public List<Document> GetAllUsersDocuments(User user)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// Returns all documents stored in the system
+        /// </summary>
+        /// <returns>List of all documents</returns>
+        public List<Document> GetAllDocuments()
         {
             return null;
         }
@@ -48,10 +57,19 @@ namespace SliceOfPie
         }
 
         /// <summary>
-        /// Deletes a document from the database
+        /// Deletes a document from the system
         /// </summary>
         /// <param name="doc">The document to delete</param>
         public void DeleteDocument(Document doc)
+        { 
+        }
+
+        /// <summary>
+        /// Allows the owner of the document to share the
+        /// document with other users.
+        /// </summary>
+        /// <param name="users">List of users to share with.</param>
+        public void ShareDocument(params User[] users)
         { 
         }
     }
