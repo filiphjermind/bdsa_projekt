@@ -69,9 +69,10 @@
 ** TODO Client
 ** TODO Database
    - [ ] ER-Diagram
-   - [ ] User table
-   - [ ] Document table
-   - [ ] User-Document
+   - [X] User table
+   - [X] Document table
+   - [X] User-Document table
+   - [ ] DocumentHistory table
 ** TODO System architecture
    - [ ] Implement GRASP
    - [ ] Create/Edit/Delete Document
