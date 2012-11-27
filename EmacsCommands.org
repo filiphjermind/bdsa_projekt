@@ -1,0 +1,173 @@
+* Emacs Commands
+
+** Buffers
+| Command                    | Key Combination |
+|----------------------------+-----------------|
+| Select buffer              | C-x b           |
+| Next buffer (rotation)     | C-s             |
+| Previous buffer (rotation) | C-r             |
+| Kill buffer (in selection) | C-k             |
+| Kill current buffer        | C-x k           |
+
+- ido-mode
+
+** Windows
+| Command                   | Key Combination |
+|---------------------------+-----------------|
+| Horizontal split          | C-x 2           |
+| Vertical split            | C-x 3           |
+|                           |                 |
+| Destroy all except active | C-x 1           |
+| Destroy current window    | C-x 0           |
+|                           |                 |
+| Switch between windows    | C-x o           |
+   
+** Frames
+| Command                | Key Combination |
+|------------------------+-----------------|
+| Select frame           | C-x 5 b         |
+| Close current frame    | C-x 5 0         |
+| Switch between frames  | C-x 5 0         |
+| Open file in new frame | C-x 5 f         |
+
+
+** Misc
+| Command                         | Key Combination         |
+|---------------------------------+-------------------------|
+| Emacs Manual                    | C-h r                   |
+| Describe variable               | C-h v                   |
+| Describe function               | C-h f                   |
+| Describe key                    | C-h k                   |
+| Describe mode                   | C-h m                   |
+|                                 |                         |
+| Set mark                        | C-space                 |
+| Kill between mark and point     | C-w                     |
+| Copy between mark and point     | M-w                     |
+| Yank                            | C-y                     |
+| Swap between mark and point     | C-x C-x                 |
+|                                 |                         |
+| Transient mark mode (highlight) | M-x transient-mark-mode |
+|                                 |                         |
+   
+** Moving around
+| Command             | Key Combination |
+|---------------------+-----------------|
+| Next line           | C-n             |
+| Previous line       | C-p             |
+| Next Character      | C-f             |
+| Previous Character  | C-b             |
+|                     |                 |
+| Next word           | M-f             |
+| Precious word       | M-b             |
+|                     |                 |
+| Beginning of line   | C-a             |
+| End of line         | C-e             |
+|                     |                 |
+| Beginning of buffer | M-<             |
+| End of buffer       | M->             |
+|                     |                 |
+
+
+    
+
+** Org Mode
+*** Help
+| Command                       | Key Combination |
+|-------------------------------+-----------------|
+| Org mode manual               | M-x org-info    |
+| Show all / Hide all           | S-<TAB>         |
+|-------------------------------+-----------------|
+    
+*** Moving around
+| Command                        | Key Combination |
+|--------------------------------+-----------------|
+| Move line up                   | M-<UP>          |
+| Move line down                 | M-<DOWN>        |
+| Next heading                   | C-c C-n         |
+| Previous heading               | C-c C-p         |
+| Next heading (same level)      | C-c C-f         |
+| Previous heading (same level)  | C-c C-b         |
+| Higher level heading           | C-c C-u         |
+| Jump to place in file          | C-c C-j         |
+| Previous/next plaing list item | S-<UP>/<DOWN>   |
+|--------------------------------+-----------------|
+
+*** Visibility cycling
+| Command                                       | Key Combination |
+|-----------------------------------------------+-----------------|
+| rotate current subtree between states         | TAB             |
+| rotate entire buffer between states           | S-TAB           |
+| restore property-dependent startup visibility | C-u C-u TAB     |
+| show the whole file, including drawers        | C-u C-u C-u TAB |
+| reveal context around point                   | C-c C-r         |
+|-----------------------------------------------+-----------------|
+
+*** Structure Editing
+|--------------------------------------------+--------------------|
+| Command                                    | Key Binding        |
+|--------------------------------------------+--------------------|
+| insert new heading/item at current level   | M-RET              |
+| insert new heading after subtree           | C-RET              |
+| insert new TODO entry/checkbox item        | M-S-RET            |
+| insert TODO entry/ckbx after subtree       | C-S-RET            |
+| turn (head)line into item, cycle item type | C-c -              |
+| turn item/line into headline               | C-c *              |
+| promote/demote heading                     | M-LEFT/RIGHT       |
+| promote/demote current subtree             | M-S-LEFT/RIGHT     |
+| move subtree/list item up/down             | M-S-UP/DOWN        |
+| sort subtree/region/plain-list             | C-c ^              |
+| clone a subtree                            | C-c C-x c          |
+| copy visible text                          | C-c C-x v          |
+| kill/copy subtree                          | C-c C-x C-w/M-w    |
+| yank subtree                               | C-c C-x C-y or C-y |
+| narrow buffer to subtree / widen           | C-x n s/w          |
+|--------------------------------------------+--------------------|
+
+*** Tables
+| Command                                      | Key Binding               |
+|----------------------------------------------+---------------------------|
+| Convert region to table                      | C-c <HORIZONTAL LINE>     |
+| Separator at least 3 spaces                  | C-3 C-c <HORIZONTAL LINE> |
+|                                              |                           |
+| move the current column left                 | M-LEFT/RIGHT              |
+| kill the current column                      | M-S-LEFT                  |
+| insert new column to left of cursor position | M-S-RIGHT                 |
+|                                              |                           |
+| move the current row up/down                 | M-UP/DOWN                 |
+| kill the current row or horizontal line      | M-S-UP                    |
+| insert new row above the current row         | M-S-DOWN                  |
+| insert hline below (C-u : above) current row | C-c -                     |
+| insert hline and move to line below it       | C-c RET                   |
+| sort lines in region                         | C-c ^                     |
+|----------------------------------------------+---------------------------|
+
+*** Exporting and Publishing
+| Command                                    | Key Binding          |
+|--------------------------------------------+----------------------|
+| export/publish dispatcher                  | C-c C-e              |
+|                                            |                      |
+| export visible part only                   | C-c C-e v            |
+| insert template of export options          | C-c C-e t            |
+| toggle fixed width for entry or region     | C-c :                |
+| toggle pretty display of scripts, entities | C-c C-x {\tt\char`\} |
+|--------------------------------------------+----------------------|
+*** Formatting
+| Formatting  |
+|-------------|
+| /italic/    |
+| *bold*      |
+| _underline_ |
+|-------------|
+
+
+
+
+** Multiple Cursors
+|-------------------------+-------------|
+| Command                 | Key binding |
+|-------------------------+-------------|
+| Edit multiple lines     | C-S-c C-S-c |
+| mark-next-like-this     | C->         |
+| mark-previous-like-this | C-<         |
+| mark-all-like-this      | C-c C-<     |
+|-------------------------+-------------|

@@ -20,6 +20,9 @@
 **** DONE UC7: New project
      CLOSED: [2012-11-22 Thu 13:05]
 **** TODO UC8: Find old version of document
+**** TODO UC9: Share Document
+**** TODO UC10: Accept invite
+**** TODO UC11: Log in
 *** DONE Use Case Model (UML)
     CLOSED: [2012-11-22 Thu 12:47]
 ** DONE Supplementary specification (FURPS+)
@@ -43,7 +46,8 @@
 ** DONE Operation contract
    CLOSED: [2012-11-22 Thu 12:47]
 ** TODO Interaction Diagram
-*** TODO Communication Diagram
+*** DONE Communication Diagram
+    CLOSED: [2012-11-27 Tue 11:30]
 *** TODO Sequence Diagram
 ** TODO Software Attributes / Qualities
 ** DONE Package Diagram
