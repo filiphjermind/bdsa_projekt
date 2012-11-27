@@ -57,15 +57,27 @@
 ** TODO SAD
 ** TODO N+1
 ** TODO ER-Diagram
+** TODO Document GRASP
 * C#
 ** DONE C# Basic architecture
    CLOSED: [2012-11-22 Thu 14:11]
-** TODO Server
-*** TODO Define central methods
-    - Method signature
-    - Document
-** TODO System
+** DONE System
+   CLOSED: [2012-11-27 Tue 11:56]
 *** TODO Define central methods.
     - Method signature
     - Document
 ** TODO Client
+** TODO Database
+   - [ ] ER-Diagram
+   - [X] User table
+   - [X] Document table
+   - [X] User-Document table
+   - [ ] DocumentHistory table
+** TODO System architecture
+   - [ ] Implement GRASP
+   - [ ] Create/Edit/Delete Document
+   - [ ] Create/Edit/Delete Folder
+   - [ ] Database Connection
+   - [ ] GUI Client
+** TODO Test
+   - TEST EVERYTHING!!

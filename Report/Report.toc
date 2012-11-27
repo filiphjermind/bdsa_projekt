@@ -12,4 +12,5 @@
 \contentsline {section}{\numberline {9}Use Case Diagram}{12}
 \contentsline {section}{\numberline {10}UML Package Diagram}{13}
 \contentsline {section}{\numberline {11}UML Class Diagram}{13}
-\contentsline {section}{\numberline {12}Revision Table}{13}
+\contentsline {section}{\numberline {12}Communication Diagram}{14}
+\contentsline {section}{\numberline {13}Revision Table}{14}

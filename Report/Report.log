@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  23 NOV 2012 15:12
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  27 NOV 2012 12:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -448,150 +448,150 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
  [1
 
-{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 71--71
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 71--72
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 74--75
 [][] 
  []
 
-[2]
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--99
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 99--100
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 102--103
 [][] 
  []
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 130.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 133.
 
 (/usr/local/texlive/2011/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 130.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 133.
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--130
+Underfull \hbox (badness 10000) in paragraph at lines 133--133
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 130--131
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 133--134
 [][] 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 144--144
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--144
+Underfull \hbox (badness 10000) in paragraph at lines 147--147
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 144--145
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 147--148
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--174
+Underfull \hbox (badness 10000) in paragraph at lines 177--177
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 174--175
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 177--178
 [][] 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 205--205
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 205--205
+Underfull \hbox (badness 10000) in paragraph at lines 208--208
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 205--206
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 208--209
 [][] 
  []
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--235
+Underfull \hbox (badness 10000) in paragraph at lines 238--238
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 235--236
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 238--239
 [][] 
  []
 
 [7]
-Underfull \hbox (badness 10000) in paragraph at lines 249--249
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 249--249
+Underfull \hbox (badness 10000) in paragraph at lines 252--252
 
  []
 
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 249--250
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 252--253
 [][] 
  []
 
@@ -599,7 +599,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 249--250
 File: images/DomainModel.jpg Graphic file (type jpg)
 
 <use images/DomainModel.jpg>
-Package pdftex.def Info: images/DomainModel.jpg used on input line 284.
+Package pdftex.def Info: images/DomainModel.jpg used on input line 287.
 (pdftex.def)             Requested size: 301.1261pt x 244.74501pt.
 
 
@@ -609,7 +609,7 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 File: images/LogicalArchitecture.jpg Graphic file (type jpg)
 
 <use images/LogicalArchitecture.jpg>
-Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 291.
+Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 294.
 
 (pdftex.def)             Requested size: 301.1261pt x 524.30193pt.
  [9]
@@ -621,10 +621,10 @@ Overfull \vbox (305.19205pt too high) has occurred while \output is active []
 File: images/SSQ_NewDocument.jpg Graphic file (type jpg)
 
 <use images/SSQ_NewDocument.jpg>
-Package pdftex.def Info: images/SSQ_NewDocument.jpg used on input line 298.
+Package pdftex.def Info: images/SSQ_NewDocument.jpg used on input line 301.
 (pdftex.def)             Requested size: 301.1261pt x 274.67001pt.
 
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 312--313
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 315--316
 [] 
  []
 
@@ -632,7 +632,7 @@ Overfull \hbox (6.79999pt too wide) in paragraph at lines 312--313
 File: images/UseCaseDiagram.jpg Graphic file (type jpg)
 
 <use images/UseCaseDiagram.jpg>
-Package pdftex.def Info: images/UseCaseDiagram.jpg used on input line 317.
+Package pdftex.def Info: images/UseCaseDiagram.jpg used on input line 320.
 (pdftex.def)             Requested size: 301.1261pt x 297.54308pt.
  [11 <./images/SSQ_NewDocument.jpg>]
 <images/PackageDiagramOverview.jpg, id=45, 749.80125pt x 424.58624pt>
@@ -640,7 +640,7 @@ File: images/PackageDiagramOverview.jpg Graphic file (type jpg)
 
 <use images/PackageDiagramOverview.jpg>
 Package pdftex.def Info: images/PackageDiagramOverview.jpg used on input line 3
-24.
+27.
 (pdftex.def)             Requested size: 301.1261pt x 170.51822pt.
  [12 <./images/UseCaseDiagram.jpg>]
 <images/ClassDiagramFirstDraft.jpg, id=49, 843.15pt x 364.36125pt>
@@ -648,35 +648,48 @@ File: images/ClassDiagramFirstDraft.jpg Graphic file (type jpg)
 
 <use images/ClassDiagramFirstDraft.jpg>
 Package pdftex.def Info: images/ClassDiagramFirstDraft.jpg used on input line 3
-31.
+34.
 (pdftex.def)             Requested size: 301.1261pt x 130.13028pt.
 
-Overfull \hbox (24.50003pt too wide) in paragraph at lines 341--361
+
+LaTeX Warning: File `images/Communication Diagrams/Delete Communication Diagram
+.jpg' not found on input line 341.
+
+
+<images/Communication Diagrams/Delete Communication Diagram.jpg, id=50, 816.048
+75pt x 435.6275pt>
+File: images/Communication Diagrams/Delete Communication Diagram.jpg Graphic fi
+le (type jpg)
+
+<use images/Communication Diagrams/Delete Communication Diagram.jpg>
+Package pdftex.def Info: images/Communication Diagrams/Delete Communication Dia
+gram.jpg used on input line 341.
+(pdftex.def)             Requested size: 301.1261pt x 160.74759pt.
+ [13 <./images/PackageDiagramOverview.jpg> <./images/ClassDiagramFirstDraft.jpg
+>]
+Overfull \hbox (24.50003pt too wide) in paragraph at lines 351--373
  [] 
  []
 
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[13 <./images/PackageDiagramOverview.jpg> <./images/ClassDiagramFirstDraft.jpg>
-] [14] (./Report.aux) ) 
+[14 <./images/Communication Diagrams/Delete Communication Diagram.jpg>]
+(./Report.aux) ) 
 Here is how much of TeX's memory you used:
- 2650 strings out of 493633
- 34761 string characters out of 3143377
+ 2655 strings out of 493633
+ 35045 string characters out of 3143377
  93626 words of memory out of 3000000
- 5895 multiletter control sequences out of 15000+200000
+ 5899 multiletter control sequences out of 15000+200000
  9806 words of font info for 37 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
  37i,7n,23p,256b,277s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2011/texmf-dist/fonts/type1/public/a
-msfonts/cm/cmbx10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmsy10.pfb>
-Output written on Report.pdf (14 pages, 211398 bytes).
+</usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy10.pfb>
+Output written on Report.pdf (14 pages, 237006 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 36 words of extra memory for PDF output out of 10000 (max. 10000000)
 
