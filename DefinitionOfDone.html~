@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>DefinitionOfDone</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="DefinitionOfDone"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-11-27 18:29:37 CET"/>
+<meta name="author" content="Bergar Simonsen"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">DefinitionOfDone</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Definition of done</a>
+<ul>
+<li><a href="#sec-1-1">1.1 Development</a></li>
+<li><a href="#sec-1-2">1.2 Documentation</a></li>
+<li><a href="#sec-1-3">1.3 Testing</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Definition of done</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>Before our system is ready for release, we must have implemented all required features. 
+In addition to implementing the features, we also must document every aspect of the system
+and the process. This includes diagrams, use cases etc &hellip;
+Finally we have to test our system to make sure that it works as intended and doesn't break 
+when receiving odd input etc..
+</p>
+<p>
+A more detailed explanation of the requirements can be found below.
+</p>
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> Development</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>The system must be able to handle all the requirements before it can be deemed done.
+These requirements include the assignment required requirements as well as our
+own requirements.
+</p>
+<p>
+These requirements include:
+</p><ul>
+<li><code>[&nbsp;]</code> Document [0/4]
+<ul>
+<li><code>[&nbsp;]</code> Create a document that can handle both text and images.
+</li>
+<li><code>[&nbsp;]</code> Documents can be arranged into folders.
+</li>
+<li><code>[&nbsp;]</code> Documents can be arranged into projects (optional).
+</li>
+<li><code>[&nbsp;]</code> Log of all changes to a document.
+</li>
+</ul>
+
+</li>
+<li><code>[&nbsp;]</code> System [0/4]
+<ul>
+<li><code>[&nbsp;]</code> Synchronization for offline usage.
+</li>
+<li><code>[&nbsp;]</code> Sharing of documents to other users.
+</li>
+<li><code>[&nbsp;]</code> Authentication system for users.
+</li>
+<li><code>[&nbsp;]</code> Document storage in a database.
+</li>
+</ul>
+
+</li>
+<li><code>[&nbsp;]</code> User Interface [0/2]
+<ul>
+<li><code>[&nbsp;]</code> Web interface.
+</li>
+<li><code>[&nbsp;]</code> Stand-alone client (for offline usage).
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> Documentation</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>All aspects of the system must be documented.
+The idea of the documentation is that the system is easy to understand based only on
+the documentation. In addition, an external actor must be able to see the development
+process from reading the documentation only.
+</p>
+<p>
+These documents must be made before the documentation can be deemed as done:
+</p><ul>
+<li><code>[&nbsp;]</code> Use cases [0/3]
+<ul>
+<li><code>[&nbsp;]</code> All use cases must be documented (text form)
+</li>
+<li><code>[&nbsp;]</code> Use case diagram must be made for use cases that require it.
+</li>
+<li><code>[&nbsp;]</code> Operation contracts must be made for use cases that are complex.
+</li>
+</ul>
+
+</li>
+<li><code>[&nbsp;]</code> Domain documentation [0/2]
+<ul>
+<li><code>[&nbsp;]</code> A model must be made for describing the domain.
+</li>
+<li><code>[&nbsp;]</code> A sequence diagram must be made for understanding how to domain
+       interacts.
+</li>
+</ul>
+
+</li>
+<li><code>[&nbsp;]</code> Software documentation [0/4]
+<ul>
+<li><code>[&nbsp;]</code> Static class diagram that explains the entire system.
+</li>
+<li><code>[&nbsp;]</code> Package diagram that shows a higher view of the system.
+</li>
+<li><code>[&nbsp;]</code> Interaction diagrams that describe the dynamic aspect of the system.
+</li>
+<li><code>[&nbsp;]</code> E-R diagram for the database structure.
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Testing</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>Before the system can be declared done, all the core features of the system
+must be thoroughly tested.
+This includes testing all core features of the system.
+</p>
+<p>
+Testing checklist:
+</p><ul>
+<li><code>[&nbsp;]</code> System [0/8]
+<ul>
+<li><code>[&nbsp;]</code> Document
+</li>
+<li><code>[&nbsp;]</code> DocumentHandler
+</li>
+<li><code>[&nbsp;]</code> Folder
+</li>
+<li><code>[&nbsp;]</code> User
+</li>
+<li><code>[&nbsp;]</code> UserAuth
+</li>
+<li><code>[&nbsp;]</code> DBConnector
+</li>
+<li><code>[&nbsp;]</code> ClientSystemFacade
+</li>
+<li><code>[&nbsp;]</code> ServerSystemFacade
+</li>
+</ul>
+
+</li>
+<li><code>[&nbsp;]</code> Client [0/2]
+<ul>
+<li><code>[&nbsp;]</code> Stand-Aloone client
+</li>
+<li><code>[&nbsp;]</code> Web-Client
+</li>
+</ul>
+
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-11-27 18:29:37 CET</p>
+<p class="author">Author: Bergar Simonsen</p>
+<p class="creator">Org version 7.8.11 with Emacs version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+* Definition of done
+Before our system is ready for release, we must have implemented all required features.
+In addition to implementing the features, we also must document every aspect of the system
+and the process. This includes diagrams, use cases etc ...
+Finally we have to test our system to make sure that it works as intended and doesn't break 
+when receiving odd input etc..
+
+A more detailed explanation of the requirements can be found below.
+
+
+** Development
+The system must be able to handle all the requirements before it can be deemed done.
+These requirements include the assignment required requirements as well as our
+own requirements.
+
+These requirements include:
+   - [ ] Document [0/4]
+     - [ ] Create a document that can handle both text and images.
+     - [ ] Documents can be arranged into folders.
+     - [ ] Documents can be arranged into projects (optional).
+     - [ ] Log of all changes to a document.
+   - [ ] System [0/4]
+     - [ ] Synchronization for offline usage.
+     - [ ] Sharing of documents to other users.
+     - [ ] Authentication system for users.
+     - [ ] Document storage in a database.
+   - [ ] User Interface [0/2]
+     - [ ] Web interface.
+     - [ ] Stand-alone client (for offline usage).
+
+
+** Documentation
+All aspects of the system must be documented.
+The idea of the documentation is that the system is easy to understand based only on
+the documentation. In addition, an external actor must be able to see the development
+process from reading the documentation only.
+
+These documents must be made before the documentation can be deemed as done:
+   - [ ] Use cases [0/3]
+     - [ ] All use cases must be documented (text form)
+     - [ ] Use case diagram must be made for use cases that require it.
+     - [ ] Operation contracts must be made for use cases that are complex.
+   - [ ] Domain documentation [0/2]
+     - [ ] A model must be made for describing the domain.
+     - [ ] A sequence diagram must be made for understanding how to domain
+       interacts.
+   - [ ] Software documentation [0/4]
+     - [ ] Static class diagram that explains the entire system.
+     - [ ] Package diagram that shows a higher view of the system.
+     - [ ] Interaction diagrams that describe the dynamic aspect of the system.
+     - [ ] E-R diagram for the database structure.
+
+** Testing
+Before the system can be declared done, all the core features of the system
+must be thoroughly tested.
+This includes testing all core features of the system.
+
+Testing checklist:
+   - [ ] System [0/8]
+     - [ ] Document
+     - [ ] DocumentHandler
+     - [ ] Folder
+     - [ ] User
+     - [ ] UserAuth
+     - [ ] DBConnector
+     - [ ] ClientSystemFacade
+     - [ ] ServerSystemFacade
+   - [ ] Client [0/2]
+     - [ ] Stand-Aloone client
+     - [ ] Web-Client
