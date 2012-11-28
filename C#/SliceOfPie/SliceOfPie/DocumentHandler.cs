@@ -11,10 +11,12 @@ namespace SliceOfPie
         /// Creates a new document.
         /// </summary>
         /// <param name="owner">The owner of the document</param>
+        /// <param name="title">The title of the document.</param>
         /// <returns>The newly created document.</returns>
-        public Document NewDocument(User owner)
+        public Document NewDocument(User owner, string title)
         {
-            return null;
+            Document doc = new Document(owner, title);
+            return doc;
         }
 
         /// <summary>
