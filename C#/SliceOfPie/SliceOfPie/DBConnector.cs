@@ -12,12 +12,23 @@ namespace SliceOfPie
     class DBConnector
     {
 
+        private static DBConnector instance;
+
+
         private MySqlConnection connection;
-        private string connectionString = "SERVER=mysql.itu.dk;DATABASE=PieServer;UID=pieserver;PASSWORD=bdsapie;";
+        private string connectionString;
         DocumentHandler docu = new DocumentHandler();
 
-        //Constructor
-        public DBConnector()
+        public static DBConnector Instance
+        {
+            get
+            {
+                if (instance == null) instance = new DBConnector();
+                return instance;
+            }
+        }
+        
+        private DBConnector()
         {
             Initialize();
             OpenConnection();
@@ -27,15 +38,19 @@ namespace SliceOfPie
             //DeleteDocumentByID(2);
             //UpdateDocumentByID(1,"carlos","right over there");
             //SelectDocumentsFromUser("carlos");
-            print(SelectDocumentsFromUser("carlos"));
+            //print(SelectDocumentsFromUser("carlos"));
 
             //InsertUser("God", "Almighty", "Blowback");
             //DeleteUserByUsername("K-Master");
             //UpdateUserByUsername("Karl", "Dante", "Henry", "password");
+            //SelectUser("Henry", "password");
+            //SelectAllUsers();
+
         }
 
         private void Initialize()
         {
+            connectionString = "SERVER=mysql.itu.dk;DATABASE=PieServer;UID=pieserver;PASSWORD=bdsapie;";
             connection = new MySqlConnection(connectionString);
         }
 
@@ -170,6 +185,50 @@ namespace SliceOfPie
         {
             string query = "UPDATE user SET username = '" + newUsername + "', name = '"+newName+"', password = '"+newPassword+"' WHERE username='" + username + "'"; 
             ExecuteQuery(query);
+        }
+
+        public string[] SelectUser(string usernameInput, string passwordInput)
+        { 
+            string[] userAssembly = new string[4];
+
+            string query = "SELECT * FROM user WHERE username='"+usernameInput+"' and password='"+passwordInput+"'";
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            try
+            {
+                while (reader.Read())
+                {
+                    int id = (int)reader["id"];
+                    userAssembly[0] = id.ToString();
+                    userAssembly[1] = reader["name"] + "";
+                    userAssembly[2] = reader["username"] + "";
+                    userAssembly[3] = reader["password"] + "";
+                }
+            }
+            catch (NullReferenceException ex)
+            {
+                ErrorMessage("No user with both given username and password exists.");
+            }
+            return userAssembly;
+        }
+
+        public List<string> SelectAllUsers()
+        {
+            List<string> userList = new List<string>();
+
+            string query = "SELECT username FROM user";
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                userList.Add(reader["username"] + "");
+            }
+
+            return userList;
         }
 
         /// <summary>
