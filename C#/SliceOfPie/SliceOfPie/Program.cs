@@ -22,13 +22,13 @@ namespace SliceOfPie
             //System system = new System();
             //system.NewUser("chuck norris", "chuckn", "1234");
 
-            User user = new User("Chuck Norris", "Chuck", "pass");
+            //User user = new User("Chuck Norris", "Chuck", "pass");
 
-            DocumentHandler docHandler = new DocumentHandler();
+            //DocumentHandler docHandler = new DocumentHandler();
 
 
 
-            docHandler.SaveDocument("Chuck", docHandler.NewDocument(user, "TEST"), "someFile");
+            //docHandler.SaveDocument("Chuck", docHandler.NewDocument(user, "TEST"), "someFile");
 
             Console.ReadKey();
         }
