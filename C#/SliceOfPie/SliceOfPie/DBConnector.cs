@@ -13,8 +13,6 @@ namespace SliceOfPie
     {
 
         private static DBConnector instance;
-
-
         private MySqlConnection connection;
         private string connectionString;
 
@@ -43,7 +41,7 @@ namespace SliceOfPie
             //DeleteUserByUsername("K-Master");
             //UpdateUserByUsername("Karl", "Dante", "Henry", "password");
             //SelectUser("Henry", "password");
-            //SelectAllUsers();
+            SelectAllUsers();
 
         }
 
@@ -135,6 +133,7 @@ namespace SliceOfPie
                 ownerList.Add(reader["owner"] + "");
                 fileList.Add(reader["file"] + "");
             }
+            reader.Close();
 
             for (int i = 0; i < idList.Count; i++)
             {
@@ -210,6 +209,7 @@ namespace SliceOfPie
             {
                 ErrorMessage("No user with both given username and password exists.");
             }
+            reader.Close();
             return userAssembly;
         }
 
@@ -226,7 +226,7 @@ namespace SliceOfPie
             {
                 userList.Add(reader["username"] + "");
             }
-
+            reader.Close();
             return userList;
         }
 

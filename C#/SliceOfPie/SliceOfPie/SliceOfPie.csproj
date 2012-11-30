@@ -85,15 +85,6 @@
     <Compile Include="UserAuth.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="PieServer.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PieServer_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>PieServer.mdf</DependentUpon>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="app.config" />
     <None Include="PieServerDataSet.xsc">
       <DependentUpon>PieServerDataSet.xsd</DependentUpon>
