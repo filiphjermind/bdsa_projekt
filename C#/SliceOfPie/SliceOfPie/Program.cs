@@ -9,8 +9,7 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            DBConnector dbCon = new DBConnector();
+            DBConnector dbCon = DBConnector.Instance;
 
             //dbCon.OpenConnection();
             //dbCon.Insert();
@@ -20,9 +19,6 @@ namespace SliceOfPie
 
             Console.WriteLine("should've been run now");
             Console.ReadKey();
-=======
-            
->>>>>>> c3060308236092eaad601eb3a0b16c96f2bba1a8
         }
     }
 }
