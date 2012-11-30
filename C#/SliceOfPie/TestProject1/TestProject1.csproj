@@ -6,7 +6,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>c695542c-1a37-4243-8ff0-2a7712ac9eb3</ProjectGuid>
+    <ProjectGuid>{008916ED-2A65-429A-A65F-91922EC36925}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TestProject1</RootNamespace>
