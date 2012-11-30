@@ -1,0 +1,4 @@
+DB name: 		PieServer
+DB Username: 	pieserver
+Password: 		bdsapie
+Hostname:		mysql.itu.dk

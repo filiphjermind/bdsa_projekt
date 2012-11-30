@@ -1,0 +1,23 @@
+User:
+ID			int(11) auto_increment not null
+name		varchar(60)
+username	varchar(30)
+password	varchar(30)
+
+Document:
+id				int(11) auto_increment not null
+owner			varchar(64)
+file			text
+userdocument	(F)
+
+Userdocument
+userID			(F)
+documentID		(F)
+
+Document History:
+documentID		(F)
+userID			(F)
+revisionnumber	float 
+date			datetime
+action			varchar(64)
+comment			varchar(228) (may be null)

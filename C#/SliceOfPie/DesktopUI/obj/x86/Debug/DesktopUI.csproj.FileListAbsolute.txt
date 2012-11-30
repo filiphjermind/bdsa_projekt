@@ -1,3 +1,14 @@
+<<<<<<< HEAD
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.exe
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.pdb
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.Form1.resources
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.Properties.Resources.resources
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.exe
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.pdb
+=======
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.exe
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.pdb
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.Form1.resources
@@ -6,3 +17,4 @@ C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Deb
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.exe
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.pdb
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache
+>>>>>>> c3060308236092eaad601eb3a0b16c96f2bba1a8
