@@ -18,6 +18,18 @@ namespace SliceOfPie
             //dbCon.AddDocument("joe", "right behind you");
 
             Console.WriteLine("should've been run now");
+
+            //System system = new System();
+            //system.NewUser("chuck norris", "chuckn", "1234");
+
+            User user = new User("Chuck Norris", "Chuck", "pass");
+
+            DocumentHandler docHandler = new DocumentHandler();
+
+
+
+            docHandler.SaveDocument("Chuck", docHandler.NewDocument(user, "TEST"), "someFile");
+
             Console.ReadKey();
         }
     }
