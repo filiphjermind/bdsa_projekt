@@ -1,1 +1,8 @@
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.exe.config
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.exe.config
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\PieServer.mdf
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\PieServer_log.ldf
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.exe
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.pdb
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.exe
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.pdb
