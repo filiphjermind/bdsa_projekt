@@ -11,7 +11,7 @@ namespace SliceOfPie
         private Folder folder = new Folder();
 
         // Handles all the database related methods.
-        DBConnector dbCon = DBConnector.Instance;
+        private DBConnector dbCon = DBConnector.Instance;
 
         /// <summary>
         /// Creates a new user.

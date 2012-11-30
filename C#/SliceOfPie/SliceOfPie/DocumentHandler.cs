@@ -12,7 +12,7 @@ namespace SliceOfPie
         public List<Document> documents = new List<Document>();
 
         // Handles all the database related mathods.
-        DBConnector dbCon = DBConnector.Instance;
+        private DBConnector dbCon = DBConnector.Instance;
 
         /// <summary>
         /// Creates a new document.
@@ -43,6 +43,7 @@ namespace SliceOfPie
 
             path = Path.Combine(path, filename);
 
+            // Checks if the file exists, and saves it to the system.
             if (!File.Exists(path))
             {
                 using (FileStream fs = File.Create(path))
@@ -84,7 +85,6 @@ namespace SliceOfPie
         /// <returns>The document</returns>
         public Document OpenDocument(int id, string owner, string file)
         {
-
             return null;
         }
 
