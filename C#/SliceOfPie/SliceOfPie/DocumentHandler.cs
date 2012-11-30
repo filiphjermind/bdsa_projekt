@@ -7,8 +7,12 @@ namespace SliceOfPie
 {
     class DocumentHandler
     {
+        // Stores the users document objects.
+        private List<Document> documents = new List<Document>();
+
         /// <summary>
         /// Creates a new document.
+        /// Adds it to the users list of documents.
         /// </summary>
         /// <param name="owner">The owner of the document</param>
         /// <param name="title">The title of the document.</param>
@@ -16,6 +20,7 @@ namespace SliceOfPie
         public Document NewDocument(User owner, string title)
         {
             Document doc = new Document(owner, title);
+            AddDocToList(doc);
             return doc;
         }
 
@@ -74,6 +79,28 @@ namespace SliceOfPie
         /// <param name="users">List of users to share with.</param>
         public void ShareDocument(params User[] users)
         { 
+        }
+
+        /// <summary>
+        /// Adds a document to the users list of documents.
+        /// </summary>
+        /// <param name="doc">The document to be added.</param>
+        private void AddDocToList(Document doc)
+        {
+            documents.Add(doc);
+        }
+
+        /// <summary>
+        /// Prints out all documents that belong to a user.
+        /// </summary>
+        /// <param name="docs">List of documents</param>
+        public void PrintDocList(List<Document> docs)
+        {
+            foreach (Document d in docs)
+            {
+                Console.WriteLine(d.owner.name);
+                Console.WriteLine(d.title);
+            }
         }
     }
 }

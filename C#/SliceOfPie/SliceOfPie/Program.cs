@@ -9,7 +9,6 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
             DBConnector dbCon = new DBConnector();
 
             //dbCon.OpenConnection();
@@ -19,10 +18,11 @@ namespace SliceOfPie
             //dbCon.AddDocument("joe", "right behind you");
 
             Console.WriteLine("should've been run now");
+
+            //System system = new System();
+            //system.NewUser("chuck norris", "chuckn", "1234");
+
             Console.ReadKey();
-=======
-            
->>>>>>> c3060308236092eaad601eb3a0b16c96f2bba1a8
         }
     }
 }

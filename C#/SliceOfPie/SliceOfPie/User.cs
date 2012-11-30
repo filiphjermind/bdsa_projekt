@@ -22,16 +22,23 @@ namespace SliceOfPie
             set;
         }
 
+        public string username
+        {
+            get;
+            set;
+        }
+
         public string password
         {
             get;
             set;
         }
 
-        public User(string name, string password)
+        public User(string name, string username, string password)
         {
             this.name = name;
             this.password = password;
+            this.username = username;
             //this.id = ??
         }
     }

@@ -59,8 +59,10 @@ namespace SliceOfPie
         {
             this.owner = owner;
             this.title = title;
+            // file
             //this.documentId
             this.users = new List<User>();
+            this.content = "";
         }
     }
 }
