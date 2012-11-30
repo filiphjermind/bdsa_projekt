@@ -9,7 +9,11 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             DBConnector dbCon = new DBConnector();
+=======
+            DBConnector dbCon = DBConnector.Instance;
+>>>>>>> 983f8d621b0d3ceabc6ad0b5a8d4a54ba4bf4961
 
             //dbCon.OpenConnection();
             //dbCon.Insert();
