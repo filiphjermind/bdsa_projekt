@@ -1,4 +1,5 @@
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.exe.config
+<<<<<<< HEAD
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.exe.config
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\PieServer.mdf
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\PieServer_log.ldf
@@ -8,3 +9,12 @@ C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\D
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.exe
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.pdb
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\MySql.Data.dll
+=======
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.exe.config
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\PieServer.mdf
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\PieServer_log.ldf
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.exe
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.pdb
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.exe
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.pdb
+>>>>>>> c3060308236092eaad601eb3a0b16c96f2bba1a8
