@@ -9,6 +9,16 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
+            DBConnector dbCon = new DBConnector();
+
+            //dbCon.OpenConnection();
+            //dbCon.Insert();
+
+            
+            //dbCon.AddDocument("joe", "right behind you");
+
+            Console.WriteLine("should've been run now");
+            Console.ReadKey();
         }
     }
 }

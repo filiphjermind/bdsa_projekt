@@ -29,7 +29,7 @@ namespace SliceOfPie
         /// <returns>The newly opened job.</returns>
         public Document OpenDocument(int id)
         {
-            return docHandler.OpenDocument(id);
+            return null;
         }
 
         /// <summary>

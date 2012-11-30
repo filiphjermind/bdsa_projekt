@@ -53,8 +53,9 @@ namespace SliceOfPie
         /// </summary>
         /// <param name="id">Id of the document to open</param>
         /// <returns>The document</returns>
-        public Document OpenDocument(int id)
+        public Document OpenDocument(int id, string owner, string file)
         {
+
             return null;
         }
 
