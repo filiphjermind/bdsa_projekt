@@ -17,7 +17,6 @@ namespace SliceOfPie
 
         private MySqlConnection connection;
         private string connectionString;
-        DocumentHandler docu = new DocumentHandler();
 
         public static DBConnector Instance
         {

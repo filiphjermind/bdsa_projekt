@@ -7,7 +7,11 @@ namespace SliceOfPie
 {
     class System
     {
+        // handles the creation of folders.
         private Folder folder = new Folder();
+
+        // Handles all the database related methods.
+        DBConnector dbCon = DBConnector.Instance;
 
         /// <summary>
         /// Creates a new user.
@@ -21,6 +25,7 @@ namespace SliceOfPie
         public User NewUser(string name, string username, string password)
         {
             User user = new User(name, username, password);
+            dbCon.InsertUser(name, username, password);
             folder.CreateRootFolder(username);
             return user;
         }
