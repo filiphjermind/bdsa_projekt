@@ -50,3 +50,32 @@
 |----------------------+---------------------+-----------+----------------------------+--------|
 | Test                 | Test what you do    |           |                          3 |        |
 |----------------------+---------------------+-----------+----------------------------+--------|
+
+* Sprint [2012-12-04 Tue]
+** Table
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| Product Backlog Item     | Sprint task                                  | volunteer | Initial estimate of effort | status |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| User directory           | Personal root dir                            |           |                            |        |
+|                          | Shared root dir                              |           |                            |        |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| User authentication      | Username and password relationship           |           |                            |        |
+|                          | Storage of username and password             |           |                            |        |
+|                          | Fetch and compare                            |           |                            |        |
+|                          | Encrypt and decrypt                          |           |                            |        |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| Sharing document/folders | File input                                   |           |                            |        |
+|                          | Server code                                  |           |                            |        |
+|                          | Share with permission                        |           |                            |        |
+|                          | Permission db (add fields read/write/delete) | Morten    |                            | Done   |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| Offline sync             | Client to server connection                  |           |                            |        |
+|                          | Server handling new data                     |           |                            |        |
+|                          | Client accepts all                           |           |                            |        |
+|                          | Server handling new data                     |           |                            |        |
+|                          | Server simple comparision of doc history     |           |                            |        |
+|                          | Server merge of documents.                   |           |                            |        |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| Web client               | Implement web client                         |           |                            |        |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+** Deadline [2012-12-11 Tue]

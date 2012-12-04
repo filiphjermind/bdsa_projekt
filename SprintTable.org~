@@ -41,10 +41,10 @@
 |                      | DocumentHistory     | Morten    |                          3 |        |
 |----------------------+---------------------+-----------+----------------------------+--------|
 | System Architecture  | Implement GRASP     |           |                          3 |        |
-|                      | C/E/D Document      |           |                          3 |        |
+|                      | C/E/D Document      | Bergar    |                          3 |        |
 |                      | C/E/D Folder        |           |                          3 |        |
-|                      | Database Connection |           |                          3 |        |
-|                      | GUI Client          |           |                          3 |        |
+|                      | Database Connection | Morten    |                          3 |        |
+|                      | GUI Client          | Filip     |                          3 |        |
 |----------------------+---------------------+-----------+----------------------------+--------|
 | Documentation        | GRASP               |           |                          3 |        |
 |----------------------+---------------------+-----------+----------------------------+--------|
