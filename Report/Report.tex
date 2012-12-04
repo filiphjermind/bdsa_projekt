@@ -251,6 +251,38 @@ Sending a document back and forth between multiple users can lead to a lot of er
 		\textbf{Special requirements:} \\
 \end{minipage}}
 
+% Use case 8
+\fbox{\begin{minipage}{\columnwidth}
+		\textbf{Use case UC11: Log in} \\ 
+		\textbf{Scope:} Slice of Pie application\\
+		\textbf{Level:}  User goal\\
+		\textbf{Primary actor:} Regular user\\
+		\textbf{Preconditions:} User must be registered in the system \emph{(see "extensions *2").}\\
+		\textbf{Postconditions:} User is logged into the system.\\
+		
+		\textbf{Basic flow:} \\
+		\begin{enumerate}
+			\item When the user starts the system (web client or stand-alone client) he's prompted with a login screen.
+			\item User must log in by typing username and password.
+			\item System checks if information matches what is stored in the system.
+			\item User is logged into the system.
+		\end{enumerate}
+		\textbf{Extensions:} \\
+		\begin{enumerate}
+			\item[*2.] User is not registered in the system.
+		\begin{enumerate}
+			\item User is prompted with a sign up screen (web-client only).
+			\item User fills out required information for signing up.
+		\end{enumerate}
+			\item[*4.] Username and password are rejected.
+		\begin{enumerate}
+			\item User gets an error message on the screen saying that the username and password don't match the system.
+			\item User gets prompted back to the login screen.
+		\end{enumerate}
+		\end{enumerate}
+		\textbf{Special requirements:} \\
+\end{minipage}}
+
 \section{Glossary}
 \begin{itemize}
 \item \textbf{Response Time:} The time it takes for the system to respond to a request from the user.
@@ -342,6 +374,33 @@ Sending a document back and forth between multiple users can lead to a lot of er
     	\caption{Communication Diagram}
 	\end{figure}
 
+\section{Technical Memo}
+	\fbox{\begin{minipage}{\columnwidth}
+	\begin{center}
+		\textbf{Technical Memo} \\
+		\textbf{Issue: Files format - Which file format to use}
+	\end{center}
+	\textbf{Solution Summary:} Use HTML for our file format.\\
+	\textbf{Factors}
+		\begin{itemize}
+			\item Must be able to contain both text and images.
+		\end{itemize}
+	\textbf{Solution} \\
+	We chose to use HTML for our file format because it's simple to construct, and can contain text and images seamlessly. \\
+	\textbf{Motivation} \\
+	We needed a file format that can contain images and text as well as being easy to construct. in addition, HTML can easily be extended to other content. Lastly, HTML can be opened with any browser, so the users isn't tied to SliceOfPie if he just want's to view the content of a file. \\
+	\textbf{Alternatives considered} \\
+	We considered using a .txt file format, but .txt can only contain plain text. \\
+	We also considered using our own file format (since the format itself isn't important to the application). But if we use our own format the user is stuck with using SliceOfPie, so he can't view the content of a file with any other application.
+\end{minipage}}
+
+\section{ER-Diagram}
+	\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/ER-Diagram.png}
+    	\caption{ER-Diagram}
+	\end{figure}
+
 
 
 \section{Revision Table}
@@ -368,6 +427,11 @@ Revision & Changes & Section & Author \\ \hline
 23-11-12 & UML Class Diagram & 11 & Bergar \\
 \hline
 27-11-12 & UML Communication Diagram & 12 & Morten \\
+\hline
+04-12-12 & Use case 11 & 2 & Bergar \\
+04-12-12 & Update class diagram & 12 & Bergar \\
+04-12-12 & Technical memo for file format & 13 & Bergar \\
+04-12-12 & ER-Diagram & 14 & Bergar  \\
 \hline
 \end{tabular} 
 \end{center}
