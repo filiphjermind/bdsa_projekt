@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>63ea4a85-98fa-4cd8-8c4a-74bdcf6a1e80</ProjectGuid>
+    <ProjectGuid>{F08A1C74-9842-4D64-9A94-2A4C697C55A2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SliceOfPieTest</RootNamespace>
