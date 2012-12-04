@@ -59,6 +59,32 @@ namespace SliceOfPie
         }
 
         /// <summary>
+        /// Opens a document based on the document id.
+        /// </summary>
+        /// <param name="id">Id of the document to open</param>
+        /// <returns>The document</returns>
+        public string OpenDocument(int id, User user)
+        {
+            // Get file path from database
+            string path = dbCon.GetDocument(id, user.username);
+
+            // Open file
+            string[] lines = File.ReadAllLines(path);
+
+            // Content of the file.
+            string content = "";
+
+            // Convert lines to strine
+            for (int i = 0; i < lines.Length; i++)
+            {
+                content += lines[i] + "\n";
+            }
+
+            // Return content of the file.
+            return content;
+        }
+
+        /// <summary>
         /// Returns all documents from the database that belong to
         /// the specific user.
         /// </summary>
@@ -79,16 +105,6 @@ namespace SliceOfPie
         }
 
         /// <summary>
-        /// Opens a document based on the document id.
-        /// </summary>
-        /// <param name="id">Id of the document to open</param>
-        /// <returns>The document</returns>
-        public Document OpenDocument(int id, string owner, string file)
-        {
-            return null;
-        }
-
-        /// <summary>
         /// Deletes a document from the system
         /// </summary>
         /// <param name="doc">The document to delete</param>
@@ -104,6 +120,8 @@ namespace SliceOfPie
         public void ShareDocument(params User[] users)
         { 
         }
+
+        /********************** PRIVATE HELPER METHODS ******************************/
 
         /// <summary>
         /// Adds a document to the users list of documents.

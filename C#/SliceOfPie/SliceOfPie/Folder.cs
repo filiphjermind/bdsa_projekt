@@ -17,5 +17,14 @@ namespace SliceOfPie
             string dir = username;
             Directory.CreateDirectory(dir);
         }
+
+        /// <summary>
+        /// Creates a new directory.
+        /// </summary>
+        /// <param name="path">Path to the new directory.</param>
+        public void CreateNewFolder(string path)
+        {
+            Directory.CreateDirectory(path);
+        }
     }
 }
