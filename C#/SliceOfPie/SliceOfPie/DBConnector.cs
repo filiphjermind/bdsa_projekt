@@ -231,6 +231,33 @@ namespace SliceOfPie
         }
 
         /// <summary>
+        /// Retreives a document from the database based on the document id.
+        /// </summary>
+        /// <param name="id">The id of the document.</param>
+        /// <returns>File path to the docuemnt</returns>
+        public string GetDocument(int id, string user)
+        {
+            string query = "SELECT file FROM document WHERE id = '" + id + "' AND owner ='" + user + "'";
+
+            string path = "";
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            { 
+                path = reader["file"] + "";
+            }
+            reader.Close();
+            return path;
+        }
+
+        public bool CheckPermission(User user, Document doc)
+        {
+            return false;
+        }
+
+        /// <summary>
         /// Executes an already existing query
         /// </summary>
         /// <param name="query">query to be executed</param>
