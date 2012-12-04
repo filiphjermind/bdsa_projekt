@@ -56,26 +56,34 @@
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
 | Product Backlog Item     | Sprint task                                  | volunteer | Initial estimate of effort | status |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
-| User directory           | Personal root dir                            |           |                            |        |
-|                          | Shared root dir                              |           |                            |        |
+| User directory           | Personal root dir                            | Bergar    |                            |        |
+|                          | Shared root dir                              | Bergar    |                            |        |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
-| User authentication      | Username and password relationship           |           |                            |        |
-|                          | Storage of username and password             |           |                            |        |
-|                          | Fetch and compare                            |           |                            |        |
+| User authentication      | Username and password relationship           | Morten    |                            |        |
+|                          | Storage of username and password             | Morten    |                            | Done   |
+|                          | Fetch and compare                            | Morten    |                            |        |
 |                          | Encrypt and decrypt                          |           |                            |        |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
-| Sharing document/folders | File input                                   |           |                            |        |
-|                          | Server code                                  |           |                            |        |
+| Sharing document/folders | File input                                   | Filip     |                            |        |
+|                          | Server code                                  | Morten    |                            |        |
 |                          | Share with permission                        |           |                            |        |
 |                          | Permission db (add fields read/write/delete) | Morten    |                            | Done   |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
-| Offline sync             | Client to server connection                  |           |                            |        |
-|                          | Server handling new data                     |           |                            |        |
-|                          | Client accepts all                           |           |                            |        |
+| Offline sync             | Client to server connection                  | Filip     |                            |        |
+|                          | Server to client connection                  | Bergar    |                            |        |
+|                          | Server handling new data                     | Morten    |                            |        |
+|                          | Client accepts all                           | Filip     |                            |        |
 |                          | Server handling new data                     |           |                            |        |
 |                          | Server simple comparision of doc history     |           |                            |        |
 |                          | Server merge of documents.                   |           |                            |        |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
-| Web client               | Implement web client                         |           |                            |        |
+| Web client               | Implement web client                         | Bergar    |                            |        |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| Use cases                | UC11: Log in                                 | Bergar    |                            |        |
+|                          | UC10: Accept invite                          |           |                            |        |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| ER-Diagram               | Er-Diagram                                   | Bergar    |                            |        |
+|--------------------------+----------------------------------------------+-----------+----------------------------+--------|
+| File format              | Documentation                                | Bergar    |                            |        |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
 ** Deadline [2012-12-11 Tue]
