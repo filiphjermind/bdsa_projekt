@@ -7,11 +7,17 @@ using System.Data;
 
 namespace SliceOfPie
 {
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> f5cb75287a160e6830a45b062b436a043741e061
     public class DBConnector
     {
         private static DBConnector instance;
         private MySqlConnection connection;
         private string connectionString;
+        //private Engine engine = Engine.Instance;
 
         public static DBConnector Instance
         {
@@ -27,25 +33,13 @@ namespace SliceOfPie
             Initialize();
             OpenConnection();
 
-            //InsertDocument("carlos", "Left there");
-            //DeleteDocumentByUserName("carl");
-            //DeleteDocumentByID(2);
-            //UpdateDocumentByID(1,"carlos","right over there");
-            //SelectDocumentsFromUser("carlos");
-            //print(SelectDocumentsFromUser("carlos"));
-
-            //InsertUser("God", "Almighty", "Blowback");
-            //DeleteUserByUsername("K-Master");
-            //UpdateUserByUsername("Karl", "Dante", "Henry", "password");
-            //SelectUser("Henry", "password");
-            SelectAllUsers();
-
         }
 
         private void Initialize()
         {
             connectionString = "SERVER=mysql.itu.dk;DATABASE=PieServer;UID=pieserver;PASSWORD=bdsapie;";
             connection = new MySqlConnection(connectionString);
+            
         }
 
         //opens connection to the database
@@ -111,47 +105,22 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
-        public List<Document> SelectDocumentsFromUser(string username)
+        public List<int> SelectDocumentsFromUser(User user)
         { 
             List<Document> documentList = new List<Document>();
             List<int> idList = new List<int>();
-            List<string> ownerList = new List<string>();
-            List<string> titleList = new List<string>();
-            List<string> fileList = new List<string>();
 
-            string query = "SELECT * FROM document WHERE owner='"+username+"'";
+            string query = "SELECT id FROM document WHERE owner='"+user.username +"'";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
 
-            while (reader.Read())
-            {
-                idList.Add((int)reader["id"]);
-                ownerList.Add(reader["owner"] + "");
-                fileList.Add(reader["file"] + "");
-            }
+            while (reader.Read()) idList.Add((int)reader["id"]);
+
             reader.Close();
 
-            for (int i = 0; i < idList.Count; i++)
-            {
-                documentList.Add(OpenDocument(idList[i], ownerList[i], fileList[i]));
-            }
-
-                return documentList;
+                return idList;
         }
-
-        public Document OpenDocument(int id, string owner, string file)
-        {
-            return new Document(owner, id, file);
-
-        }
-
-        public void print(List<Document> smukt)
-        {
-            foreach (Document d in smukt) Console.WriteLine(d.documentId);
-        }
-
-
 
         /// <summary>
         /// Inserts a user into the database
@@ -193,11 +162,11 @@ namespace SliceOfPie
         ///             arr[2] = users username
         ///             arr[3] = users password
         /// </returns>
-        public string[] SelectUser(string usernameInput, string passwordInput)
+        public string[] SelectUser(string username)
         { 
             string[] userAssembly = new string[4];
 
-            string query = "SELECT * FROM user WHERE username='"+usernameInput+"' and password='"+passwordInput+"'";
+            string query = "SELECT * FROM user WHERE username='" + username + "'";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
