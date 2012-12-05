@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SliceOfPie
 {
-    class Document
+    public class Document
     {
         /// <summary>
         /// List of users that have access to edit the document.
@@ -46,6 +46,14 @@ namespace SliceOfPie
         {
             get;
             set;
+        }
+
+        // Primary
+        public Document(User owner, int id, string content)
+        {
+            this.owner = owner;
+            this.documentId = id;
+            this.content = content;
         }
 
         public Document(string owner, int id, string file)

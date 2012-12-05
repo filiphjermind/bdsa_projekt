@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SliceOfPie
 {
-    class ClientSystemFacade
+    public class ClientSystemFacade
     {
     }
 }

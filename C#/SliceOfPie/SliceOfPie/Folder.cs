@@ -6,15 +6,15 @@ using System.IO;
 
 namespace SliceOfPie
 {
-    class Folder
+    public class Folder
     {
         /// <summary>
         /// Creates a root folder for a user.
         /// </summary>
         /// <param name="username">Name of the user who owns the folder.</param>
-        public void CreateRootFolder(string username)
+        public void CreateRootFolder(User user)
         {
-            string dir = username;
+            string dir = "root/" + user.username;
             Directory.CreateDirectory(dir);
         }
 
@@ -22,9 +22,10 @@ namespace SliceOfPie
         /// Creates a new directory.
         /// </summary>
         /// <param name="path">Path to the new directory.</param>
-        public void CreateNewFolder(string path)
+        public void CreateNewFolder(User user, string path)
         {
-            Directory.CreateDirectory(path);
+            string root = "root/" + user.username;
+            Directory.CreateDirectory(root + "/" + path);
         }
     }
 }

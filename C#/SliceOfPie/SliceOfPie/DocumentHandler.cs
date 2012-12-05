@@ -6,12 +6,12 @@ using System.IO;
 
 namespace SliceOfPie
 {
-    class DocumentHandler
+    public class DocumentHandler
     {
         // Stores the users document objects.
         public List<Document> documents = new List<Document>();
 
-        // Handles all the database related mathods.
+        // Handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
 
         /// <summary>
@@ -34,12 +34,12 @@ namespace SliceOfPie
         /// <param name="username">Owner of the document.</param>
         /// <param name="doc">The document to be saved.</param>
         /// <param name="filename">Filename of the document</param>
-        public void SaveDocument(string username, Document doc, string filename)
+        public void SaveDocument(User user, Document doc, string filename)
         {
-            string owner = username;
-            string filepath = username + "/" + filename;
+            string owner = user.username;
+            string filepath = "root/" + owner + "/" + filename;
 
-            string path = username;
+            string path = "root/" + owner;
 
             path = Path.Combine(path, filename);
 
@@ -55,7 +55,7 @@ namespace SliceOfPie
                 }
             }
 
-            dbCon.InsertDocument(username, filepath);
+            dbCon.InsertDocument(owner, filepath);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace SliceOfPie
         /// </summary>
         /// <param name="id">Id of the document to open</param>
         /// <returns>The document</returns>
-        public string OpenDocument(int id, User user)
+        public Document OpenDocument(int id, User user)
         {
             // Get file path from database
             string path = dbCon.GetDocument(id, user.username);
@@ -74,14 +74,20 @@ namespace SliceOfPie
             // Content of the file.
             string content = "";
 
-            // Convert lines to strine
+            // Convert lines to string
             for (int i = 0; i < lines.Length; i++)
             {
                 content += lines[i] + "\n";
             }
 
-            // Return content of the file.
-            return content;
+            // Create new document object.
+            Document doc = NewDocObject(user, id, content);
+
+            // Add document to users document list
+            AddDocToList(doc);
+
+            // Return the document object.
+            return doc;
         }
 
         /// <summary>
@@ -144,6 +150,20 @@ namespace SliceOfPie
                 Console.WriteLine(d.title);
                 Console.WriteLine();
             }
+        }
+
+        /// <summary>
+        /// Creates a new document object.
+        /// </summary>
+        /// <param name="owner">Owner of the document.</param>
+        /// <param name="id">Id of the document.</param>
+        /// <param name="content">Content of the document file.</param>
+        /// <returns>The new document object.</returns>
+        private Document NewDocObject(User owner, int id, string content)
+        {
+            Document doc = new Document(owner, id, content);
+
+            return doc;
         }
     }
 }
