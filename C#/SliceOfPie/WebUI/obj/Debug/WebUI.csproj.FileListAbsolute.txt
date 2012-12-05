@@ -1,0 +1,5 @@
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\WebUI.dll
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\WebUI.pdb
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.dll
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.pdb
