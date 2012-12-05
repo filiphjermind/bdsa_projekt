@@ -9,10 +9,19 @@ namespace SliceOfPie
     class Engine
     {
         // handles the creation of folders.
-        private Folder folder = new Folder();
+        private Folder folder;
 
         // Handles all the database related methods.
-        private DBConnector dbCon = DBConnector.Instance;
+        private DBConnector dbCon;
+
+        // Handles user creation / editing etc ..
+        private UserHandler userhandler;
+
+        // Handles user authentication
+        private UserAuth userAuth;
+
+        // Handles functionality related to documents
+        private DocumentHandler docHandler;
 
         public Engine()
         {
@@ -21,12 +30,18 @@ namespace SliceOfPie
 
         private void Initialize()
         { 
+            // Initializes all other classes.
+            dbCon = DBConnector.Instance;
+            folder = new Folder();
+            userhandler = new UserHandler();
+            docHandler = new DocumentHandler();
+            userAuth = new UserAuth();
+
             // Check if root directory exists
             if (!Directory.Exists("root"))
             {
                 Directory.CreateDirectory("root");
             }
-
         }
 
     }

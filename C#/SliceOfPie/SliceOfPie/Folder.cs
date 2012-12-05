@@ -14,7 +14,7 @@ namespace SliceOfPie
         /// <param name="username">Name of the user who owns the folder.</param>
         public void CreateRootFolder(User user)
         {
-            string dir = user.username;
+            string dir = "root/" + user.username;
             Directory.CreateDirectory(dir);
         }
 
@@ -24,7 +24,7 @@ namespace SliceOfPie
         /// <param name="path">Path to the new directory.</param>
         public void CreateNewFolder(User user, string path)
         {
-            string root = user.username;
+            string root = "root/" + user.username;
             Directory.CreateDirectory(root + "/" + path);
         }
     }
