@@ -58,6 +58,7 @@
 ** TODO N+1
 ** TODO ER-Diagram
 ** TODO Document GRASP
+** HTML Format
 * C#
 ** DONE C# Basic architecture
    CLOSED: [2012-11-22 Thu 14:11]
@@ -75,9 +76,36 @@
    - [ ] DocumentHistory table
 ** TODO System architecture
    - [ ] Implement GRASP
-   - [ ] Create/Edit/Delete Document
+   - [X] Create/Edit/Delete Document
    - [ ] Create/Edit/Delete Folder
-   - [ ] Database Connection
-   - [ ] GUI Client
+   - [X] Database Connection
+   - [X] GUI Client
 ** TODO Test
    - TEST EVERYTHING!!
+** TODO User Directory
+   - [ ] Personal Root directory
+
+   - [ ] Shared Root Directory
+** TODO User Authentication
+   - [ ] Username and password relationship
+
+   - [ ] Storage of username and password
+   - [ ] Fetch and compare
+
+   - [ ] Encryption and decryption of password / username
+** TODO Sharing documents / folders
+   - [ ] File input
+   - [ ] Server code
+
+   - [ ] Share with permissions (view/edit/delete)
+   - [ ] Permisions DB: Add permisions to userdocument
+** TODO Offline synchronization
+   - [ ] Client to server connection
+   - [ ] Server handling new data
+   - [ ] Client accepts all
+
+   - [ ] Server handling new data (Where permission meets requirements) (ice cold overwrite)
+
+   - [ ] Server simple comparision of document history
+
+   - [ ] Server merge of documents

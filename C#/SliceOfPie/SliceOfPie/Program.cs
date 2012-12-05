@@ -9,8 +9,7 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-            DBConnector dbCon = new DBConnector();
+            DBConnector dbCon = DBConnector.Instance;
 
             //dbCon.OpenConnection();
             //dbCon.Insert();
@@ -19,10 +18,25 @@ namespace SliceOfPie
             //dbCon.AddDocument("joe", "right behind you");
 
             Console.WriteLine("should've been run now");
+
+            //System system = new System();
+            //system.NewUser("chuck norris", "chuckn", "1234");
+
+            //User user = new User("Chuck Norris", "Chuck", "pass");
+
+            //DocumentHandler docHandler = new DocumentHandler();
+
+
+
+            //docHandler.SaveDocument("Chuck", docHandler.NewDocument(user, "TEST"), "someFile");
+
+            User Chuck = new User("Chuck Norris", "Chuck", "1234");
+
+            DocumentHandler docHandler = new DocumentHandler();
+
+            Console.WriteLine(docHandler.OpenDocument(13, Chuck));
+
             Console.ReadKey();
-=======
-            
->>>>>>> c3060308236092eaad601eb3a0b16c96f2bba1a8
         }
     }
 }

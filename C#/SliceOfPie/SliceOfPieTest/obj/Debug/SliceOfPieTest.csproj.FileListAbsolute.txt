@@ -1,0 +1,5 @@
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPieTest.dll
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPieTest.pdb
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.csprojResolveAssemblyReference.cache
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.dll
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.pdb

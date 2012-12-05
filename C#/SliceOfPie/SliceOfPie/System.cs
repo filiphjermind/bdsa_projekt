@@ -7,59 +7,27 @@ namespace SliceOfPie
 {
     class System
     {
-        private DocumentHandler docHandler = new DocumentHandler();
+        // handles the creation of folders.
+        private Folder folder = new Folder();
+
+        // Handles all the database related methods.
+        private DBConnector dbCon = DBConnector.Instance;
 
         /// <summary>
-        /// Creates a new document by calling the NewDocument method from 
-        /// the document handler class.
+        /// Creates a new user.
+        /// Stores the user in the database.
+        /// Creates a root folder for the user.
         /// </summary>
-        /// <param name="owner">The owner of the document</param>
-        /// <param name="title">Title of the document</param>
-        /// <returns>The new document.</returns>
-        public Document NewDocument(User owner, string title)
+        /// <param name="name">Name of the user</param>
+        /// <param name="username">Username of the user</param>
+        /// <param name="password">Password for the user.</param>
+        /// <returns>The newly created user.</returns>
+        public User NewUser(string name, string username, string password)
         {
-            return docHandler.NewDocument(owner, title);
-        }
-
-        /// <summary>
-        /// Opens a document stored in the database by calling
-        /// the open document method in the documenthandler class.
-        /// </summary>
-        /// <param name="id">The id of the specific job.</param>
-        /// <returns>The newly opened job.</returns>
-        public Document OpenDocument(int id)
-        {
-            return null;
-        }
-
-        /// <summary>
-        /// Saves a document to the database by calling the
-        /// save document in the document handler class.
-        /// </summary>
-        /// <param name="doc">The document to save</param>
-        public void SaveDocument(Document doc)
-        {
-            docHandler.SaveDocument(doc);
-        }
-
-        /// <summary>
-        /// Deletes a document from the database by calling
-        /// the delete document method from the document handler class.
-        /// </summary>
-        /// <param name="doc">The document to delete.</param>
-        public void DeleteDocument(Document doc)
-        {
-            docHandler.DeleteDocument(doc);
-        }
-
-        /// <summary>
-        /// Shares a document with other users by calling the share document
-        /// method of the document handler class
-        /// </summary>
-        /// <param name="users">The users to share the document with.</param>
-        public void ShareDocument(params User[] users)
-        {
-            docHandler.ShareDocument(users);
+            User user = new User(name, username, password);
+            dbCon.InsertUser(name, username, password);
+            folder.CreateRootFolder(username);
+            return user;
         }
     }
 }

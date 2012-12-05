@@ -1,0 +1,34 @@
+User directory
+	Personal root directory
+	---
+	Shared root dicretory
+
+User Authentication
+	Username and password relationship
+	---
+	Storage of username and password
+	Fetch and compare
+	---
+	encryption & dercyption of password/username
+	---
+	
+Sharing Documents/Folders
+	File input
+	Server Code
+	---
+	Share with permisions (View / Edit)	
+	Permitions: DB: userdocument gets a new collumn called permision
+	---
+	
+Offline synchronization (pull and push at the same time)
+	Client to server connection
+	Server handling new data 
+	Client accepts all
+	---
+	Server handling new data (Where permision meets requirements) (Ice cold overwrite)
+	---
+	Server simple comparison of document history
+	---
+	Server Merge of documents
+	---
+	
