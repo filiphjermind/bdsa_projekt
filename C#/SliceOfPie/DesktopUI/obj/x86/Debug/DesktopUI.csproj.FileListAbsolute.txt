@@ -14,7 +14,6 @@ C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Deb
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csproj.GenerateResource.Cache
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.exe
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.pdb
-C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.exe
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.pdb
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.exe
@@ -22,3 +21,4 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bi
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.Form1.resources
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.Properties.Resources.resources
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csproj.GenerateResource.Cache
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache
