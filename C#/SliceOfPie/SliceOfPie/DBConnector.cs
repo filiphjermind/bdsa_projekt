@@ -15,6 +15,7 @@ namespace SliceOfPie
         private static DBConnector instance;
         private MySqlConnection connection;
         private string connectionString;
+        private Engine engine;
 
         public static DBConnector Instance
         {
@@ -49,6 +50,7 @@ namespace SliceOfPie
         {
             connectionString = "SERVER=mysql.itu.dk;DATABASE=PieServer;UID=pieserver;PASSWORD=bdsapie;";
             connection = new MySqlConnection(connectionString);
+            engine = Engine.Instance;
         }
 
         //opens connection to the database
@@ -114,7 +116,7 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
-        public List<Document> SelectDocumentsFromUser(string username)
+        public List<Document> SelectDocumentsFromUser(User user)
         { 
             List<Document> documentList = new List<Document>();
             List<int> idList = new List<int>();
@@ -122,7 +124,7 @@ namespace SliceOfPie
             List<string> titleList = new List<string>();
             List<string> fileList = new List<string>();
 
-            string query = "SELECT * FROM document WHERE owner='"+username+"'";
+            string query = "SELECT id FROM document WHERE owner='"+user.username +"'";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
@@ -130,31 +132,16 @@ namespace SliceOfPie
             while (reader.Read())
             {
                 idList.Add((int)reader["id"]);
-                ownerList.Add(reader["owner"] + "");
-                fileList.Add(reader["file"] + "");
             }
             reader.Close();
 
             for (int i = 0; i < idList.Count; i++)
             {
-                documentList.Add(OpenDocument(idList[i], ownerList[i], fileList[i]));
+                documentList.Add(engine.docHandler.OpenDocument(idList[i], user));//ownerList[i]));
             }
 
                 return documentList;
         }
-
-        public Document OpenDocument(int id, string owner, string file)
-        {
-            return new Document(owner, id, file);
-
-        }
-
-        public void print(List<Document> smukt)
-        {
-            foreach (Document d in smukt) Console.WriteLine(d.documentId);
-        }
-
-
 
         /// <summary>
         /// Inserts a user into the database
@@ -196,11 +183,11 @@ namespace SliceOfPie
         ///             arr[2] = users username
         ///             arr[3] = users password
         /// </returns>
-        public string[] SelectUser(string usernameInput, string passwordInput)
+        public string[] SelectUser(string username)
         { 
             string[] userAssembly = new string[4];
 
-            string query = "SELECT * FROM user WHERE username='"+usernameInput+"' and password='"+passwordInput+"'";
+            string query = "SELECT * FROM user WHERE username='" + username + "'";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader reader = cmd.ExecuteReader();

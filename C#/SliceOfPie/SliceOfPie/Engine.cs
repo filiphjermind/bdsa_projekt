@@ -6,24 +6,36 @@ using System.IO;
 
 namespace SliceOfPie
 {
-    class Engine
+    public class Engine
     {
+
+        private static Engine instance;
+
         // handles the creation of folders.
-        private Folder folder;
+        public Folder folder;
 
         // Handles all the database related methods.
-        private DBConnector dbCon;
+        public DBConnector dbCon;
 
         // Handles user creation / editing etc ..
-        private UserHandler userhandler;
+        public UserHandler userhandler;
 
         // Handles user authentication
-        private UserAuth userAuth;
+        public UserAuth userAuth;
 
         // Handles functionality related to documents
-        private DocumentHandler docHandler;
+        public DocumentHandler docHandler;
 
-        public Engine()
+        public static Engine Instance
+        {
+            get
+            {
+                if (instance == null) instance = new Engine();
+                return instance;
+            }
+        }
+
+        private Engine()
         {
             Initialize();
         }
