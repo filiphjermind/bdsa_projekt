@@ -144,9 +144,9 @@ namespace SliceOfPie
         }
 
         public Document OpenDocument(int id, string owner, string file)
-        { 
+        {
             return new Document(owner, id, file);
-            
+
         }
 
         public void print(List<Document> smukt)
@@ -185,6 +185,17 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
+        /// <summary>
+        /// Retreives a user from the database.
+        /// </summary>
+        /// <param name="usernameInput">username of the user to retreive</param>
+        /// <param name="passwordInput">users password</param>
+        /// <returns>   Array with users information.
+        ///             arr[0] = users id
+        ///             arr[1] = users name
+        ///             arr[2] = users username
+        ///             arr[3] = users password
+        /// </returns>
         public string[] SelectUser(string usernameInput, string passwordInput)
         { 
             string[] userAssembly = new string[4];
