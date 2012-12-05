@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SliceOfPie
 {
-    class UserHandler
+    public class UserHandler
     {
         // Instance of the dbconnector, handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
@@ -44,7 +44,7 @@ namespace SliceOfPie
         public User GetUser(string username, string password)
         {
             // Get data from database.
-            string[] userValues = dbCon.SelectUser(username, password);
+            string[] userValues = dbCon.SelectUser(username);
 
             // Store the users values.
             int newId = Convert.ToInt32(userValues[0]);
@@ -66,6 +66,16 @@ namespace SliceOfPie
         public void DeleteUser(string username)
         {
             dbCon.DeleteUserByUsername(username);
+        }
+
+        public void CheckEditUser(string username)
+        { 
+            //EditUserWindow()
+        }
+
+        public void EditUser(string name, string oldPassword, string newPassword)
+        { 
+            //password null? same as last
         }
     }
 }

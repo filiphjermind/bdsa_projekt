@@ -5,15 +5,12 @@ using System.Text;
 
 namespace SliceOfPie
 {
-    class UserAuth
+    public class UserAuth
     {
-
-        private Engine engine;
         private DBConnector DBcon;
 
         public UserAuth()
         {
-            engine = Engine.Instance;
             DBcon = DBConnector.Instance;
         }
 

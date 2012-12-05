@@ -9,15 +9,20 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
-            DBConnector dbCon = DBConnector.Instance;
-            DocumentHandler docHandler = new DocumentHandler();
-            Engine engine = new Engine();
+            Engine engine = new Engine();//Engine.Instance;
 
-            //dbCon.OpenConnection();
-            //dbCon.Insert();
+            //engine.dbCon.InsertDocument("carl", "Left there");
+            //engine.dbCon.DeleteDocumentByUserName("carl");
+            //engine.dbCon.DeleteDocumentByID(10);
+            //engine.dbCon.UpdateDocumentByID(1,"carlos","right over there");
+            //engine.dbCon.SelectDocumentsFromUser("carlos");
+            //engine.dbCon.print(SelectDocumentsFromUser("carlos"));
 
-            
-            //dbCon.AddDocument("joe", "right behind you");
+            //engine.dbCon.InsertUser("God", "Almighty", "Blowback");
+            //engine.dbCon.DeleteUserByUsername("K-Master");
+            //engine.dbCon.UpdateUserByUsername("Karl", "Dante", "Henry", "password");
+            //engine.dbCon.SelectUser("Henry", "password");
+            //engine.dbCon.SelectAllUsers();
 
             Console.WriteLine("should've been run now");
 

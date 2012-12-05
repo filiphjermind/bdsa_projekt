@@ -9,13 +9,13 @@ namespace SliceOfPie
 {
 
 
-    class DBConnector
+    public class DBConnector
     {
 
         private static DBConnector instance;
         private MySqlConnection connection;
         private string connectionString;
-        private Engine engine;
+        //private Engine engine = Engine.Instance;
 
         public static DBConnector Instance
         {
@@ -31,26 +31,13 @@ namespace SliceOfPie
             Initialize();
             OpenConnection();
 
-            //InsertDocument("carlos", "Left there");
-            //DeleteDocumentByUserName("carl");
-            //DeleteDocumentByID(2);
-            //UpdateDocumentByID(1,"carlos","right over there");
-            //SelectDocumentsFromUser("carlos");
-            //print(SelectDocumentsFromUser("carlos"));
-
-            //InsertUser("God", "Almighty", "Blowback");
-            //DeleteUserByUsername("K-Master");
-            //UpdateUserByUsername("Karl", "Dante", "Henry", "password");
-            //SelectUser("Henry", "password");
-            SelectAllUsers();
-
         }
 
         private void Initialize()
         {
             connectionString = "SERVER=mysql.itu.dk;DATABASE=PieServer;UID=pieserver;PASSWORD=bdsapie;";
             connection = new MySqlConnection(connectionString);
-            engine = Engine.Instance;
+            
         }
 
         //opens connection to the database
@@ -116,31 +103,21 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
-        public List<Document> SelectDocumentsFromUser(User user)
+        public List<int> SelectDocumentsFromUser(User user)
         { 
             List<Document> documentList = new List<Document>();
             List<int> idList = new List<int>();
-            List<string> ownerList = new List<string>();
-            List<string> titleList = new List<string>();
-            List<string> fileList = new List<string>();
 
             string query = "SELECT id FROM document WHERE owner='"+user.username +"'";
 
             MySqlCommand cmd = new MySqlCommand(query, connection);
             MySqlDataReader reader = cmd.ExecuteReader();
 
-            while (reader.Read())
-            {
-                idList.Add((int)reader["id"]);
-            }
+            while (reader.Read()) idList.Add((int)reader["id"]);
+
             reader.Close();
 
-            for (int i = 0; i < idList.Count; i++)
-            {
-                documentList.Add(engine.docHandler.OpenDocument(idList[i], user));//ownerList[i]));
-            }
-
-                return documentList;
+                return idList;
         }
 
         /// <summary>

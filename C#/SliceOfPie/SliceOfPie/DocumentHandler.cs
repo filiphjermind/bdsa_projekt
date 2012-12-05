@@ -6,7 +6,7 @@ using System.IO;
 
 namespace SliceOfPie
 {
-    class DocumentHandler
+    public class DocumentHandler
     {
         // Stores the users document objects.
         public List<Document> documents = new List<Document>();

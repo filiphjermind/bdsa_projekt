@@ -9,7 +9,7 @@ namespace SliceOfPie
     public class Engine
     {
 
-        private static Engine instance;
+        //private static Engine instance;
 
         // handles the creation of folders.
         public Folder folder;
@@ -26,16 +26,16 @@ namespace SliceOfPie
         // Handles functionality related to documents
         public DocumentHandler docHandler;
 
-        public static Engine Instance
+        /*public static Engine Instance
         {
             get
             {
                 if (instance == null) instance = new Engine();
                 return instance;
             }
-        }
+        }*/
 
-        private Engine()
+        public Engine()
         {
             Initialize();
         }
