@@ -7,11 +7,8 @@ using System.Data;
 
 namespace SliceOfPie
 {
-
-
-    class DBConnector
+    public class DBConnector
     {
-
         private static DBConnector instance;
         private MySqlConnection connection;
         private string connectionString;

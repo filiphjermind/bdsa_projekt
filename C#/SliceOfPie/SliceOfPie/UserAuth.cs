@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SliceOfPie
 {
-    class UserAuth
+    public class UserAuth
     {
     }
 }

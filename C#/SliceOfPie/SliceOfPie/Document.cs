@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SliceOfPie
 {
-    class Document
+    public class Document
     {
         /// <summary>
         /// List of users that have access to edit the document.

@@ -6,7 +6,7 @@ using System.IO;
 
 namespace SliceOfPie
 {
-    class Folder
+    public class Folder
     {
         /// <summary>
         /// Creates a root folder for a user.

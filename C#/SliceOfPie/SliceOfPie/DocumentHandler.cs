@@ -6,7 +6,7 @@ using System.IO;
 
 namespace SliceOfPie
 {
-    class DocumentHandler
+    public class DocumentHandler
     {
         // Stores the users document objects.
         public List<Document> documents = new List<Document>();
@@ -34,12 +34,12 @@ namespace SliceOfPie
         /// <param name="username">Owner of the document.</param>
         /// <param name="doc">The document to be saved.</param>
         /// <param name="filename">Filename of the document</param>
-        public void SaveDocument(string username, Document doc, string filename)
+        public void SaveDocument(User user, Document doc, string filename)
         {
-            string owner = username;
-            string filepath = username + "/" + filename;
+            string owner = user.username;
+            string filepath = "root/" + owner + "/" + filename;
 
-            string path = username;
+            string path = "root/" + owner;
 
             path = Path.Combine(path, filename);
 
@@ -55,7 +55,7 @@ namespace SliceOfPie
                 }
             }
 
-            dbCon.InsertDocument(username, filepath);
+            dbCon.InsertDocument(owner, filepath);
         }
 
         /// <summary>

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace SliceOfPie
 {
-    class UserHandler
+    public class UserHandler
     {
         // Instance of the dbconnector, handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
