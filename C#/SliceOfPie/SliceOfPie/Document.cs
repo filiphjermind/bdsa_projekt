@@ -48,6 +48,14 @@ namespace SliceOfPie
             set;
         }
 
+        // Primary
+        public Document(User owner, int id, string content)
+        {
+            this.owner = owner;
+            this.documentId = id;
+            this.content = content;
+        }
+
         public Document(string owner, int id, string file)
         {
             this.documentId = id;

@@ -80,9 +80,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServerSystemFacade.cs" />
-    <Compile Include="System.cs" />
+    <Compile Include="Engine.cs" />
     <Compile Include="User.cs" />
     <Compile Include="UserAuth.cs" />
+    <Compile Include="UserHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -30,6 +30,12 @@ namespace SliceOfPie
 
             //docHandler.SaveDocument("Chuck", docHandler.NewDocument(user, "TEST"), "someFile");
 
+            User Chuck = new User("Chuck Norris", "Chuck", "1234");
+
+            DocumentHandler docHandler = new DocumentHandler();
+
+            Console.WriteLine(docHandler.OpenDocument(13, Chuck));
+
             Console.ReadKey();
         }
     }

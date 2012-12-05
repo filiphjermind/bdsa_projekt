@@ -11,7 +11,7 @@ namespace SliceOfPie
         // Stores the users document objects.
         public List<Document> documents = new List<Document>();
 
-        // Handles all the database related mathods.
+        // Handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
 
         /// <summary>
@@ -59,6 +59,38 @@ namespace SliceOfPie
         }
 
         /// <summary>
+        /// Opens a document based on the document id.
+        /// </summary>
+        /// <param name="id">Id of the document to open</param>
+        /// <returns>The document</returns>
+        public Document OpenDocument(int id, User user)
+        {
+            // Get file path from database
+            string path = dbCon.GetDocument(id, user.username);
+
+            // Open file
+            string[] lines = File.ReadAllLines(path);
+
+            // Content of the file.
+            string content = "";
+
+            // Convert lines to string
+            for (int i = 0; i < lines.Length; i++)
+            {
+                content += lines[i] + "\n";
+            }
+
+            // Create new document object.
+            Document doc = NewDocObject(user, id, content);
+
+            // Add document to users document list
+            AddDocToList(doc);
+
+            // Return the document object.
+            return doc;
+        }
+
+        /// <summary>
         /// Returns all documents from the database that belong to
         /// the specific user.
         /// </summary>
@@ -79,16 +111,6 @@ namespace SliceOfPie
         }
 
         /// <summary>
-        /// Opens a document based on the document id.
-        /// </summary>
-        /// <param name="id">Id of the document to open</param>
-        /// <returns>The document</returns>
-        public Document OpenDocument(int id, string owner, string file)
-        {
-            return null;
-        }
-
-        /// <summary>
         /// Deletes a document from the system
         /// </summary>
         /// <param name="doc">The document to delete</param>
@@ -104,6 +126,8 @@ namespace SliceOfPie
         public void ShareDocument(params User[] users)
         { 
         }
+
+        /********************** PRIVATE HELPER METHODS ******************************/
 
         /// <summary>
         /// Adds a document to the users list of documents.
@@ -126,6 +150,20 @@ namespace SliceOfPie
                 Console.WriteLine(d.title);
                 Console.WriteLine();
             }
+        }
+
+        /// <summary>
+        /// Creates a new document object.
+        /// </summary>
+        /// <param name="owner">Owner of the document.</param>
+        /// <param name="id">Id of the document.</param>
+        /// <param name="content">Content of the document file.</param>
+        /// <returns>The new document object.</returns>
+        private Document NewDocObject(User owner, int id, string content)
+        {
+            Document doc = new Document(owner, id, content);
+
+            return doc;
         }
     }
 }

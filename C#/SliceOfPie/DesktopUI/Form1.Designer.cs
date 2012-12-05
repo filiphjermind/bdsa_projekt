@@ -42,7 +42,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.DocumentContent = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.DocumentNameLabel = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.UpdateSettingsButton = new System.Windows.Forms.Button();
             this.synchronizeButton = new System.Windows.Forms.Button();
@@ -61,6 +61,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.ShareFolderButton = new System.Windows.Forms.Button();
             this.ShareDocumentButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.DeleteButton = new System.Windows.Forms.Button();
+            this.listView2 = new System.Windows.Forms.ListView();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.acceptButton = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.updateInvitationsButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -69,6 +76,7 @@
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -118,8 +126,7 @@
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
-            this.listView1.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.temp);
-            this.listView1.DoubleClick += new System.EventHandler(this.OnDoubleClickFileOrFolder);
+            this.listView1.ItemActivate += new System.EventHandler(this.OnItemActivated);
             // 
             // name
             // 
@@ -176,20 +183,20 @@
             // 
             // DocumentContent
             // 
-            this.DocumentContent.Location = new System.Drawing.Point(379, 50);
+            this.DocumentContent.Location = new System.Drawing.Point(379, 100);
             this.DocumentContent.Multiline = true;
             this.DocumentContent.Name = "DocumentContent";
-            this.DocumentContent.Size = new System.Drawing.Size(361, 558);
+            this.DocumentContent.Size = new System.Drawing.Size(361, 356);
             this.DocumentContent.TabIndex = 8;
             // 
-            // label4
+            // DocumentNameLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(376, 21);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Document name";
+            this.DocumentNameLabel.AutoSize = true;
+            this.DocumentNameLabel.Location = new System.Drawing.Point(376, 71);
+            this.DocumentNameLabel.Name = "DocumentNameLabel";
+            this.DocumentNameLabel.Size = new System.Drawing.Size(88, 13);
+            this.DocumentNameLabel.TabIndex = 9;
+            this.DocumentNameLabel.Text = "Document name:";
             // 
             // groupBox1
             // 
@@ -219,7 +226,7 @@
             // 
             // synchronizeButton
             // 
-            this.synchronizeButton.Location = new System.Drawing.Point(32, 623);
+            this.synchronizeButton.Location = new System.Drawing.Point(517, 21);
             this.synchronizeButton.Name = "synchronizeButton";
             this.synchronizeButton.Size = new System.Drawing.Size(78, 23);
             this.synchronizeButton.TabIndex = 11;
@@ -370,15 +377,86 @@
             this.ShareDocumentButton.UseVisualStyleBackColor = true;
             this.ShareDocumentButton.Click += new System.EventHandler(this.onClickShareDocumentButton);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(379, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(63, 23);
+            this.button1.TabIndex = 19;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.OnClickSave);
+            // 
+            // DeleteButton
+            // 
+            this.DeleteButton.Location = new System.Drawing.Point(448, 21);
+            this.DeleteButton.Name = "DeleteButton";
+            this.DeleteButton.Size = new System.Drawing.Size(63, 23);
+            this.DeleteButton.TabIndex = 20;
+            this.DeleteButton.Text = "Delete";
+            this.DeleteButton.UseVisualStyleBackColor = true;
+            this.DeleteButton.Click += new System.EventHandler(this.OnDeleteButtonClicked);
+            // 
+            // listView2
+            // 
+            this.listView2.Location = new System.Drawing.Point(12, 25);
+            this.listView2.Name = "listView2";
+            this.listView2.Size = new System.Drawing.Size(159, 81);
+            this.listView2.TabIndex = 21;
+            this.listView2.UseCompatibleStateImageBehavior = false;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.updateInvitationsButton);
+            this.groupBox5.Controls.Add(this.button2);
+            this.groupBox5.Controls.Add(this.acceptButton);
+            this.groupBox5.Controls.Add(this.listView2);
+            this.groupBox5.Location = new System.Drawing.Point(379, 482);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(361, 126);
+            this.groupBox5.TabIndex = 22;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Invitations";
+            // 
+            // acceptButton
+            // 
+            this.acceptButton.Location = new System.Drawing.Point(197, 25);
+            this.acceptButton.Name = "acceptButton";
+            this.acceptButton.Size = new System.Drawing.Size(96, 23);
+            this.acceptButton.TabIndex = 20;
+            this.acceptButton.Text = "Accept";
+            this.acceptButton.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(197, 54);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(96, 23);
+            this.button2.TabIndex = 22;
+            this.button2.Text = "Ignore";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // updateInvitationsButton
+            // 
+            this.updateInvitationsButton.Location = new System.Drawing.Point(197, 83);
+            this.updateInvitationsButton.Name = "updateInvitationsButton";
+            this.updateInvitationsButton.Size = new System.Drawing.Size(96, 23);
+            this.updateInvitationsButton.TabIndex = 23;
+            this.updateInvitationsButton.Text = "Update";
+            this.updateInvitationsButton.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(858, 658);
+            this.ClientSize = new System.Drawing.Size(792, 639);
+            this.Controls.Add(this.groupBox5);
+            this.Controls.Add(this.DeleteButton);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.synchronizeButton);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.DocumentNameLabel);
             this.Controls.Add(this.DocumentContent);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupBox1);
@@ -397,6 +475,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,7 +495,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox DocumentContent;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label DocumentNameLabel;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button UpdateSettingsButton;
         private System.Windows.Forms.Button synchronizeButton;
@@ -435,6 +514,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button DeleteButton;
+        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Button updateInvitationsButton;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button acceptButton;
 
 
     }

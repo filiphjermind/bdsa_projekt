@@ -13,6 +13,7 @@ namespace DesktopUI
     public partial class Form1 : Form
     {
         private DirectoryInfo CurrentDirectoryInfo;
+        private string currentPath;
         public Form1()
         {
             
@@ -30,6 +31,7 @@ namespace DesktopUI
         /// </summary>
         private void PopulateTreeView()
         {
+            treeView1.Nodes.Clear();
             TreeNode rootNode;
 
             DirectoryInfo info = new DirectoryInfo(rootDirectory.Text);
@@ -42,6 +44,7 @@ namespace DesktopUI
             rootNode.Tag = info;
             GetDirectories(info.GetDirectories(), rootNode);
             treeView1.Nodes.Add(rootNode);
+            
             
         }
         /// <summary>
@@ -80,16 +83,6 @@ namespace DesktopUI
             ListViewItem.ListViewSubItem[] subItems;
             ListViewItem item = null;
 
-            foreach (DirectoryInfo dir in nodeDirInfo.GetDirectories())
-            {
-                item = new ListViewItem(dir.Name, 0);
-                subItems = new ListViewItem.ListViewSubItem[]
-                    {new ListViewItem.ListViewSubItem(item, "Directory"), 
-                     new ListViewItem.ListViewSubItem(item, 
-						dir.LastAccessTime.ToShortDateString())};
-                item.SubItems.AddRange(subItems);
-                listView1.Items.Add(item);
-            }
             foreach (FileInfo file in nodeDirInfo.GetFiles())
             {
                 item = new ListViewItem(file.Name, 1);
@@ -104,12 +97,25 @@ namespace DesktopUI
 
             listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
         }
-
+        /// <summary>
+        /// This method should be called when the user have updatted the settings, such
+        /// as username and password and rootdirectory. The method then updates the
+        /// explorer view
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onClickUpdateSettings(object sender, EventArgs e)
         {
             PopulateTreeView();
         }
 
+
+        /// <summary>
+        /// This method creates a new document based on the name the user types and
+        /// the directory the user is located in.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClickCreateDocument(object sender, EventArgs e)
         {
             string text = "";
@@ -117,11 +123,19 @@ namespace DesktopUI
             CreateDocumentText.Text = "";
 
         }
-
+        /// <summary>
+        /// This method creates a new folder based on the name the user types and
+        /// the directory the user is located in.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClickCreateFolder(object sender, EventArgs e)
         {
+            //Creates the folder
             System.IO.Directory.CreateDirectory(CurrentDirectoryInfo.FullName + @"\" + CreateFolderText.Text);
+            //Clear the foldername textfield
             CreateFolderText.Text = "";
+            PopulateTreeView();
         }
 
         private void onClickShareDocumentButton(object sender, EventArgs e)
@@ -139,16 +153,47 @@ namespace DesktopUI
 
         }
 
-        private void OnDoubleClickFileOrFolder(object sender, EventArgs e)
+        /// <summary>
+        /// This method opens a document when the user click on the name 
+        /// in the listView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnItemActivated(object sender, EventArgs e)
         {
-            ListView listView = (ListView)sender;
-            ListView.CheckedListViewItemCollection checkedItems = listView.CheckedItems;
-            DocumentContent.Text = DocumentContent.Text + listView1;
+            ListView lv = (ListView)sender;
+            ListViewItem lvi = (ListViewItem)lv.SelectedItems[0];
+            DirectoryInfo di = (DirectoryInfo)treeView1.SelectedNode.Tag;
+            currentPath = di.FullName + @"\" + lvi.Text;
+            StreamReader streamReader = new StreamReader(currentPath);
+            string text = streamReader.ReadToEnd();
+            streamReader.Close();
+            DocumentContent.Text = text;
+            DocumentNameLabel.Text = "Document name: " +lvi.Text;
+            
+        }
+        /// <summary>
+        /// This method saves the document that is open.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void OnClickSave(object sender, EventArgs e)
+        {
+            //deletes all existing text and writes the new text
+            File.WriteAllText(currentPath, DocumentContent.Text);
         }
 
-        private void temp(object sender, ItemCheckedEventArgs e)
+        private void OnDeleteButtonClicked(object sender, EventArgs e)
         {
-            DocumentContent.Text = DocumentContent.Text + e.Item.ToString();
+            if (listView1.SelectedItems.Count != 0)
+            {   
+                for (int i = 0; i < listView1.SelectedItems.Count; i++)
+                {
+                    DocumentContent.Text = "" + currentPath;
+                   File.Delete(CurrentDirectoryInfo.FullName + @"\" + listView1.SelectedItems[i].Text);
+                }
+            }
+            DocumentNameLabel.Text = "Document name: ";
         }
 
     }

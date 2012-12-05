@@ -144,9 +144,9 @@ namespace SliceOfPie
         }
 
         public Document OpenDocument(int id, string owner, string file)
-        { 
+        {
             return new Document(owner, id, file);
-            
+
         }
 
         public void print(List<Document> smukt)
@@ -185,6 +185,17 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
+        /// <summary>
+        /// Retreives a user from the database.
+        /// </summary>
+        /// <param name="usernameInput">username of the user to retreive</param>
+        /// <param name="passwordInput">users password</param>
+        /// <returns>   Array with users information.
+        ///             arr[0] = users id
+        ///             arr[1] = users name
+        ///             arr[2] = users username
+        ///             arr[3] = users password
+        /// </returns>
         public string[] SelectUser(string usernameInput, string passwordInput)
         { 
             string[] userAssembly = new string[4];
@@ -228,6 +239,33 @@ namespace SliceOfPie
             }
             reader.Close();
             return userList;
+        }
+
+        /// <summary>
+        /// Retreives a document from the database based on the document id.
+        /// </summary>
+        /// <param name="id">The id of the document.</param>
+        /// <returns>File path to the docuemnt</returns>
+        public string GetDocument(int id, string user)
+        {
+            string query = "SELECT file FROM document WHERE id = '" + id + "' AND owner ='" + user + "'";
+
+            string path = "";
+
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            MySqlDataReader reader = cmd.ExecuteReader();
+
+            while (reader.Read())
+            { 
+                path = reader["file"] + "";
+            }
+            reader.Close();
+            return path;
+        }
+
+        public bool CheckPermission(User user, Document doc)
+        {
+            return false;
         }
 
         /// <summary>

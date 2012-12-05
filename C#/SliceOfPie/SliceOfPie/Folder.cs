@@ -12,10 +12,20 @@ namespace SliceOfPie
         /// Creates a root folder for a user.
         /// </summary>
         /// <param name="username">Name of the user who owns the folder.</param>
-        public void CreateRootFolder(string username)
+        public void CreateRootFolder(User user)
         {
-            string dir = username;
+            string dir = user.username;
             Directory.CreateDirectory(dir);
+        }
+
+        /// <summary>
+        /// Creates a new directory.
+        /// </summary>
+        /// <param name="path">Path to the new directory.</param>
+        public void CreateNewFolder(User user, string path)
+        {
+            string root = user.username;
+            Directory.CreateDirectory(root + "/" + path);
         }
     }
 }
