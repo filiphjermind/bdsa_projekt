@@ -59,9 +59,9 @@
 | User directory           | Personal root dir                            | Bergar    |                            |        |
 |                          | Shared root dir                              | Bergar    |                            |        |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
-| User authentication      | Username and password relationship           | Morten    |                            |        |
+| User authentication      | Username and password relationship           | Morten    |                            | Done   |
 |                          | Storage of username and password             | Morten    |                            | Done   |
-|                          | Fetch and compare                            | Morten    |                            |        |
+|                          | Fetch and compare                            | Morten    |                            | Done   |
 |                          | Encrypt and decrypt                          |           |                            |        |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
 | Sharing document/folders | File input                                   | Filip     |                            |        |
@@ -71,9 +71,9 @@
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
 | Offline sync             | Client to server connection                  | Filip     |                            |        |
 |                          | Server to client connection                  | Bergar    |                            |        |
-|                          | Server handling new data                     | Morten    |                            |        |
+|                          | Server handling new data (Spimple)           | Morten    |                            |        |
 |                          | Client accepts all                           | Filip     |                            |        |
-|                          | Server handling new data                     |           |                            |        |
+|                          | Server handling new data (Advanced)          |           |                            |        |
 |                          | Server simple comparision of doc history     |           |                            |        |
 |                          | Server merge of documents.                   |           |                            |        |
 |--------------------------+----------------------------------------------+-----------+----------------------------+--------|
