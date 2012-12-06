@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Permission.cs" />
     <Compile Include="ClientSystemFacade.cs" />
     <Compile Include="DBConnector.cs" />
     <Compile Include="Document.cs" />

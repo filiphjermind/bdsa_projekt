@@ -21,9 +21,10 @@ namespace SliceOfPie
         /// <param name="owner">The owner of the document</param>
         /// <param name="title">The title of the document.</param>
         /// <returns>The newly created document.</returns>
-        public Document NewDocument(User owner, string title)
+        public Document NewDocument(User owner)
         {
-            Document doc = new Document(owner, title);
+            // NOTE!!!
+            Document doc = new Document(owner);
             AddDocToList(doc);
             return doc;
         }
@@ -123,11 +124,24 @@ namespace SliceOfPie
         /// document with other users.
         /// </summary>
         /// <param name="users">List of users to share with.</param>
-        public void ShareDocument(params User[] users)
-        { 
+        public void ShareDocument(string file, Permission perm ,params User[] users)
+        {
+            string[] splitFile = splitString(file);
+            Document sharedDocument;
+            foreach (User i in users)
+            sharedDocument = new Document(i, file, perm);
+
+            //foreach user
         }
 
         /********************** PRIVATE HELPER METHODS ******************************/
+
+        private string[] splitString(string input)
+        {
+            string[] tmp = input.Split('/');
+
+            return tmp;
+        }
 
         /// <summary>
         /// Adds a document to the users list of documents.
