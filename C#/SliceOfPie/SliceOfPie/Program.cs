@@ -12,16 +12,13 @@ namespace SliceOfPie
             Engine engine = new Engine();//Engine.Instance;
             DBConnector DBCon = DBConnector.Instance;
 
-
-            //User user1 = engine.userhandler.GetUser("jetli", "12345");
-
             User user = engine.userhandler.GetUser("mrT", "1234");
             Document document1 = engine.docHandler.OpenDocument(15, user);
+            
+            
             //DBCon.InsertUserDocument(user, document1, Permission.Permissions.Edit);
 
-            Console.WriteLine(DBCon.CheckPermission(user, document1));
-
-            Console.WriteLine("should've been run now");
+            //Console.WriteLine(DBCon.CheckPermission(user, document1));
 
             //User user1 = engine.userhandler.NewUser("Mr T", "mrT", "1234");
 
@@ -31,7 +28,7 @@ namespace SliceOfPie
 
             //User user = engine.userhandler.NewUser("Test user", "testuser", "test123");
 
-
+            Console.WriteLine("should've been run now");
             Console.ReadKey();
         }
     }
