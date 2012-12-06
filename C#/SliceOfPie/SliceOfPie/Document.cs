@@ -7,10 +7,6 @@ namespace SliceOfPie
 {
     public class Document
     {
-        /// <summary>
-        /// List of users that have access to edit the document.
-        /// </summary>
-        public List<User> users;
 
         /// <summary>
         /// The owner of the document.
@@ -48,6 +44,12 @@ namespace SliceOfPie
             set;
         }
 
+        public Permission permission
+        {
+            get;
+            set;
+        }
+
         // Primary
         public Document(User owner, int id, string content)
         {
@@ -56,20 +58,18 @@ namespace SliceOfPie
             this.content = content;
         }
 
-        public Document(string owner, int id, string file)
-        {
-            this.documentId = id;
-            //this.owner = owner;
-            //TODO: file
-        }
-
-        public Document(User owner, string title)
+        public Document(User owner, string file, Permission perm)
         {
             this.owner = owner;
-            this.title = title;
+            this.permission = permission;
+            // TODO file
+        }
+
+        public Document(User owner)
+        {
+            this.owner = owner;
             // file
             //this.documentId
-            this.users = new List<User>();
             this.content = "";
         }
     }

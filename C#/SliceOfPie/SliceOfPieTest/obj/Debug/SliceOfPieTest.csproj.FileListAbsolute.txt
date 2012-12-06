@@ -6,3 +6,10 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTe
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPie.exe
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\MySql.Data.dll
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPie.pdb
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPieTest.dll
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPieTest.pdb
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPie.exe
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPie.pdb
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.csprojResolveAssemblyReference.cache
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.dll
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.pdb
