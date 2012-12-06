@@ -22,4 +22,3 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\ob
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.View.resources
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.View.resources
-C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache

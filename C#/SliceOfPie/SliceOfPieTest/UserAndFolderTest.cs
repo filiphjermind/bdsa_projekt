@@ -79,7 +79,8 @@ namespace SliceOfPieTest
         [TestMethod]
         public void DeleteUserTest()
         {
-            engine.userhandler.DeleteUser("testuser");
+            User user1 = engine.userhandler.GetUser("testuser", "test123");
+            engine.userhandler.DeleteUser(user1);
             User user = engine.userhandler.GetUser("testuser", "test123");
             Assert.AreEqual(null, user.username);
         }

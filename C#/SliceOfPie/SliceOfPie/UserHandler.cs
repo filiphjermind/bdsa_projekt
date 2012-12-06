@@ -63,10 +63,10 @@ namespace SliceOfPie
         /// Deletes a user from the database.
         /// </summary>
         /// <param name="username">The username of the user to delete.</param>
-        public void DeleteUser(string username)
+        public void DeleteUser(User user)
         {
-            dbCon.DeleteUserByUsername(username);
-            folder.DeleteUserRootFolder(username);
+            dbCon.DeleteUserByUsername(user.username);
+            folder.DeleteUserRootFolder(user);
         }
 
         public void CheckEditUser(string username)

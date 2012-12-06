@@ -25,7 +25,13 @@ namespace SliceOfPie
             //Console.WriteLine(user1.username);
             //Console.WriteLine(user1.password);
 
-            User user = engine.userhandler.NewUser("Test user", "testuser", "test123");
+            //User user = engine.userhandler.NewUser("Test user", "testuser", "test123");
+
+            User user1 = engine.userhandler.GetUser("Sample", "Sample123");
+
+            //engine.folder.CreateNewFolder(user1, "some/sample/folder");
+
+            engine.folder.DeleteFolder(user1, "some");
 
 
             Console.ReadKey();
