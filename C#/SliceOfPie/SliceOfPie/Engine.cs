@@ -25,6 +25,19 @@ namespace SliceOfPie
 
         // Handles functionality related to documents
         public DocumentHandler docHandler;
+<<<<<<< HEAD
+=======
+
+        /*public static Engine Instance
+        {
+            get
+            {
+                if (instance == null) instance = new Engine();
+                return instance;
+            }
+        }*/
+
+>>>>>>> 62c0e5c429c26ca08ad288f09bcd0108faaf8782
 
         public Engine()
         {

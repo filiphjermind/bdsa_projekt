@@ -9,23 +9,21 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
 
             Engine engine = new Engine();
+=======
+            Engine engine = new Engine();//Engine.Instance;
+            DBConnector DBCon = DBConnector.Instance;
+>>>>>>> 62c0e5c429c26ca08ad288f09bcd0108faaf8782
 
-            //engine.dbCon.InsertDocument("carl", "Left there");
-            //engine.dbCon.DeleteDocumentByUserName("carl");
-            //engine.dbCon.DeleteDocumentByID(10);
-            //engine.dbCon.UpdateDocumentByID(1,"carlos","right over there");
-            //engine.dbCon.SelectDocumentsFromUser("carlos");
-            //engine.dbCon.print(SelectDocumentsFromUser("carlos"));
+            User user = engine.userhandler.GetUser("mrT", "1234");
+            Document document1 = engine.docHandler.OpenDocument(15, user);
+            
+            
+            //DBCon.InsertUserDocument(user, document1, Permission.Permissions.Edit);
 
-            //engine.dbCon.InsertUser("God", "Almighty", "Blowback");
-            //engine.dbCon.DeleteUserByUsername("K-Master");
-            //engine.dbCon.UpdateUserByUsername("Karl", "Dante", "Henry", "password");
-            //engine.dbCon.SelectUser("Henry", "password");
-            //engine.dbCon.SelectAllUsers();
-
-            Console.WriteLine("should've been run now");
+            //Console.WriteLine(DBCon.CheckPermission(user, document1));
 
             //User user1 = engine.userhandler.NewUser("Mr T", "mrT", "1234");
 
@@ -33,13 +31,9 @@ namespace SliceOfPie
 
             //engine.docHandler.SaveDocument(user1, doc, "TestFile2.html");
 
-            User user1 = engine.userhandler.GetUser("jetli", "12345");
+            //User user = engine.userhandler.NewUser("Test user", "testuser", "test123");
 
-            Console.WriteLine(user1.name);
-            Console.WriteLine(user1.username);
-            Console.WriteLine(user1.password);
-
-
+            Console.WriteLine("should've been run now");
             Console.ReadKey();
         }
     }

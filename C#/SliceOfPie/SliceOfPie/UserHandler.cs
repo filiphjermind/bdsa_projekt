@@ -66,6 +66,7 @@ namespace SliceOfPie
         public void DeleteUser(string username)
         {
             dbCon.DeleteUserByUsername(username);
+            folder.DeleteUserRootFolder(username);
         }
 
         public void CheckEditUser(string username)
