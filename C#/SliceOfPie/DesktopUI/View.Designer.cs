@@ -55,20 +55,23 @@
             this.CreateFolderButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.shareFolderText = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.shareDocumentText = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.ShareFolderButton = new System.Windows.Forms.Button();
             this.ShareDocumentButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.DeleteDocumentButton = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
+            this.listViewInvitations = new System.Windows.Forms.ListView();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.updateInvitationsButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.acceptButton = new System.Windows.Forms.Button();
             this.deleteFolderButton = new System.Windows.Forms.Button();
+            this.invitationColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.comboBoxShareDocument = new System.Windows.Forms.ComboBox();
+            this.comboBoxShareFolder = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -188,7 +191,7 @@
             this.DocumentContent.Location = new System.Drawing.Point(379, 100);
             this.DocumentContent.Multiline = true;
             this.DocumentContent.Name = "DocumentContent";
-            this.DocumentContent.Size = new System.Drawing.Size(361, 356);
+            this.DocumentContent.Size = new System.Drawing.Size(419, 413);
             this.DocumentContent.TabIndex = 8;
             // 
             // DocumentNameLabel
@@ -267,7 +270,7 @@
             this.groupBox2.Controls.Add(this.CreateDocumentText);
             this.groupBox2.Controls.Add(this.createDocumentButton);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(32, 379);
+            this.groupBox2.Location = new System.Drawing.Point(32, 368);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(313, 54);
             this.groupBox2.TabIndex = 16;
@@ -279,7 +282,7 @@
             this.groupBox3.Controls.Add(this.CreateFolderText);
             this.groupBox3.Controls.Add(this.CreateFolderButton);
             this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Location = new System.Drawing.Point(32, 453);
+            this.groupBox3.Location = new System.Drawing.Point(32, 428);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(313, 54);
             this.groupBox3.TabIndex = 17;
@@ -314,25 +317,27 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.textBox5);
+            this.groupBox4.Controls.Add(this.comboBoxShareFolder);
+            this.groupBox4.Controls.Add(this.comboBoxShareDocument);
+            this.groupBox4.Controls.Add(this.shareFolderText);
             this.groupBox4.Controls.Add(this.label8);
-            this.groupBox4.Controls.Add(this.textBox1);
+            this.groupBox4.Controls.Add(this.shareDocumentText);
             this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(this.ShareFolderButton);
             this.groupBox4.Controls.Add(this.ShareDocumentButton);
-            this.groupBox4.Location = new System.Drawing.Point(32, 526);
+            this.groupBox4.Location = new System.Drawing.Point(379, 532);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(313, 82);
+            this.groupBox4.Size = new System.Drawing.Size(419, 82);
             this.groupBox4.TabIndex = 18;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Share";
             // 
-            // textBox5
+            // shareFolderText
             // 
-            this.textBox5.Location = new System.Drawing.Point(49, 50);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(141, 20);
-            this.textBox5.TabIndex = 18;
+            this.shareFolderText.Location = new System.Drawing.Point(49, 50);
+            this.shareFolderText.Name = "shareFolderText";
+            this.shareFolderText.Size = new System.Drawing.Size(122, 20);
+            this.shareFolderText.TabIndex = 18;
             // 
             // label8
             // 
@@ -343,12 +348,12 @@
             this.label8.TabIndex = 19;
             this.label8.Text = "User";
             // 
-            // textBox1
+            // shareDocumentText
             // 
-            this.textBox1.Location = new System.Drawing.Point(49, 21);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(141, 20);
-            this.textBox1.TabIndex = 16;
+            this.shareDocumentText.Location = new System.Drawing.Point(49, 21);
+            this.shareDocumentText.Name = "shareDocumentText";
+            this.shareDocumentText.Size = new System.Drawing.Size(122, 20);
+            this.shareDocumentText.TabIndex = 16;
             // 
             // label7
             // 
@@ -361,7 +366,7 @@
             // 
             // ShareFolderButton
             // 
-            this.ShareFolderButton.Location = new System.Drawing.Point(196, 48);
+            this.ShareFolderButton.Location = new System.Drawing.Point(317, 46);
             this.ShareFolderButton.Name = "ShareFolderButton";
             this.ShareFolderButton.Size = new System.Drawing.Size(96, 23);
             this.ShareFolderButton.TabIndex = 13;
@@ -371,7 +376,7 @@
             // 
             // ShareDocumentButton
             // 
-            this.ShareDocumentButton.Location = new System.Drawing.Point(196, 19);
+            this.ShareDocumentButton.Location = new System.Drawing.Point(317, 17);
             this.ShareDocumentButton.Name = "ShareDocumentButton";
             this.ShareDocumentButton.Size = new System.Drawing.Size(96, 23);
             this.ShareDocumentButton.TabIndex = 12;
@@ -399,53 +404,59 @@
             this.DeleteDocumentButton.UseVisualStyleBackColor = true;
             this.DeleteDocumentButton.Click += new System.EventHandler(this.OnDeleteDocumentButtonClicked);
             // 
-            // listView2
+            // listViewInvitations
             // 
-            this.listView2.Location = new System.Drawing.Point(12, 25);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(213, 81);
-            this.listView2.TabIndex = 21;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.listViewInvitations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.invitationColumn});
+            this.listViewInvitations.Location = new System.Drawing.Point(12, 25);
+            this.listViewInvitations.Name = "listViewInvitations";
+            this.listViewInvitations.Size = new System.Drawing.Size(178, 81);
+            this.listViewInvitations.TabIndex = 21;
+            this.listViewInvitations.UseCompatibleStateImageBehavior = false;
+            this.listViewInvitations.View = System.Windows.Forms.View.Tile;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.updateInvitationsButton);
             this.groupBox5.Controls.Add(this.button2);
             this.groupBox5.Controls.Add(this.acceptButton);
-            this.groupBox5.Controls.Add(this.listView2);
-            this.groupBox5.Location = new System.Drawing.Point(379, 482);
+            this.groupBox5.Controls.Add(this.listViewInvitations);
+            this.groupBox5.Location = new System.Drawing.Point(32, 488);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(361, 126);
+            this.groupBox5.Size = new System.Drawing.Size(313, 126);
             this.groupBox5.TabIndex = 22;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Invitations";
             // 
             // updateInvitationsButton
             // 
-            this.updateInvitationsButton.Location = new System.Drawing.Point(245, 85);
+            this.updateInvitationsButton.Location = new System.Drawing.Point(214, 81);
             this.updateInvitationsButton.Name = "updateInvitationsButton";
-            this.updateInvitationsButton.Size = new System.Drawing.Size(96, 23);
+            this.updateInvitationsButton.Size = new System.Drawing.Size(78, 23);
             this.updateInvitationsButton.TabIndex = 23;
             this.updateInvitationsButton.Text = "Update";
             this.updateInvitationsButton.UseVisualStyleBackColor = true;
+            this.updateInvitationsButton.Click += new System.EventHandler(this.onClickUpdateInvitations);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(245, 56);
+            this.button2.Location = new System.Drawing.Point(214, 52);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(96, 23);
+            this.button2.Size = new System.Drawing.Size(78, 23);
             this.button2.TabIndex = 22;
             this.button2.Text = "Ignore";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.onClickIgnoreInvitations);
             // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(245, 27);
+            this.acceptButton.Location = new System.Drawing.Point(214, 23);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(96, 23);
+            this.acceptButton.Size = new System.Drawing.Size(78, 23);
             this.acceptButton.TabIndex = 20;
             this.acceptButton.Text = "Accept";
             this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.Click += new System.EventHandler(this.onClickAcceptInvitations);
             // 
             // deleteFolderButton
             // 
@@ -457,11 +468,32 @@
             this.deleteFolderButton.UseVisualStyleBackColor = true;
             this.deleteFolderButton.Click += new System.EventHandler(this.onClickDeleteFolderButton);
             // 
+            // invitationColumn
+            // 
+            this.invitationColumn.Text = "invitations";
+            this.invitationColumn.Width = 91;
+            // 
+            // comboBoxShareDocument
+            // 
+            this.comboBoxShareDocument.FormattingEnabled = true;
+            this.comboBoxShareDocument.Location = new System.Drawing.Point(177, 19);
+            this.comboBoxShareDocument.Name = "comboBoxShareDocument";
+            this.comboBoxShareDocument.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxShareDocument.TabIndex = 20;
+            // 
+            // comboBoxShareFolder
+            // 
+            this.comboBoxShareFolder.FormattingEnabled = true;
+            this.comboBoxShareFolder.Location = new System.Drawing.Point(177, 49);
+            this.comboBoxShareFolder.Name = "comboBoxShareFolder";
+            this.comboBoxShareFolder.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxShareFolder.TabIndex = 21;
+            // 
             // View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 639);
+            this.ClientSize = new System.Drawing.Size(825, 639);
             this.Controls.Add(this.deleteFolderButton);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.DeleteDocumentButton);
@@ -523,18 +555,21 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button ShareDocumentButton;
         private System.Windows.Forms.Button ShareFolderButton;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox shareFolderText;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox shareDocumentText;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button DeleteDocumentButton;
-        private System.Windows.Forms.ListView listView2;
+        private System.Windows.Forms.ListView listViewInvitations;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button updateInvitationsButton;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button acceptButton;
         private System.Windows.Forms.Button deleteFolderButton;
+        private System.Windows.Forms.ColumnHeader invitationColumn;
+        private System.Windows.Forms.ComboBox comboBoxShareFolder;
+        private System.Windows.Forms.ComboBox comboBoxShareDocument;
 
 
     }

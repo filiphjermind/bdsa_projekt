@@ -9,11 +9,8 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
+
             Engine engine = new Engine();
-=======
-            Engine engine = new Engine();//Engine.Instance;
->>>>>>> f5cb75287a160e6830a45b062b436a043741e061
 
             //engine.dbCon.InsertDocument("carl", "Left there");
             //engine.dbCon.DeleteDocumentByUserName("carl");

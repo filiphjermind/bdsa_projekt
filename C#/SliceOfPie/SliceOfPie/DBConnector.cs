@@ -7,11 +7,6 @@ using System.Data;
 
 namespace SliceOfPie
 {
-<<<<<<< HEAD
-=======
-
-
->>>>>>> f5cb75287a160e6830a45b062b436a043741e061
     public class DBConnector
     {
         private static DBConnector instance;

@@ -9,6 +9,8 @@ namespace DesktopUI
     class Model
     {
         private static Model instance;
+        private string password;
+        private string username;
         public static Model GetInstance()
         {
             if (instance == null)
@@ -54,6 +56,37 @@ namespace DesktopUI
         }
 
         internal void Synchronize(string username, string password)
+        {
+            
+        }
+
+        internal void ShareDocuments(string[] users, string[] documents)
+        {
+            
+        }
+
+        internal void ShareFolder(string[] users, string folder)
+        {
+            
+        }
+
+        internal string[] GetInvitations()
+        {
+            return new string[]{"Morten/Eve/spreadsheet","Bergar/emacs/cheatsheet"};
+        }
+
+        internal void AcceptInvitations(string[] accepts)
+        {
+            
+        }
+
+        internal void SetCredentials(string user, string pass)
+        {
+            username = user;
+            password = pass;
+        }
+
+        internal void IgnoreInvitaions(string[] ignorations)
         {
             
         }
