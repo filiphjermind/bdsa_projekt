@@ -2,23 +2,43 @@
     background-color: red;
     padding: 0px;
     margin: auto;
-    width: 800px;
+    margin-top: 30px;
+    width: 1000px;
     height: 1000px;
+}
+#menuBar {
+    width: 1000px;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+    background-color: blue;
 }
 #fileExplorer {
     float: left;
     background-color: yellow;
     padding: 0px;
     margin: 0px;
-    width: 100px;
+    width: 250px;
     height: 1000px;
 }
 #textField {
     float: right;
-    background-color: blue;
     padding: 0px;
     margin: 0px;
-    width: 700px;
+    width: 750px;
     height: 1000px;
 }
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
 
