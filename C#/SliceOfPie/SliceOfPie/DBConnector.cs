@@ -268,9 +268,16 @@ namespace SliceOfPie
 
         private MySqlDataReader ExecuteReader(string query)
         {
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
-            return reader;
+            if (connection.State != ConnectionState.Open) OpenConnection();
+            if (connection.State != ConnectionState.Open) ErrorMessage("Cannot open connection to server");
+            else
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                //CloseConnection();
+                return reader;
+            }
+            return null;
         }
 
         private void ErrorMessage(string error)
