@@ -219,6 +219,11 @@ namespace SliceOfPie
             return path;
         }
 
+        public void InsertUserDocument(User user, Document doc, Permission.Permissions permission)
+        {
+            string query = "INSERT INTO userdocument (userID, documentID, permission) VALUES('" + user.id + "', '" + doc.documentId + "', '" + permission.ToString() +"')";
+            ExecuteQuery(query);
+        }
 
 
         public Permission.Permissions CheckPermission(User user, Document doc)
