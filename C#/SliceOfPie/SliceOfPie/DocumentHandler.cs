@@ -153,6 +153,14 @@ namespace SliceOfPie
 
         /********************** PRIVATE HELPER METHODS ******************************/
 
+        /// <summary>
+        /// Copies and selects newest documents from one list and 
+        /// adds them into another list. if two documents have got the
+        /// same ID, the newes one is chosen
+        /// </summary>
+        /// <param name="fromList">List that is copied into another list</param>
+        /// <param name="toList">List that gets new documents and possible updated some of it's documents</param>
+        /// <returns>A list of all files from list 1 and 2 without dublicates</returns>
         private List<Document> CopyNewEntities(List<Document> fromList, List<Document> toList)
         {
             foreach (Document d in fromList)
@@ -165,6 +173,14 @@ namespace SliceOfPie
             return toList;
         }
 
+        /// <summary>
+        /// Compares a single document with all documents in a list
+        /// </summary>
+        /// <param name="d">document to be compared</param>
+        /// <param name="toList">list of documents the "d" document will be compared to</param>
+        /// <returns>if it finds a document in "toList" that matches the ID of "d", 
+        /// it returns the newest of those 2 documents. If "d" does not exist in "toList" it returns null
+        /// to let</returns>
         private Document CheckDocumentInList(Document d, List<Document> toList)
         {
             foreach (Document i in toList)
