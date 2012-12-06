@@ -9,8 +9,10 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
+
             Engine engine = new Engine();//Engine.Instance;
             DBConnector DBCon = DBConnector.Instance;
+
 
             User user = engine.userhandler.GetUser("mrT", "1234");
             Document document1 = engine.userhandler.docHandler.OpenDocument(15, user);

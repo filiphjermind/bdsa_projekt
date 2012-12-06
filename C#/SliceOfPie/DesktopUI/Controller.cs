@@ -52,5 +52,35 @@ namespace DesktopUI
         {
             Model.GetInstance().Synchronize(username,password);
         }
+
+        internal void ShareDocuments(string[] users, string[] documents, string permission)
+        {
+            Model.GetInstance().ShareDocuments(users, documents, permission);
+        }
+
+        internal void ShareFolder(string[] users, string folder, string permission)
+        {
+            Model.GetInstance().ShareFolder(users, folder, permission);
+        }
+
+        internal string[] GetInvitations()
+        {
+            return Model.GetInstance().GetInvitations();
+        }
+
+        internal void AcceptInvitations(string[] accepts)
+        {
+            Model.GetInstance().AcceptInvitations(accepts);
+        }
+
+        internal void SetCredentials(string user, string pass)
+        {
+            Model.GetInstance().SetCredentials(user, pass);
+        }
+
+        internal void IgnoreInvitations(string[] ignorations)
+        {
+            Model.GetInstance().IgnoreInvitaions(ignorations);
+        }
     }
 }

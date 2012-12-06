@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using SliceOfPie;
 
 namespace DesktopUI
 {
@@ -14,7 +15,7 @@ namespace DesktopUI
     {
         private DirectoryInfo CurrentDirectoryInfo;
         private string currentPath;
-        
+        private static TextBox staticDocumentText;
         public View()
         {
             
@@ -22,6 +23,24 @@ namespace DesktopUI
             rootDirectory.Text = @"C:\Users\" + Environment.UserName + @"\Documents\SliceOfPie";
             PopulateTreeView();
             ShowNoFileMessage();
+            staticDocumentText = DocumentContent;
+            initComponents();
+
+        }
+
+        private void initComponents()
+        {
+           //share document
+            comboBoxShareDocument.Text = Permission.Permissions.View.ToString();
+            comboBoxShareDocument.Items.Add(Permission.Permissions.View);
+            comboBoxShareDocument.Items.Add(Permission.Permissions.Edit);
+            comboBoxShareDocument.Items.Add(Permission.Permissions.Delete);
+
+            //share folder
+            comboBoxShareFolder.Text = Permission.Permissions.View.ToString();
+            comboBoxShareFolder.Items.Add(Permission.Permissions.View);
+            comboBoxShareFolder.Items.Add(Permission.Permissions.Edit);
+            comboBoxShareFolder.Items.Add(Permission.Permissions.Delete);
         }
         /// <summary>
         /// This method populates the tree based on which root directory the user
@@ -129,6 +148,7 @@ namespace DesktopUI
         private void onClickUpdateSettings(object sender, EventArgs e)
         {
             PopulateTreeView();
+            Controller.GetInstance().SetCredentials(usernameTextBox.Text,passwordTextBox.Text);
         }
 
 
@@ -167,12 +187,26 @@ namespace DesktopUI
 
         private void onClickShareDocumentButton(object sender, EventArgs e)
         {
-
+            if (listView1.SelectedItems.Count == 0 || shareDocumentText.Text == "") return;
+            string t = shareDocumentText.Text;
+            string[] users = t.Split(',');
+            string[] documents = new string[listView1.SelectedItems.Count];
+            for (int i = 0; i < listView1.SelectedItems.Count; i++)
+            {
+                documents[i] = CurrentDirectoryInfo.FullName + @"\" + listView1.SelectedItems[i].Text;
+            }
+            Controller.GetInstance().ShareDocuments(users,documents,comboBoxShareDocument.Text);
+            shareDocumentText.Text = "";
         }
 
         private void OnClickShareFolderButton(object sender, EventArgs e)
         {
-
+            if (treeView1.SelectedNode == null || shareDocumentText.Text == "") return;
+            string t = shareFolderText.Text;
+            string[] users = t.Split(',');
+            string folder = ((DirectoryInfo)treeView1.SelectedNode.Tag).FullName;
+            Controller.GetInstance().ShareFolder(users, folder,comboBoxShareFolder.Text);
+            shareFolderText.Text = "";
         }
 
         private void OnClickSynchronize(object sender, EventArgs e)
@@ -258,5 +292,47 @@ namespace DesktopUI
             currentPath = null;
         }
 
+        /// <summary>
+        /// This method is only for develop phase. It works as a substitute for a console.
+        /// </summary>
+        public static void WriteToDocumentTextBox(string s)
+        {
+            staticDocumentText.Text = s;
+        }
+
+        private void onClickAcceptInvitations(object sender, EventArgs e)
+        {
+            if (listViewInvitations.SelectedItems.Count == 0) return;
+            string[] accepts = new string[listViewInvitations.SelectedItems.Count];
+            for (int i = 0 ; i < listViewInvitations.SelectedItems.Count ; i++)
+            {
+                accepts[i] = listViewInvitations.SelectedItems[i].Text;
+            }
+            Controller.GetInstance().AcceptInvitations(accepts);
+            onClickUpdateInvitations(null, null);
+        }
+
+        private void onClickIgnoreInvitations(object sender, EventArgs e)
+        {
+            if (listViewInvitations.SelectedItems.Count == 0) return;
+            string[] ignorations = new string[listViewInvitations.SelectedItems.Count];
+            for (int i = 0; i < listViewInvitations.SelectedItems.Count; i++)
+            {
+                ignorations[i] = listViewInvitations.SelectedItems[i].Text;
+            }
+            Controller.GetInstance().IgnoreInvitations(ignorations);
+
+            onClickUpdateInvitations(null, null);
+        }
+
+        private void onClickUpdateInvitations(object sender, EventArgs e)
+        {
+            listViewInvitations.Clear();
+            string[] invitations = Controller.GetInstance().GetInvitations();
+            foreach(string s in invitations){
+                listViewInvitations.Items.Add(new ListViewItem(s));
+            }
+      
+        }
     }
 }
