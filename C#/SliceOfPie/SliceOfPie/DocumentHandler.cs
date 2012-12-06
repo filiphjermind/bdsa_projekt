@@ -123,19 +123,24 @@ namespace SliceOfPie
         /// Allows the owner of the document to share the
         /// document with other users.
         /// </summary>
+        /// <param name="file">File path of file</param>
+        /// <param name="perm">Enumerated permition</param>
         /// <param name="users">List of users to share with.</param>
         public void ShareDocument(string file, Permission.Permissions perm ,params User[] users)
         {
-            string[] splitFile = splitString(file);
+            //string[] splitFile = splitString(file);
             Document sharedDocument;
             foreach (User i in users)
-            sharedDocument = new Document(i, file, perm);
-
-            //foreach user
+            documents.Add(sharedDocument = new Document(i, file, perm));
         }
 
         /********************** PRIVATE HELPER METHODS ******************************/
 
+        /// <summary>
+        /// Splits a string at every "/" and returns an array of strings
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
         private string[] splitString(string input)
         {
             string[] tmp = input.Split('/');

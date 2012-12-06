@@ -12,7 +12,6 @@ namespace SliceOfPie
         private static DBConnector instance;
         private MySqlConnection connection;
         private string connectionString;
-        //private Engine engine = Engine.Instance;
 
         public static DBConnector Instance
         {
@@ -107,8 +106,7 @@ namespace SliceOfPie
 
             string query = "SELECT id FROM document WHERE owner='"+user.username +"'";
 
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataReader reader = ExecuteReader(query);
 
             while (reader.Read()) idList.Add((int)reader["id"]);
 
@@ -163,8 +161,7 @@ namespace SliceOfPie
 
             string query = "SELECT * FROM user WHERE username='" + username + "'";
 
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataReader reader = ExecuteReader(query);
 
             try
             {
@@ -191,8 +188,7 @@ namespace SliceOfPie
 
             string query = "SELECT username FROM user";
 
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataReader reader = ExecuteReader(query);
 
             while (reader.Read())
             {
@@ -213,8 +209,7 @@ namespace SliceOfPie
 
             string path = "";
 
-            MySqlCommand cmd = new MySqlCommand(query, connection);
-            MySqlDataReader reader = cmd.ExecuteReader();
+            MySqlDataReader reader = ExecuteReader(query);
 
             while (reader.Read())
             { 
@@ -224,9 +219,30 @@ namespace SliceOfPie
             return path;
         }
 
-        public bool CheckPermission(User user, Document doc)
+
+
+        public Permission.Permissions CheckPermission(User user, Document doc)
         {
-            return false;
+            string query = "SELECT permission FROM userdocument WHERE userID='"+user.id+"' and documentID='"+doc.documentId+"'";
+
+            string incPerm = "None";
+
+            MySqlDataReader reader = ExecuteReader(query);            
+
+            while (reader.Read())
+            {
+                incPerm = reader["permission"] + "";
+            }
+
+            switch (incPerm)
+            {
+                case "None": return Permission.Permissions.None;
+                case "View": return Permission.Permissions.View;
+                case "Edit": return Permission.Permissions.Edit;
+                case "Delete": return Permission.Permissions.Delete;
+                break;
+                default: return Permission.Permissions.None; Console.WriteLine("corrupt DB, check data"); break;
+            }
         }
 
         /// <summary>
@@ -243,6 +259,20 @@ namespace SliceOfPie
                 cmd.ExecuteNonQuery();
                 CloseConnection();
             }
+        }
+
+        private MySqlDataReader ExecuteReader(string query)
+        {
+            if (connection.State != ConnectionState.Open) OpenConnection();
+            if (connection.State != ConnectionState.Open) ErrorMessage("Cannot open connection to server");
+            else
+            {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                //CloseConnection();
+                return reader;
+            }
+            return null;
         }
 
         private void ErrorMessage(string error)

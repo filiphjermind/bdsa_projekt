@@ -18,6 +18,14 @@ namespace SliceOfPie
             Directory.CreateDirectory(dir);
         }
 
+        public void DeleteUserRootFolder(string username)
+        {
+            string dir = "root/" + username;
+            if (Directory.Exists(dir)) {
+                Directory.Delete(dir);
+            }
+        }
+
         /// <summary>
         /// Creates a new directory.
         /// </summary>
@@ -26,6 +34,15 @@ namespace SliceOfPie
         {
             string root = "root/" + user.username;
             Directory.CreateDirectory(root + "/" + path);
+        }
+
+        public void DeleteFolder(User user, string path)
+        {
+            string dir = "root/" + user.username + "/" + path;
+            if (Directory.Exists(dir))
+            {
+                Directory.Delete(dir);
+            }
         }
     }
 }

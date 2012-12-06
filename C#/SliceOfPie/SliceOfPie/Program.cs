@@ -11,8 +11,6 @@ namespace SliceOfPie
         {
             Engine engine = new Engine();//Engine.Instance;
 
-            //DocumentHandler docH = new DocumentHandler();
-
             Console.WriteLine("should've been run now");
 
             //User user1 = engine.userhandler.NewUser("Mr T", "mrT", "1234");
