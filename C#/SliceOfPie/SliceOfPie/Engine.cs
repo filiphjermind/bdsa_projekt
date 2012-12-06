@@ -24,7 +24,7 @@ namespace SliceOfPie
         public UserAuth userAuth;
 
         // Handles functionality related to documents
-        public DocumentHandler docHandler;
+        //public DocumentHandler docHandler;
 
         /*public static Engine Instance
         {
@@ -50,7 +50,7 @@ namespace SliceOfPie
             dbCon = DBConnector.Instance;
             folder = new Folder();
             userhandler = new UserHandler();
-            docHandler = new DocumentHandler();
+            //docHandler = new DocumentHandler();
             userAuth = new UserAuth();
 
             // Check if root directory exists
