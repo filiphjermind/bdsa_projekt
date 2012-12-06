@@ -8,8 +8,7 @@ namespace SliceOfPie
 {
     public class DocumentHandler
     {
-        // Stores the users document objects.
-        public List<Document> documents = new List<Document>();
+        
 
         // Handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
@@ -25,7 +24,7 @@ namespace SliceOfPie
         {
             // NOTE!!!
             Document doc = new Document(owner);
-            AddDocToList(doc);
+            AddDocToList(owner, doc);
             return doc;
         }
 
@@ -85,7 +84,7 @@ namespace SliceOfPie
             Document doc = NewDocObject(user, id, content);
 
             // Add document to users document list
-            AddDocToList(doc);
+            AddDocToList(user, doc);
 
             // Return the document object.
             return doc;
@@ -99,7 +98,12 @@ namespace SliceOfPie
         /// <returns>List of all documents that belong to the user.</returns>
         public List<Document> GetAllUsersDocuments(User user)
         {
-            return null;
+            List<int> documentIDList = dbCon.SelectDocumentsFromUser(user);
+            List<Document> usersDocuments = new List<Document>();
+
+            foreach (int i in documentIDList) usersDocuments.Add(OpenDocument(i, user));
+
+            return usersDocuments;
         }
 
         /// <summary>
@@ -126,15 +130,49 @@ namespace SliceOfPie
         /// <param name="file">File path of file</param>
         /// <param name="perm">Enumerated permition</param>
         /// <param name="users">List of users to share with.</param>
-        public void ShareDocument(string file, Permission.Permissions perm ,params User[] users)
+        public void ShareDocument(User currentUser, string file, Permission.Permissions perm ,params User[] users)
         {
             //string[] splitFile = splitString(file);
             Document sharedDocument;
             foreach (User i in users)
-            documents.Add(sharedDocument = new Document(i, file, perm));
+            currentUser.documents.Add(sharedDocument = new Document(i, file, perm));
+        }
+
+        public List<Document> OfflineSynchronization(List<Document> incDocuments, User user)
+        {
+            List<Document> newDocumentList = new List<Document>();
+            List<Document> usersDocumentOnServer = GetAllUsersDocuments(user);
+
+            newDocumentList = usersDocumentOnServer;
+            CopyNewEntities(incDocuments, newDocumentList);
+
+
+            return newDocumentList;
         }
 
         /********************** PRIVATE HELPER METHODS ******************************/
+
+        private List<Document> CopyNewEntities(List<Document> fromList, List<Document> toList)
+        {
+            bool inList = false;
+            foreach (Document d in fromList)
+            {
+                inList = CheckDocumentInList(d, toList);
+                if (inList == false) toList.Add(d);
+            }
+
+
+            return toList;
+        }
+
+        private bool CheckDocumentInList(Document d, List<Document> toList)
+        {
+            foreach (Document i in toList)
+            {
+                if (d.documentId == i.documentId) return true;
+            }
+            return false;
+        }
 
         /// <summary>
         /// Splits a string at every "/" and returns an array of strings
@@ -152,9 +190,9 @@ namespace SliceOfPie
         /// Adds a document to the users list of documents.
         /// </summary>
         /// <param name="doc">The document to be added.</param>
-        private void AddDocToList(Document doc)
+        private void AddDocToList(User user, Document doc)
         {
-            documents.Add(doc);
+            user.documents.Add(doc);
         }
 
         /// <summary>

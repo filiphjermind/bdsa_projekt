@@ -13,7 +13,7 @@ namespace SliceOfPie
             DBConnector DBCon = DBConnector.Instance;
 
             User user = engine.userhandler.GetUser("mrT", "1234");
-            Document document1 = engine.docHandler.OpenDocument(15, user);
+            Document document1 = engine.userhandler.docHandler.OpenDocument(15, user);
             
             
             //DBCon.InsertUserDocument(user, document1, Permission.Permissions.Edit);

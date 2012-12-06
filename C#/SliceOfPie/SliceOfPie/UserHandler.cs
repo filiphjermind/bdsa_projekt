@@ -9,6 +9,7 @@ namespace SliceOfPie
     {
         // Instance of the dbconnector, handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
+        public DocumentHandler docHandler = new DocumentHandler();
 
         // Handles the creation of folders
         private Folder folder = new Folder();
@@ -54,6 +55,8 @@ namespace SliceOfPie
 
             // Create user object.
             User user = new User(newId, newName, newUsername, newPassword);
+
+
 
             // Return user object.
             return user;

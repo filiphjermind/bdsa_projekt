@@ -34,6 +34,9 @@ namespace SliceOfPie
             set;
         }
 
+        // Stores the users document objects.
+        public List<Document> documents = new List<Document>();
+
         // Used when creating a new user.
         public User(string name, string username, string password)
         {

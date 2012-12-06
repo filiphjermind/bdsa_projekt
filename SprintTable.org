@@ -71,7 +71,7 @@
 |--------------------------+------------------------------------------+-----------+----------------------------+--------|
 | Offline sync             | Client to server connection              | Filip     |                            |        |
 |                          | Server to client connection              | Bergar    |                            |        |
-|                          | Server handling new data (Spimple)       | Morten    |                            |        |
+|                          | Server handling new data (Spimple)       | Morten    |                            | Done   |
 |                          | Client accepts all                       | Filip     |                            |        |
 |                          | Server handling new data (Advanced)      |           |                            |        |
 |                          | Server simple comparision of doc history |           |                            |        |

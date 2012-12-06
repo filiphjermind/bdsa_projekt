@@ -245,7 +245,6 @@ namespace SliceOfPie
                 case "View": return Permission.Permissions.View;
                 case "Edit": return Permission.Permissions.Edit;
                 case "Delete": return Permission.Permissions.Delete;
-                break;
                 default: return Permission.Permissions.None; Console.WriteLine("corrupt DB, check data"); break;
             }
         }
