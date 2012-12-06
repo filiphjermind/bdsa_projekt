@@ -73,8 +73,8 @@
 |                          | Server to client connection              | Bergar    |                            |        |
 |                          | Server handling new data (Spimple)       | Morten    |                            | Done   |
 |                          | Client accepts all                       | Filip     |                            |        |
-|                          | Server handling new data (Advanced)      |           |                            |        |
-|                          | Server simple comparision of doc history |           |                            |        |
+|                          | Server handling new data (Advanced)      | Morten    |                            | Done   |
+|                          | Server simple comparision of doc history | Morten    |                            | Done   |
 |                          | Server merge of documents.               |           |                            |        |
 |--------------------------+------------------------------------------+-----------+----------------------------+--------|
 | Web client               | Implement web client                     | Bergar    |                            |        |
