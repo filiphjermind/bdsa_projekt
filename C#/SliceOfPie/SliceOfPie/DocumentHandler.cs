@@ -55,6 +55,7 @@ namespace SliceOfPie
                 }
             }
 
+            doc.lastChanged = DateTime.Now;
             dbCon.InsertDocument(owner, filepath);
         }
 
@@ -154,26 +155,31 @@ namespace SliceOfPie
 
         private List<Document> CopyNewEntities(List<Document> fromList, List<Document> toList)
         {
-            bool inList = false;
             foreach (Document d in fromList)
             {
-                inList = CheckDocumentInList(d, toList);
-                if (inList == false) toList.Add(d);
+                Document tmp = CheckDocumentInList(d, toList);
+                if (tmp == null) toList.Add(d);
             }
 
 
             return toList;
         }
 
-        private bool CheckDocumentInList(Document d, List<Document> toList)
+        private Document CheckDocumentInList(Document d, List<Document> toList)
         {
             foreach (Document i in toList)
             {
-                if (d.documentId == i.documentId) return true;
+                if (d.documentId == i.documentId) return FindNewestDocument(i, d);
             }
-            return false;
+            return null;
         }
 
+        private Document FindNewestDocument(Document doc1, Document doc2)
+        {
+            if (doc1.lastChanged.CompareTo(doc2.lastChanged) < 0) return doc2;
+            else if (doc1.lastChanged.CompareTo(doc2.lastChanged) > 0) return doc1;
+            else return null;
+        }
         /// <summary>
         /// Splits a string at every "/" and returns an array of strings
         /// </summary>

@@ -18,6 +18,5 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\b
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.csprojResolveAssemblyReference.cache
 =======
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.csprojResolveAssemblyReference.cache
-C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.csprojResolveAssemblyReference.cache
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.csprojResolveAssemblyReference.cache
 >>>>>>> 2ac7565178098e023ad6d318aaaec4b9a383e115
