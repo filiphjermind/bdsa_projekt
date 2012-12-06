@@ -55,6 +55,8 @@
             this.CreateFolderButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.comboBoxShareFolder = new System.Windows.Forms.ComboBox();
+            this.comboBoxShareDocument = new System.Windows.Forms.ComboBox();
             this.shareFolderText = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.shareDocumentText = new System.Windows.Forms.TextBox();
@@ -64,14 +66,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.DeleteDocumentButton = new System.Windows.Forms.Button();
             this.listViewInvitations = new System.Windows.Forms.ListView();
+            this.invitationColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.updateInvitationsButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.acceptButton = new System.Windows.Forms.Button();
             this.deleteFolderButton = new System.Windows.Forms.Button();
-            this.invitationColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.comboBoxShareDocument = new System.Windows.Forms.ComboBox();
-            this.comboBoxShareFolder = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -332,6 +332,22 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Share";
             // 
+            // comboBoxShareFolder
+            // 
+            this.comboBoxShareFolder.FormattingEnabled = true;
+            this.comboBoxShareFolder.Location = new System.Drawing.Point(177, 49);
+            this.comboBoxShareFolder.Name = "comboBoxShareFolder";
+            this.comboBoxShareFolder.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxShareFolder.TabIndex = 21;
+            // 
+            // comboBoxShareDocument
+            // 
+            this.comboBoxShareDocument.FormattingEnabled = true;
+            this.comboBoxShareDocument.Location = new System.Drawing.Point(177, 19);
+            this.comboBoxShareDocument.Name = "comboBoxShareDocument";
+            this.comboBoxShareDocument.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxShareDocument.TabIndex = 20;
+            // 
             // shareFolderText
             // 
             this.shareFolderText.Location = new System.Drawing.Point(49, 50);
@@ -415,6 +431,11 @@
             this.listViewInvitations.UseCompatibleStateImageBehavior = false;
             this.listViewInvitations.View = System.Windows.Forms.View.Tile;
             // 
+            // invitationColumn
+            // 
+            this.invitationColumn.Text = "invitations";
+            this.invitationColumn.Width = 91;
+            // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.updateInvitationsButton);
@@ -467,27 +488,6 @@
             this.deleteFolderButton.Text = "Delete Folder";
             this.deleteFolderButton.UseVisualStyleBackColor = true;
             this.deleteFolderButton.Click += new System.EventHandler(this.onClickDeleteFolderButton);
-            // 
-            // invitationColumn
-            // 
-            this.invitationColumn.Text = "invitations";
-            this.invitationColumn.Width = 91;
-            // 
-            // comboBoxShareDocument
-            // 
-            this.comboBoxShareDocument.FormattingEnabled = true;
-            this.comboBoxShareDocument.Location = new System.Drawing.Point(177, 19);
-            this.comboBoxShareDocument.Name = "comboBoxShareDocument";
-            this.comboBoxShareDocument.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxShareDocument.TabIndex = 20;
-            // 
-            // comboBoxShareFolder
-            // 
-            this.comboBoxShareFolder.FormattingEnabled = true;
-            this.comboBoxShareFolder.Location = new System.Drawing.Point(177, 49);
-            this.comboBoxShareFolder.Name = "comboBoxShareFolder";
-            this.comboBoxShareFolder.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxShareFolder.TabIndex = 21;
             // 
             // View
             // 

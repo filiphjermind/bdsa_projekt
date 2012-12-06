@@ -3,11 +3,12 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\We
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.dll
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.pdb
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
-<<<<<<< HEAD
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\WebUI.dll
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\WebUI.pdb
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.dll
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.pdb
-=======
->>>>>>> 5c851ad96043e44836c48a0be3469dd5d8be744a
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\WebUI.dll
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\WebUI.pdb
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.dll
+C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.pdb

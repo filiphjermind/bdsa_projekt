@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using SliceOfPie;
 
 namespace DesktopUI
 {
@@ -23,7 +24,23 @@ namespace DesktopUI
             PopulateTreeView();
             ShowNoFileMessage();
             staticDocumentText = DocumentContent;
+            initComponents();
 
+        }
+
+        private void initComponents()
+        {
+           //share document
+            comboBoxShareDocument.Text = Permission.Permissions.View.ToString();
+            comboBoxShareDocument.Items.Add(Permission.Permissions.View);
+            comboBoxShareDocument.Items.Add(Permission.Permissions.Edit);
+            comboBoxShareDocument.Items.Add(Permission.Permissions.Delete);
+
+            //share folder
+            comboBoxShareFolder.Text = Permission.Permissions.View.ToString();
+            comboBoxShareFolder.Items.Add(Permission.Permissions.View);
+            comboBoxShareFolder.Items.Add(Permission.Permissions.Edit);
+            comboBoxShareFolder.Items.Add(Permission.Permissions.Delete);
         }
         /// <summary>
         /// This method populates the tree based on which root directory the user
@@ -178,7 +195,7 @@ namespace DesktopUI
             {
                 documents[i] = CurrentDirectoryInfo.FullName + @"\" + listView1.SelectedItems[i].Text;
             }
-            Controller.GetInstance().ShareDocuments(users,documents);
+            Controller.GetInstance().ShareDocuments(users,documents,comboBoxShareDocument.Text);
             shareDocumentText.Text = "";
         }
 
@@ -188,7 +205,7 @@ namespace DesktopUI
             string t = shareFolderText.Text;
             string[] users = t.Split(',');
             string folder = ((DirectoryInfo)treeView1.SelectedNode.Tag).FullName;
-            Controller.GetInstance().ShareFolder(users, folder);
+            Controller.GetInstance().ShareFolder(users, folder,comboBoxShareFolder.Text);
             shareFolderText.Text = "";
         }
 

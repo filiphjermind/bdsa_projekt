@@ -6,7 +6,6 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTe
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPie.exe
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\MySql.Data.dll
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPie.pdb
-<<<<<<< HEAD
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPieTest.dll
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPieTest.pdb
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPie.exe
@@ -15,7 +14,6 @@ C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\De
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.csprojResolveAssemblyReference.cache
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.dll
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.pdb
-=======
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPieTest.dll
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPieTest.pdb
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\Debug\SliceOfPie.exe
@@ -23,4 +21,3 @@ C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\bin\D
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.csprojResolveAssemblyReference.cache
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.dll
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPieTest\obj\Debug\SliceOfPieTest.pdb
->>>>>>> 62c0e5c429c26ca08ad288f09bcd0108faaf8782

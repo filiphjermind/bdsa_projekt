@@ -53,14 +53,14 @@ namespace DesktopUI
             Model.GetInstance().Synchronize(username,password);
         }
 
-        internal void ShareDocuments(string[] users, string[] documents)
+        internal void ShareDocuments(string[] users, string[] documents, string permission)
         {
-            Model.GetInstance().ShareDocuments(users, documents);
+            Model.GetInstance().ShareDocuments(users, documents, permission);
         }
 
-        internal void ShareFolder(string[] users, string folder)
+        internal void ShareFolder(string[] users, string folder, string permission)
         {
-            Model.GetInstance().ShareFolder(users, folder);
+            Model.GetInstance().ShareFolder(users, folder, permission);
         }
 
         internal string[] GetInvitations()

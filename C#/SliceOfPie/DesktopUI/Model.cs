@@ -60,12 +60,12 @@ namespace DesktopUI
             
         }
 
-        internal void ShareDocuments(string[] users, string[] documents)
+        internal void ShareDocuments(string[] users, string[] documents, string permission)
         {
             
         }
 
-        internal void ShareFolder(string[] users, string folder)
+        internal void ShareFolder(string[] users, string folder, string permission)
         {
             
         }
