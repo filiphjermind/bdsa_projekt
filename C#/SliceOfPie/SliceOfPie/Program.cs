@@ -11,7 +11,7 @@ namespace SliceOfPie
         {
             Engine engine = new Engine();//Engine.Instance;
 
-            DocumentHandler docH = new DocumentHandler();
+            //DocumentHandler docH = new DocumentHandler();
 
             Console.WriteLine("should've been run now");
 
@@ -21,11 +21,13 @@ namespace SliceOfPie
 
             //engine.docHandler.SaveDocument(user1, doc, "TestFile2.html");
 
-            User user1 = engine.userhandler.GetUser("jetli", "12345");
+            //User user1 = engine.userhandler.GetUser("jetli", "12345");
 
-            Console.WriteLine(user1.name);
-            Console.WriteLine(user1.username);
-            Console.WriteLine(user1.password);
+            //Console.WriteLine(user1.name);
+            //Console.WriteLine(user1.username);
+            //Console.WriteLine(user1.password);
+
+            User user = engine.userhandler.NewUser("Test user", "testuser", "test123");
 
 
             Console.ReadKey();

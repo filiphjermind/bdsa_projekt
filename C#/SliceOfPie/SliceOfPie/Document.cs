@@ -44,7 +44,7 @@ namespace SliceOfPie
             set;
         }
 
-        public Permission permission
+        public Permission.Permissions permission
         {
             get;
             set;
@@ -58,7 +58,7 @@ namespace SliceOfPie
             this.content = content;
         }
 
-        public Document(User owner, string file, Permission perm)
+        public Document(User owner, string file, Permission.Permissions perm)
         {
             this.owner = owner;
             this.permission = permission;

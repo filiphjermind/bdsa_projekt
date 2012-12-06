@@ -124,7 +124,7 @@ namespace SliceOfPie
         /// document with other users.
         /// </summary>
         /// <param name="users">List of users to share with.</param>
-        public void ShareDocument(string file, Permission perm ,params User[] users)
+        public void ShareDocument(string file, Permission.Permissions perm ,params User[] users)
         {
             string[] splitFile = splitString(file);
             Document sharedDocument;

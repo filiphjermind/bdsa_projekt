@@ -8,7 +8,7 @@ namespace SliceOfPie
     public static class Permission
     {
 
-        public static enum Permission { View, Edit, Delete}
+        public enum Permissions { View, Edit, Delete}
 
     }
 }
