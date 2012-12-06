@@ -35,11 +35,15 @@ namespace SliceOfPie
             }
         }*/
 
+
         public Engine()
         {
             Initialize();
         }
 
+        /// <summary>
+        /// Initializes the engine class.
+        /// </summary>
         private void Initialize()
         { 
             // Initializes all other classes.

@@ -42,7 +42,7 @@ namespace SliceOfPie
             this.username = username;
         }
 
-        // Used when creating a user object from the database.
+        // Used when creating a user object from an existing user stored in the database.
         public User(int id, string name, string username, string password)
         {
             this.id = id;
