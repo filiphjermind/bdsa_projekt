@@ -123,11 +123,19 @@ namespace SliceOfPie
         /// document with other users.
         /// </summary>
         /// <param name="users">List of users to share with.</param>
-        public void ShareDocument(params User[] users)
+        public void ShareDocument(string file, params User[] users)
         { 
+
         }
 
         /********************** PRIVATE HELPER METHODS ******************************/
+
+        private List<string> splitString(string input)
+        {
+            List<string> output = new List<string>();
+
+            return output;
+        }
 
         /// <summary>
         /// Adds a document to the users list of documents.
