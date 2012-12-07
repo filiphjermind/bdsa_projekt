@@ -1,17 +1,19 @@
 ﻿body {
     background-color: red;
-    padding: 0px;
-    margin: auto;
     margin-top: 30px;
+}
+#main {
     width: 1000px;
     height: 1000px;
+    border: 1px solid black;
+    margin: auto;
 }
 #menuBar {
     width: 1000px;
     height: 30px;
     margin: 0px;
     padding: 0px;
-    background-color: blue;
+    background-color: #433A4F;
 }
 #fileExplorer {
     float: left;

@@ -56,6 +56,12 @@ namespace SliceOfPie
             set;
         }
 
+        public string path
+        {
+            get;
+            set;
+        }
+
         // Primary
         public Document(User owner, int id, string content)
         {
@@ -63,6 +69,16 @@ namespace SliceOfPie
             this.documentId = id;
             this.content = content;
             this.lastChanged = DateTime.Now;
+        }
+
+        // WEB
+        public Document(User owner, int id, string content, string path)
+        {
+            this.owner = owner;
+            this.documentId = id;
+            this.content = content;
+            this.lastChanged = DateTime.Now;
+            this.path = path;
         }
 
         public Document(User owner, string file, Permission.Permissions perm)

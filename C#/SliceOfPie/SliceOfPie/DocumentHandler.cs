@@ -82,7 +82,7 @@ namespace SliceOfPie
             }
 
             // Create new document object.
-            Document doc = NewDocObject(user, id, content);
+            Document doc = NewDocObject(user, id, content, path);
 
             // Add document to users document list
             AddDocToList(user, doc);
@@ -238,9 +238,9 @@ namespace SliceOfPie
         /// <param name="id">Id of the document.</param>
         /// <param name="content">Content of the document file.</param>
         /// <returns>The new document object.</returns>
-        private Document NewDocObject(User owner, int id, string content)
+        private Document NewDocObject(User owner, int id, string content, string path)
         {
-            Document doc = new Document(owner, id, content);
+            Document doc = new Document(owner, id, content, path);
 
             return doc;
         }
