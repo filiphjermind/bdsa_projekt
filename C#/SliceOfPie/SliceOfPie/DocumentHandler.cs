@@ -8,10 +8,11 @@ namespace SliceOfPie
 {
     public class DocumentHandler
     {
-        
-
         // Handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
+
+        // Handles all folder related actions
+        private Folder folder = new Folder();
 
         /// <summary>
         /// Creates a new document.
@@ -66,29 +67,59 @@ namespace SliceOfPie
         /// <returns>The document</returns>
         public Document OpenDocument(int id, User user)
         {
+            string path = "";
             // Get file path from database
-            string path = dbCon.GetDocument(id, user.username);
+            path = dbCon.GetDocument(id, user.username);
 
-            // Open file
-            string[] lines = File.ReadAllLines(path);
-
-            // Content of the file.
-            string content = "";
-
-            // Convert lines to string
-            for (int i = 0; i < lines.Length; i++)
+            // Check if path is empty,
+            if (path != "")
             {
-                content += lines[i] + "\n";
+                // Check if path exists
+                if (!Directory.Exists(path))
+                {
+                    // split the path to eliminate the "root/username"
+                    string[] splitPath = path.Split('/');
+
+                    // Clear the path variable in order to rebuild it without the "root/username"
+                    path = "";
+                    
+                    // Rebuild the path.
+                    for (int i = 2; i < splitPath.Length; i++)
+                    {
+                        path += splitPath[i] + "/";
+                    }
+
+                    // Create the path
+                    folder.CreateNewFolder(user, path);
+                }
+
+                // Check if the file exists.
+                if (File.Exists(path))
+                {
+                    // Open file
+                    string[] lines = File.ReadAllLines(path);
+
+                    // Content of the file.
+                    string content = "";
+
+                    // Convert lines to string
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        content += lines[i] + "\n";
+                    }
+
+                    // Create new document object.
+                    Document doc = NewDocObject(user, id, content, path);
+
+                    // Add document to users document list
+                    AddDocToList(user, doc);
+
+                    // Return the document object.
+                    return doc;
+                }
+                else return null;
             }
-
-            // Create new document object.
-            Document doc = NewDocObject(user, id, content, path);
-
-            // Add document to users document list
-            AddDocToList(user, doc);
-
-            // Return the document object.
-            return doc;
+            else return null;
         }
 
         /// <summary>

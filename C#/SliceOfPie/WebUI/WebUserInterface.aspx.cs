@@ -16,18 +16,41 @@ namespace WebUI
         User user; 
         protected void Page_Load(object sender, EventArgs e)
         {
-            user = engine.userhandler.GetUser("jetli", "12345");
+            user = engine.userhandler.GetUser("MrT", "1234");
 
             List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
 
-            foreach (Document d in docs)
+            // Check if the document list is empty
+            if (docs != null) 
             {
-                textArea.Text = d.content;
+                foreach (Document d in docs)
+                {
+                    // Check if the document is empty.
+                    if (d != null)
+                    {
+                        textArea.Text = d.content;
+                    }
+                }
             }
 
-            PopulateTree(user);
+            //PopulateTree(user);
+
+            //foreach (TreeNode n in FileTree.Nodes)
+            //{
+            //    n.SelectAction = TreeNodeSelectAction.SelectExpand;
+            //}
+
+            
+            
 
         }
+
+        protected void Populate(object sender, EventArgs e)
+        {
+            PopulateTree(user);
+        }
+
+
 
         /// <summary>
         /// Fills the fileTree with all files / folders that
@@ -39,6 +62,7 @@ namespace WebUI
             // Get user root dir, create and add it to the tree.
             DirectoryInfo rootDir = new DirectoryInfo("root/" + user.username);
             TreeNode rootNode = new TreeNode(rootDir.Name, rootDir.FullName);
+            rootNode.SelectAction = TreeNodeSelectAction.SelectExpand;
             FileTree.Nodes.Add(rootNode);
 
             // Get all users documents
@@ -62,7 +86,11 @@ namespace WebUI
 
             foreach (Document d in documents)
             {
-                docFilePath.Add(d.path);
+                // Check if the document is empty.
+                if (d != null)
+                {
+                    docFilePath.Add(d.path);
+                }
             }
 
             return docFilePath;
@@ -99,16 +127,20 @@ namespace WebUI
         /// <param name="currentNode">Current node of the fileTree</param>
         private void TraverseTree(DirectoryInfo currentDir, TreeNode currentNode)
         {
+            // Add all files to the fileTree
             foreach (FileInfo file in currentDir.GetFiles())
             {
                 TreeNode node = new TreeNode(file.Name, file.FullName);
+                node.SelectAction = TreeNodeSelectAction.Select;
                 currentNode.ChildNodes.Add(node);
             }
-            //loop through each sub-directory in the current one
+
+            // add all directories / subdirectories to the fileTree
             foreach (DirectoryInfo dir in currentDir.GetDirectories())
             {
                 //create node and add to the tree view
                 TreeNode node = new TreeNode(dir.Name, dir.FullName);
+                node.SelectAction = TreeNodeSelectAction.SelectExpand;
                 currentNode.ChildNodes.Add(node);
                 //recursively call same method to go down the next level of the tree
                 TraverseTree(dir, node);
@@ -117,9 +149,7 @@ namespace WebUI
 
         protected void Click(object sender, EventArgs e)
         {
-            textArea.Text = "Clicked: " + sender.ToString();
+            textArea.Text = "Clicked: ";
         }
-
-
     }
 }
