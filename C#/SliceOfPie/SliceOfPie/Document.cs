@@ -63,8 +63,9 @@ namespace SliceOfPie
         }
 
         // Primary
-        public Document(User owner, int id, string content)
+        public Document(User owner, int id, string content, string path, Permission.Permissions perm)
         {
+            this.permission = perm;
             this.owner = owner;
             this.documentId = id;
             this.content = content;

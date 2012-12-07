@@ -54,7 +54,7 @@ namespace SliceOfPieTest
             User userOwner = engine.userhandler.GetUser("mrT", "1234");
             User user1 = engine.userhandler.GetUser("chuckn", "1234");
 
-
+            Document testDoc = new Document(
         }
     }
 }
