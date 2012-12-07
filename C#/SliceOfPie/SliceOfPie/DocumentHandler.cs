@@ -8,8 +8,7 @@ namespace SliceOfPie
 {
     public class DocumentHandler
     {
-        // Stores the users document objects.
-        public List<Document> documents = new List<Document>();
+        
 
         // Handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
@@ -25,7 +24,7 @@ namespace SliceOfPie
         {
             // NOTE!!!
             Document doc = new Document(owner);
-            AddDocToList(doc);
+            AddDocToList(owner, doc);
             return doc;
         }
 
@@ -56,6 +55,7 @@ namespace SliceOfPie
                 }
             }
 
+            doc.lastChanged = DateTime.Now;
             dbCon.InsertDocument(owner, filepath);
         }
 
@@ -82,10 +82,10 @@ namespace SliceOfPie
             }
 
             // Create new document object.
-            Document doc = NewDocObject(user, id, content);
+            Document doc = NewDocObject(user, id, content, path);
 
             // Add document to users document list
-            AddDocToList(doc);
+            AddDocToList(user, doc);
 
             // Return the document object.
             return doc;
@@ -99,7 +99,12 @@ namespace SliceOfPie
         /// <returns>List of all documents that belong to the user.</returns>
         public List<Document> GetAllUsersDocuments(User user)
         {
-            return null;
+            List<int> documentIDList = dbCon.SelectDocumentsFromUser(user);
+            List<Document> usersDocuments = new List<Document>();
+
+            foreach (int i in documentIDList) usersDocuments.Add(OpenDocument(i, user));
+
+            return usersDocuments;
         }
 
         /// <summary>
@@ -126,21 +131,106 @@ namespace SliceOfPie
         /// <param name="file">File path of file</param>
         /// <param name="perm">Enumerated permition</param>
         /// <param name="users">List of users to share with.</param>
-        public void ShareDocument(string file, Permission.Permissions perm ,params User[] users)
+        public void ShareDocument(User currentUser, string file, Permission.Permissions perm ,params User[] users)
         {
             //string[] splitFile = splitString(file);
             Document sharedDocument;
             foreach (User i in users)
-            documents.Add(sharedDocument = new Document(i, file, perm));
+            currentUser.documents.Add(sharedDocument = new Document(i, file, perm));
+        }
+
+        /// <summary>
+        /// Synchronizes a users local Documents with Documents owned and shared with him on the server
+        /// </summary>
+        /// <param name="incDocuments">All of the users Documents</param>
+        /// <param name="user">the documents user</param>
+        /// <returns>A list of all the newest documents the user either owns, have rights to watch or edit.</returns>
+        public List<Document> OfflineSynchronization(List<Document> incDocuments, User user)
+        {
+            List<Document> newDocumentList = new List<Document>();
+            List<Document> usersDocumentOnServer = GetAllUsersDocuments(user);
+
+            newDocumentList = usersDocumentOnServer;
+            CopyNewEntities(incDocuments, newDocumentList);
+
+
+            return newDocumentList;
+        }
+
+        public List<Document> OfflineSynchronization(List<Document> incDocuments, List<Document> serverDocuments)
+        {
+            List<Document> newDocumentList = serverDocuments;
+
+            newDocumentList = CopyNewEntities(incDocuments, newDocumentList);
+
+
+            return newDocumentList;
         }
 
         /********************** PRIVATE HELPER METHODS ******************************/
 
         /// <summary>
+        /// Copies and selects newest documents from one list and 
+        /// adds them into another list. if two documents have got the
+        /// same ID, the newes one is chosen
+        /// </summary>
+        /// <param name="fromList">List that is copied into another list</param>
+        /// <param name="toList">List that gets new documents and possible updated some of it's documents</param>
+        /// <returns>A list of all files from list 1 and 2 without dublicates</returns>
+        private List<Document> CopyNewEntities(List<Document> fromList, List<Document> toList)
+        {
+            foreach (Document d in fromList)
+            {
+                Document tmp = CheckDocumentInList(d, toList);
+                if (tmp == null) toList.Add(d);
+            }
+
+
+            return toList;
+        }
+
+        /// <summary>
+        /// Compares a single document with all documents in a list
+        /// </summary>
+        /// <param name="d">document to be compared</param>
+        /// <param name="toList">list of documents the "d" document will be compared to</param>
+        /// <returns>if it finds a document in "toList" that matches the ID of "d", 
+        /// it returns the newest of those 2 documents. If "d" does not exist in "toList" it returns null
+        /// to let it's caller know that the document does not exist in the "toList"</returns>
+        private Document CheckDocumentInList(Document d, List<Document> toList)
+        {
+            
+            foreach (Document i in toList)
+            {
+                if (d.documentId == i.documentId)
+                {
+                    Document tmp = FindNewestDocument(i, d);
+                    if (toList.Contains(i)) toList.Remove(i);
+                    if (toList.Contains(d)) toList.Remove(d);
+                    toList.Add(tmp); return tmp;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Compares two documents and finds the one with the newest DateTime Object
+        /// </summary>
+        /// <param name="doc1">First Document</param>
+        /// <param name="doc2">Second Document</param>
+        /// <returns>The document with the newest DateTime object</returns>
+        private Document FindNewestDocument(Document doc1, Document doc2)
+        {
+
+            if (doc1.lastChanged.CompareTo(doc2.lastChanged) < 0) return doc2;
+            else if (doc1.lastChanged.CompareTo(doc2.lastChanged) > 0) return doc1;
+            else return doc1;
+        }
+        /// <summary>
         /// Splits a string at every "/" and returns an array of strings
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">string to be split</param>
+        /// <returns>An array of strings, contaning the input after it has been split</returns>
         private string[] splitString(string input)
         {
             string[] tmp = input.Split('/');
@@ -152,9 +242,9 @@ namespace SliceOfPie
         /// Adds a document to the users list of documents.
         /// </summary>
         /// <param name="doc">The document to be added.</param>
-        private void AddDocToList(Document doc)
+        private void AddDocToList(User user, Document doc)
         {
-            documents.Add(doc);
+            user.documents.Add(doc);
         }
 
         /// <summary>
@@ -178,9 +268,9 @@ namespace SliceOfPie
         /// <param name="id">Id of the document.</param>
         /// <param name="content">Content of the document file.</param>
         /// <returns>The new document object.</returns>
-        private Document NewDocObject(User owner, int id, string content)
+        private Document NewDocObject(User owner, int id, string content, string path)
         {
-            Document doc = new Document(owner, id, content);
+            Document doc = new Document(owner, id, content, path);
 
             return doc;
         }

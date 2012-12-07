@@ -11,17 +11,25 @@
     <form id="form1" runat="server">
     <div id="main">
         <div id="menuBar">
-            <asp:Menu ID="mainMenu" runat="server" StaticDisplayLevels="3" Orientation="Horizontal">
-                <Items>
-                    <asp:MenuItem Text="File"></asp:MenuItem>
-                    <asp:MenuItem Text="Document"></asp:MenuItem>
-                    <asp:MenuItem Text="User"></asp:MenuItem>
-                </Items>
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+            <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1"
+                DynamicHorizontalOffset="0" Font-Names="Verdana" Font-Size="13px"
+                ForeColor="White" Orientation="Horizontal"
+                StaticSubMenuIndent="10px" Font-Bold="True" Height="30px">
+
+                <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="5px" Height="20px" BackColor="#433A4F" />
+                <DynamicHoverStyle BackColor="#433A4F" ForeColor="White" Font-Underline="true" />
+                <DynamicMenuStyle BackColor="#433A4F" />
+                <DynamicSelectedStyle BackColor="#433A4F" />
+                <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                <StaticHoverStyle BackColor="#433A4F" ForeColor="White" Font-Underline="true" />
             </asp:Menu>
         </div>
-        <div id="fileExplorer"></div>
+        <div id="fileExplorer">
+            <asp:TreeView ID="FileTree" runat="server" OnSelectedNodeChanged="Click"></asp:TreeView>
+        </div>
         <div id="textField">
-            <asp:TextBox ID="textArea" TextMode="MultiLine" runat="server" Width="744px" Height="994px"/>
+            <asp:TextBox ID="textArea" TextMode="MultiLine" runat="server" Width="744px" Height="994px" />
         </div>
     </div>
     </form>

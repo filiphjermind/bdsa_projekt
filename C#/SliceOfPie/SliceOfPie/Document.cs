@@ -50,18 +50,42 @@ namespace SliceOfPie
             set;
         }
 
+        public DateTime lastChanged
+        {
+            get;
+            set;
+        }
+
+        public string path
+        {
+            get;
+            set;
+        }
+
         // Primary
         public Document(User owner, int id, string content)
         {
             this.owner = owner;
             this.documentId = id;
             this.content = content;
+            this.lastChanged = DateTime.Now;
+        }
+
+        // WEB
+        public Document(User owner, int id, string content, string path)
+        {
+            this.owner = owner;
+            this.documentId = id;
+            this.content = content;
+            this.lastChanged = DateTime.Now;
+            this.path = path;
         }
 
         public Document(User owner, string file, Permission.Permissions perm)
         {
             this.owner = owner;
             this.permission = permission;
+            this.lastChanged = DateTime.Now;
             // TODO file
         }
 
@@ -71,6 +95,7 @@ namespace SliceOfPie
             // file
             //this.documentId
             this.content = "";
+            this.lastChanged = DateTime.Now;
         }
     }
 }

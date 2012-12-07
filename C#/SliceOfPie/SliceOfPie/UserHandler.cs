@@ -9,6 +9,7 @@ namespace SliceOfPie
     {
         // Instance of the dbconnector, handles all the database related methods.
         private DBConnector dbCon = DBConnector.Instance;
+        public DocumentHandler docHandler = new DocumentHandler();
 
         // Handles the creation of folders
         private Folder folder = new Folder();
@@ -55,6 +56,8 @@ namespace SliceOfPie
             // Create user object.
             User user = new User(newId, newName, newUsername, newPassword);
 
+
+
             // Return user object.
             return user;
         }
@@ -63,10 +66,10 @@ namespace SliceOfPie
         /// Deletes a user from the database.
         /// </summary>
         /// <param name="username">The username of the user to delete.</param>
-        public void DeleteUser(string username)
+        public void DeleteUser(User user)
         {
-            dbCon.DeleteUserByUsername(username);
-            folder.DeleteUserRootFolder(username);
+            dbCon.DeleteUserByUsername(user.username);
+            folder.DeleteUserRootFolder(user);
         }
 
         public void CheckEditUser(string username)
