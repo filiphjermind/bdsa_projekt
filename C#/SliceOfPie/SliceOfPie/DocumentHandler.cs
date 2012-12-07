@@ -139,6 +139,12 @@ namespace SliceOfPie
             currentUser.documents.Add(sharedDocument = new Document(i, file, perm));
         }
 
+        /// <summary>
+        /// Synchronizes a users local Documents with Documents owned and shared with him on the server
+        /// </summary>
+        /// <param name="incDocuments">All of the users Documents</param>
+        /// <param name="user">the documents user</param>
+        /// <returns>A list of all the newest documents the user either owns, have rights to watch or edit.</returns>
         public List<Document> OfflineSynchronization(List<Document> incDocuments, User user)
         {
             List<Document> newDocumentList = new List<Document>();
@@ -146,6 +152,16 @@ namespace SliceOfPie
 
             newDocumentList = usersDocumentOnServer;
             CopyNewEntities(incDocuments, newDocumentList);
+
+
+            return newDocumentList;
+        }
+
+        public List<Document> OfflineSynchronization(List<Document> incDocuments, List<Document> serverDocuments)
+        {
+            List<Document> newDocumentList = serverDocuments;
+
+            newDocumentList = CopyNewEntities(incDocuments, newDocumentList);
 
 
             return newDocumentList;
@@ -180,27 +196,41 @@ namespace SliceOfPie
         /// <param name="toList">list of documents the "d" document will be compared to</param>
         /// <returns>if it finds a document in "toList" that matches the ID of "d", 
         /// it returns the newest of those 2 documents. If "d" does not exist in "toList" it returns null
-        /// to let</returns>
+        /// to let it's caller know that the document does not exist in the "toList"</returns>
         private Document CheckDocumentInList(Document d, List<Document> toList)
         {
+            
             foreach (Document i in toList)
             {
-                if (d.documentId == i.documentId) return FindNewestDocument(i, d);
+                if (d.documentId == i.documentId)
+                {
+                    Document tmp = FindNewestDocument(i, d);
+                    if (toList.Contains(i)) toList.Remove(i);
+                    if (toList.Contains(d)) toList.Remove(d);
+                    toList.Add(tmp); return tmp;
+                }
             }
             return null;
         }
 
+        /// <summary>
+        /// Compares two documents and finds the one with the newest DateTime Object
+        /// </summary>
+        /// <param name="doc1">First Document</param>
+        /// <param name="doc2">Second Document</param>
+        /// <returns>The document with the newest DateTime object</returns>
         private Document FindNewestDocument(Document doc1, Document doc2)
         {
+
             if (doc1.lastChanged.CompareTo(doc2.lastChanged) < 0) return doc2;
             else if (doc1.lastChanged.CompareTo(doc2.lastChanged) > 0) return doc1;
-            else return null;
+            else return doc1;
         }
         /// <summary>
         /// Splits a string at every "/" and returns an array of strings
         /// </summary>
-        /// <param name="input"></param>
-        /// <returns></returns>
+        /// <param name="input">string to be split</param>
+        /// <returns>An array of strings, contaning the input after it has been split</returns>
         private string[] splitString(string input)
         {
             string[] tmp = input.Split('/');
