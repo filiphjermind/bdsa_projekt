@@ -13,10 +13,14 @@ namespace DesktopUI
         [STAThread]
         static void Main()
         {
-
+            
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View());
+            View view = new View();
+            //written to invoke the constructor
+            Model.GetInstance();
+            Application.Run(view);
+            
         }
     }
 }

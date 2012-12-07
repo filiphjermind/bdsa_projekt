@@ -50,8 +50,11 @@ namespace SliceOfPie
             dbCon = DBConnector.Instance;
             folder = new Folder();
             userhandler = new UserHandler();
+
+            ClientSystemFacade.GetInstance();
+
             //docHandler = new DocumentHandler();
-            userAuth = new UserAuth();
+
 
             // Check if root directory exists
             /*if (!Directory.Exists("root"))

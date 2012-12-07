@@ -13,9 +13,15 @@ namespace DesktopUI
 {
     public partial class View : Form
     {
+        //This field holds information about the folder path that is
+        //currently chosen in the tree view
         private DirectoryInfo CurrentDirectoryInfo;
+        //This field holds information about the file name that is currently open.
+        //If no document is open the value is null.
         private string currentPath;
+        //This field is used for testing. 
         private static TextBox staticDocumentText;
+
         public View()
         {
             
@@ -28,6 +34,10 @@ namespace DesktopUI
 
         }
 
+        /// <summary>
+        /// This method is used to initialize the components that have not been
+        /// initialized by the code autogeneration
+        /// </summary>
         private void initComponents()
         {
            //share document
@@ -185,6 +195,12 @@ namespace DesktopUI
             UpdateDocumentListView(CurrentDirectoryInfo);
         }
 
+        /// <summary>
+        /// This method takes care of retrieving the right information for
+        /// sharing of documents when the user clicks the share document button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onClickShareDocumentButton(object sender, EventArgs e)
         {
             if (listView1.SelectedItems.Count == 0 || shareDocumentText.Text == "") return;
@@ -199,6 +215,12 @@ namespace DesktopUI
             shareDocumentText.Text = "";
         }
 
+        /// <summary>
+        /// This method takes care of retrieving the right information for
+        /// sharing of folders when the user clicks the share document button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClickShareFolderButton(object sender, EventArgs e)
         {
             if (treeView1.SelectedNode == null || shareDocumentText.Text == "") return;
@@ -209,9 +231,14 @@ namespace DesktopUI
             shareFolderText.Text = "";
         }
 
+        /// <summary>
+        /// THis method should be invoked when the user hits the synchronize button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void OnClickSynchronize(object sender, EventArgs e)
         {
-            Controller.GetInstance().Synchronize(usernameTextBox.Text, passwordTextBox.Text);
+            Controller.GetInstance().Synchronize();
         }
 
         /// <summary>
@@ -300,6 +327,11 @@ namespace DesktopUI
             staticDocumentText.Text = s;
         }
 
+        /// <summary>
+        /// This method should be invoked when the user hits the accept invitations button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onClickAcceptInvitations(object sender, EventArgs e)
         {
             if (listViewInvitations.SelectedItems.Count == 0) return;
@@ -312,6 +344,13 @@ namespace DesktopUI
             onClickUpdateInvitations(null, null);
         }
 
+        /// <summary>
+        /// This method should be invoked when a user hits the ignore invitations. 
+        /// The method retrieves the different invitations the user wants to ignore
+        /// and pass it on to the controller.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onClickIgnoreInvitations(object sender, EventArgs e)
         {
             if (listViewInvitations.SelectedItems.Count == 0) return;
@@ -325,6 +364,12 @@ namespace DesktopUI
             onClickUpdateInvitations(null, null);
         }
 
+        /// <summary>
+        /// THis method should be invoked when the user hits the update invitations button.
+        /// It request invitations from the controller and displays them in the list view.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void onClickUpdateInvitations(object sender, EventArgs e)
         {
             listViewInvitations.Clear();
