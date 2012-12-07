@@ -54,10 +54,10 @@ namespace SliceOfPie
             userAuth = new UserAuth();
 
             // Check if root directory exists
-            if (!Directory.Exists("root"))
+            /*if (!Directory.Exists("root"))
             {
                 Directory.CreateDirectory("root");
-            }
+            }*/
         }
 
     }

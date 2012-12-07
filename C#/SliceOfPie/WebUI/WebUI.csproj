@@ -78,6 +78,13 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SliceOfPie\SliceOfPie.csproj">
+      <Project>{872af6b5-8d44-4ad8-a96f-6ef671cdd815}</Project>
+      <Name>SliceOfPie</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
