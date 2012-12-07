@@ -51,7 +51,7 @@ namespace SliceOfPie
             folder = new Folder();
             userhandler = new UserHandler();
             docHandler = new DocumentHandler();
-            userAuth = new UserAuth();
+            ClientSystemFacade.GetInstance();
 
             // Check if root directory exists
             if (!Directory.Exists("root"))
