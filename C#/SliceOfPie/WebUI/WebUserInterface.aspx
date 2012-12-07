@@ -26,6 +26,7 @@
             </asp:Menu>
         </div>
         <div id="fileExplorer">
+            <asp:Button ID="button" runat="server" OnClick="Populate" />
             <asp:TreeView ID="FileTree" runat="server" OnSelectedNodeChanged="Click"></asp:TreeView>
         </div>
         <div id="textField">

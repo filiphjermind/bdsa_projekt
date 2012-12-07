@@ -8,10 +8,21 @@ namespace SliceOfPie
     public class UserAuth
     {
         private DBConnector DBcon;
+        private static UserAuth instance;
 
         public UserAuth()
         {
             DBcon = DBConnector.Instance;
+            
+
+        }
+        internal static UserAuth GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new UserAuth();
+            }
+            return instance;
         }
 
         public bool CheckUserAndPassword(string userName, string password)
@@ -21,5 +32,7 @@ namespace SliceOfPie
             if (tmpUser[3] == userName && tmpUser[4] == password) return true;
             else return false;
         }
+
+       
     }
 }

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Text;
 
 namespace DesktopUI
@@ -18,6 +20,16 @@ namespace DesktopUI
                 instance = new Model();
             }
             return instance;
+        }
+
+        public Model()
+        {
+            IPEndPoint ipe = new IPEndPoint(Dns.GetHostEntry("localhost").AddressList[0],8080);
+            Socket s = new Socket(ipe.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            s.Connect(ipe);
+            s.Send(Encoding.ASCII.GetBytes("Hello world"));
+            View.WriteToDocumentTextBox("Model - constructor");
+            
         }
 
         internal void CreateDocument(string file)
@@ -55,7 +67,7 @@ namespace DesktopUI
             Directory.Delete(CurrentDirectoryInfo.FullName, true);
         }
 
-        internal void Synchronize(string username, string password)
+        internal void Synchronize()
         {
             
         }
