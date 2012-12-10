@@ -192,12 +192,15 @@ namespace SliceOfPie
         /// <param name="file">File path of file</param>
         /// <param name="perm">Enumerated permition</param>
         /// <param name="users">List of users to share with.</param>
-        public void ShareDocument(User currentUser, string file, Permission.Permissions perm ,params User[] users)
+        public void ShareDocument(User currentUser, Document doc, Permission.Permissions perm ,params User[] users)
         {
             //string[] splitFile = splitString(file);
             Document sharedDocument;
             foreach (User i in users)
-            currentUser.documents.Add(sharedDocument = new Document(i, file, perm));
+            {
+                if (!currentUser.documents.Contains(doc)) { }
+                    //currentUser.documents.Add()sharedDocument = new Document(i, ;//sharedDocument = new Document(i, file, perm));
+            }
         }
 
         /// <summary>
