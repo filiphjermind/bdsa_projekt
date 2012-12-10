@@ -16,6 +16,7 @@ namespace SliceOfPie
 
             User user = engine.userhandler.GetUser("mrT", "1234");
             Document document1 = engine.userhandler.docHandler.OpenDocument(15, user);
+            //Console.WriteLine(document1.content);
             
             
             //DBCon.InsertUserDocument(user, document1, Permission.Permissions.Edit);

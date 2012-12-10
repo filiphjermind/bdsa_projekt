@@ -37,8 +37,24 @@ namespace SliceOfPie
         /// <param name="path">Path to the new directory.</param>
         public void CreateNewFolder(User user, string path)
         {
-            string root = "root/" + user.username;
-            Directory.CreateDirectory(root + "/" + path);
+            string root = "root/" + user.username + "/";
+
+            string[] splitPath = path.Split('/');
+            string fileName = splitPath[splitPath.Length - 1];
+
+            string curDir = root;
+
+            // Check if the directory exists.
+            // Create if it doesn't.
+
+            for (int i = 2; i < splitPath.Length - 2; i++)
+            { 
+                if(!Directory.Exists(curDir))
+                {
+                    Directory.CreateDirectory(curDir);
+                }
+                curDir += splitPath + "/";
+            }
         }
 
         /// <summary>
@@ -120,6 +136,19 @@ namespace SliceOfPie
             }
 
             return files;
+        }
+
+        /// <summary>
+        /// Sets the absolute path to the root directory.
+        /// </summary>
+        /// <returns>The absolute path to the root directory.</returns>
+        public string SetRootDirectory()
+        {
+            string path = "root";
+
+            string fullPath = Path.GetFullPath(path);
+
+            return fullPath;
         }
     }
 }

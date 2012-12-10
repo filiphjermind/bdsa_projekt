@@ -11,14 +11,25 @@ namespace WebUI
 {
     public partial class WebUserInterface : System.Web.UI.Page
     {
-        Engine engine = new Engine();
+        ClientSystemFacade facade = ClientSystemFacade.GetInstance();
 
-        User user; 
+        Engine engine = new Engine();
+        User user;
+        List<Document> docs;
+
+        Document currentDoc;
+
+        string userRoot;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             user = engine.userhandler.GetUser("MrT", "1234");
 
-            List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
+            docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
+
+            userRoot = engine.rootDirectory;
+
+            textArea.Text = engine.rootDirectory;
 
             // Check if the document list is empty
             if (docs != null) 
@@ -150,6 +161,33 @@ namespace WebUI
         protected void Click(object sender, EventArgs e)
         {
             textArea.Text = "Clicked: ";
+        }
+
+        private string SetCurrentRootDirectory(User user)
+        {
+            string userRoot = user.username;
+            string rootDir = engine.rootDirectory + "/" + userRoot;
+
+            return rootDir;
+        }
+
+        protected void NewDocument(object sender, EventArgs e)
+        {
+            Document doc = facade.NewDocument(user);
+            currentDoc = doc;
+            textArea.Text = doc.content;
+        }
+
+        protected void SaveDocument(object sender, EventArgs e)
+        {
+            facade.SaveDocument(user, currentDoc, "SampleFile.html");
+        }
+
+        protected void OpenDocument(object sender, EventArgs e)
+        {
+            Document doc = facade.OpenDocument(16, user);
+            currentDoc = doc;
+            textArea.Text = currentDoc.content;
         }
     }
 }

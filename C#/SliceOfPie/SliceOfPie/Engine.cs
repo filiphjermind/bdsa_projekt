@@ -8,8 +8,8 @@ namespace SliceOfPie
 {
     public class Engine
     {
-
-        //private static Engine instance;
+        // Absolute path to the root directory of the logged in user.
+        public readonly string rootDirectory;
 
         // handles the creation of folders.
         public Folder folder;
@@ -38,6 +38,8 @@ namespace SliceOfPie
 
         public Engine()
         {
+            rootDirectory = Path.GetFullPath("root"); //folder.SetRootDirectory();
+            Console.WriteLine(rootDirectory);
             Initialize();
         }
 
@@ -45,13 +47,13 @@ namespace SliceOfPie
         /// Initializes the engine class.
         /// </summary>
         private void Initialize()
-        { 
+        {
             // Initializes all other classes.
             dbCon = DBConnector.Instance;
             folder = new Folder();
             userhandler = new UserHandler();
 
-            ClientSystemFacade.GetInstance();
+            //ClientSystemFacade.GetInstance();
 
             //docHandler = new DocumentHandler();
 

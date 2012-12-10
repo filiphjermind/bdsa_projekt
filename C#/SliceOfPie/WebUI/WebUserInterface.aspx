@@ -11,7 +11,7 @@
     <form id="form1" runat="server">
     <div id="main">
         <div id="menuBar">
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+            <%--<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
             <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1"
                 DynamicHorizontalOffset="0" Font-Names="Verdana" Font-Size="13px"
                 ForeColor="White" Orientation="Horizontal"
@@ -23,7 +23,10 @@
                 <DynamicSelectedStyle BackColor="#433A4F" />
                 <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
                 <StaticHoverStyle BackColor="#433A4F" ForeColor="White" Font-Underline="true" />
-            </asp:Menu>
+            </asp:Menu>--%>
+            <asp:Button ID="newDocButton" runat="server" OnClick="NewDocument" Text="New Document" />
+            <asp:Button ID="saveDocButton" runat="server" OnClick="SaveDocument" Text="Save Document" />
+            <asp:Button ID="openDocButton" runat="server" OnClick="OpenDocument" Text="Open Document" />
         </div>
         <div id="fileExplorer">
             <asp:Button ID="button" runat="server" OnClick="Populate" />
