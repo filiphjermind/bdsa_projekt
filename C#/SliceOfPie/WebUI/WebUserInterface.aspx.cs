@@ -23,26 +23,25 @@ namespace WebUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //this.textArea.Text = Server.HtmlDecode(this.textArea.Text);
             user = engine.userhandler.GetUser("MrT", "1234");
 
             docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
 
-            userRoot = engine.rootDirectory;
-
-            textArea.Text = engine.rootDirectory;
+            //userRoot = engine.rootDirectory;
 
             // Check if the document list is empty
-            if (docs != null) 
-            {
-                foreach (Document d in docs)
-                {
-                    // Check if the document is empty.
-                    if (d != null)
-                    {
-                        textArea.Text = d.content;
-                    }
-                }
-            }
+            //if (docs != null) 
+            //{
+            //    foreach (Document d in docs)
+            //    {
+            //        // Check if the document is empty.
+            //        if (d != null)
+            //        {
+            //            textArea.Text = d.content;
+            //        }
+            //    }
+            //}
 
             //PopulateTree(user);
 
@@ -173,14 +172,17 @@ namespace WebUI
 
         protected void NewDocument(object sender, EventArgs e)
         {
-            Document doc = facade.NewDocument(user);
-            currentDoc = doc;
-            textArea.Text = doc.content;
+            currentDoc = facade.NewDocument(user);
+            //currentDoc = doc;
+            //textArea.Text = currentDoc.content;
         }
 
         protected void SaveDocument(object sender, EventArgs e)
         {
-            facade.SaveDocument(user, currentDoc, "SampleFile.html");
+            //Document doc = new Document(user);
+            currentDoc = new Document(user);
+            currentDoc.content = textArea.Text;
+            facade.SaveDocument(user, currentDoc, "hello.html");
         }
 
         protected void OpenDocument(object sender, EventArgs e)

@@ -15,7 +15,10 @@ namespace SliceOfPie
 
 
             User user = engine.userhandler.GetUser("mrT", "1234");
-            Document document1 = engine.userhandler.docHandler.OpenDocument(15, user);
+            //Document document1 = engine.userhandler.docHandler.OpenDocument(15, user);
+            Document doc1 = new Document(user);
+            doc1.content = "This is \n a tst";
+            engine.userhandler.docHandler.SaveDocument(user, doc1, "sometestfilelololol.html");
             //Console.WriteLine(document1.content);
             
             

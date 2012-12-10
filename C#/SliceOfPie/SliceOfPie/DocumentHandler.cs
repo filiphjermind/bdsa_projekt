@@ -37,27 +37,55 @@ namespace SliceOfPie
         /// <param name="filename">Filename of the document</param>
         public void SaveDocument(User user, Document doc, string filename)
         {
-            string owner = user.username;
-            string filepath = "root/" + owner + "/" + filename;
+            // The full path to the file.
+            string path = "root/" + user.username + "/" + filename;
 
-            string path = "root/" + owner;
-
-            path = Path.Combine(path, filename);
-
-            // Checks if the file exists, and saves it to the system.
+            // Check if the file exists
             if (!File.Exists(path))
             {
-                using (FileStream fs = File.Create(path))
-                {
-                    for (byte i = 0; i < 100; i++)
-                    {
-                        fs.WriteByte(i);
-                    }
-                }
+                // Create the file
+                File.Create(path);
             }
 
+            // Split the content so each line is an array index.
+            string[] splitContent = doc.content.Split('\n');
+
+            foreach (string l in splitContent)
+            {
+                Console.WriteLine(l);
+            }
+
+            // Write content to the file
+            try
+            {
+                File.WriteAllLines(path, splitContent);
+            }
+            catch (IOException e) { 
+            }
+
+            //string owner = user.username;
+            //string filepath = "root/" + owner + "/" + filename;
+
+            //string path = "root/" + owner;
+
+            //path = Path.Combine(path, filename);
+
+            //// Checks if the file exists, and saves it to the system.
+            //if (!File.Exists(path))
+            //{
+            //    using (FileStream fs = File.Create(path))
+            //    {
+            //        for (byte i = 0; i < 100; i++)
+            //        {
+            //            fs.WriteByte(i);
+            //        }
+            //    }
+            //}
+
             //doc.lastChanged = DateTime.Now;
-            dbCon.InsertDocument(owner, filepath);
+
+            // Insert data to the database.
+            dbCon.InsertDocument(user.username, path);
         }
 
         /// <summary>
@@ -132,24 +160,35 @@ namespace SliceOfPie
             string path = "";
             path = dbCon.GetDocument(id, user.username);
 
-            /// Read the file, line by line, into an array.
-            string[] lines = File.ReadAllLines(path);
-
-            // Save the content of the file.
-            string content = "";
-            for (int i = 0; i < lines.Length; i++)
+            // Read the file, line by line, into an array.
+            try
             {
-                content += lines[i] + "\n";
+                string[] lines = File.ReadAllLines(path);
+
+                // Save the content of the file.
+                string content = "";
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    content += lines[i] + "\n";
+                }
+
+                // Create a new document object.
+                Document doc = new Document(user, id, content, path);
+
+                // Add document to the users list of documents
+                AddDocToList(user, doc);
+
+                // Return the document.
+                return doc;
             }
+            catch (IOException e)
+            { 
+            
+            }
+            return null;
+            
 
-            // Create a new document object.
-            Document doc = new Document(user, id, content, path);
-
-            // Add document to the users list of documents
-            AddDocToList(user, doc);
-
-            // Return the document.
-            return doc;
+            
         }
 
         /// <summary>

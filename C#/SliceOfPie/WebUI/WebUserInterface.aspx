@@ -2,6 +2,15 @@
 
 <!DOCTYPE html>
 
+<%--<script>
+    function Encode() {
+        var value = (document.getElementById('textArea').value);
+        value = value.replace('<', "&lt;");
+        value = value.replace('>', "&gt;");
+        document.getElementById('textArea').value = value;
+    }
+ </script>--%>
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" type="text/css" href="style/style.css" />
@@ -27,6 +36,7 @@
             <asp:Button ID="newDocButton" runat="server" OnClick="NewDocument" Text="New Document" />
             <asp:Button ID="saveDocButton" runat="server" OnClick="SaveDocument" Text="Save Document" />
             <asp:Button ID="openDocButton" runat="server" OnClick="OpenDocument" Text="Open Document" />
+            <%--<asp:Button ID="showHTMLButton" runat="server" Text="Show HTML" OnClientClick="Encode()" />--%>
         </div>
         <div id="fileExplorer">
             <asp:Button ID="button" runat="server" OnClick="Populate" />
