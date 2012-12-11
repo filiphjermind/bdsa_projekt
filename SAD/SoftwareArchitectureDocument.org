@@ -1,0 +1,25 @@
+* Software Architecture Document
+** Architectural Representation
+The SAD summarizes the architecture of the Slice of Pie application from multple views. These views include:
+   - Logical view
+   - Deployment view
+   - Process view
+   - Data view
+   - Use-case view
+** Architectural Factors
+   - Suplementary specifications.
+** Architectural Decisions
+   - Why have we made the decisions that we have made?
+** Logical View
+   - Logical diagrams etc ..
+** Deployment View
+   - Delpoyment diagrams etc ...
+** Process View
+   - Interction diagrams etc ..
+   - Class diagrams
+
+   Comment on how the interprocess communitacion works.
+** Use-Case View
+   - Use cases
+   - Use case diagrams
+** Other Views ...
