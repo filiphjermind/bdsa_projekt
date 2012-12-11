@@ -1,0 +1,14 @@
+* Supplementary Requirements (the FURPS+) model
+
+** Functionality
+   - The system must be able to create/edit/delete users.
+   - The system must be able to create/edit/delete/share documents.
+** Usability
+   - The system must be easy to use.
+     - Have a clean user interface.
+     - The "average" user must be able to use the system without any training.
+** Reliability
+
+** Performance
+
+** Supportability
