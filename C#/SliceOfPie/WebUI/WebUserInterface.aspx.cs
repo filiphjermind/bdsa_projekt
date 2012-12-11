@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using SliceOfPie;
 using System.IO;
+using System.Text;
 
 namespace WebUI
 {
@@ -19,48 +20,139 @@ namespace WebUI
 
         Document currentDoc;
 
-        string userRoot;
+        string selectedFile;
+
+        public string test
+        {
+            get;
+            set;
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //this.textArea.Text = Server.HtmlDecode(this.textArea.Text);
             user = engine.userhandler.GetUser("MrT", "1234");
-
-            docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
-
-            //userRoot = engine.rootDirectory;
-
-            // Check if the document list is empty
-            //if (docs != null) 
-            //{
-            //    foreach (Document d in docs)
-            //    {
-            //        // Check if the document is empty.
-            //        if (d != null)
-            //        {
-            //            textArea.Text = d.content;
-            //        }
-            //    }
-            //}
-
-            //PopulateTree(user);
-
-            //foreach (TreeNode n in FileTree.Nodes)
-            //{
-            //    n.SelectAction = TreeNodeSelectAction.SelectExpand;
-            //}
-
-            
-            
-
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {            
+            // Do some other processing...
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<script>");
+            sb.Append("window.open('SaveDocumentConfirmation.aspx', '', 'resizable=no, width=500px, height=300px');");
+            sb.Append("</scri");
+            sb.Append("pt>");
+
+            Page.RegisterStartupScript("test", sb.ToString());
+        }
+
+
+        
+
+        /// <summary>
+        /// Creates a new empty document.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void NewDocument(object sender, EventArgs e)
+        {
+            newDocumentHidden.Value = "true";
+            currentDoc = facade.NewDocument(user);
+            fileNameBox.Text = "";
+            textArea.Text = currentDoc.content;
+        }
+
+        protected void Save(object sender, EventArgs e)
+        {
+            if (!fileNameBox.Text.Equals(""))
+            {
+                currentDoc = new Document(user);
+                currentDoc.content = textArea.Text;
+                facade.SaveDocument(user, currentDoc, fileNameBox.Text);
+            }
+        }
+
+        /// <summary>
+        /// Saves a document.
+        /// If an existing document has been opened, overwrite the existing one.
+        /// If a new document has been created, save a new document.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void SaveDocument(object sender, EventArgs e)
+        {
+            // Check if a new document has been created, or an existing one has been opened.
+            if (newDocumentHidden.Value.Equals("false"))
+            {
+                // Existing document has been opened.
+                string filePath = FileTree.SelectedNode.Value.ToString();
+                string[] path = filePath.Split('\\');
+                filePath = path[path.Length - 1];
+
+                currentDoc = new Document(user);
+                currentDoc.content = textArea.Text;
+                facade.SaveDocument(user, currentDoc, filePath);
+            }
+            else if (newDocumentHidden.Value.Equals("empty"))
+            { 
+                // No document opened or created.
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<script>");
+                sb.Append("window.open('NoDocumentBox.aspx', '', 'resizable=no, width=500px, height=300px');");
+                sb.Append("</scri");
+                sb.Append("pt>");
+
+                Page.RegisterStartupScript("test", sb.ToString());
+            }
+            else
+            {
+                // New unsaved document.
+                StringBuilder sb = new StringBuilder();
+                sb.Append("<script>");
+                sb.Append("window.open('SaveDocumentConfirmation.aspx', '', 'resizable=no, width=500px, height=300px');");
+                sb.Append("</scri");
+                sb.Append("pt>");
+
+                Page.RegisterStartupScript("test", sb.ToString());
+            }
+            
+        }
+
+        protected void OpenDocument(object sender, EventArgs e)
+        {
+            Document doc = facade.OpenDocument(16, user);
+            currentDoc = doc;
+            textArea.Text = currentDoc.content;
+        }
+
+        /// <summary>
+        /// Reads the content of a file selected in the file tree and populates the text field with
+        /// the file's content
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void OpenDocumentFromFileTree(object sender, EventArgs e)
+        {
+            newDocumentHidden.Value = "false";
+            fileNameBox.Text = "";
+            selectedFile = FileTree.SelectedNode.Value.ToString();
+            string[] splitPath = selectedFile.Split('\\');
+
+            for (int i = 5; i < splitPath.Length; i++)
+            {
+                fileNameBox.Text += "/" + splitPath[i];
+            }
+            
+            // Display the content of the file in the textArea.
+            textArea.Text = engine.userhandler.docHandler.ReadFile(FileTree.SelectedNode.Value.ToString());
+        }
+
+        /****************** ALL METHODS BELOW ARE USED TO POPULATE THE FILE TREE **********************/
 
         protected void Populate(object sender, EventArgs e)
         {
             PopulateTree(user);
         }
-
-
 
         /// <summary>
         /// Fills the fileTree with all files / folders that
@@ -68,11 +160,11 @@ namespace WebUI
         /// </summary>
         /// <param name="user">The owner of the files</param>
         private void PopulateTree(User user)
-        { 
+        {
             // Get user root dir, create and add it to the tree.
             DirectoryInfo rootDir = new DirectoryInfo("root/" + user.username);
             TreeNode rootNode = new TreeNode(rootDir.Name, rootDir.FullName);
-            rootNode.SelectAction = TreeNodeSelectAction.SelectExpand;
+            rootNode.SelectAction = TreeNodeSelectAction.Expand;
             FileTree.Nodes.Add(rootNode);
 
             // Get all users documents
@@ -122,9 +214,12 @@ namespace WebUI
                 // Create directories if they do not exist
                 foreach (string s in splitpath)
                 {
-                    if (!Directory.Exists(s))
+                    if (!s.Equals(""))
                     {
-                        Directory.CreateDirectory(s);
+                        if (!Directory.Exists(s))
+                        {
+                            Directory.CreateDirectory(s);
+                        }
                     }
                 }
             }
@@ -150,46 +245,11 @@ namespace WebUI
             {
                 //create node and add to the tree view
                 TreeNode node = new TreeNode(dir.Name, dir.FullName);
-                node.SelectAction = TreeNodeSelectAction.SelectExpand;
+                node.SelectAction = TreeNodeSelectAction.Expand;
                 currentNode.ChildNodes.Add(node);
                 //recursively call same method to go down the next level of the tree
                 TraverseTree(dir, node);
             }
-        }
-
-        protected void Click(object sender, EventArgs e)
-        {
-            textArea.Text = "Clicked: ";
-        }
-
-        private string SetCurrentRootDirectory(User user)
-        {
-            string userRoot = user.username;
-            string rootDir = engine.rootDirectory + "/" + userRoot;
-
-            return rootDir;
-        }
-
-        protected void NewDocument(object sender, EventArgs e)
-        {
-            currentDoc = facade.NewDocument(user);
-            //currentDoc = doc;
-            //textArea.Text = currentDoc.content;
-        }
-
-        protected void SaveDocument(object sender, EventArgs e)
-        {
-            //Document doc = new Document(user);
-            currentDoc = new Document(user);
-            currentDoc.content = textArea.Text;
-            facade.SaveDocument(user, currentDoc, "hello.html");
-        }
-
-        protected void OpenDocument(object sender, EventArgs e)
-        {
-            Document doc = facade.OpenDocument(16, user);
-            currentDoc = doc;
-            textArea.Text = currentDoc.content;
         }
     }
 }

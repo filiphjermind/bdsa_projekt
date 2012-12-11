@@ -57,12 +57,29 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="NoDocumentBox.aspx" />
+    <Content Include="SaveDocumentConfirmation.aspx" />
+    <Content Include="style\confirmationStyle.css" />
     <Content Include="style\style.css" />
     <Content Include="Web.config" />
     <Content Include="WebUserInterface.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NoDocumentBox.aspx.cs">
+      <DependentUpon>NoDocumentBox.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoDocumentBox.aspx.designer.cs">
+      <DependentUpon>NoDocumentBox.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaveDocumentConfirmation.aspx.cs">
+      <DependentUpon>SaveDocumentConfirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SaveDocumentConfirmation.aspx.designer.cs">
+      <DependentUpon>SaveDocumentConfirmation.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebUserInterface.aspx.cs">
       <DependentUpon>WebUserInterface.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

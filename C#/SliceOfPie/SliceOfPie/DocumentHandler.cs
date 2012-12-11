@@ -40,11 +40,36 @@ namespace SliceOfPie
             // The full path to the file.
             string path = "root/" + user.username + "/" + filename;
 
+            // split the filename into an array.
+            string[] filePath = path.Split('/');
+
+            string tmpPath = "";
+
+            // Check if the path to the file exists.
+            for (int i = 0; i < filePath.Length-1; i++)
+            {
+                tmpPath += filePath[i] + "/";
+                if(!Directory.Exists(tmpPath))
+                {
+                    try
+                    {
+                        Directory.CreateDirectory(tmpPath);
+                    }
+                    catch (IOException e) { }
+                    
+                }
+            }
+
             // Check if the file exists
             if (!File.Exists(path))
             {
-                // Create the file
-                File.Create(path);
+                try
+                {
+                    // Create the file
+                    File.Create(path);
+                }
+                catch (IOException e) { }
+                
             }
 
             // Split the content so each line is an array index.
@@ -189,6 +214,28 @@ namespace SliceOfPie
             
 
             
+        }
+
+        public string ReadFile(string path)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines(path);
+
+                // Save the content of the file.
+                string content = "";
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    content += lines[i] + "\n";
+                }
+
+                return content;
+            }
+            catch (IOException e)
+            { 
+            }
+
+            return null;
         }
 
         /// <summary>

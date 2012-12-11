@@ -7,9 +7,9 @@
       <siteMapNode title="Paste" url=""/>
     </siteMapNode>
     <siteMapNode title="Document" url="">
-      <siteMapNode title="New Document" url="http://www.portal.fo"/>
+      <siteMapNode title="New Document" url="http://www.portal.fo" target="_blank"/>
       <siteMapNode title="Open Document" url=""/>
-      <siteMapNode title="Save Document" url=""/>
+      <siteMapNode title="Save Document" url="openwin()"/>
       <siteMapNode title="Share Document" url=""/>
       <siteMapNode title="Delete Document" url=""/>
     </siteMapNode>
