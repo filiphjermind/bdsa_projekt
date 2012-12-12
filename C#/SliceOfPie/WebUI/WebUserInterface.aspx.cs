@@ -46,6 +46,19 @@ namespace WebUI
             Page.RegisterStartupScript("test", sb.ToString());
         }
 
+        protected void SignUp(object sender, EventArgs e)
+        {
+            // Do some other processing...
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<script>");
+            sb.Append("window.open('Signup.aspx', '', 'resizable=no, width=500px, height=300px');");
+            sb.Append("</scri");
+            sb.Append("pt>");
+
+            Page.RegisterStartupScript("test", sb.ToString());
+        }
+
         protected void Login(object sender, EventArgs e)
         {
             string username = userBox.Text;

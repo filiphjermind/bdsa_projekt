@@ -32,6 +32,7 @@
             <label>Username: </label><asp:TextBox ID="userBox" runat="server" />
             <label>Password: </label><asp:TextBox ID="passwordBox" runat="server" TextMode="Password" />
             <asp:Button ID="loginButton" runat="server" OnClick="Login" Text="Login" />
+            <asp:Button ID="signupButton" runat="server" OnClick="SignUp" Text="Sign up" />
         </div>
         
         <div id="menuBar">

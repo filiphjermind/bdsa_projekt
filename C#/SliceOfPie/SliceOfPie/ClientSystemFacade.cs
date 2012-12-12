@@ -88,5 +88,10 @@ namespace SliceOfPie
             //Console.WriteLine("FACADE2");
             return user;
         }
+
+        public User NewUser(string name, string username, string password)
+        {
+            return engine.userhandler.NewUser(name, username, password);
+        }
     }
 }

@@ -17,7 +17,9 @@ namespace SliceOfPie
 
             User user = facade.Authenticate("mrT", "1234");
 
-            Console.WriteLine(user.ToString());
+            engine.userhandler.docHandler.GetAllUsersDocuments(user);
+
+            //Console.WriteLine(user.ToString());
 
             //User ownerUser = engine.userhandler.GetUser("mrT", "1234");
             //User toUser = engine.userhandler.GetUser("bergar", "1234");

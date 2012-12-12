@@ -215,8 +215,9 @@ namespace SliceOfPie
             MySqlDataReader reader = ExecuteReader(query);
 
             while (reader.Read())
-            { 
-                path = reader["file"] + "";
+            {
+                path = (string) reader[0];
+                //Console.WriteLine("Path: " + path);
             }
             reader.Close();
             CloseConnection();
