@@ -8,6 +8,12 @@
     border: 1px solid black;
     margin: auto;
 }
+#userBar {
+    width: 1000px;
+    height: 30px;
+    margin: 0px;
+    padding: 0px;
+}
 #menuBar {
     width: 1000px;
     height: 30px;

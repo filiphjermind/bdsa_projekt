@@ -8,7 +8,7 @@ namespace SliceOfPie
     public class UserAuth
     {
         private DBConnector DBcon;
-        private static UserAuth instance;
+        public static UserAuth instance;
 
         public UserAuth()
         {
@@ -31,6 +31,12 @@ namespace SliceOfPie
 
             if (tmpUser[3] == userName && tmpUser[4] == password) return true;
             else return false;
+        }
+
+        public User Authenticate(string username, string password)
+        {
+            User user = DBcon.AuthenticateUser(username, password);
+            return user;
         }
 
        

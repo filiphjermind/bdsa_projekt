@@ -9,6 +9,7 @@ namespace SliceOfPie
 {
     public class ClientSystemFacade
     {
+        private UserAuth userAuth = UserAuth.instance;
         private Engine engine = new Engine();
         private static ClientSystemFacade instance;
         private Socket socket;
@@ -66,6 +67,23 @@ namespace SliceOfPie
         {
             Document doc = engine.userhandler.docHandler.OpenDocument(id, user);
             return doc;
+        }
+
+        /// <summary>
+        /// Deletes a document from the disc, and deletes it's entry
+        /// in the database.
+        /// </summary>
+        /// <param name="user">The owner of the document</param>
+        /// <param name="doc">The document to delete.</param>
+        public void DeleteDocument(User user, Document doc)
+        {
+            engine.userhandler.docHandler.DeleteDocument(doc);
+        }
+
+        public User Authenticate(string username, string password)
+        {
+            User user = userAuth.Authenticate(username, password);
+            return user;
         }
     }
 }

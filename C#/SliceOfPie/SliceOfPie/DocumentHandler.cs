@@ -31,6 +31,7 @@ namespace SliceOfPie
 
         /// <summary>
         /// Saves a document to the database.
+        /// And saves the file to the disc.
         /// </summary>
         /// <param name="username">Owner of the document.</param>
         /// <param name="doc">The document to be saved.</param>
@@ -88,25 +89,6 @@ namespace SliceOfPie
             catch (IOException e) { 
             }
 
-            //string owner = user.username;
-            //string filepath = "root/" + owner + "/" + filename;
-
-            //string path = "root/" + owner;
-
-            //path = Path.Combine(path, filename);
-
-            //// Checks if the file exists, and saves it to the system.
-            //if (!File.Exists(path))
-            //{
-            //    using (FileStream fs = File.Create(path))
-            //    {
-            //        for (byte i = 0; i < 100; i++)
-            //        {
-            //            fs.WriteByte(i);
-            //        }
-            //    }
-            //}
-
             //doc.lastChanged = DateTime.Now;
 
             // Insert data to the database.
@@ -118,67 +100,6 @@ namespace SliceOfPie
         /// </summary>
         /// <param name="id">Id of the document to open</param>
         /// <returns>The document</returns>
-        //public Document OpenDocument(int id, User user)
-        //{
-        //    string path = "";
-        //    // Get file path from database
-        //    path = dbCon.GetDocument(id, user.username);
-
-        //    // Check if path is empty,
-        //    if (path != "")
-        //    {
-        //        // Check if path exists
-        //        if (!Directory.Exists(path))
-        //        {
-        //            // split the path to eliminate the "root/username"
-        //            string[] splitPath = path.Split('/');
-
-        //            // Clear the path variable in order to rebuild it without the "root/username"
-        //            path = "";
-
-        //            // Rebuild the path.
-        //            for (int i = 2; i < splitPath.Length; i++)
-        //            {
-        //                path += splitPath[i] + "/";
-        //            }
-
-        //            // Create the path
-        //            folder.CreateNewFolder(user, path);
-        //        }
-
-        //        Console.WriteLine(path);
-
-        //        // Check if the file exists.
-        //        if (File.Exists(path))
-        //        {
-        //            // Open file
-        //            string[] lines = File.ReadAllLines(path);
-
-        //            // Content of the file.
-        //            string content = "";
-
-        //            // Convert lines to string
-        //            for (int i = 0; i < lines.Length; i++)
-        //            {
-        //                content += lines[i] + "\n";
-        //            }
-
-        //            Console.WriteLine(content);
-
-        //            // Create new document object.
-        //            Document doc = NewDocObject(user, id, content, path);
-
-        //            // Add document to users document list
-        //            AddDocToList(user, doc);
-
-        //            // Return the document object.
-        //            return doc;
-        //        }
-        //        else return null;
-        //    }
-        //    else return null;
-        //}
-
         public Document OpenDocument(int id, User user)
         {
             // Get the path to the file from the database.
@@ -211,11 +132,13 @@ namespace SliceOfPie
             
             }
             return null;
-            
-
-            
         }
 
+        /// <summary>
+        /// Reads the content of a file
+        /// </summary>
+        /// <param name="path">Path to the file</param>
+        /// <returns>File content as a string</returns>
         public string ReadFile(string path)
         {
             try
@@ -228,13 +151,11 @@ namespace SliceOfPie
                 {
                     content += lines[i] + "\n";
                 }
-
                 return content;
             }
             catch (IOException e)
             { 
             }
-
             return null;
         }
 
@@ -268,7 +189,23 @@ namespace SliceOfPie
         /// </summary>
         /// <param name="doc">The document to delete</param>
         public void DeleteDocument(Document doc)
-        { 
+        {
+            string path = doc.path;
+
+            // Delete the file
+            if (File.Exists(path))
+            {
+                try
+                {
+                    File.Delete(path);
+                }
+                catch (IOException e) {
+                    Console.WriteLine(e.StackTrace);
+                }
+            }
+
+            // Delete the entry from the database.
+            dbCon.DeleteDocumentByID(doc.documentId);
         }
 
         /// <summary>

@@ -26,6 +26,11 @@
 <body>
     <form id="form1" runat="server">
     <div id="main">
+        <div id="userBar">
+            <label>Username: </label><asp:TextBox ID="userBox" runat="server" />
+            <label>Password: </label><asp:TextBox ID="passwordBox" runat="server" TextMode="Password" />
+            <asp:Button ID="loginButton" runat="server" OnClick="Login" Text="Login" />
+        </div>
         
         <div id="menuBar">
             <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
@@ -43,7 +48,7 @@
             </asp:Menu>--%>
             <asp:HiddenField ID="newDocumentHidden" runat="server" Value="empty" />
             <asp:Button ID="newDocButton" runat="server" OnClick="NewDocument" Text="New Document" />
-            <asp:Button ID="saveDocButton" runat="server" OnClick="SaveDocument" Text="Save Document" />
+            <asp:Button ID="saveDocButton" runat="server" Text="Save Document" />
             <asp:Button ID="openDocButton" runat="server" OnClick="OpenDocument" Text="Open Document" />
             <asp:Button id="Button1" onclick="Button1_Click" runat="server" Text="Go!" />
             
@@ -53,10 +58,10 @@
             File: 
             <asp:TextBox ID="fileNameBox" runat="server" Width="700px" />
             <asp:Button ID="SaveButton" runat="server" Text="Save" OnClick="Save" CssClass="rightButton" />
-            <asp:Button ID="DeleteButton" runat="server" Text="Delete" CssClass="rightButton" />
+            <asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteDocument" CssClass="rightButton" />
         </div>
         <div id="fileExplorer">
-            <asp:Button ID="button" runat="server" OnClick="Populate" />
+            <asp:Button ID="button" runat="server" OnClick="Populate" Text="Get Files" />
             <asp:TreeView ID="FileTree" runat="server" OnSelectedNodeChanged="OpenDocumentFromFileTree"></asp:TreeView>
         </div>
         <div id="textField">
