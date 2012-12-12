@@ -30,7 +30,7 @@ namespace WebUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            user = engine.userhandler.GetUser("MrT", "1234");
+            user = engine.userhandler.GetUser(hiddenUsername.Value, hiddenPassword.Value);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -50,6 +50,9 @@ namespace WebUI
         {
             string username = userBox.Text;
             string password = passwordBox.Text;
+            User user = facade.Authenticate(username, password);
+            hiddenUsername.Value = user.username;
+            hiddenPassword.Value = user.password;
         }
 
         /// <summary>
@@ -91,9 +94,10 @@ namespace WebUI
 
         protected void OpenDocument(object sender, EventArgs e)
         {
-            Document doc = facade.OpenDocument(16, user);
-            currentDoc = doc;
-            textArea.Text = currentDoc.content;
+            //Document doc = facade.OpenDocument(16, user);
+            //currentDoc = doc;
+            //textArea.Text = currentDoc.content;
+            Response.Write(user.ToString());
         }
 
         /// <summary>

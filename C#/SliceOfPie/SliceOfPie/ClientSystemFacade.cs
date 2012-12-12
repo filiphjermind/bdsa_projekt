@@ -9,7 +9,7 @@ namespace SliceOfPie
 {
     public class ClientSystemFacade
     {
-        private UserAuth userAuth = UserAuth.instance;
+        private UserAuth userAuth = UserAuth.GetInstance();
         private Engine engine = new Engine();
         private static ClientSystemFacade instance;
         private Socket socket;
@@ -82,7 +82,10 @@ namespace SliceOfPie
 
         public User Authenticate(string username, string password)
         {
+            Console.WriteLine("FACADE");
+            Console.WriteLine("username " + username + "password " + password);
             User user = userAuth.Authenticate(username, password);
+            //Console.WriteLine("FACADE2");
             return user;
         }
     }

@@ -27,6 +27,8 @@
     <form id="form1" runat="server">
     <div id="main">
         <div id="userBar">
+            <asp:HiddenField ID="hiddenUsername" runat="server" Value="" />
+            <asp:HiddenField ID="hiddenPassword" runat="server" Value="" />
             <label>Username: </label><asp:TextBox ID="userBox" runat="server" />
             <label>Password: </label><asp:TextBox ID="passwordBox" runat="server" TextMode="Password" />
             <asp:Button ID="loginButton" runat="server" OnClick="Login" Text="Login" />

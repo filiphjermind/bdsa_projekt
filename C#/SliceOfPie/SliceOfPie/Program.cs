@@ -9,14 +9,20 @@ namespace SliceOfPie
     {
         static void Main(string[] args)
         {
-
+            ClientSystemFacade facade = ClientSystemFacade.GetInstance();
             Engine engine = new Engine();//Engine.Instance;
             DBConnector DBCon = DBConnector.Instance;
 
-            User ownerUser = engine.userhandler.GetUser("mrT", "1234");
-            User toUser = engine.userhandler.GetUser("bergar", "1234");
+            //User user = engine.userhandler.GetUser("mrT", "1234");
 
-            engine.userhandler.docHandler.NewDocument(ownerUser, "tmp content", "SHARING DOCUMENT", Permission.Permissions.Edit);
+            User user = facade.Authenticate("mrT", "1234");
+
+            Console.WriteLine(user.ToString());
+
+            //User ownerUser = engine.userhandler.GetUser("mrT", "1234");
+            //User toUser = engine.userhandler.GetUser("bergar", "1234");
+
+            //engine.userhandler.docHandler.NewDocument(ownerUser, "tmp content", "SHARING DOCUMENT", Permission.Permissions.Edit);
 
             //User ownerUser = engine.userhandler.GetUser("mrT", "1234");
             //User toUser = engine.userhandler.GetUser("bergar", "1234");
