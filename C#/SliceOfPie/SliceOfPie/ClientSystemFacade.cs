@@ -75,9 +75,10 @@ namespace SliceOfPie
         /// </summary>
         /// <param name="user">The owner of the document</param>
         /// <param name="doc">The document to delete.</param>
-        public void DeleteDocument(User user, Document doc)
+        public void DeleteDocument(User user, string path)
         {
-            engine.userhandler.docHandler.DeleteDocument(doc);
+            engine.userhandler.docHandler.DeleteFile(path);
+            //engine.userhandler.docHandler.DeleteDocument(doc);
         }
 
         public User Authenticate(string username, string password)

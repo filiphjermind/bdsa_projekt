@@ -63,9 +63,13 @@ namespace WebUI
         {
             string username = userBox.Text;
             string password = passwordBox.Text;
-            User user = facade.Authenticate(username, password);
-            hiddenUsername.Value = user.username;
-            hiddenPassword.Value = user.password;
+            if (username != "" && password != "")
+            {
+                User user = facade.Authenticate(username, password);
+                hiddenUsername.Value = user.username;
+                hiddenPassword.Value = user.password;
+            }
+            
         }
 
         /// <summary>
@@ -95,16 +99,30 @@ namespace WebUI
             {
                 currentDoc = new Document(user);
                 currentDoc.content = textArea.Text;
+                Response.Write(currentDoc.content);
                 facade.SaveDocument(user, currentDoc, fileNameBox.Text);
             }
         }
 
+        /// <summary>
+        /// Deletes the currently opened document.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void DeleteDocument(object sender, EventArgs e)
         {
-            currentDoc = new Document(user);
+            string path = "root/" + user.username + "/" + fileNameBox.Text;
+
+            textArea.Text = "";
+            fileNameBox.Text = "";
+            
+            if (path != "")
+            {
+                facade.DeleteDocument(user, path);
+            }
         }
 
-
+        // DEPRECATED
         protected void OpenDocument(object sender, EventArgs e)
         {
             //Document doc = facade.OpenDocument(16, user);
