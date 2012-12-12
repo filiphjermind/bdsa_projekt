@@ -21,10 +21,10 @@ namespace SliceOfPie
         /// <param name="owner">The owner of the document</param>
         /// <param name="title">The title of the document.</param>
         /// <returns>The newly created document.</returns>
-        public Document NewDocument(User owner)
+        public Document NewDocument(User owner, string content, string path, Permission.Permissions perm)
         {
             // NOTE!!!
-            Document doc = new Document(owner);
+            Document doc = new Document(owner, content, path, perm);
             AddDocToList(owner, doc);
             return doc;
         }
@@ -217,12 +217,12 @@ namespace SliceOfPie
         /// <param name="users">List of users to share with.</param>
         public void ShareDocument(User currentUser, Document doc, Permission.Permissions perm ,params User[] users)
         {
-            //string[] splitFile = splitString(file);
-            Document sharedDocument;
+            Document sharedDocument = new Document(doc.owner, "tmp content", doc.path, perm);
             foreach (User i in users)
             {
-                if (!currentUser.documents.Contains(doc)) { }
-                    //currentUser.documents.Add()sharedDocument = new Document(i, ;//sharedDocument = new Document(i, file, perm));
+                if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document doe already exist"); 
+                else i.documents.Add(sharedDocument);
+                Console.WriteLine(i.documents.Contains(sharedDocument));
             }
         }
 

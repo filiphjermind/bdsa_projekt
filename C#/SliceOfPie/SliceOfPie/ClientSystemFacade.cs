@@ -40,9 +40,9 @@ namespace SliceOfPie
         /// </summary>
         /// <param name="owner">The owner of the document</param>
         /// <returns>The newly created document.</returns>
-        public Document NewDocument(User owner)
+        public Document NewDocument(User owner, string content, string path, Permission.Permissions perm)
         {
-            Document doc = engine.userhandler.docHandler.NewDocument(owner);
+            Document doc = engine.userhandler.docHandler.NewDocument(owner, content, path, perm);
             return doc;
         }
 

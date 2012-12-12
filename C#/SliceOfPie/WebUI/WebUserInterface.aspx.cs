@@ -60,7 +60,7 @@ namespace WebUI
         protected void NewDocument(object sender, EventArgs e)
         {
             newDocumentHidden.Value = "true";
-            currentDoc = facade.NewDocument(user);
+            currentDoc = facade.NewDocument(user, "", "", Permission.Permissions.Edit);
             fileNameBox.Text = "";
             textArea.Text = currentDoc.content;
         }

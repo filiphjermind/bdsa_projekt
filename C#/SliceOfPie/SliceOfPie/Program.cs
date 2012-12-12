@@ -13,16 +13,27 @@ namespace SliceOfPie
             Engine engine = new Engine();//Engine.Instance;
             DBConnector DBCon = DBConnector.Instance;
 
+            User ownerUser = engine.userhandler.GetUser("mrT", "1234");
+            User toUser = engine.userhandler.GetUser("bergar", "1234");
 
-            User user = engine.userhandler.GetUser("mrT", "1234");
-            List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
+            engine.userhandler.docHandler.NewDocument(ownerUser, "tmp content", "SHARING DOCUMENT", Permission.Permissions.Edit);
 
-            Console.WriteLine(docs.Count);
+            //User ownerUser = engine.userhandler.GetUser("mrT", "1234");
+            //User toUser = engine.userhandler.GetUser("bergar", "1234");
 
-            foreach (Document doc in docs)
-            {
-                Console.WriteLine(doc.documentId + " " + doc.owner.username);
-            }
+            //Document sharedDocument = engine.userhandler.docHandler.OpenDocument(15, ownerUser);
+
+            //engine.userhandler.docHandler.ShareDocument(ownerUser, sharedDocument, Permission.Permissions.Edit, toUser);
+
+            //User user = engine.userhandler.GetUser("mrT", "1234");
+            //List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
+
+            //Console.WriteLine(docs.Count);
+
+            //foreach (Document doc in docs)
+            //{
+            //    Console.WriteLine(doc.documentId + " " + doc.owner.username);
+            //}
             //Document document1 = engine.userhandler.docHandler.OpenDocument(15, user);
             //Document doc1 = new Document(user);
             //doc1.content = "This is \n a tst";
