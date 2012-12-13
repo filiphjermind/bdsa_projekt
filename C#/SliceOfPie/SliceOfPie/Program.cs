@@ -16,14 +16,9 @@ namespace SliceOfPie
             User ownerUser = engine.userhandler.GetUser("mrT", "1234");
             User toUser = engine.userhandler.GetUser("bergar", "1234");
 
-            engine.userhandler.docHandler.NewDocument(ownerUser, "tmp content", "SHARING DOCUMENT", Permission.Permissions.Edit);
+            Document sharedDocument = engine.userhandler.docHandler.OpenDocument(81, ownerUser);
 
-            //User ownerUser = engine.userhandler.GetUser("mrT", "1234");
-            //User toUser = engine.userhandler.GetUser("bergar", "1234");
-
-            //Document sharedDocument = engine.userhandler.docHandler.OpenDocument(15, ownerUser);
-
-            //engine.userhandler.docHandler.ShareDocument(ownerUser, sharedDocument, Permission.Permissions.Edit, toUser);
+            engine.userhandler.docHandler.ShareDocument(ownerUser, sharedDocument, Permission.Permissions.Edit, toUser);
 
             //User user = engine.userhandler.GetUser("mrT", "1234");
             //List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);

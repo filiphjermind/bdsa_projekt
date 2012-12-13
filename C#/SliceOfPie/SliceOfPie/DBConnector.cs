@@ -249,6 +249,25 @@ namespace SliceOfPie
             }
         }
 
+        public User AuthenticateUser(string username, string password)
+        {
+            User user = null;
+            string query = "SELECT * FROM user WHERE username = '" + username + "' AND password = '" + password + "'";
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                int id = (int) reader[0];
+                string name = (string) reader[1];
+                string userName = (string) reader[2];
+                string passWord = (string) reader[3];
+                user = new User(name, userName, passWord);
+            }
+
+            return user;
+        }
+
         /// <summary>
         /// Executes an already existing query
         /// </summary>

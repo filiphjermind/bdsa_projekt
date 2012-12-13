@@ -46,8 +46,11 @@ namespace WebUI
             Page.RegisterStartupScript("test", sb.ToString());
         }
 
-
-        
+        protected void Login(object sender, EventArgs e)
+        {
+            string username = userBox.Text;
+            string password = passwordBox.Text;
+        }
 
         /// <summary>
         /// Creates a new empty document.
@@ -57,11 +60,19 @@ namespace WebUI
         protected void NewDocument(object sender, EventArgs e)
         {
             newDocumentHidden.Value = "true";
-            currentDoc = facade.NewDocument(user);
+            currentDoc = facade.NewDocument(user, "", "", Permission.Permissions.Edit);
             fileNameBox.Text = "";
             textArea.Text = currentDoc.content;
         }
 
+        /// <summary>
+        /// Saves the currently opened document.
+        /// Saves the file to the disc.
+        /// Saves an entry in the database.
+        /// If the file/path doesn't exist, create it.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Save(object sender, EventArgs e)
         {
             if (!fileNameBox.Text.Equals(""))
@@ -72,51 +83,11 @@ namespace WebUI
             }
         }
 
-        /// <summary>
-        /// Saves a document.
-        /// If an existing document has been opened, overwrite the existing one.
-        /// If a new document has been created, save a new document.
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        protected void SaveDocument(object sender, EventArgs e)
+        protected void DeleteDocument(object sender, EventArgs e)
         {
-            // Check if a new document has been created, or an existing one has been opened.
-            if (newDocumentHidden.Value.Equals("false"))
-            {
-                // Existing document has been opened.
-                string filePath = FileTree.SelectedNode.Value.ToString();
-                string[] path = filePath.Split('\\');
-                filePath = path[path.Length - 1];
-
-                currentDoc = new Document(user);
-                currentDoc.content = textArea.Text;
-                facade.SaveDocument(user, currentDoc, filePath);
-            }
-            else if (newDocumentHidden.Value.Equals("empty"))
-            { 
-                // No document opened or created.
-                StringBuilder sb = new StringBuilder();
-                sb.Append("<script>");
-                sb.Append("window.open('NoDocumentBox.aspx', '', 'resizable=no, width=500px, height=300px');");
-                sb.Append("</scri");
-                sb.Append("pt>");
-
-                Page.RegisterStartupScript("test", sb.ToString());
-            }
-            else
-            {
-                // New unsaved document.
-                StringBuilder sb = new StringBuilder();
-                sb.Append("<script>");
-                sb.Append("window.open('SaveDocumentConfirmation.aspx', '', 'resizable=no, width=500px, height=300px');");
-                sb.Append("</scri");
-                sb.Append("pt>");
-
-                Page.RegisterStartupScript("test", sb.ToString());
-            }
-            
+            currentDoc = new Document(user);
         }
+
 
         protected void OpenDocument(object sender, EventArgs e)
         {
