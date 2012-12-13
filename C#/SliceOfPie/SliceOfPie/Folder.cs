@@ -40,9 +40,9 @@ namespace SliceOfPie
             string root = "root/" + user.username + "/";
             Console.WriteLine("FOLDRE SADFSDFSADF" + path);
 
-            if(!Directory.Exists(path))
+            if(!Directory.Exists(root + path))
             {
-                Directory.CreateDirectory(path);
+                Directory.CreateDirectory(root + path);
                 Console.WriteLine("FOLDER.CREATED Directory");
             }
 

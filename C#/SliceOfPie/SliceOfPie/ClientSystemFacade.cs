@@ -54,6 +54,8 @@ namespace SliceOfPie
         /// <param name="filename">Filename of the document.</param>
         public void SaveDocument(User user, Document doc, string filename)
         {
+            Console.WriteLine("PATH " + doc.path);
+            Console.WriteLine("FILENAME " + filename);
             engine.userhandler.docHandler.SaveDocument(user, doc, filename);
         }
 
@@ -93,6 +95,21 @@ namespace SliceOfPie
         public User NewUser(string name, string username, string password)
         {
             return engine.userhandler.NewUser(name, username, password);
+        }
+
+        public User GetUser(string username, string password)
+        {
+            return engine.userhandler.GetUser(username, password);
+        }
+
+        public string ReadFile(string path)
+        {
+            return engine.userhandler.docHandler.ReadFile(path);
+        }
+
+        public List<Document> GetAllUsersDocuments(User user)
+        {
+            return engine.userhandler.docHandler.GetAllUsersDocuments(user);
         }
     }
 }

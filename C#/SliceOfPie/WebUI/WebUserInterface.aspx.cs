@@ -14,42 +14,40 @@ namespace WebUI
     {
         ClientSystemFacade facade = ClientSystemFacade.GetInstance();
 
-        Engine engine = new Engine();
         User user;
-        List<Document> docs;
 
+        // Currently opened document.
         Document currentDoc;
 
+        // The currently selected file (in the file tree).
         string selectedFile;
-
-        public string test
-        {
-            get;
-            set;
-        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            user = engine.userhandler.GetUser(hiddenUsername.Value, hiddenPassword.Value);
+            user = facade.GetUser(hiddenUsername.Value, hiddenPassword.Value);
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {            
-            // Do some other processing...
+        // Used for testing!
+        //protected void Button1_Click(object sender, EventArgs e)
+        //{            
+        //    // Do some other processing...
+        //    StringBuilder sb = new StringBuilder();
+        //    sb.Append("<script>");
+        //    sb.Append("window.open('SaveDocumentConfirmation.aspx', '', 'resizable=no, width=500px, height=300px');");
+        //    sb.Append("</scri");
+        //    sb.Append("pt>");
 
-            StringBuilder sb = new StringBuilder();
-            sb.Append("<script>");
-            sb.Append("window.open('SaveDocumentConfirmation.aspx', '', 'resizable=no, width=500px, height=300px');");
-            sb.Append("</scri");
-            sb.Append("pt>");
+        //    Page.RegisterStartupScript("test", sb.ToString());
+        //}
 
-            Page.RegisterStartupScript("test", sb.ToString());
-        }
-
+        /// <summary>
+        /// Opens up a new window that allows a user to sign up for the system.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void SignUp(object sender, EventArgs e)
         {
             // Do some other processing...
-
             StringBuilder sb = new StringBuilder();
             sb.Append("<script>");
             sb.Append("window.open('Signup.aspx', '', 'resizable=no, width=500px, height=300px');");
@@ -59,6 +57,12 @@ namespace WebUI
             Page.RegisterStartupScript("test", sb.ToString());
         }
 
+        /// <summary>
+        /// Logs the user into the system by checking his credentials
+        /// against those stored in the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void Login(object sender, EventArgs e)
         {
             string username = userBox.Text;
@@ -73,13 +77,21 @@ namespace WebUI
         }
 
         /// <summary>
-        /// Creates a new empty document.
+        /// Shares the current document.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void ShareDocument(object sender, EventArgs e)
+        { 
+        }
+
+        /// <summary>
+        /// Creates a new empty document without saving it.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void NewDocument(object sender, EventArgs e)
         {
-            newDocumentHidden.Value = "true";
             currentDoc = facade.NewDocument(user, "", "", Permission.Permissions.Edit);
             fileNameBox.Text = "";
             textArea.Text = currentDoc.content;
@@ -97,14 +109,6 @@ namespace WebUI
         {
             if (!fileNameBox.Text.Equals(""))
             {
-                //string path = "root/" + user.username + fileNameBox.Text;
-                //string[] tmpPath = fileNameBox.Text.Split('/');
-                //string path = "";
-                //for (int i = 1; i < tmpPath.Length; i++)
-                //{
-                //    path += tmpPath[i];
-                //}
-                //Response.Write(path);
                 currentDoc = new Document(user);
                 currentDoc.content = textArea.Text;
                 Response.Write(currentDoc.content);
@@ -124,23 +128,11 @@ namespace WebUI
             textArea.Text = "";
             fileNameBox.Text = "";
 
-            Response.Write(path);
-            
+            // Delete the document if any document is opened.
             if (path != "")
             {
                 facade.DeleteDocument(user, path);
             }
-
-            Response.Write(" AFTER " + path);
-        }
-
-        // DEPRECATED
-        protected void OpenDocument(object sender, EventArgs e)
-        {
-            //Document doc = facade.OpenDocument(16, user);
-            //currentDoc = doc;
-            //textArea.Text = currentDoc.content;
-            Response.Write(user.ToString());
         }
 
         /// <summary>
@@ -151,12 +143,11 @@ namespace WebUI
         /// <param name="e"></param>
         protected void OpenDocumentFromFileTree(object sender, EventArgs e)
         {
-            newDocumentHidden.Value = "false";
             fileNameBox.Text = "";
             selectedFile = FileTree.SelectedNode.Value.ToString();
-            Response.Write(selectedFile);
             string[] splitPath = selectedFile.Split('\\');
 
+            // Display the file (and it's path) in the filebox.
             for (int i = 5; i < splitPath.Length; i++)
             {
                 if (i == splitPath.Length - 1)
@@ -170,7 +161,7 @@ namespace WebUI
             }
             
             // Display the content of the file in the textArea.
-            textArea.Text = engine.userhandler.docHandler.ReadFile(FileTree.SelectedNode.Value.ToString());
+            textArea.Text = facade.ReadFile(FileTree.SelectedNode.Value.ToString());
         }
 
         /****************** ALL METHODS BELOW ARE USED TO POPULATE THE FILE TREE **********************/
@@ -208,7 +199,7 @@ namespace WebUI
         /// <returns>A list of the path to all the users documents.</returns>
         private List<string> GetDocFilePath(User user)
         {
-            List<Document> documents = engine.userhandler.docHandler.GetAllUsersDocuments(user);
+            List<Document> documents = facade.GetAllUsersDocuments(user);
 
             List<string> docFilePath = new List<string>();
 

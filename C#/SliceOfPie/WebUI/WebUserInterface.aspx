@@ -2,22 +2,6 @@
 
 <!DOCTYPE html>
 
-<%--<script runat="server">
-
-    void Button1_Click(object sender, EventArgs e)
-    {
-        // Do some other processing...
-
-        StringBuilder sb = new StringBuilder();
-        sb.Append("<script>");
-        sb.Append("window.open('SaveDocumentConfirmation.aspx', '', 'resizable=no, width=500px, height=300px');");
-        sb.Append("</scri");
-        sb.Append("pt>");
-
-        Page.RegisterStartupScript("test", sb.ToString());
-    }
-
-</script>--%>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" type="text/css" href="style/style.css" />
@@ -29,8 +13,8 @@
         <div id="userBar">
             <asp:HiddenField ID="hiddenUsername" runat="server" Value="" />
             <asp:HiddenField ID="hiddenPassword" runat="server" Value="" />
-            <label>Username: </label><asp:TextBox ID="userBox" runat="server" />
-            <label>Password: </label><asp:TextBox ID="passwordBox" runat="server" TextMode="Password" />
+            <label class="label">Username: </label><asp:TextBox ID="userBox" runat="server" />
+            <label class="label">Password: </label><asp:TextBox ID="passwordBox" runat="server" TextMode="Password" />
             <asp:Button ID="loginButton" runat="server" OnClick="Login" Text="Login" />
             <asp:Button ID="signupButton" runat="server" OnClick="SignUp" Text="Sign up" />
         </div>
@@ -51,17 +35,18 @@
             </asp:Menu>--%>
             <asp:HiddenField ID="newDocumentHidden" runat="server" Value="empty" />
             <asp:Button ID="newDocButton" runat="server" OnClick="NewDocument" Text="New Document" />
-            <asp:Button ID="saveDocButton" runat="server" Text="Save Document" />
+            <asp:Button ID="SaveButton" runat="server" Text="Save Document" OnClick="Save" />
+            <asp:Button ID="DeleteButton" runat="server" Text="Delete Document" OnClick="DeleteDocument" />
+            <asp:Button ID="ShareButton" runat="server" Text="Share Document" OnClick="ShareDocument" />
+            <%--<asp:Button ID="saveDocButton" runat="server" Text="Save Document" />
             <asp:Button ID="openDocButton" runat="server" OnClick="OpenDocument" Text="Open Document" />
-            <asp:Button id="Button1" onclick="Button1_Click" runat="server" Text="Go!" />
+            <asp:Button id="Button1" onclick="Button1_Click" runat="server" Text="Go!" />--%>
             
             <%--<asp:Button ID="showHTMLButton" runat="server" Text="Show HTML" OnClientClick="Encode()" />--%>
         </div>
         <div id="fileBox">
-            File: 
+            <label class="label">File: </label>
             <asp:TextBox ID="fileNameBox" runat="server" Width="700px" />
-            <asp:Button ID="SaveButton" runat="server" Text="Save" OnClick="Save" CssClass="rightButton" />
-            <asp:Button ID="DeleteButton" runat="server" Text="Delete" OnClick="DeleteDocument" CssClass="rightButton" />
         </div>
         <div id="fileExplorer">
             <asp:Button ID="button" runat="server" OnClick="Populate" Text="Get Files" />

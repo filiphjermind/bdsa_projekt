@@ -1,5 +1,5 @@
 ﻿body {
-    background-color: red;
+    background-color: grey;
     margin-top: 30px;
 }
 #main {
@@ -9,22 +9,26 @@
     margin: auto;
 }
 #userBar {
-    width: 1000px;
+    width: 990px;
     height: 30px;
     margin: 0px;
-    padding: 0px;
+    padding-left: 10px;
+    background-color: #433A4F;
+    border-bottom: 1px solid black;
 }
 #menuBar {
-    width: 1000px;
+    width: 990px;
     height: 30px;
     margin: 0px;
-    padding: 0px;
+    padding-left: 10px;
     background-color: #433A4F;
+    border-bottom: 1px solid black;
 }
 #fileBox {
-    width: 1000px;
+    padding-left: 10px;
+    width: 990px;
     height: 30px;
-    background-color: red;
+    background-color: #433A4F;
 }
 #fileExplorer {
     float: left;
@@ -55,6 +59,9 @@ a:visited {
 }
 .rightButton {
     float: right;
+}
+.label {
+    color: white;
 }
 
 /*SIGNUP WINDOW*/

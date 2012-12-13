@@ -178,6 +178,7 @@ namespace SliceOfPie
 
         private void WriteFile(string path, string content)
         {
+            Console.WriteLine("WRITeFile");
             string[] splitContent = content.Split('\n');
 
             foreach (string s in splitContent)

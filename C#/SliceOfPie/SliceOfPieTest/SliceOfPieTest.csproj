@@ -51,6 +51,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="DocumentHandlerTest.cs" />
+    <Compile Include="ClientFacadeTest.cs" />
     <Compile Include="UserAndFolderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
