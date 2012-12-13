@@ -237,7 +237,35 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
+        public void DeleteUserDocument(User user, Document doc)
+        { 
+            string query = "DELETE FROM userdocument WHERE userID='"+user.id+"' AND documentID='"+doc.documentId+"'";
+            ExecuteQuery(query);
+        }
 
+        public void UpdatePermission(User user, Document doc, Permission.Permissions newPerm)
+        {
+            string query = "UPDATE userdocument SET permission='" + newPerm + "' WHERE userID='" + user.id + "' AND documentID='" + doc.documentId + "'";
+            ExecuteQuery(query);
+        }
+
+        public List<int> GetUserdocumentsByUser(User user)
+        {
+            string query = "SELECT * FROM userdocument WHERE userID='"+user.id+"'";
+
+            List<int> idList = new List<int>();
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                int id = (int)reader["id"];
+                idList.Add(id);
+            }
+
+            return idList;
+        }
+        
         public Permission.Permissions CheckPermission(User user, Document doc)
         {
             string query = "SELECT permission FROM userdocument WHERE userID='"+user.id+"' and documentID='"+doc.documentId+"'";
