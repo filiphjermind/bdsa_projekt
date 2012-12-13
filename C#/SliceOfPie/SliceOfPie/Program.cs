@@ -20,9 +20,9 @@ namespace SliceOfPie
             List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
 
             Document doc1 = engine.userhandler.docHandler.OpenDocument(71, user);
-            Document doc2 = engine.userhandler.docHandler.OpenDocument(71, user);
+            Document doc2 = engine.userhandler.docHandler.OpenDocument(105, user);
 
-            //engine.userhandler.docHandler.
+            engine.userhandler.docHandler.SaveDocument(user, engine.userhandler.docHandler.MergeDocuments(doc1, doc2), "hello.html");
 
 
             //Console.WriteLine(user.ToString());

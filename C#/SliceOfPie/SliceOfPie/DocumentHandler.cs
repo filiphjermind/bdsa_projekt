@@ -165,6 +165,17 @@ namespace SliceOfPie
             return null;
         }
 
+        public string[] ReadFile(Document doc)
+        {
+            try
+            {
+                string[] lines = File.ReadAllLines(doc.path);
+                return lines;
+            }
+            catch (IOException ioex) { }
+            return null;
+        }
+
         /// <summary>
         /// Returns all documents from the database that belong to
         /// the specific user.
@@ -277,7 +288,58 @@ namespace SliceOfPie
             return newDocumentList;
         }
 
+        public Document MergeDocuments(Document clientDoc, Document serverDoc)
+        {
+            string[] clientContent = ReadFile(clientDoc);
+            string[] serverContent = ReadFile(serverDoc);
+            string[] newArray;
+            if (serverContent.Length < clientContent.Length) newArray = CompareDocumentsInArray(clientContent, serverContent);
+            else newArray = CompareDocumentsInArray(serverContent, clientContent);
+
+            string newContent = "";
+
+            foreach (string s in newArray)
+            {
+                newContent += s + "\n";
+            }
+
+            Document tmpDocument = new Document(clientDoc.owner, newContent, clientDoc.path, clientDoc.permission);
+            SaveDocument(clientDoc.owner, tmpDocument, "This is a title");
+
+            return tmpDocument;
+        }
+
         /********************** PRIVATE HELPER METHODS ******************************/
+
+        private string[] CompareDocumentsInArray(string[] largestArray, string[] smallestArray)
+        {
+            List<string> tmpList = new List<string>();
+
+            for (int i = 0; i < largestArray.Length; i++)
+            {
+                if (i >= smallestArray.Length)
+                {
+                    tmpList.Add(largestArray[i]);
+                }
+                else 
+                {
+                    string[] tmpArray = CompareLinesInDocument(largestArray[i], smallestArray[i]).Split('\n');
+                    foreach (string s in tmpArray) tmpList.Add(s);
+                }
+                
+            }
+
+            string[] returnArray = tmpList.ToArray();
+            return returnArray;
+        }
+
+        private string CompareLinesInDocument(string s1, string s2)
+        {
+
+            if (s1.Equals(s2)) return s1;
+            else return "<<< " + s1 + "\n" + s2 + ">>>";
+        }
+
 
         /// <summary>
         /// Copies and selects newest documents from one list and 
@@ -314,9 +376,12 @@ namespace SliceOfPie
             {
                 if (d.documentId == i.documentId)
                 {
-                    Document tmp = FindNewestDocument(i, d);
-                    if (toList.Contains(i)) toList.Remove(i);
-                    if (toList.Contains(d)) toList.Remove(d);
+                    //Document tmp = FindNewestDocument(i, d);
+                    //if (toList.Contains(i)) toList.Remove(i);
+                    //if (toList.Contains(d)) toList.Remove(d);
+
+                    Document tmp = MergeDocuments(i, d);
+
                     toList.Add(tmp); return tmp;
                 }
             }
