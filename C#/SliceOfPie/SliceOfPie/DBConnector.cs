@@ -93,6 +93,13 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
+        public void DeleteDocumentByPath(User user, string path)
+        {
+            string query = "DELETE * FROM document WHERE owner = '"+user.username+"' AND file = '"+path+"'";
+            ExecuteQuery(query);
+
+        }
+
         public void UpdateDocumentByID(int id, string newOwner, string newFile)
         {
             string query = "UPDATE document SET owner='"+newOwner+"', file='"+newFile+"' WHERE id="+id+"";

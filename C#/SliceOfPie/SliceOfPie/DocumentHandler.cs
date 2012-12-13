@@ -225,7 +225,7 @@ namespace SliceOfPie
             dbCon.DeleteDocumentByID(doc.documentId);
         }
 
-        public void DeleteFile(string path)
+        public void DeleteFile(User user, string path)
         {
             if (File.Exists(path))
             {
@@ -238,6 +238,8 @@ namespace SliceOfPie
                     Console.WriteLine(e.StackTrace);
                 }
             }
+
+            dbCon.DeleteDocumentByPath(user, path);
         }
 
         /// <summary>
