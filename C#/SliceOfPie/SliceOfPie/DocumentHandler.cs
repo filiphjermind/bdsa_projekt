@@ -91,6 +91,7 @@ namespace SliceOfPie
                 }
                 catch (IOException e)
                 {
+                    Console.WriteLine(e.StackTrace);
                 }
             }
 
@@ -225,8 +226,9 @@ namespace SliceOfPie
             dbCon.DeleteDocumentByID(doc.documentId);
         }
 
-        public void DeleteFile(string path)
+        public void DeleteFile(User user, string path)
         {
+            dbCon.DeleteDocumentByPath(user, path);
             if (File.Exists(path))
             {
                 try

@@ -77,7 +77,7 @@ namespace SliceOfPie
         /// <param name="doc">The document to delete.</param>
         public void DeleteDocument(User user, string path)
         {
-            engine.userhandler.docHandler.DeleteFile(path);
+            engine.userhandler.docHandler.DeleteFile(user, path);
             //engine.userhandler.docHandler.DeleteDocument(doc);
         }
 

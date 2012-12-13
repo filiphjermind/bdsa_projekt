@@ -13,16 +13,29 @@ namespace SliceOfPie
             Engine engine = new Engine();//Engine.Instance;
             DBConnector DBCon = DBConnector.Instance;
 
+            User user = facade.NewUser("Chuck Norris", "chuck", "norris");
+
+            //Document doc = new Document(user);
+            //doc.content = "this is a \nTEST!!! sadfkjhsdaklfjhaskjfh";
+            //facade.SaveDocument(user, doc, "TESTING.html");
+
+            facade.DeleteDocument(user, "TESTING.html");
+
+
             //User user = engine.userhandler.GetUser("mrT", "1234");
 
-            User user = facade.Authenticate("mrT", "1234");
+            //User user = facade.Authenticate("NewUser", "123");
 
-            List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
+            //Document doc = facade.OpenDocument(117, user);
 
-            Document doc1 = engine.userhandler.docHandler.OpenDocument(71, user);
-            Document doc2 = engine.userhandler.docHandler.OpenDocument(105, user);
+            //facade.DeleteDocument(user, "root/NewUser/hellosfsadfsfafd.html");
 
-            engine.userhandler.docHandler.SaveDocument(user, engine.userhandler.docHandler.MergeDocuments(doc1, doc2), "hello.html");
+            //List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
+
+            //Document doc1 = engine.userhandler.docHandler.OpenDocument(71, user);
+            //Document doc2 = engine.userhandler.docHandler.OpenDocument(105, user);
+
+            //engine.userhandler.docHandler.SaveDocument(user, engine.userhandler.docHandler.MergeDocuments(doc1, doc2), "hello.html");
 
 
             //Console.WriteLine(user.ToString());

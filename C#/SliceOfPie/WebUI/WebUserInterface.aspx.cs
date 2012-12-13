@@ -97,6 +97,14 @@ namespace WebUI
         {
             if (!fileNameBox.Text.Equals(""))
             {
+                //string path = "root/" + user.username + fileNameBox.Text;
+                //string[] tmpPath = fileNameBox.Text.Split('/');
+                //string path = "";
+                //for (int i = 1; i < tmpPath.Length; i++)
+                //{
+                //    path += tmpPath[i];
+                //}
+                //Response.Write(path);
                 currentDoc = new Document(user);
                 currentDoc.content = textArea.Text;
                 Response.Write(currentDoc.content);
@@ -111,15 +119,19 @@ namespace WebUI
         /// <param name="e"></param>
         protected void DeleteDocument(object sender, EventArgs e)
         {
-            string path = "root/" + user.username + "/" + fileNameBox.Text;
+            string path = "root/" + user.username + fileNameBox.Text;
 
             textArea.Text = "";
             fileNameBox.Text = "";
+
+            Response.Write(path);
             
             if (path != "")
             {
                 facade.DeleteDocument(user, path);
             }
+
+            Response.Write("AFTER " + path);
         }
 
         // DEPRECATED
