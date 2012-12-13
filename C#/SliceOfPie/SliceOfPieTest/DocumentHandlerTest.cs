@@ -16,13 +16,13 @@ namespace SliceOfPieTest
         {
             //creation of documents and user for testing
             User user1 = engine.userhandler.GetUser("mrT","1234");
-            Document document1 = new Document(user1, "tmp", "There", Permission.Permissions.Edit);
-            Document document2 = new Document(user1, "tmp", "There", Permission.Permissions.Edit);
-            Document document3 = new Document(user1, "tmp", "There", Permission.Permissions.Edit);
+            Document document1 = new Document(user1, "tmp", "There.html", Permission.Permissions.Edit);
+            Document document2 = new Document(user1, "tmp", "There.html", Permission.Permissions.Edit);
+            Document document3 = new Document(user1, "tmp", "There.html", Permission.Permissions.Edit);
 
-            Document document4 = new Document(user1, "tmp", "There", Permission.Permissions.Edit);
-            Document document5 = new Document(user1, "tmp", "There", Permission.Permissions.Edit);
-            Document document6 = new Document(user1, "tmp", "There", Permission.Permissions.Edit);
+            Document document4 = new Document(user1, "tmp", "There.html", Permission.Permissions.Edit);
+            Document document5 = new Document(user1, "tmp", "There.html", Permission.Permissions.Edit);
+            Document document6 = new Document(user1, "tmp", "There.html", Permission.Permissions.Edit);
 
             document2.lastChanged = new DateTime(2012, 12, 5);
             document3.lastChanged = new DateTime(2012, 12, 5);
