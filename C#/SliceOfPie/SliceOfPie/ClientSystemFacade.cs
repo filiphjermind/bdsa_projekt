@@ -9,7 +9,7 @@ namespace SliceOfPie
 {
     public class ClientSystemFacade
     {
-        private UserAuth userAuth = UserAuth.instance;
+        private UserAuth userAuth = UserAuth.GetInstance();
         private Engine engine = new Engine();
         private static ClientSystemFacade instance;
         private Socket socket;
@@ -75,15 +75,24 @@ namespace SliceOfPie
         /// </summary>
         /// <param name="user">The owner of the document</param>
         /// <param name="doc">The document to delete.</param>
-        public void DeleteDocument(User user, Document doc)
+        public void DeleteDocument(User user, string path)
         {
-            engine.userhandler.docHandler.DeleteDocument(doc);
+            engine.userhandler.docHandler.DeleteFile(path);
+            //engine.userhandler.docHandler.DeleteDocument(doc);
         }
 
         public User Authenticate(string username, string password)
         {
+            Console.WriteLine("FACADE");
+            Console.WriteLine("username " + username + "password " + password);
             User user = userAuth.Authenticate(username, password);
+            //Console.WriteLine("FACADE2");
             return user;
+        }
+
+        public User NewUser(string name, string username, string password)
+        {
+            return engine.userhandler.NewUser(name, username, password);
         }
     }
 }

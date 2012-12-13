@@ -111,6 +111,7 @@ namespace SliceOfPie
             while (reader.Read()) idList.Add((int)reader["id"]);
 
             reader.Close();
+            CloseConnection();
 
                 return idList;
         }
@@ -179,6 +180,7 @@ namespace SliceOfPie
                 ErrorMessage("No user with both given username and password exists.");
             }
             reader.Close();
+            CloseConnection();
             return userAssembly;
         }
 
@@ -195,6 +197,7 @@ namespace SliceOfPie
                 userList.Add(reader["username"] + "");
             }
             reader.Close();
+            CloseConnection();
             return userList;
         }
 
@@ -212,10 +215,12 @@ namespace SliceOfPie
             MySqlDataReader reader = ExecuteReader(query);
 
             while (reader.Read())
-            { 
-                path = reader["file"] + "";
+            {
+                path = (string) reader[0];
+                //Console.WriteLine("Path: " + path);
             }
             reader.Close();
+            CloseConnection();
             return path;
         }
 
@@ -247,6 +252,7 @@ namespace SliceOfPie
                 case "Delete": return Permission.Permissions.Delete;
                 default: return Permission.Permissions.None; Console.WriteLine("corrupt DB, check data"); break;
             }
+            CloseConnection();
         }
 
         public User AuthenticateUser(string username, string password)
@@ -258,13 +264,16 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                int id = (int) reader[0];
+                //int id = (int) reader[1];
                 string name = (string) reader[1];
                 string userName = (string) reader[2];
                 string passWord = (string) reader[3];
                 user = new User(name, userName, passWord);
             }
 
+            //Console.WriteLine("READER " + reader[1] + " " + reader[2] + " " + reader[3]);
+            reader.Close();
+            CloseConnection();
             return user;
         }
 
@@ -290,10 +299,14 @@ namespace SliceOfPie
             if (connection.State != ConnectionState.Open) ErrorMessage("Cannot open connection to server");
             else
             {
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                MySqlDataReader reader = cmd.ExecuteReader();
-                //CloseConnection();
-                return reader;
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    MySqlDataReader reader = cmd.ExecuteReader();
+                    //CloseConnection();
+                    return reader;
+                }
+                catch (MySqlException e) { }
             }
             return null;
         }

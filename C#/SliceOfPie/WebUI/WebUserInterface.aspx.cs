@@ -30,7 +30,7 @@ namespace WebUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            user = engine.userhandler.GetUser("MrT", "1234");
+            user = engine.userhandler.GetUser(hiddenUsername.Value, hiddenPassword.Value);
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -46,10 +46,30 @@ namespace WebUI
             Page.RegisterStartupScript("test", sb.ToString());
         }
 
+        protected void SignUp(object sender, EventArgs e)
+        {
+            // Do some other processing...
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<script>");
+            sb.Append("window.open('Signup.aspx', '', 'resizable=no, width=500px, height=300px');");
+            sb.Append("</scri");
+            sb.Append("pt>");
+
+            Page.RegisterStartupScript("test", sb.ToString());
+        }
+
         protected void Login(object sender, EventArgs e)
         {
             string username = userBox.Text;
             string password = passwordBox.Text;
+            if (username != "" && password != "")
+            {
+                User user = facade.Authenticate(username, password);
+                hiddenUsername.Value = user.username;
+                hiddenPassword.Value = user.password;
+            }
+            
         }
 
         /// <summary>
@@ -79,21 +99,36 @@ namespace WebUI
             {
                 currentDoc = new Document(user);
                 currentDoc.content = textArea.Text;
+                Response.Write(currentDoc.content);
                 facade.SaveDocument(user, currentDoc, fileNameBox.Text);
             }
         }
 
+        /// <summary>
+        /// Deletes the currently opened document.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         protected void DeleteDocument(object sender, EventArgs e)
         {
-            currentDoc = new Document(user);
+            string path = "root/" + user.username + "/" + fileNameBox.Text;
+
+            textArea.Text = "";
+            fileNameBox.Text = "";
+            
+            if (path != "")
+            {
+                facade.DeleteDocument(user, path);
+            }
         }
 
-
+        // DEPRECATED
         protected void OpenDocument(object sender, EventArgs e)
         {
-            Document doc = facade.OpenDocument(16, user);
-            currentDoc = doc;
-            textArea.Text = currentDoc.content;
+            //Document doc = facade.OpenDocument(16, user);
+            //currentDoc = doc;
+            //textArea.Text = currentDoc.content;
+            Response.Write(user.ToString());
         }
 
         /// <summary>

@@ -214,6 +214,21 @@ namespace SliceOfPie
             dbCon.DeleteDocumentByID(doc.documentId);
         }
 
+        public void DeleteFile(string path)
+        {
+            if (File.Exists(path))
+            {
+                try
+                {
+                    File.Delete(path);
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                }
+            }
+        }
+
         /// <summary>
         /// Allows the owner of the document to share the
         /// document with other users.

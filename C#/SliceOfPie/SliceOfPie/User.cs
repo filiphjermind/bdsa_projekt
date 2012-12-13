@@ -53,5 +53,11 @@ namespace SliceOfPie
             this.username = username;
             this.password = password;
         }
+
+        public override string ToString()
+        {
+            string user = "Name: " + this.name + "\nUsername: " + this.username + "\nPassword: " + this.password;
+            return user;
+        }
     }
 }

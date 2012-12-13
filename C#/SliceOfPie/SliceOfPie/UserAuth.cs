@@ -35,7 +35,9 @@ namespace SliceOfPie
 
         public User Authenticate(string username, string password)
         {
+            Console.WriteLine("USERAUTH");
             User user = DBcon.AuthenticateUser(username, password);
+            //Console.WriteLine("USERAUTH2");
             return user;
         }
 
