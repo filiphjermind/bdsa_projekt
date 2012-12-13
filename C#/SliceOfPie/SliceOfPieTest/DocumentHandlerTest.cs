@@ -51,14 +51,14 @@ namespace SliceOfPieTest
         [TestMethod]
         public void ShareDocumentTest()
         {
-            User userOwner = engine.userhandler.GetUser("mrT", "1234");
-            User user1 = engine.userhandler.GetUser("bergar", "1234");
+            User ownerUser = engine.userhandler.GetUser("mrT", "1234");
+            User toUser = engine.userhandler.GetUser("bergar", "1234");
 
-            Document testDoc = engine.userhandler.docHandler.OpenDocument(15, userOwner);
+            Document testDoc = engine.userhandler.docHandler.OpenDocument(81, ownerUser);
+            //testDoc.content = "here is some content";
+            engine.userhandler.docHandler.ShareDocument(ownerUser, testDoc, Permission.Permissions.Edit, toUser);
 
-            engine.userhandler.docHandler.ShareDocument(userOwner, testDoc, Permission.Permissions.Edit, user1);
-
-            Assert.AreEqual(true ,user1.documents.Contains(testDoc));
+            Assert.AreEqual(true ,toUser.documents.Contains(testDoc));
         }
     }
 }

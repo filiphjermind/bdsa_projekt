@@ -42,7 +42,7 @@ namespace SliceOfPie
         /// <returns>The newly created document.</returns>
         public Document NewDocument(User owner, string content, string path, Permission.Permissions perm)
         {
-            Document doc = engine.userhandler.docHandler.NewDocument(owner, content, path, perm);
+            Document doc = engine.userhandler.docHandler.NewDocument(owner, content, perm);
             return doc;
         }
 

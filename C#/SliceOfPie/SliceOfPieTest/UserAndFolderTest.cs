@@ -73,9 +73,9 @@ namespace SliceOfPieTest
             Assert.AreEqual(false, exists);
         }
 
-        /// <summary>
-        /// Check that it's possible to delete a user from the database.
-        /// </summary>
+        ///<summary>
+        ///Check that it's possible to delete a user from the database.
+        ///</summary>
         [TestMethod]
         public void DeleteUserTest()
         {

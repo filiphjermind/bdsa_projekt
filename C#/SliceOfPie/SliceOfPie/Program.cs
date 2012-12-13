@@ -17,19 +17,18 @@ namespace SliceOfPie
 
             User user = facade.Authenticate("mrT", "1234");
 
-            engine.userhandler.docHandler.GetAllUsersDocuments(user);
+            List<Document> docs = engine.userhandler.docHandler.GetAllUsersDocuments(user);
+
+            Document doc1 = engine.userhandler.docHandler.OpenDocument(71, user);
+            Document doc2 = engine.userhandler.docHandler.OpenDocument(71, user);
+
+            //engine.userhandler.docHandler.
+
 
             //Console.WriteLine(user.ToString());
 
             //User ownerUser = engine.userhandler.GetUser("mrT", "1234");
             //User toUser = engine.userhandler.GetUser("bergar", "1234");
-
-            //engine.userhandler.docHandler.NewDocument(ownerUser, "tmp content", "SHARING DOCUMENT", Permission.Permissions.Edit);
-
-            //User ownerUser = engine.userhandler.GetUser("mrT", "1234");
-            //User toUser = engine.userhandler.GetUser("bergar", "1234");
-
-            //Document sharedDocument = engine.userhandler.docHandler.OpenDocument(15, ownerUser);
 
             //engine.userhandler.docHandler.ShareDocument(ownerUser, sharedDocument, Permission.Permissions.Edit, toUser);
 

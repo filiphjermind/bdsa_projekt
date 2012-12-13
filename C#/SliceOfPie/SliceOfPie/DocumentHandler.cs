@@ -21,10 +21,10 @@ namespace SliceOfPie
         /// <param name="owner">The owner of the document</param>
         /// <param name="title">The title of the document.</param>
         /// <returns>The newly created document.</returns>
-        public Document NewDocument(User owner, string content, string path, Permission.Permissions perm)
+        public Document NewDocument(User owner, string content, Permission.Permissions perm)
         {
             // NOTE!!!
-            Document doc = new Document(owner, content, path, perm);
+            Document doc = new Document(owner, content, perm);
             AddDocToList(owner, doc);
             return doc;
         }
@@ -74,25 +74,31 @@ namespace SliceOfPie
             }
 
             // Split the content so each line is an array index.
-            string[] splitContent = doc.content.Split('\n');
-
-            foreach (string l in splitContent)
+            if (doc.content == null) ;
+            else
             {
-                Console.WriteLine(l);
+                string[] splitContent = doc.content.Split('\n');
+
+                foreach (string l in splitContent)
+                {
+                    Console.WriteLine(l);
+                }
+
+                // Write content to the file
+                try
+                {
+                    File.WriteAllLines(path, splitContent);
+                }
+                catch (IOException e)
+                {
+                }
             }
 
-            // Write content to the file
-            try
-            {
-                File.WriteAllLines(path, splitContent);
-            }
-            catch (IOException e) { 
-            }
-
-            //doc.lastChanged = DateTime.Now;
+            doc.lastChanged = DateTime.Now;
 
             // Insert data to the database.
             dbCon.InsertDocument(user.username, path);
+            user.documents.Add(doc);
         }
 
         /// <summary>
@@ -232,11 +238,13 @@ namespace SliceOfPie
         /// <param name="users">List of users to share with.</param>
         public void ShareDocument(User currentUser, Document doc, Permission.Permissions perm ,params User[] users)
         {
-            Document sharedDocument = new Document(doc.owner, "tmp content", doc.path, perm);
+            Document sharedDocument = new Document(doc.owner, doc.path, perm);
+            
             foreach (User i in users)
             {
-                if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document doe already exist"); 
-                else i.documents.Add(sharedDocument);
+                if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document doe already exist");
+                else SaveDocument(i, doc, doc.title);
+                
                 Console.WriteLine(i.documents.Contains(sharedDocument));
             }
         }
