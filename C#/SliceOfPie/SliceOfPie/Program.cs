@@ -16,10 +16,14 @@ namespace SliceOfPie
             User user = facade.NewUser("Chuck Norris", "chuck", "norris");
 
             //Document doc = new Document(user);
-            //doc.content = "this is a \nTEST!!! sadfkjhsdaklfjhaskjfh";
-            //facade.SaveDocument(user, doc, "TESTING.html");
+            //doc.content = "helloooooo\nthis\nis\nSPARTA!!";
+            //facade.SaveDocument(user, doc, "folder/sample/lol/asdfTESTING123556655.html");
 
-            facade.DeleteDocument(user, "TESTING.html");
+            //Document doc2 = facade.OpenDocument(187, user);
+
+            //facade.DeleteDocument(user, doc2.path);
+
+            //facade.DeleteDocument(user, "asdfsdfTESTINGDOC123.html");
 
 
             //User user = engine.userhandler.GetUser("mrT", "1234");

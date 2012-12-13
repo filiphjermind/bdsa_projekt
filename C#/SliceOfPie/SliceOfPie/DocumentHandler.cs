@@ -36,70 +36,165 @@ namespace SliceOfPie
         /// <param name="username">Owner of the document.</param>
         /// <param name="doc">The document to be saved.</param>
         /// <param name="filename">Filename of the document</param>
+        //public void SaveDocument(User user, Document doc, string filename)
+        //{
+        //    // The full path to the file.
+        //    string path = "root/" + user.username + "/" + filename;
+
+        //    // split the filename into an array.
+        //    string[] filePath = path.Split('/');
+
+        //    string tmpPath = "";
+
+        //    // Check if the path to the file exists.
+        //    for (int i = 0; i < filePath.Length-1; i++)
+        //    {
+        //        tmpPath += filePath[i] + "/";
+        //        if(!Directory.Exists(tmpPath))
+        //        {
+        //            try
+        //            {
+        //                Directory.CreateDirectory(tmpPath);
+        //            }
+        //            catch (IOException e) { }
+                    
+        //        }
+        //    }
+
+        //    // Check if the file exists
+        //    if (!File.Exists(path))
+        //    {
+        //        try
+        //        {
+        //            // Create the file
+        //            File.Create(path);
+        //        }
+        //        catch (IOException e) { }
+                
+        //    }
+
+        //    // Split the content so each line is an array index.
+        //    if (doc.content == null) ;
+        //    else
+        //    {
+        //        string[] splitContent = doc.content.Split('\n');
+
+        //        foreach (string l in splitContent)
+        //        {
+        //            Console.WriteLine(l);
+        //        }
+
+        //        // Write content to the file
+        //        try
+        //        {
+        //            File.WriteAllLines(path, splitContent);
+        //        }
+        //        catch (IOException e)
+        //        {
+        //            Console.WriteLine(e.StackTrace);
+        //        }
+        //    }
+
+        //    doc.lastChanged = DateTime.Now;
+
+        //    // Insert data to the database.
+        //    dbCon.InsertDocument(user.username, path);
+        //    user.documents.Add(doc);
+        //}
+
         public void SaveDocument(User user, Document doc, string filename)
         {
             // The full path to the file.
             string path = "root/" + user.username + "/" + filename;
 
-            // split the filename into an array.
-            string[] filePath = path.Split('/');
-
-            string tmpPath = "";
-
-            // Check if the path to the file exists.
-            for (int i = 0; i < filePath.Length-1; i++)
+            // The full path without the filename.
+            string[] tmp = path.Split('/');
+            string pathWihoutFile = "";
+            for (int i = 0; i < tmp.Length-1; i++)
             {
-                tmpPath += filePath[i] + "/";
-                if(!Directory.Exists(tmpPath))
-                {
-                    try
-                    {
-                        Directory.CreateDirectory(tmpPath);
-                    }
-                    catch (IOException e) { }
-                    
-                }
+                pathWihoutFile += tmp[i] + "/";
             }
 
-            // Check if the file exists
-            if (!File.Exists(path))
-            {
-                try
-                {
-                    // Create the file
-                    File.Create(path);
-                }
-                catch (IOException e) { }
-                
-            }
+            Console.WriteLine("SAVEDOC " + pathWihoutFile);
 
-            // Split the content so each line is an array index.
-            if (doc.content == null) ;
-            else
-            {
-                string[] splitContent = doc.content.Split('\n');
+            // Check if the path to the file exists. Create it if not.
+            //CreatePathToFile(user, pathWihoutFile);
+            folder.CreateNewFolder(user, pathWihoutFile);
 
-                foreach (string l in splitContent)
-                {
-                    Console.WriteLine(l);
-                }
+            // Check if the file exists. Create it if not.
+            //CreateFile(path);
 
-                // Write content to the file
-                try
-                {
-                    File.WriteAllLines(path, splitContent);
-                }
-                catch (IOException e)
-                {
-                    Console.WriteLine(e.StackTrace);
-                }
-            }
+            // Write content to the file.
+            WriteFile(path, doc.content);
+            
 
+            // Update when the document was last changed.
             doc.lastChanged = DateTime.Now;
 
-            // Insert data to the database.
+            // Insert entry in the database.
             dbCon.InsertDocument(user.username, path);
+
+            // Add the document to the users list of documents.
             user.documents.Add(doc);
+            
+        }
+
+        private void CreatePathToFile(User user, string path)
+        {
+            Console.WriteLine("PATH TO FILE: " + path);
+            // Check if the path to the file exists.
+            string[] splitPath = path.Split('/');
+
+            // If the path contains more than the actual file
+            if (splitPath.Length > 3)
+            {
+                string tmpPath = "";
+                for (int i = 2; i < splitPath.Length - 1; i++)
+                {
+                    tmpPath += splitPath[i] + "/";
+                    // Check if directory exists.
+                    if (!Directory.Exists(tmpPath))
+                    {
+                        folder.CreateNewFolder(user, tmpPath);
+                        Console.WriteLine("CREATED FOLDER");
+                    }
+                }
+            }
+            Console.WriteLine("CREATED PATH");
+        }
+
+        private void CreateFile(string path)
+        {
+            try
+            {
+                File.Create(path);
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+            Console.WriteLine("CREATED FILE");
+        }
+
+        private void WriteFile(string path, string content)
+        {
+            string[] splitContent = content.Split('\n');
+
+            foreach (string s in splitContent)
+            {
+                Console.WriteLine(s);
+            }
+
+            try
+            {
+                //File.WriteAllText(path, content);
+                File.WriteAllLines(path, splitContent);
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+            Console.WriteLine("WROTE TO FILE");
         }
 
         /// <summary>
@@ -209,6 +304,7 @@ namespace SliceOfPie
         public void DeleteDocument(Document doc)
         {
             string path = doc.path;
+            
 
             // Delete the file
             if (File.Exists(path))
@@ -228,6 +324,7 @@ namespace SliceOfPie
 
         public void DeleteFile(User user, string path)
         {
+            Console.WriteLine("DELETE DOCUMENT() " + path);
             dbCon.DeleteDocumentByPath(user, path);
             if (File.Exists(path))
             {

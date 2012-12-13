@@ -38,23 +38,31 @@ namespace SliceOfPie
         public void CreateNewFolder(User user, string path)
         {
             string root = "root/" + user.username + "/";
+            Console.WriteLine("FOLDRE SADFSDFSADF" + path);
 
-            string[] splitPath = path.Split('/');
-            string fileName = splitPath[splitPath.Length - 1];
-
-            string curDir = root;
-
-            // Check if the directory exists.
-            // Create if it doesn't.
-
-            for (int i = 2; i < splitPath.Length - 2; i++)
-            { 
-                if(!Directory.Exists(curDir))
-                {
-                    Directory.CreateDirectory(curDir);
-                }
-                curDir += splitPath + "/";
+            if(!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+                Console.WriteLine("FOLDER.CREATED Directory");
             }
+
+            //string[] splitPath = path.Split('/');
+            //string fileName = splitPath[splitPath.Length - 1];
+
+            //string curDir = root;
+
+            //// Check if the directory exists.
+            //// Create if it doesn't.
+
+            //for (int i = 2; i < splitPath.Length - 2; i++)
+            //{ 
+            //    if(!Directory.Exists(curDir))
+            //    {
+            //        Directory.CreateDirectory(curDir);
+            //        Console.WriteLine("CREATED FOLDER IN FOLDER CLASS");
+            //    }
+            //    curDir += splitPath + "/";
+            //}
         }
 
         /// <summary>

@@ -119,7 +119,7 @@ namespace WebUI
         /// <param name="e"></param>
         protected void DeleteDocument(object sender, EventArgs e)
         {
-            string path = "root/" + user.username + fileNameBox.Text;
+            string path = "root/" + user.username + "/" + fileNameBox.Text;
 
             textArea.Text = "";
             fileNameBox.Text = "";
@@ -131,7 +131,7 @@ namespace WebUI
                 facade.DeleteDocument(user, path);
             }
 
-            Response.Write("AFTER " + path);
+            Response.Write(" AFTER " + path);
         }
 
         // DEPRECATED
@@ -154,11 +154,19 @@ namespace WebUI
             newDocumentHidden.Value = "false";
             fileNameBox.Text = "";
             selectedFile = FileTree.SelectedNode.Value.ToString();
+            Response.Write(selectedFile);
             string[] splitPath = selectedFile.Split('\\');
 
             for (int i = 5; i < splitPath.Length; i++)
             {
-                fileNameBox.Text += "/" + splitPath[i];
+                if (i == splitPath.Length - 1)
+                {
+                    fileNameBox.Text += splitPath[i];
+                }
+                else
+                {
+                    fileNameBox.Text += splitPath[i] + "/";
+                }
             }
             
             // Display the content of the file in the textArea.
