@@ -27,6 +27,7 @@ namespace WebUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (hiddenUsername.Value == "") { } else
             user = facade.GetUser(hiddenUsername.Value, hiddenPassword.Value);
         }
 

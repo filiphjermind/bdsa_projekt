@@ -57,7 +57,7 @@ namespace SliceOfPieTest
         public void CheckUserdocumentTest()
         {
             User testUser = engine.userhandler.GetUser("hvass", "1234");
-            //Document 
+            //Document testDocument = engine.dbCon.GetDocument(
         }
 
         [TestMethod]
