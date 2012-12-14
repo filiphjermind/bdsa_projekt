@@ -38,8 +38,13 @@ namespace SliceOfPie
 
         public Engine()
         {
-            rootDirectory = Path.GetFullPath("root"); //folder.SetRootDirectory();
-            Console.WriteLine(rootDirectory);
+            // Check if the root directory exists. If not, create it.
+            if (!Directory.Exists("root"))
+            {
+                Directory.CreateDirectory("root");
+            }
+            //rootDirectory = Path.GetFullPath("root"); //folder.SetRootDirectory();
+            //Console.WriteLine(rootDirectory);
             Initialize();
         }
 

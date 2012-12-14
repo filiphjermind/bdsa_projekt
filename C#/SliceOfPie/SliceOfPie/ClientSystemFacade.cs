@@ -139,5 +139,10 @@ namespace SliceOfPie
         {
             return engine.userhandler.docHandler.GetAllUsersDocuments(user);
         }
+
+        public List<Document> GetAllSharedDocuments(User user)
+        {
+            return null;
+        }
     }
 }

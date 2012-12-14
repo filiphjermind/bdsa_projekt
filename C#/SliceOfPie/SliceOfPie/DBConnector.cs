@@ -260,7 +260,7 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                int id = (int)reader["id"];
+                int id = (int)reader["documentID"];
                 idList.Add(id);
             }
 
@@ -300,7 +300,7 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                //int id = (int) reader[1];
+                int id = (int) reader[0];
                 string name = (string) reader[1];
                 string userName = (string) reader[2];
                 string passWord = (string) reader[3];

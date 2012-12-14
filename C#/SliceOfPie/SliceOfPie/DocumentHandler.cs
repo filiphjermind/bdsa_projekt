@@ -282,6 +282,7 @@ namespace SliceOfPie
         public List<Document> GetAllUsersDocuments(User user)
         {
             List<int> documentIDList = dbCon.SelectDocumentsFromUser(user);
+            //List<int> documentIDList = dbCon.GetUserdocumentsByUser(user);
             List<Document> usersDocuments = new List<Document>();
 
             foreach (int i in documentIDList) usersDocuments.Add(OpenDocument(i, user));
