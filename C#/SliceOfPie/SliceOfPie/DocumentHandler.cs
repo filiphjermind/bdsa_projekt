@@ -110,7 +110,7 @@ namespace SliceOfPie
             // The full path without the filename.
             string[] tmp = path.Split('/');
             string pathWihoutFile = "";
-            for (int i = 0; i < tmp.Length-1; i++)
+            for (int i = 2; i < tmp.Length-1; i++)
             {
                 pathWihoutFile += tmp[i] + "/";
             }

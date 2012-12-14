@@ -83,30 +83,58 @@ namespace SliceOfPie
             //engine.userhandler.docHandler.DeleteDocument(doc);
         }
 
+        /// <summary>
+        /// Authenticates a user that tries to log in to the system.
+        /// </summary>
+        /// <param name="username">Username of the user</param>
+        /// <param name="password">Password of the user</param>
+        /// <returns>User object if the authentication succeeds</returns>
         public User Authenticate(string username, string password)
         {
-            Console.WriteLine("FACADE");
             Console.WriteLine("username " + username + "password " + password);
             User user = userAuth.Authenticate(username, password);
-            //Console.WriteLine("FACADE2");
             return user;
         }
 
+        /// <summary>
+        /// Creates a new user. Used when a new user signs up for 
+        /// the system.
+        /// </summary>
+        /// <param name="name">Full name of the user</param>
+        /// <param name="username">Username of the user</param>
+        /// <param name="password">Password of the user</param>
+        /// <returns>The new user object.</returns>
         public User NewUser(string name, string username, string password)
         {
             return engine.userhandler.NewUser(name, username, password);
         }
 
+        /// <summary>
+        /// Retreives a user from the database
+        /// </summary>
+        /// <param name="username">Username of the user</param>
+        /// <param name="password">Password of the user</param>
+        /// <returns>The user object</returns>
         public User GetUser(string username, string password)
         {
             return engine.userhandler.GetUser(username, password);
         }
 
+        /// <summary>
+        /// Reads the content of a file.
+        /// </summary>
+        /// <param name="path">The path to the file</param>
+        /// <returns>The content of the file as a string.</returns>
         public string ReadFile(string path)
         {
             return engine.userhandler.docHandler.ReadFile(path);
         }
 
+        /// <summary>
+        /// Retreives all users documents
+        /// </summary>
+        /// <param name="user">The user that owns the documents.</param>
+        /// <returns>A list of all the users documents.</returns>
         public List<Document> GetAllUsersDocuments(User user)
         {
             return engine.userhandler.docHandler.GetAllUsersDocuments(user);
