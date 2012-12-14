@@ -195,6 +195,8 @@ namespace WebUI
             textArea.Text = facade.ReadFile(FileTree.SelectedNode.Value.ToString());
         }
 
+        /************************************* PRIVATE HELPER METHODS ***************************************************/
+
         private void MessageLabel(string message)
         {
             msgLabel.Text = message;
