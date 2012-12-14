@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.IO;
+using System.ServiceModel;
+using System.Threading;
 
 namespace SliceOfPie
 {
@@ -58,7 +60,12 @@ namespace SliceOfPie
             folder = new Folder();
             userhandler = new UserHandler();
 
-            //ClientSystemFacade.GetInstance();
+            ClientSystemFacade2.GetInstance();
+
+
+
+            //Thread hostThread = new Thread(() => OpenHost());
+            //hostThread.Start();
 
             //docHandler = new DocumentHandler();
 
@@ -68,6 +75,15 @@ namespace SliceOfPie
             {
                 Directory.CreateDirectory("root");
             }*/
+        }
+
+        private void OpenHost()
+        {
+            using (ServiceHost host = new ServiceHost(typeof(ClientSystemFacade2)))
+            {
+                host.Open();
+                Console.ReadLine();
+            }
         }
 
     }

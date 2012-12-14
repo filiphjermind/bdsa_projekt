@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel;
 using System.Text;
 
 namespace SliceOfPie
@@ -81,6 +82,11 @@ namespace SliceOfPie
             //engine.docHandler.SaveDocument(user1, doc, "TestFile2.html");
 
             Console.WriteLine("should've been run now");
+            using (ServiceHost host = new ServiceHost(typeof(ClientSystemFacade2)))
+            {
+                host.Open();
+                Console.ReadLine();
+            }
             Console.ReadKey();
         }
     }

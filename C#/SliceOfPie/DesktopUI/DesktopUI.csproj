@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +54,11 @@
   <ItemGroup>
     <Compile Include="Controller.cs" />
     <Compile Include="Model.cs" />
+    <Compile Include="Service References\SliceOfPieReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="View.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +79,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -81,12 +89,43 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Service References\SliceOfPieReference\ClientSystemFacade2.wsdl" />
+    <None Include="Service References\SliceOfPieReference\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SliceOfPieReference\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SliceOfPie\SliceOfPie.csproj">
       <Project>{872af6b5-8d44-4ad8-a96f-6ef671cdd815}</Project>
       <Name>SliceOfPie</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\SliceOfPieReference\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SliceOfPieReference\item.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SliceOfPieReference\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SliceOfPieReference\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\SliceOfPieReference\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SliceOfPieReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
