@@ -17,6 +17,8 @@
             <label class="label">Password: </label><asp:TextBox ID="passwordBox" runat="server" TextMode="Password" />
             <asp:Button ID="loginButton" runat="server" OnClick="Login" Text="Login" />
             <asp:Button ID="signupButton" runat="server" OnClick="SignUp" Text="Sign up" />
+            <asp:Button ID="logoutButton" runat="server" OnClick="Logout" Text="Logout" />
+            <asp:Label ID="msgLabel" runat="server" CssClass="msgLabel" />
         </div>
         
         <div id="menuBar">

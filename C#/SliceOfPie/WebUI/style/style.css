@@ -7,6 +7,7 @@
     height: 1000px;
     border: 1px solid black;
     margin: auto;
+    background-color: white;
 }
 #userBar {
     width: 990px;
@@ -32,11 +33,12 @@
 }
 #fileExplorer {
     float: left;
-    background-color: yellow;
+    background-color: white;
     padding: 0px;
     margin: 0px;
-    width: 250px;
+    width: 248px;
     height: 1000px;
+    border-right: solid 1px black;
 }
 #textField {
     float: right;
@@ -62,6 +64,10 @@ a:visited {
 }
 .label {
     color: white;
+}
+.msgLabel {
+    color: white;
+    float: right;
 }
 
 /*SIGNUP WINDOW*/
