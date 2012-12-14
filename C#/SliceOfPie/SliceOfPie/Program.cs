@@ -17,12 +17,12 @@ namespace SliceOfPie
             DBConnector DBCon = DBConnector.Instance;
             
 
-            User user1 = facade.GetUser("chuck", "norris");
-            User user2 = facade.GetUser("awesome", "123");
+            //User user1 = facade.GetUser("chuck", "norris");
+            //User user2 = facade.GetUser("awesome", "123");
 
-            Document sharedDoc = engine.userhandler.docHandler.OpenDocument(153, user1);
+            //Document sharedDoc = engine.userhandler.docHandler.OpenDocument(153, user1);
 
-            engine.userhandler.docHandler.ShareDocument(user1, sharedDoc, Permission.Permissions.Edit, user2);
+            //engine.userhandler.docHandler.ShareDocument(user1, sharedDoc, Permission.Permissions.Edit, user2);
 
             //Document doc = new Document(user);
             //doc.content = "helloooooo\nthis\nis\nSPARTA!!";

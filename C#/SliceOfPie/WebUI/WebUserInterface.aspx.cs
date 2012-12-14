@@ -111,7 +111,33 @@ namespace WebUI
         /// <param name="sender"></param>
         /// <param name="e"></param>
         protected void ShareDocument(object sender, EventArgs e)
-        { 
+        {
+            if (!fileNameBox.Text.Equals(""))
+            {
+                Response.Write("FILENAME " + fileNameBox.Text);
+                User toUser = facade.GetUser(ShareBox.Text);
+                if (toUser != null)
+                {
+                    currentDoc = new Document(user);
+                    currentDoc.content = textArea.Text;
+                    //facade.SaveDocument(user, currentDoc, fileNameBox.Text);
+                    facade.ShareDocument(user, currentDoc, Permission.Permissions.Edit, fileNameBox.Text, toUser);
+                    MessageLabel("Document saved!");
+                }
+                
+            }
+            else MessageLabel("No document selected!");
+            //if (!fileNameBox.Text.Equals(""))
+            //{
+            //    User toUser = facade.GetUser(ShareBox.Text);
+            //    if (toUser != null)
+            //    {
+            //        currentDoc = facade.GetDocumentByPath(user, hiddenPath.Value);
+            //        currentDoc.content = textArea.Text;
+            //        facade.ShareDocument(user, currentDoc, Permission.Permissions.Edit, toUser);
+            //    }
+            //}
+            
         }
 
         /// <summary>
@@ -192,6 +218,20 @@ namespace WebUI
                     fileNameBox.Text += splitPath[i] + "/";
                 }
             }
+
+            for (int i = 3; i < splitPath.Length; i++)
+            {
+                if (i == splitPath.Length - 1)
+                {
+                    hiddenPath.Value += splitPath[i];
+                }
+                else
+                {
+                    hiddenPath.Value += splitPath[i] + "/";
+                }
+            }
+
+            Response.Write(hiddenPath.Value);
             
             // Display the content of the file in the textArea.
             textArea.Text = facade.ReadFile(FileTree.SelectedNode.Value.ToString());
