@@ -131,15 +131,21 @@ namespace SliceOfPie
             // Update when the document was last changed.
             doc.lastChanged = DateTime.Now;
 
-            // Insert entry in the database.
-            dbCon.InsertDocument(user.username, path);
+            if (!dbCon.CheckForDocument(user, doc))
+            {
+                // Insert entry in the database.
+                dbCon.InsertDocument(user.username, path);
 
-            // Add the document to the users list of documents.
-            user.documents.Add(doc);
+                // Add the document to the users list of documents.
+                user.documents.Add(doc);
+            }
 
-            int newID = dbCon.GetDocument(user.username, path);
+            if (!dbCon.CheckForUserDocument(user, doc))
+            {
+                int newID = dbCon.GetDocument(user.username, path);
 
-            dbCon.InsertUserDocument(user, newID, Permission.Permissions.Edit);
+                dbCon.InsertUserDocument(user, newID, Permission.Permissions.Edit);
+            }
             
         }
 

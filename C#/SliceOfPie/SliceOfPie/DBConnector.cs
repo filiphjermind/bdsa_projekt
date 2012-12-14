@@ -209,6 +209,24 @@ namespace SliceOfPie
             return userList;
         }
 
+
+        public bool CheckForDocument(User user, Document doc)
+        {
+            string query = "SELECT * FROM document WHERE owner='" + user.username + "' AND id='" + doc.documentId + "'";
+
+            List<int> counterList = new List<int>();
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                counterList.Add((int)reader["id"]);
+            }
+
+            if (counterList.Count > 0) return true;
+            else return false;
+        }
+
         /// <summary>
         /// Retreives a document from the database based on the document id.
         /// </summary>
@@ -242,7 +260,7 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                id = (int)reader[0];
+                id = (int)reader["id"];
                 //Console.WriteLine("Path: " + path);
             }
             reader.Close();
@@ -278,11 +296,28 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                int id = (int)reader["id"];
+                int id = (int)reader["userID"];
                 idList.Add(id);
             }
 
             return idList;
+        }
+
+        public bool CheckForUserDocument(User user, Document doc)
+        { 
+            string query = "SELECT * FROM userdocument WHERE userID='"+user.id+"' AND documentID='"+doc.documentId+"'";
+
+            List<int> counterList = new List<int>();
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                counterList.Add((int)reader["userID"]);
+            }
+
+            if (counterList.Count > 0) return true;
+            else return false;
         }
         
         public Permission.Permissions CheckPermission(User user, Document doc)
