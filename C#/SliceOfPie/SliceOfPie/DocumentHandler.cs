@@ -137,9 +137,9 @@ namespace SliceOfPie
             // Add the document to the users list of documents.
             user.documents.Add(doc);
 
-            dbCon.GetDocument(user.username, path);
+            int newID = dbCon.GetDocument(user.username, path);
 
-            dbCon.InsertUserDocument(user, doc, Permission.Permissions.Edit);
+            dbCon.InsertUserDocument(user, newID, Permission.Permissions.Edit);
             
         }
 

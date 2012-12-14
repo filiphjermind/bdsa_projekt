@@ -55,8 +55,10 @@ namespace SliceOfPieTest
 
         [TestMethod]
         public void TestInsertUserdocument()
-        { 
-            User testUser = 
+        {
+            User testUser = engine.userhandler.GetUser("hvass", "1234");
+
+            Document doc = engine.userhandler.docHandler.OpenDocument(
         }
     }
 }
