@@ -136,6 +136,10 @@ namespace SliceOfPie
 
             // Add the document to the users list of documents.
             user.documents.Add(doc);
+
+            dbCon.GetDocument(user.username, path);
+
+            dbCon.InsertUserDocument(user, doc, Permission.Permissions.Edit);
             
         }
 
@@ -354,10 +358,10 @@ namespace SliceOfPie
             
             foreach (User i in users)
             {
-                if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document doe already exist");
+                if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document does already exist");
                 else SaveDocument(i, doc, doc.title);
                 
-                Console.WriteLine(i.documents.Contains(sharedDocument));
+                //Console.WriteLine(i.documents.Contains(sharedDocument));
             }
         }
 
