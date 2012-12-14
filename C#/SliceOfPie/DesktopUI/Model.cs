@@ -26,8 +26,8 @@ namespace DesktopUI
         {
             IPEndPoint ipe = new IPEndPoint(Dns.GetHostEntry("localhost").AddressList[0],8080);
             Socket s = new Socket(ipe.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            //s.Connect(ipe);
-            //s.Send(Encoding.ASCII.GetBytes("Hello world"));
+            s.Connect(ipe);
+            s.Send(Encoding.ASCII.GetBytes("Hello world"));
             //View.WriteToDocumentTextBox("Model - constructor");
             
         }

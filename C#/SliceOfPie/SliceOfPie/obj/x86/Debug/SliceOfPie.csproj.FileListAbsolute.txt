@@ -15,3 +15,4 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\o
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.exe
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\bin\Debug\SliceOfPie.pdb
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.csprojResolveAssemblyReference.cache
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\SliceOfPie\obj\x86\Debug\SliceOfPie.csprojResolveAssemblyReference.cache
