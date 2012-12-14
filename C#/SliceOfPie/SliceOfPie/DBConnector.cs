@@ -209,6 +209,27 @@ namespace SliceOfPie
             return userList;
         }
 
+
+        public bool CheckForDocument(User user, Document doc)
+        {
+            string query = "SELECT * FROM document WHERE owner='" + user.username + "' AND id='" + doc.documentId + "'";
+
+            List<int> counterList = new List<int>();
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                counterList.Add((int)reader["id"]);
+            }
+
+            reader.Close();
+            CloseConnection();
+
+            if (counterList.Count > 0) return true;
+            else return false;
+        }
+
         /// <summary>
         /// Retreives a document from the database based on the document id.
         /// </summary>
@@ -232,6 +253,23 @@ namespace SliceOfPie
             return path;
         }
 
+        public string GetDocumentById(int id)
+        {
+            string query = "SELECT file FROM document WHERE id = '" + id + "'";
+
+            string path = "";
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                path = (string) reader[0];
+            }
+            reader.Close();
+            CloseConnection();
+            return path;
+        }
+
         public int GetDocument(string user, string filePath)
         {
             string query = "SELECT id FROM document WHERE file = '" + filePath + "' AND owner ='" + user + "'";
@@ -242,7 +280,7 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                id = (int)reader[0];
+                id = (int)reader["id"];
                 //Console.WriteLine("Path: " + path);
             }
             reader.Close();
@@ -282,7 +320,30 @@ namespace SliceOfPie
                 idList.Add(id);
             }
 
+            reader.Close();
+            CloseConnection();
+
             return idList;
+        }
+
+        public bool CheckForUserDocument(User user, Document doc)
+        { 
+            string query = "SELECT * FROM userdocument WHERE userID='"+user.id+"' AND documentID='"+doc.documentId+"'";
+
+            List<int> counterList = new List<int>();
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                counterList.Add((int)reader["userID"]);
+            }
+
+            reader.Close();
+            CloseConnection();
+
+            if (counterList.Count > 0) return true;
+            else return false;
         }
         
         public Permission.Permissions CheckPermission(User user, Document doc)
@@ -298,6 +359,9 @@ namespace SliceOfPie
                 incPerm = reader["permission"] + "";
             }
 
+            reader.Close();
+            CloseConnection();
+
             switch (incPerm)
             {
                 case "None": return Permission.Permissions.None;
@@ -306,7 +370,6 @@ namespace SliceOfPie
                 case "Delete": return Permission.Permissions.Delete;
                 default: return Permission.Permissions.None; Console.WriteLine("corrupt DB, check data"); break;
             }
-            CloseConnection();
         }
 
         public User AuthenticateUser(string username, string password)
@@ -322,7 +385,7 @@ namespace SliceOfPie
                 string name = (string) reader[1];
                 string userName = (string) reader[2];
                 string passWord = (string) reader[3];
-                user = new User(name, userName, passWord);
+                user = new User(id, name, userName, passWord);
             }
 
             //Console.WriteLine("READER " + reader[1] + " " + reader[2] + " " + reader[3]);

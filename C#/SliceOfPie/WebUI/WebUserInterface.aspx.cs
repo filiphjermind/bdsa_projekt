@@ -75,6 +75,7 @@ namespace WebUI
                 User user = facade.Authenticate(username, password);
                 if (user.username != null && user.password != null)
                 {
+                    hiddenID.Value = user.id.ToString();
                     hiddenUsername.Value = user.username;
                     hiddenPassword.Value = user.password;
                     MessageLabel("Signed in as: " + hiddenUsername.Value);
@@ -229,6 +230,24 @@ namespace WebUI
 
             // populate tree
             TraverseTree(rootDir, rootNode);
+
+            GetSharedDocuments(GetDocFilePath(user));
+
+            //AddSharedDocument("hvass/Testing Purpose.html", rootNode);
+        }
+
+        private void GetSharedDocuments(List<string> path)
+        {
+            string[] splitSharedPath;
+            string pathToDoc = "";
+            foreach (string p in path)
+            {
+                splitSharedPath = p.Split('/');
+                if (!splitSharedPath[1].Equals(user.username))
+                {
+                    AddSharedDocument(p, rootNode);
+                }
+            }
         }
 
         /// <summary>
@@ -248,6 +267,7 @@ namespace WebUI
                 // Check if the document is empty.
                 if (d != null)
                 {
+                    //Response.Write(documents.Count + " " +  d.path);
                     docFilePath.Add(d.path);
                 }
             }
@@ -282,6 +302,14 @@ namespace WebUI
             }
         }
 
+        private void AddSharedDocument(string fileName, TreeNode currentNode)
+        {
+            FileInfo file = new FileInfo(fileName);
+            node = new TreeNode(file.Name, file.FullName);
+            node.SelectAction = TreeNodeSelectAction.Select;
+            currentNode.ChildNodes.Add(node);
+        }
+
         /// <summary>
         /// Recursively adds all folders and files to the fileTree.
         /// </summary>
@@ -289,6 +317,7 @@ namespace WebUI
         /// <param name="currentNode">Current node of the fileTree</param>
         private void TraverseTree(DirectoryInfo currentDir, TreeNode currentNode)
         {
+            
             // Add all files to the fileTree
             foreach (FileInfo file in currentDir.GetFiles())
             {
