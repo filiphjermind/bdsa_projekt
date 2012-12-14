@@ -232,9 +232,27 @@ namespace SliceOfPie
             return path;
         }
 
-        public void InsertUserDocument(User user, Document doc, Permission.Permissions permission)
+        public int GetDocument(string user, string filePath)
         {
-            string query = "INSERT INTO userdocument (userID, documentID, permission) VALUES('" + user.id + "', '" + doc.documentId + "', '" + permission.ToString() +"')";
+            string query = "SELECT id FROM document WHERE file = '" + filePath + "' AND owner ='" + user + "'";
+
+            int id = 0;
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                id = (int)reader[0];
+                //Console.WriteLine("Path: " + path);
+            }
+            reader.Close();
+            CloseConnection();
+            return id;
+        }
+
+        public void InsertUserDocument(User user, int docID, Permission.Permissions permission)
+        {
+            string query = "INSERT INTO userdocument (userID, documentID, permission) VALUES('" + user.id + "', '" + docID + "', '" + permission.ToString() +"')";
             ExecuteQuery(query);
         }
 
