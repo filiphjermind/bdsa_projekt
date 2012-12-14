@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DesktopUI.SliceOfPieReference;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -24,11 +25,6 @@ namespace DesktopUI
 
         public Model()
         {
-            IPEndPoint ipe = new IPEndPoint(Dns.GetHostEntry("localhost").AddressList[0],8080);
-            Socket s = new Socket(ipe.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            s.Connect(ipe);
-            s.Send(Encoding.ASCII.GetBytes("Hello world"));
-            View.WriteToDocumentTextBox("Model - constructor");
             
         }
 
@@ -74,22 +70,40 @@ namespace DesktopUI
 
         internal void ShareDocuments(string[] users, string[] documents, string permission)
         {
-            
+            using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
+            {
+                proxy.ShareDocuments(password,username,users,documents,permission);
+
+            }
         }
 
         internal void ShareFolder(string[] users, string folder, string permission)
         {
-            
+            using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
+            {
+                proxy.ShareFolder(password, username, users, folder, permission);
+
+            }
         }
 
         internal string[] GetInvitations()
         {
-            return new string[]{"Morten/Eve/spreadsheet","Bergar/emacs/cheatsheet"};
+            string[] result;
+            using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
+            {
+                result = proxy.GetInvitations(password, username);
+
+            }
+            return result;
         }
 
         internal void AcceptInvitations(string[] accepts)
         {
-            
+            using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
+            {
+                proxy.AcceptInvitations(password, username, accepts);
+
+            }
         }
 
         internal void SetCredentials(string user, string pass)
