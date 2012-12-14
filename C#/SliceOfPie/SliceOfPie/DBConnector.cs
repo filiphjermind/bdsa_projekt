@@ -209,6 +209,24 @@ namespace SliceOfPie
             return userList;
         }
 
+
+        public bool CheckForDocument(User user, Document doc)
+        {
+            string query = "SELECT * FROM document WHERE owner='" + user.username + "' AND id='" + doc.documentId + "'";
+
+            List<int> counterList = new List<int>();
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                counterList.Add((int)reader["id"]);
+            }
+
+            if (counterList.Count > 0) return true;
+            else return false;
+        }
+
         /// <summary>
         /// Retreives a document from the database based on the document id.
         /// </summary>
@@ -232,9 +250,27 @@ namespace SliceOfPie
             return path;
         }
 
-        public void InsertUserDocument(User user, Document doc, Permission.Permissions permission)
+        public int GetDocument(string user, string filePath)
         {
-            string query = "INSERT INTO userdocument (userID, documentID, permission) VALUES('" + user.id + "', '" + doc.documentId + "', '" + permission.ToString() +"')";
+            string query = "SELECT id FROM document WHERE file = '" + filePath + "' AND owner ='" + user + "'";
+
+            int id = 0;
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                id = (int)reader["id"];
+                //Console.WriteLine("Path: " + path);
+            }
+            reader.Close();
+            CloseConnection();
+            return id;
+        }
+
+        public void InsertUserDocument(User user, int docID, Permission.Permissions permission)
+        {
+            string query = "INSERT INTO userdocument (userID, documentID, permission) VALUES('" + user.id + "', '" + docID + "', '" + permission.ToString() +"')";
             ExecuteQuery(query);
         }
 
@@ -260,11 +296,28 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                int id = (int)reader["id"];
+                int id = (int)reader["userID"];
                 idList.Add(id);
             }
 
             return idList;
+        }
+
+        public bool CheckForUserDocument(User user, Document doc)
+        { 
+            string query = "SELECT * FROM userdocument WHERE userID='"+user.id+"' AND documentID='"+doc.documentId+"'";
+
+            List<int> counterList = new List<int>();
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                counterList.Add((int)reader["userID"]);
+            }
+
+            if (counterList.Count > 0) return true;
+            else return false;
         }
         
         public Permission.Permissions CheckPermission(User user, Document doc)

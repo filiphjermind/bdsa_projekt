@@ -110,7 +110,7 @@ namespace SliceOfPie
             // The full path without the filename.
             string[] tmp = path.Split('/');
             string pathWihoutFile = "";
-            for (int i = 0; i < tmp.Length-1; i++)
+            for (int i = 2; i < tmp.Length-1; i++)
             {
                 pathWihoutFile += tmp[i] + "/";
             }
@@ -131,11 +131,21 @@ namespace SliceOfPie
             // Update when the document was last changed.
             doc.lastChanged = DateTime.Now;
 
-            // Insert entry in the database.
-            dbCon.InsertDocument(user.username, path);
+            if (!dbCon.CheckForDocument(user, doc))
+            {
+                // Insert entry in the database.
+                dbCon.InsertDocument(user.username, path);
 
-            // Add the document to the users list of documents.
-            user.documents.Add(doc);
+                // Add the document to the users list of documents.
+                user.documents.Add(doc);
+            }
+
+            if (!dbCon.CheckForUserDocument(user, doc))
+            {
+                int newID = dbCon.GetDocument(user.username, path);
+
+                dbCon.InsertUserDocument(user, newID, Permission.Permissions.Edit);
+            }
             
         }
 
@@ -353,10 +363,10 @@ namespace SliceOfPie
             
             foreach (User i in users)
             {
-                if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document doe already exist");
+                if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document does already exist");
                 else SaveDocument(i, doc, doc.title);
                 
-                Console.WriteLine(i.documents.Contains(sharedDocument));
+                //Console.WriteLine(i.documents.Contains(sharedDocument));
             }
         }
 

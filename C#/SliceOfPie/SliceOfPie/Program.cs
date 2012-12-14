@@ -14,7 +14,12 @@ namespace SliceOfPie
             Engine engine = new Engine();//Engine.Instance;
             DBConnector DBCon = DBConnector.Instance;
 
-            User user = facade.NewUser("Chuck Norris", "chuck", "norris");
+            User user1 = facade.GetUser("chuck", "norris");
+            User user2 = facade.GetUser("awesome", "123");
+
+            Document sharedDoc = engine.userhandler.docHandler.OpenDocument(153, user1);
+
+            engine.userhandler.docHandler.ShareDocument(user1, sharedDoc, Permission.Permissions.Edit, user2);
 
             //Document doc = new Document(user);
             //doc.content = "helloooooo\nthis\nis\nSPARTA!!";

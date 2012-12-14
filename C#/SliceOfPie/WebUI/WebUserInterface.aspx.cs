@@ -22,8 +22,12 @@ namespace WebUI
         // The currently selected file (in the file tree).
         string selectedFile;
 
+        TreeNode node;
+        TreeNode rootNode;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (hiddenUsername.Value == "") { } else
             user = facade.GetUser(hiddenUsername.Value, hiddenPassword.Value);
         }
 
@@ -70,10 +74,34 @@ namespace WebUI
             if (username != "" && password != "")
             {
                 User user = facade.Authenticate(username, password);
-                hiddenUsername.Value = user.username;
-                hiddenPassword.Value = user.password;
+                if (user.username != null && user.password != null)
+                {
+                    hiddenUsername.Value = user.username;
+                    hiddenPassword.Value = user.password;
+                    MessageLabel("Signed in as: " + hiddenUsername.Value);
+                }
+                else MessageLabel("Wrong username or password");
             }
-            
+            else MessageLabel("Please fill out username and password!");
+        }
+
+        /// <summary>
+        /// Logs a user out of the system.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        protected void Logout(object sender, EventArgs e)
+        {
+            // Clear all text boxes.
+            hiddenPassword.Value = "";
+            hiddenUsername.Value = "";
+            userBox.Text = "";
+            fileNameBox.Text = "";
+            // Clear user
+            user = null;
+            // Reload the page
+            Response.Redirect(Request.RawUrl);
+            MessageLabel("Logged out");
         }
 
         /// <summary>
@@ -87,6 +115,7 @@ namespace WebUI
 
         /// <summary>
         /// Creates a new empty document without saving it.
+        /// Clears all test boxes.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -95,6 +124,7 @@ namespace WebUI
             currentDoc = facade.NewDocument(user, "", "", Permission.Permissions.Edit);
             fileNameBox.Text = "";
             textArea.Text = currentDoc.content;
+            MessageLabel("New document created!");
         }
 
         /// <summary>
@@ -111,9 +141,10 @@ namespace WebUI
             {
                 currentDoc = new Document(user);
                 currentDoc.content = textArea.Text;
-                Response.Write(currentDoc.content);
                 facade.SaveDocument(user, currentDoc, fileNameBox.Text);
-            }
+                MessageLabel("Document saved!");
+            } 
+            else MessageLabel("No document selected!");
         }
 
         /// <summary>
@@ -125,14 +156,15 @@ namespace WebUI
         {
             string path = "root/" + user.username + "/" + fileNameBox.Text;
 
-            textArea.Text = "";
-            fileNameBox.Text = "";
-
             // Delete the document if any document is opened.
-            if (path != "")
+            if (fileNameBox.Text != "" && fileNameBox != null && path != "")
             {
+                textArea.Text = "";
+                fileNameBox.Text = "";
                 facade.DeleteDocument(user, path);
+                MessageLabel("Document deleted!");
             }
+            else MessageLabel("No document selected!");
         }
 
         /// <summary>
@@ -164,10 +196,19 @@ namespace WebUI
             textArea.Text = facade.ReadFile(FileTree.SelectedNode.Value.ToString());
         }
 
+        /************************************* PRIVATE HELPER METHODS ***************************************************/
+
+        private void MessageLabel(string message)
+        {
+            msgLabel.Text = message;
+        }
+
         /****************** ALL METHODS BELOW ARE USED TO POPULATE THE FILE TREE **********************/
 
         protected void Populate(object sender, EventArgs e)
         {
+            //rootNode = null;
+            //node = null;
             PopulateTree(user);
         }
 
@@ -180,7 +221,7 @@ namespace WebUI
         {
             // Get user root dir, create and add it to the tree.
             DirectoryInfo rootDir = new DirectoryInfo("root/" + user.username);
-            TreeNode rootNode = new TreeNode(rootDir.Name, rootDir.FullName);
+            /*TreeNode*/ rootNode = new TreeNode(rootDir.Name, rootDir.FullName);
             rootNode.SelectAction = TreeNodeSelectAction.Expand;
             FileTree.Nodes.Add(rootNode);
 
@@ -252,7 +293,7 @@ namespace WebUI
             // Add all files to the fileTree
             foreach (FileInfo file in currentDir.GetFiles())
             {
-                TreeNode node = new TreeNode(file.Name, file.FullName);
+                /*TreeNode*/ node = new TreeNode(file.Name, file.FullName);
                 node.SelectAction = TreeNodeSelectAction.Select;
                 currentNode.ChildNodes.Add(node);
             }
@@ -261,7 +302,7 @@ namespace WebUI
             foreach (DirectoryInfo dir in currentDir.GetDirectories())
             {
                 //create node and add to the tree view
-                TreeNode node = new TreeNode(dir.Name, dir.FullName);
+                /*TreeNode*/ node = new TreeNode(dir.Name, dir.FullName);
                 node.SelectAction = TreeNodeSelectAction.Expand;
                 currentNode.ChildNodes.Add(node);
                 //recursively call same method to go down the next level of the tree
