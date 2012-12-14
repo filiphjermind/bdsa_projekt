@@ -214,6 +214,38 @@ namespace SliceOfPie
             Console.WriteLine("WROTE TO FILE");
         }
 
+        public Document OpenSharedDocument(int id, User user)
+        {
+            string path = dbCon.GetDocumentById(id);
+
+            // Read the file, line by line, into an array.
+            try
+            {
+                string[] lines = File.ReadAllLines(path);
+
+                // Save the content of the file.
+                string content = "";
+                for (int i = 0; i < lines.Length; i++)
+                {
+                    content += lines[i] + "\n";
+                }
+
+                // Create a new document object.
+                Document doc = new Document(user, id, content, path);
+
+                // Add document to the users list of documents
+                AddDocToList(user, doc);
+
+                // Return the document.
+                return doc;
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine(e.StackTrace);
+            }
+            return null;
+        }
+
         /// <summary>
         /// Opens a document based on the document id.
         /// </summary>
@@ -247,8 +279,8 @@ namespace SliceOfPie
                 return doc;
             }
             catch (IOException e)
-            { 
-            
+            {
+                Console.WriteLine(e.StackTrace);
             }
             return null;
         }
@@ -297,10 +329,11 @@ namespace SliceOfPie
         /// <returns>List of all documents that belong to the user.</returns>
         public List<Document> GetAllUsersDocuments(User user)
         {
-            List<int> documentIDList = dbCon.SelectDocumentsFromUser(user);
+            //List<int> documentIDList = dbCon.SelectDocumentsFromUser(user);
+            List<int> documentIDList = dbCon.GetUserdocumentsByUser(user);
             List<Document> usersDocuments = new List<Document>();
 
-            foreach (int i in documentIDList) usersDocuments.Add(OpenDocument(i, user));
+            foreach (int i in documentIDList) usersDocuments.Add(OpenSharedDocument(i, user));
 
             return usersDocuments;
         }

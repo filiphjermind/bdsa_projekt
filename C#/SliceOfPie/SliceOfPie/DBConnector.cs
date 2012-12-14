@@ -273,6 +273,7 @@ namespace SliceOfPie
 
             reader.Close();
             CloseConnection();
+
             if (counterList.Count > 0) return true;
             else return false;
         }
@@ -306,6 +307,22 @@ namespace SliceOfPie
         /// <param name="user">document's owner</param>
         /// <param name="filePath">document's filepath</param>
         /// <returns></returns>
+        public string GetDocumentById(int id)
+        {
+            string query = "SELECT file FROM document WHERE id = '" + id + "'";
+
+            string path = "";
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            while (reader.Read())
+            {
+                path = (string) reader[0];
+            }
+            reader.Close();
+            CloseConnection();
+            return path;
+        }
         public int GetDocument(string user, string filePath)
         {
             string query = "SELECT id FROM document WHERE file = '" + filePath + "' AND owner ='" + user + "'";
@@ -374,12 +391,13 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                int id = (int)reader["userID"];
+                int id = (int)reader["documentID"];
                 idList.Add(id);
             }
 
             reader.Close();
             CloseConnection();
+
             return idList;
         }
 
@@ -406,6 +424,7 @@ namespace SliceOfPie
 
             reader.Close();
             CloseConnection();
+
             if (counterList.Count > 0) return true;
             else return false;
         }
@@ -457,11 +476,11 @@ namespace SliceOfPie
 
             while (reader.Read())
             {
-                //int id = (int) reader[1];
+                int id = (int) reader[0];
                 string name = (string) reader[1];
                 string userName = (string) reader[2];
                 string passWord = (string) reader[3];
-                user = new User(name, userName, passWord);
+                user = new User(id, name, userName, passWord);
             }
 
             //Console.WriteLine("READER " + reader[1] + " " + reader[2] + " " + reader[3]);
