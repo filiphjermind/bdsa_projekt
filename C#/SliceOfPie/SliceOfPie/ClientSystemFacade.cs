@@ -120,6 +120,11 @@ namespace SliceOfPie
             return engine.userhandler.GetUser(username, password);
         }
 
+        public User GetUser(string username)
+        {
+            return engine.userhandler.GetUserByUsername(username);
+        }
+
         /// <summary>
         /// Reads the content of a file.
         /// </summary>
@@ -140,9 +145,20 @@ namespace SliceOfPie
             return engine.userhandler.docHandler.GetAllUsersDocuments(user);
         }
 
-        public List<Document> GetAllSharedDocuments(User user)
+        //public List<Document> GetAllSharedDocuments(User user)
+        //{
+        //    return null;
+        //}
+
+        public void ShareDocument(User currentUser, Document doc, Permission.Permissions perm, string filename, params User[] users)
         {
-            return null;
+            engine.userhandler.docHandler.ShareDocument(currentUser, doc, perm, filename, users);
+        }
+
+        public Document GetDocumentByPath(User user, string path)
+        {
+            return engine.userhandler.docHandler.GetDocumentByPath(user, path);
+            
         }
     }
 }

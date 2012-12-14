@@ -121,6 +121,15 @@ namespace WebUI {
         protected global::System.Web.UI.WebControls.HiddenField newDocumentHidden;
         
         /// <summary>
+        /// hiddenPath control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hiddenPath;
+        
+        /// <summary>
         /// newDocButton control.
         /// </summary>
         /// <remarks>
@@ -155,6 +164,15 @@ namespace WebUI {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ShareButton;
+        
+        /// <summary>
+        /// ShareBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox ShareBox;
         
         /// <summary>
         /// fileNameBox control.

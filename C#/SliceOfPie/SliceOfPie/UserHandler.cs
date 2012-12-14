@@ -62,6 +62,24 @@ namespace SliceOfPie
             return user;
         }
 
+        public User GetUserByUsername(string username)
+        {
+            // Get data from database.
+            string[] userValues = dbCon.SelectUser(username);
+
+            // Store the users values.
+            int newId = Convert.ToInt32(userValues[0]);
+            string newName = userValues[1];
+            string newUsername = userValues[2];
+            string newPassword = userValues[3];
+
+            // Create user object.
+            User user = new User(newId, newName, newUsername, newPassword);
+
+            // Return user object.
+            return user;
+        }
+
         /// <summary>
         /// Deletes a user from the database.
         /// </summary>

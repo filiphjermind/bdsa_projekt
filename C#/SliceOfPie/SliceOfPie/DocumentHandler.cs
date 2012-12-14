@@ -390,17 +390,31 @@ namespace SliceOfPie
         /// <param name="file">File path of file</param>
         /// <param name="perm">Enumerated permition</param>
         /// <param name="users">List of users to share with.</param>
-        public void ShareDocument(User currentUser, Document doc, Permission.Permissions perm ,params User[] users)
+        public void ShareDocument(User currentUser, Document doc, Permission.Permissions perm , string filename, params User[] users)
         {
-            Document sharedDocument = new Document(doc.owner, doc.path, perm);
+            Document sharedDocument = new Document(doc.owner, doc.path + "/" + filename, perm);
             
             foreach (User i in users)
             {
+                int someID = dbCon.GetDocument(currentUser.username, "root/myuser/" + filename);
+
+                dbCon.InsertUserDocument(i, 243, Permission.Permissions.Edit);
                 if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document does already exist");
-                else SaveDocument(i, doc, doc.title);
+                else if (!dbCon.CheckForUserDocument(i, doc))
+                {
+                    int newID = dbCon.GetDocument(currentUser.username, doc.path);
+
+                    dbCon.InsertUserDocument(i, newID, Permission.Permissions.Edit);
+                }//SaveDocument(currentUser, doc, doc.path + "/" + filename);
                 
                 //Console.WriteLine(i.documents.Contains(sharedDocument));
             }
+        }
+
+        public Document GetDocumentByPath(User user, string path)
+        {
+            int id = dbCon.GetDocument(user.username, path);
+            return OpenDocument(id, user);
         }
 
         /// <summary>

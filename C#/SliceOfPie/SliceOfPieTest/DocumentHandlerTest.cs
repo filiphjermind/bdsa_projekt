@@ -56,7 +56,7 @@ namespace SliceOfPieTest
 
             Document testDoc = engine.userhandler.docHandler.OpenDocument(81, ownerUser);
             //testDoc.content = "here is some content";
-            engine.userhandler.docHandler.ShareDocument(ownerUser, testDoc, Permission.Permissions.Edit, toUser);
+            engine.userhandler.docHandler.ShareDocument(ownerUser, testDoc, Permission.Permissions.Edit,"", toUser);
 
             Assert.AreEqual(true ,toUser.documents.Contains(testDoc));
         }

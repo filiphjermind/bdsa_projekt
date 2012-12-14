@@ -31,3 +31,4 @@ C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\M
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\SliceOfPie.pdb
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.exe.config
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.exe.config
