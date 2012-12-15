@@ -22,7 +22,6 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bi
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\SliceOfPie.pdb
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\SliceOfPie.exe
-C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\SliceOfPie.pdb
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.View.resources
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csproj.GenerateResource.Cache
@@ -31,8 +30,5 @@ C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\M
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\SliceOfPie.pdb
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\obj\x86\Debug\DesktopUI.csprojResolveAssemblyReference.cache
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.exe.config
-<<<<<<< HEAD
 C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.exe.config
-=======
-C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\DesktopUI.exe.config
->>>>>>> ecdaf3da90cee52c66ed0b78c8d351fe6ebf92ef
+C:\Users\Morten\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\DesktopUI\bin\Debug\SliceOfPie.pdb
