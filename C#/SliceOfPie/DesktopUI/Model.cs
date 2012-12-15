@@ -14,6 +14,10 @@ namespace DesktopUI
         private static Model instance;
         private string password;
         private string username;
+
+        private TcpClient client;
+        private NetworkStream clientStream;
+
         public static Model GetInstance()
         {
             if (instance == null)
@@ -26,7 +30,19 @@ namespace DesktopUI
         public Model()
         {
 
-            TcpClient client = new TcpClient();
+            
+
+            /*IPEndPoint ipe = new IPEndPoint(Dns.GetHostEntry("localhost").AddressList[0],8080);
+            Socket s = new Socket(ipe.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            s.Connect(ipe);
+            s.Send(Encoding.ASCII.GetBytes("Hello world"));*/
+            //View.WriteToDocumentTextBox("Model - constructor");
+            
+        }
+
+        internal string MessageServer()
+        {
+            client = new TcpClient();
 
             //localhost
             IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000);
@@ -41,12 +57,34 @@ namespace DesktopUI
             clientStream.Write(buffer, 0, buffer.Length);
             clientStream.Flush();
 
-            /*IPEndPoint ipe = new IPEndPoint(Dns.GetHostEntry("localhost").AddressList[0],8080);
-            Socket s = new Socket(ipe.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            s.Connect(ipe);
-            s.Send(Encoding.ASCII.GetBytes("Hello world"));*/
-            //View.WriteToDocumentTextBox("Model - constructor");
-            
+            return RecieveMessage();
+        }
+
+        internal string RecieveMessage()
+        {
+            NetworkStream clientStream = client.GetStream();
+            ASCIIEncoding encoder = new ASCIIEncoding();
+
+            byte[] message = new byte[4096];
+            int bytesRead;
+
+            while (true)
+            {
+                bytesRead = 0;
+
+                try
+                {
+                    //blocks until it recieves a message
+                    bytesRead = clientStream.Read(message, 0, 4096);
+                }
+                catch{return null;}
+
+                if (bytesRead == 0)return null;
+
+
+                return encoder.GetString(message, 0, bytesRead);
+
+            }
         }
 
         internal void CreateDocument(string file)

@@ -14,6 +14,8 @@ namespace SliceOfPie
         private TcpListener tcpListener;
         private Thread listenThread;
 
+        private TcpClient client;
+
         public TestClientSystemFacade()
         {
             this.tcpListener = new TcpListener(IPAddress.Any, 3000);
@@ -28,8 +30,14 @@ namespace SliceOfPie
             while (true)
             {
                 //blocks until a client has connected to the server
-                TcpClient client = this.tcpListener.AcceptTcpClient();
+                client = this.tcpListener.AcceptTcpClient();
 
+                NetworkStream clientStream = client.GetStream();
+                ASCIIEncoding encoder = new ASCIIEncoding();
+                byte[] buffer = encoder.GetBytes("Hello Client!");
+
+                clientStream.Write(buffer, 0, buffer.Length);
+                clientStream.Flush();
                 //create a thread to handle communication 
                 //with connected client
                 Thread clientThread = new Thread(new ParameterizedThreadStart(HandleClientComm));
@@ -72,6 +80,8 @@ namespace SliceOfPie
                 //instead of console, here we can see what command the client wants to do
                 //and what data it contains
                 Console.WriteLine(encoder.GetString(message, 0, bytesRead));
+
+                
             }
 
             tcpClient.Close();

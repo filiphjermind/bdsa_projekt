@@ -22,6 +22,8 @@ namespace DesktopUI
         //This field is used for testing. 
         private static TextBox staticDocumentText;
 
+        private Model model = Model.GetInstance();
+
         public View()
         {
             
