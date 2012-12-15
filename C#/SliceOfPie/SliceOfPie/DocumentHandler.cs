@@ -102,6 +102,12 @@ namespace SliceOfPie
         //    user.documents.Add(doc);
         //}
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="doc"></param>
+        /// <param name="filename"></param>
         public void SaveDocument(User user, Document doc, string filename)
         {
             // The full path to the file.
@@ -369,7 +375,7 @@ namespace SliceOfPie
         public void DeleteFile(User user, string path)
         {
             Console.WriteLine("DELETE DOCUMENT() " + path);
-            dbCon.DeleteDocumentByPath(user, path);
+            dbCon.DeleteDocumentByPath(path);
             if (File.Exists(path))
             {
                 try

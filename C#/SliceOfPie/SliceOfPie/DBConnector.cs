@@ -29,6 +29,9 @@ namespace SliceOfPie
 
         }
 
+        /// <summary>
+        /// Instanciates a connection between program and server via a connectionstring
+        /// </summary>
         private void Initialize()
         {
             connectionString = "SERVER=mysql.itu.dk;DATABASE=PieServer;UID=pieserver;PASSWORD=bdsapie;";
@@ -36,7 +39,12 @@ namespace SliceOfPie
             
         }
 
-        //opens connection to the database
+        /// <summary>
+        /// Attempts to open the connection to our sever by using the already created connection 
+        /// </summary>
+        /// <returns>wether the connection was successfully opened or not.
+        /// True = the connection was opened
+        /// False the connection was not opened</returns>
         private bool OpenConnection()
         {
             try
@@ -55,7 +63,12 @@ namespace SliceOfPie
             }
         }
 
-        //Close connection
+        /// <summary>
+        /// Closes the connection
+        /// </summary>
+        /// <returns>wether the connection was closed or not.
+        /// True = connection was closed
+        /// False = connection was not closed</returns
         private bool CloseConnection()
         {
             try { connection.Close(); return true; }
@@ -92,8 +105,12 @@ namespace SliceOfPie
             string query = "DELETE FROM document WHERE id='" + id + "'";
             ExecuteQuery(query);
         }
-
-        public void DeleteDocumentByPath(User user, string path)
+        
+        /// <summary>
+        /// Deletes a document entry from the database
+        /// </summary>
+        /// <param name="path">"file" of document entry to be deleted</param>
+        public void DeleteDocumentByPath(string path)
         {
             //string query = "DELETE FROM document WHERE owner ='" + user.username + "' AND WHERE file ='" + path + "'";
             string query = "DELETE FROM document WHERE file='" + path + "'";
@@ -101,12 +118,24 @@ namespace SliceOfPie
             Console.WriteLine("DBCON: " + path);
         }
 
+        /// <summary>
+        /// Updates a document entry in the database by looking up its "id" and replacing
+        /// old values with input
+        /// </summary>
+        /// <param name="id">existing entry's id</param>
+        /// <param name="newOwner">existing entry's new "owner"</param>
+        /// <param name="newFile">Existing enry's new "file"</param>
         public void UpdateDocumentByID(int id, string newOwner, string newFile)
         {
             string query = "UPDATE document SET owner='"+newOwner+"', file='"+newFile+"' WHERE id="+id+"";
             ExecuteQuery(query);
         }
 
+        /// <summary>
+        /// Selects all CREATED documents from 1 user
+        /// </summary>
+        /// <param name="user">target user</param>
+        /// <returns>a list of all of target owner's created document's IDs</returns>
         public List<int> SelectDocumentsFromUser(User user)
         { 
             List<Document> documentList = new List<Document>();
@@ -147,6 +176,14 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
+        /// <summary>
+        /// Updates a user entry in the database by looking up his username and replacing
+        /// old values with input
+        /// </summary>
+        /// <param name="username">user entry in database</param>
+        /// <param name="newName">Entry's new "name"</param>
+        /// <param name="newUsername">Entry's new "username"</param>
+        /// <param name="newPassword">Entry's new "password"</param>
         public void UpdateUserByUsername(string username, string newName, string newUsername, string newPassword)
         {
             string query = "UPDATE user SET username = '" + newUsername + "', name = '"+newName+"', password = '"+newPassword+"' WHERE username='" + username + "'"; 
@@ -192,6 +229,10 @@ namespace SliceOfPie
             return userAssembly;
         }
 
+        /// <summary>
+        /// selects all users in the database
+        /// </summary>
+        /// <returns>a list of usernames from all users in the database</returns>
         public List<string> SelectAllUsers()
         {
             List<string> userList = new List<string>();
@@ -209,7 +250,14 @@ namespace SliceOfPie
             return userList;
         }
 
-
+        /// <summary>
+        /// Checks the database for already existing document
+        /// </summary>
+        /// <param name="user">document's owner</param>
+        /// <param name="doc">document instance</param>
+        /// <returns>Wether the document exists or not.
+        /// True = it exists
+        /// False= it does not exist</returns>
         public bool CheckForDocument(User user, Document doc)
         {
             string query = "SELECT * FROM document WHERE owner='" + user.username + "' AND id='" + doc.documentId + "'";
@@ -253,6 +301,12 @@ namespace SliceOfPie
             return path;
         }
 
+        /// <summary>
+        /// Finds a document in the database without need of an ID
+        /// </summary>
+        /// <param name="user">document's owner</param>
+        /// <param name="filePath">document's filepath</param>
+        /// <returns></returns>
         public string GetDocumentById(int id)
         {
             string query = "SELECT file FROM document WHERE id = '" + id + "'";
@@ -269,7 +323,6 @@ namespace SliceOfPie
             CloseConnection();
             return path;
         }
-
         public int GetDocument(string user, string filePath)
         {
             string query = "SELECT id FROM document WHERE file = '" + filePath + "' AND owner ='" + user + "'";
@@ -288,24 +341,46 @@ namespace SliceOfPie
             return id;
         }
 
+        /// <summary>
+        /// Inserts a userdocument in the database
+        /// </summary>
+        /// <param name="user">user "end" of userdocument relation</param>
+        /// <param name="docID">document "end" of userdocument relation</param>
+        /// <param name="permission">relation type, what level of authentication the user has to the specified document</param>
         public void InsertUserDocument(User user, int docID, Permission.Permissions permission)
         {
             string query = "INSERT INTO userdocument (userID, documentID, permission) VALUES('" + user.id + "', '" + docID + "', '" + permission.ToString() +"')";
             ExecuteQuery(query);
         }
 
+        /// <summary>
+        /// Deletes a userdocument relation from the database
+        /// </summary>
+        /// <param name="user">userdocument relation's user</param>
+        /// <param name="doc">userdocument relation's document</param>
         public void DeleteUserDocument(User user, Document doc)
         { 
             string query = "DELETE FROM userdocument WHERE userID='"+user.id+"' AND documentID='"+doc.documentId+"'";
             ExecuteQuery(query);
         }
-
+        
+        /// <summary>
+        /// Updates a permission in an already existing userdocument relation
+        /// </summary>
+        
+        /// <param name="newPerm">new permission to the userdocument relation</param>
         public void UpdatePermission(User user, Document doc, Permission.Permissions newPerm)
         {
             string query = "UPDATE userdocument SET permission='" + newPerm + "' WHERE userID='" + user.id + "' AND documentID='" + doc.documentId + "'";
             ExecuteQuery(query);
         }
 
+        /// <summary>
+        /// Selects all of the documents a user is able to see, that inclutes the
+        /// documents he have created himself, and those that are shared with him
+        /// </summary>
+        /// <param name="user">userdocument relation's user</param>
+        /// <returns>a List of all available documents' ids</returns>
         public List<int> GetUserdocumentsByUser(User user)
         {
             string query = "SELECT * FROM userdocument WHERE userID='"+user.id+"'";
@@ -326,6 +401,14 @@ namespace SliceOfPie
             return idList;
         }
 
+        /// <summary>
+        /// Checks if a userdocument is already pressent in the database
+        /// </summary>
+        /// <param name="user">userdocument relation's user</param>
+        /// <param name="doc">userdocument relation's document</param>
+        /// <returns>a bool defing wether or not the userdocument already exists
+        /// true = it does
+        /// false = it does not</returns>
         public bool CheckForUserDocument(User user, Document doc)
         { 
             string query = "SELECT * FROM userdocument WHERE userID='"+user.id+"' AND documentID='"+doc.documentId+"'";
@@ -346,6 +429,12 @@ namespace SliceOfPie
             else return false;
         }
         
+        /// <summary>
+        /// Checks the permission of a userdocument relation between a given user and document
+        /// </summary>
+        /// <param name="user">userdocument relation's user</param>
+        /// <param name="doc">userdocument relation's document</param>
+        /// <returns>The permission of the userdocument relation</returns>
         public Permission.Permissions CheckPermission(User user, Document doc)
         {
             string query = "SELECT permission FROM userdocument WHERE userID='"+user.id+"' and documentID='"+doc.documentId+"'";
@@ -372,6 +461,12 @@ namespace SliceOfPie
             }
         }
 
+        /// <summary>
+        /// Checks if there is an instance of a user in the database matching the input.
+        /// </summary>
+        /// <param name="username">users username</param>
+        /// <param name="password">users password</param>
+        /// <returns>a User instance, if null there is no user maching in the database, else returns the instance for confirmation</returns>
         public User AuthenticateUser(string username, string password)
         {
             User user = null;
@@ -410,6 +505,11 @@ namespace SliceOfPie
             }
         }
 
+        /// <summary>
+        /// executes a reader and return it so a method can use it to read
+        /// </summary>
+        /// <param name="query">query to be executed</param>
+        /// <returns>a MySqlDataReader instance</returns>
         private MySqlDataReader ExecuteReader(string query)
         {
             if (connection.State != ConnectionState.Open) OpenConnection();

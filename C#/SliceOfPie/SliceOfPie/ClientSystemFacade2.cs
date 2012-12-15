@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Sockets;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
@@ -12,6 +14,8 @@ namespace SliceOfPie
     {
         private static ClientSystemFacade2 instance;
 
+
+
         public static ClientSystemFacade2 GetInstance()
         {
             Console.WriteLine("ClientSystemFacade2 - GetInstance()");
@@ -20,6 +24,16 @@ namespace SliceOfPie
                 instance = new ClientSystemFacade2();
             }
             return instance;
+        }
+
+        private void initialize()
+        {
+            IPEndPoint ipe = new IPEndPoint(Dns.GetHostEntry("localhost").AddressList[0], 8080);
+            TcpListener tcpServerListener = new TcpListener(ipe);
+            tcpServerListener.Start();
+            Console.WriteLine("Server Started");
+            //block tcplistener to accept incoming connection
+            Socket serverSocket = tcpServerListener.AcceptSocket();
         }
 
         public void ShareDocuments(string username, string password, string[] users, string[] documents, string permission)
@@ -42,6 +56,7 @@ namespace SliceOfPie
         {
             Console.WriteLine("ClientSystemFacade2 - GetInvitations");
         }
+
         public User Authenticate(string username, string password)
         {
             User user = UserAuth.GetInstance().Authenticate(username, password);

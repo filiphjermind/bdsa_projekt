@@ -33,7 +33,6 @@ namespace DesktopUI
         /// <summary>
         /// Creates a folder
         /// </summary>
-        /// <returns></returns>
         internal void CreateFolder(string folder)
         {
             Model.GetInstance().CreateFolder(folder);

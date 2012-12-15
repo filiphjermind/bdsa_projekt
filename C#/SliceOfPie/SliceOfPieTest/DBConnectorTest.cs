@@ -13,6 +13,7 @@ namespace SliceOfPieTest
     public class DBConnectorTest
     {
         Engine engine = new Engine();
+        ClientSystemFacade facade = ClientSystemFacade.GetInstance();
 
         public DBConnectorTest()
         {
@@ -57,25 +58,31 @@ namespace SliceOfPieTest
         public void CheckUserdocumentTest()
         {
             User testUser = engine.userhandler.GetUser("hvass", "1234");
-            //Document testDocument = engine.dbCon.GetDocument(
+            Document testDocument = facade.OpenDocument(225, testUser);
+
+            Assert.AreEqual(true, engine.dbCon.CheckForUserDocument(testUser, testDocument));
+        }
+
+        [TestMethod]
+        public void DeleteUserdocumentTest()
+        {
+            User testUser = engine.userhandler.GetUser("hvass", "1234");
+            Document testDocument = facade.OpenDocument(225, testUser);
+
+            engine.dbCon.DeleteUserDocument(testUser, testDocument);
+
+            Assert.AreEqual(false, engine.dbCon.CheckForUserDocument(testUser, testDocument));
         }
 
         [TestMethod]
         public void InsertUserdocumentTest()
         {
             User testUser = engine.userhandler.GetUser("hvass", "1234");
+            Document testDocument = facade.OpenDocument(225, testUser);
 
-            Document testDoc = engine.userhandler.docHandler.NewDocument(testUser, "", Permission.Permissions.Edit);
-            testDoc.content = "asd";
+            engine.dbCon.InsertUserDocument(testUser, testDocument.documentId, Permission.Permissions.Edit);
 
-            engine.userhandler.docHandler.SaveDocument(testUser, testDoc, "fakeDocument.html");
-
-            string path = "root/hvass/fakeDocument.html";
-            //Document doc = engine.userhandler.docHandler.OpenDocument(218, testUser);
-            List<int> testList = engine.dbCon.GetUserdocumentsByUser(testUser);
-            Document finalDoc = engine.userhandler.docHandler.OpenDocument(engine.dbCon.GetDocument(testUser.username, path), testUser);
-
-            Assert.AreEqual(true, testList.Contains(finalDoc.documentId));
+            Assert.AreEqual(true, engine.dbCon.CheckForUserDocument(testUser, testDocument));
         }
     }
 }
