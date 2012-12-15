@@ -122,11 +122,11 @@ namespace WebUI
                     currentDoc.content = textArea.Text;
                     //facade.SaveDocument(user, currentDoc, fileNameBox.Text);
                     facade.ShareDocument(user, currentDoc, Permission.Permissions.Edit, fileNameBox.Text, toUser);
-                    MessageLabel("Document saved!");
+                    MessageLabel("Document shared!");
                 }
                 
             }
-            else MessageLabel("No document selected!");
+            //else MessageLabel("No document selected!");
             //if (!fileNameBox.Text.Equals(""))
             //{
             //    User toUser = facade.GetUser(ShareBox.Text);
@@ -138,6 +138,38 @@ namespace WebUI
             //    }
             //}
             
+        }
+
+        protected void ShowDocument(object sender, EventArgs e)
+        {
+            string url = FileTree.SelectedNode.Value.ToString();
+            ////string url = hiddenPath.Value;
+            //Response.Write("SHOW: " + url);
+
+            //// Do some other processing...
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append("<script>");
+            //sb.Append("window.open('" + url + "', '', 'resizable=no, width=500px, height=300px');");
+            //sb.Append("</scri");
+            //sb.Append("pt>");
+
+            //Page.RegisterStartupScript("test", sb.ToString());
+
+
+        //    string FullFilePath = url;//path of file //"D:\\ASP\\ASP.doc";
+        //FileInfo file = new FileInfo(FullFilePath);
+        //if (file.Exists)
+        //{
+        //    Response.ContentType = "text/html"; //"application/vnd.ms-word";
+        //    Response.AddHeader("Content-Disposition", "inline; filename=\"" + file.Name + "\"");
+        //    Response.AddHeader("Content-Length", file.Length.ToString());
+        //    Response.TransmitFile(file.FullName);
+        //}
+
+            string queryString = "http://localhost:63518/ShowDocument.aspx?filename=" + fileNameBox.Text.Trim() + "&username=" + user.username;
+        string newWin = "window.open('" + queryString + "');";
+        ClientScript.RegisterStartupScript (this.GetType(), "pop", newWin, true);
+
         }
 
         /// <summary>

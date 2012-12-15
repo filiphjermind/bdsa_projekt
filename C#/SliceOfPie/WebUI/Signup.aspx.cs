@@ -14,7 +14,7 @@ namespace WebUI
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            //fullNameSB.Text = Request.QueryString["param1"].ToString();
         }
 
         protected void SignUp(object sender, EventArgs e)

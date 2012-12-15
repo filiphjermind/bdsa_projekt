@@ -218,31 +218,35 @@ namespace SliceOfPie
         {
             string path = dbCon.GetDocumentById(id);
 
-            // Read the file, line by line, into an array.
-            try
+            if (!path.Equals("") && !path.Equals(" ") && path != null)
             {
-                string[] lines = File.ReadAllLines(path);
-
-                // Save the content of the file.
-                string content = "";
-                for (int i = 0; i < lines.Length; i++)
+                // Read the file, line by line, into an array.
+                try
                 {
-                    content += lines[i] + "\n";
+                    string[] lines = File.ReadAllLines(path);
+
+                    // Save the content of the file.
+                    string content = "";
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        content += lines[i] + "\n";
+                    }
+
+                    // Create a new document object.
+                    Document doc = new Document(user, id, content, path);
+
+                    // Add document to the users list of documents
+                    AddDocToList(user, doc);
+
+                    // Return the document.
+                    return doc;
                 }
-
-                // Create a new document object.
-                Document doc = new Document(user, id, content, path);
-
-                // Add document to the users list of documents
-                AddDocToList(user, doc);
-
-                // Return the document.
-                return doc;
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                }
             }
-            catch (IOException e)
-            {
-                Console.WriteLine(e.StackTrace);
-            }
+            
             return null;
         }
 
@@ -257,30 +261,33 @@ namespace SliceOfPie
             string path = "";
             path = dbCon.GetDocument(id, user.username);
 
-            // Read the file, line by line, into an array.
-            try
+            if (!path.Equals("") && !path.Equals(" ") && path != null)
             {
-                string[] lines = File.ReadAllLines(path);
-
-                // Save the content of the file.
-                string content = "";
-                for (int i = 0; i < lines.Length; i++)
+                // Read the file, line by line, into an array.
+                try
                 {
-                    content += lines[i] + "\n";
+                    string[] lines = File.ReadAllLines(path);
+
+                    // Save the content of the file.
+                    string content = "";
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        content += lines[i] + "\n";
+                    }
+
+                    // Create a new document object.
+                    Document doc = new Document(user, id, content, path);
+
+                    // Add document to the users list of documents
+                    AddDocToList(user, doc);
+
+                    // Return the document.
+                    return doc;
                 }
-
-                // Create a new document object.
-                Document doc = new Document(user, id, content, path);
-
-                // Add document to the users list of documents
-                AddDocToList(user, doc);
-
-                // Return the document.
-                return doc;
-            }
-            catch (IOException e)
-            {
-                Console.WriteLine(e.StackTrace);
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                }
             }
             return null;
         }
@@ -292,32 +299,50 @@ namespace SliceOfPie
         /// <returns>File content as a string</returns>
         public string ReadFile(string path)
         {
-            try
+            if (!path.Equals("") && !path.Equals(" ") && path != null)
             {
-                string[] lines = File.ReadAllLines(path);
-
-                // Save the content of the file.
-                string content = "";
-                for (int i = 0; i < lines.Length; i++)
+                try
                 {
-                    content += lines[i] + "\n";
+                    string[] lines = File.ReadAllLines(path);
+
+                    // Save the content of the file.
+                    string content = "";
+                    for (int i = 0; i < lines.Length; i++)
+                    {
+                        content += lines[i] + "\n";
+                    }
+                    return content;
                 }
-                return content;
-            }
-            catch (IOException e)
-            { 
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.StackTrace);
+                }
             }
             return null;
         }
 
+        /// <summary>
+        /// Reads the content of a file based on a document.
+        /// </summary>
+        /// <param name="doc">Which document to read.</param>
+        /// <returns>Content of the file representet in a string array.</returns>
         public string[] ReadFile(Document doc)
         {
-            try
+            if (doc != null)
             {
-                string[] lines = File.ReadAllLines(doc.path);
-                return lines;
+                if (!doc.path.Equals("") && !doc.path.Equals(" ") && doc.path != null)
+                {
+                    try
+                    {
+                        string[] lines = File.ReadAllLines(doc.path);
+                        return lines;
+                    }
+                    catch (IOException ioex)
+                    {
+                        Console.WriteLine(ioex.StackTrace);
+                    }
+                }
             }
-            catch (IOException ioex) { }
             return null;
         }
 
@@ -399,18 +424,23 @@ namespace SliceOfPie
         public void ShareDocument(User currentUser, Document doc, Permission.Permissions perm , string filename, params User[] users)
         {
             Document sharedDocument = new Document(doc.owner, doc.path + "/" + filename, perm);
+            string pathToFile = "root/" + currentUser.username + "/" + filename;
+            //Document sharedDoc = new Document(currentUser, doc.content, pathToFile, Permission.Permissions.Edit);
             
             foreach (User i in users)
             {
-                int someID = dbCon.GetDocument(currentUser.username, "root/myuser/" + filename);
+                //int someID = dbCon.GetDocument(currentUser.username, "root/myuser/" + filename);
+                int id = dbCon.GetDocument(currentUser.username, pathToFile);
+                dbCon.InsertUserDocument(i, id, Permission.Permissions.Edit);
+                dbCon.InsertUserDocument(currentUser, id, Permission.Permissions.Edit);
 
-                dbCon.InsertUserDocument(i, 243, Permission.Permissions.Edit);
+                //dbCon.InsertUserDocument(i, 243, Permission.Permissions.Edit);
                 if (i.documents.Contains(doc) || i.documents.Contains(sharedDocument)) Console.WriteLine("Document does already exist");
                 else if (!dbCon.CheckForUserDocument(i, doc))
                 {
-                    int newID = dbCon.GetDocument(currentUser.username, doc.path);
+                    //int newID = dbCon.GetDocument(currentUser.username, doc.path);
 
-                    dbCon.InsertUserDocument(i, newID, Permission.Permissions.Edit);
+                    //dbCon.InsertUserDocument(i, newID, Permission.Permissions.Edit);
                 }//SaveDocument(currentUser, doc, doc.path + "/" + filename);
                 
                 //Console.WriteLine(i.documents.Contains(sharedDocument));

@@ -2,7 +2,6 @@ C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\We
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\WebUI.pdb
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.dll
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.pdb
-C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\SliceOfPie.exe
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\MySql.Data.dll
 C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\SliceOfPie.pdb
@@ -21,3 +20,4 @@ C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\bin\SliceOfPie.
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.dll
 C:\Users\Filip\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.pdb
+C:\Users\BergarSimonsen\Documents\GitHub\bdsa_projekt\C#\SliceOfPie\WebUI\obj\Debug\WebUI.csprojResolveAssemblyReference.cache

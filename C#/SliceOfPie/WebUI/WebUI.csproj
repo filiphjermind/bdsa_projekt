@@ -57,6 +57,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ShowDocument.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="style\style.css" />
     <Content Include="Web.config" />
@@ -64,6 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ShowDocument.aspx.cs">
+      <DependentUpon>ShowDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowDocument.aspx.designer.cs">
+      <DependentUpon>ShowDocument.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
