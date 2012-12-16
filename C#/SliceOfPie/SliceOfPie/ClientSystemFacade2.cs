@@ -97,6 +97,17 @@ namespace SliceOfPie
             return user;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="documents">
+        /// [0] = Owner
+        /// [1] = Content
+        /// [2] = Path
+        /// [3] = Last Changed
+        /// </param>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public string[][] Synchronize(string[][] documents, User user)
         {
             //authenticate?
@@ -110,6 +121,7 @@ namespace SliceOfPie
                 Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, sarray[1], Permission.Permissions.Edit);
                 tmpDocument.path = sarray[2];
 
+                tmpDocument.lastChanged = Convert.ToDateTime(sarray[3]);
                 usersDocuments.Add(tmpDocument);
             }
 

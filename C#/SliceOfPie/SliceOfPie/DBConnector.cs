@@ -86,6 +86,11 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
+        public void InsertSyncDocument(string owner, string file)
+        {
+            string query = "INSERT INTO document (owner, file, lastmodified) VALUES('" + owner + "', '" + file + "', '" + DateTime.Now.ToString() + "')";
+        }
+
         /// <summary>
         /// Deletes all of one users documents from database
         /// </summary>

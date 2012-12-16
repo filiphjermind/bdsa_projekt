@@ -551,6 +551,9 @@ namespace SliceOfPie
         {
             foreach (Document d in fromList)
             {
+                dbCon.InsertSyncDocument(d.owner.username, d.path);
+                GetDocumentByPath(d.owner, d.path);
+
                 Document tmp = CheckDocumentInList(d, toList);
                 if (tmp == null) toList.Add(d);
             }
