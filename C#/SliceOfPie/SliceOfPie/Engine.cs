@@ -40,6 +40,7 @@ namespace SliceOfPie
 
         public Engine()
         {
+            
             // Check if the root directory exists. If not, create it.
             if (!Directory.Exists("root"))
             {
@@ -59,8 +60,7 @@ namespace SliceOfPie
             dbCon = DBConnector.Instance;
             folder = new Folder();
             userhandler = new UserHandler();
-
-            ClientSystemFacade2.GetInstance();
+           
 
 
 

@@ -22,5 +22,8 @@ namespace SliceOfPie
 
         [OperationContract]
         void AcceptInvitations(string username, string password, string[] accepts);
+        
+        [OperationContract]
+        string[][] Synchronize(string username, string password, string[][] files);
     }
 }

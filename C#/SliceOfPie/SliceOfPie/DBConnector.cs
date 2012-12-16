@@ -86,6 +86,11 @@ namespace SliceOfPie
             ExecuteQuery(query);
         }
 
+        public void InsertSyncDocument(string owner, string file)
+        {
+            string query = "INSERT INTO document (owner, file, lastmodified) VALUES('" + owner + "', '" + file + "', '" + DateTime.Now.ToString() + "')";
+        }
+
         /// <summary>
         /// Deletes all of one users documents from database
         /// </summary>
@@ -502,16 +507,17 @@ namespace SliceOfPie
             string query = "SELECT * FROM user WHERE username = '" + username + "' AND password = '" + password + "'";
 
             MySqlDataReader reader = ExecuteReader(query);
-
-            while (reader.Read())
+            if (reader != null)
             {
-                int id = (int) reader[0];
-                string name = (string) reader[1];
-                string userName = (string) reader[2];
-                string passWord = (string) reader[3];
-                user = new User(id, name, userName, passWord);
+                while (reader.Read())
+                {
+                    int id = (int)reader[0];
+                    string name = (string)reader[1];
+                    string userName = (string)reader[2];
+                    string passWord = (string)reader[3];
+                    user = new User(id, name, userName, passWord);
+                }
             }
-
             //Console.WriteLine("READER " + reader[1] + " " + reader[2] + " " + reader[3]);
             reader.Close();
             CloseConnection();
