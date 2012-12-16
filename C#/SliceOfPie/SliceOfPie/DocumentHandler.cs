@@ -102,6 +102,11 @@ namespace SliceOfPie
         //    user.documents.Add(doc);
         //}
 
+        public List<string> GetDocumentHistory(User user, string filePath)
+        {
+            return dbCon.GetDocumentHistory(user.username, filePath);
+        }
+
         /// <summary>
         /// 
         /// </summary>

@@ -82,7 +82,7 @@ namespace SliceOfPie
         /// <param name="file">Location of document on the server</param>
         public void InsertDocument(string owner, string file)
         {
-            string query = "INSERT INTO document (owner, file) VALUES('" + owner + "', '" + file + "')";
+            string query = "INSERT INTO document (owner, file, lastmodified) VALUES('" + owner + "', '" + file + "', '" + DateTime.Now.ToString() + "')";
             ExecuteQuery(query);
         }
 
@@ -127,7 +127,7 @@ namespace SliceOfPie
         /// <param name="newFile">Existing enry's new "file"</param>
         public void UpdateDocumentByID(int id, string newOwner, string newFile)
         {
-            string query = "UPDATE document SET owner='"+newOwner+"', file='"+newFile+"' WHERE id="+id+"";
+            string query = "UPDATE document SET owner='"+newOwner+"', file='"+newFile+"', lastmodified='"+DateTime.Now.ToString()+"' WHERE id="+id+"";
             ExecuteQuery(query);
         }
 
@@ -229,6 +229,34 @@ namespace SliceOfPie
             return userAssembly;
         }
 
+        public List<string> GetDocumentHistory(string user, string filePath)
+        {
+            string query = "SELECT * FROM document WHERE file = '" + filePath + "' AND owner ='" + user + "'";
+
+            MySqlDataReader reader = ExecuteReader(query);
+
+            List<string> docHistory = new List<string>();
+
+            string id;
+            string owner;
+            string path;
+            string dateTime;
+
+            while (reader.Read())
+            {
+                id = reader[0].ToString();
+                owner = (string)reader[1];
+                path = (string)reader[2];
+                dateTime = (string)reader[3];
+                docHistory.Add(id + "," + owner + "," + path + "," + dateTime);
+                //Console.WriteLine("Path: " + path);
+            }
+            reader.Close();
+            CloseConnection();
+
+            return docHistory;
+        }
+
         /// <summary>
         /// selects all users in the database
         /// </summary>
@@ -323,6 +351,7 @@ namespace SliceOfPie
             CloseConnection();
             return path;
         }
+
         public int GetDocument(string user, string filePath)
         {
             string query = "SELECT id FROM document WHERE file = '" + filePath + "' AND owner ='" + user + "'";
