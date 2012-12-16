@@ -40,7 +40,7 @@ namespace DesktopUI
         private void AutomaticSettingUpdate()
         {
             passwordTextBox.Text = "1234";
-            usernameTextBox.Text = "hvass";
+            usernameTextBox.Text = "chuck";
             onClickUpdateSettings(null,null);
         }
 
