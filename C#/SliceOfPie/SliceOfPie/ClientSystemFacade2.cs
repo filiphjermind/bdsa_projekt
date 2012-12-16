@@ -77,12 +77,8 @@ namespace SliceOfPie
             //reads all of the array-"documents" in the input 2D-array
             foreach (string[] sarray in documents) 
             {
-                //if (sarray.Length < 3) { Console.WriteLine("ERROR, array is to small"); break; }
-                string tmpOwner = sarray[0];
-                string tmpContent = sarray[1];
-                string tmpFilePath = sarray[2];
-
-                Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, tmpContent, Permission.Permissions.Edit);
+                Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, sarray[1], Permission.Permissions.Edit);
+                tmpDocument.path = sarray[2];
 
                 usersDocuments.Add(tmpDocument);
             }
@@ -90,6 +86,7 @@ namespace SliceOfPie
             //list of users documents after "OflineSynchonization"
             updatedList = engine.userhandler.docHandler.OfflineSynchronization(usersDocuments, user);
 
+            //makes the reutrn array with the sice of the numbers of documents
             string[][] returnDocuments =  new string [updatedList.Count()][];
 
             int counting = 0;
@@ -106,7 +103,7 @@ namespace SliceOfPie
                 returnDocuments[counting] = documentArray;
                 counting++;
             }
-            Console.WriteLine("Client got "+ (counting-1) +" documents back");
+            Console.WriteLine("Client got "+ (counting) +" documents back");
                 
             return returnDocuments;
         }
