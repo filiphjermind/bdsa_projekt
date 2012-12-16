@@ -105,6 +105,21 @@ namespace WebUI
             MessageLabel("Logged out");
         }
 
+        protected void GetDocumentHistory(object sender, EventArgs e)
+        {
+            //if (!fileNameBox.Text.Equals("") && !fileNameBox.Text.Equals(" "))
+            //{
+            //    if (user != null)
+            //    {
+            //        currentDoc = facade.GetDocumentByPath(user, "root/" + user.username + "/" + fileNameBox.Text.ToString());
+            //        Response.Write("SDFSDFSD" + currentDoc.path);
+            //    }
+            //}
+            string queryString = "http://localhost:63518/ShowDocumentHistory.aspx?filename=" + fileNameBox.Text.Trim() + "&username=" + user.username;
+            string newWin = "window.open('" + queryString + "');";
+            ClientScript.RegisterStartupScript(this.GetType(), "pop", newWin, true);
+        }
+
         /// <summary>
         /// Shares the current document.
         /// </summary>
@@ -167,8 +182,8 @@ namespace WebUI
         //}
 
             string queryString = "http://localhost:63518/ShowDocument.aspx?filename=" + fileNameBox.Text.Trim() + "&username=" + user.username;
-        string newWin = "window.open('" + queryString + "');";
-        ClientScript.RegisterStartupScript (this.GetType(), "pop", newWin, true);
+            string newWin = "window.open('" + queryString + "');";
+            ClientScript.RegisterStartupScript(this.GetType(), "pop", newWin, true);
 
         }
 
@@ -263,7 +278,7 @@ namespace WebUI
                 }
             }
 
-            Response.Write(hiddenPath.Value);
+            //Response.Write(hiddenPath.Value);
             
             // Display the content of the file in the textArea.
             textArea.Text = facade.ReadFile(FileTree.SelectedNode.Value.ToString());
