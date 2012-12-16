@@ -147,10 +147,11 @@ namespace DesktopUI
             foreach(FileInfo fi in files)
             {
                 //owner, content, path
-                string[] s = new string[3];
+                string[] s = new string[4];
                 s[0] = username;
                 s[1] = ReadFile(fi.FullName);
                 s[2] = fi.FullName.Substring(fi.FullName.IndexOf("SliceOfPie")+10);
+                s[3] = fi.LastWriteTime.ToShortTimeString();
                 result.Add(s);
             }
             foreach (DirectoryInfo di2 in di.GetDirectories())

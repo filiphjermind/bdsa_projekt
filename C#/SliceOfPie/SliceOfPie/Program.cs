@@ -15,7 +15,7 @@ namespace SliceOfPie
             ClientSystemFacade facade = ClientSystemFacade.GetInstance();
             Engine engine = new Engine();//Engine.Instance;
             DBConnector DBCon = DBConnector.Instance;
-            
+            ClientSystemFacade2.GetInstance();
 
             //User user1 = facade.GetUser("chuck", "norris");
             //User user2 = facade.GetUser("awesome", "123");
