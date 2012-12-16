@@ -39,9 +39,39 @@ namespace SliceOfPie
             Socket serverSocket = tcpServerListener.AcceptSocket();
         }
 
-        public void ShareDocuments(string username, string password, string[] users, string[] documents, string permission)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="users">
+        /// Array of usernames
+        /// </param>
+        /// <param name="documents">
+        /// [0] = owner
+        /// [1] = content
+        /// [2] = filePath
+        /// </param>
+        /// <param name="permission"></param>
+        public void ShareDocuments(string username, string password, string[] users, string[] userDoc, string permission)
         {
-            Console.WriteLine("ClientSystemFacade2 - ShareDocuments");
+            User authUser = engine.dbCon.AuthenticateUser(username, password);
+
+            if (authUser != null)
+            {
+                Console.WriteLine("ClientSystemFacade2 - ShareDocuments");
+                User user = engine.userhandler.GetUserByUsername(username);
+                Document tmpDocument = engine.userhandler.docHandler.GetDocumentByPath(user, userDoc[2]);
+
+                User[] newUsers = new User[users.Length];
+
+                for (int i = 0; i < users.Length; i++)
+                {
+                    newUsers[i] = engine.userhandler.GetUserByUsername(users[i]);
+                }
+
+                engine.userhandler.docHandler.ShareDocument(user, tmpDocument, Permission.Permissions.Edit, tmpDocument.path, newUsers);
+            }
         }
 
         public void ShareFolder(string username, string password, string[] users, string folder, string permission)
