@@ -1,0 +1,26 @@
+Tehnical Memo
+Issue: Choosing how to connect to the database
+
+Solution Summary: Simplest option due to time pressure
+
+Factors
+- Simplicity
+- Easy to get working
+
+Solution:
+Our way of connecting to the database, and executing queries on it is a series
+of methods close to hardcoded SQL queries. they do not automatically update if a 
+table/collumn/attribute were to change.
+
+Motivation:
+Early in the process we also designed a solid design for the database, which ment
+that we were able to make the "final" outcast of the database rather quickly.
+
+And looking apart from the fact that the solution does not adapt to changes made on 
+the database, it works perfectly and requireded minimal attention and time to get working.
+
+Alternatives considered:
+Entity framework was a possability from the start, but since entity framework had prooven 
+a challenge to get working for all of us in the past, we choose the, for us at the time,
+simpler solution to save time in the end
+
