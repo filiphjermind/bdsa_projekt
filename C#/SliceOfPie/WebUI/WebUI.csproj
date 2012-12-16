@@ -58,6 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ShowDocument.aspx" />
+    <Content Include="ShowDocumentHistory.aspx" />
     <Content Include="Signup.aspx" />
     <Content Include="style\style.css" />
     <Content Include="Web.config" />
@@ -71,6 +72,13 @@
     </Compile>
     <Compile Include="ShowDocument.aspx.designer.cs">
       <DependentUpon>ShowDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowDocumentHistory.aspx.cs">
+      <DependentUpon>ShowDocumentHistory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowDocumentHistory.aspx.designer.cs">
+      <DependentUpon>ShowDocumentHistory.aspx</DependentUpon>
     </Compile>
     <Compile Include="Signup.aspx.cs">
       <DependentUpon>Signup.aspx</DependentUpon>

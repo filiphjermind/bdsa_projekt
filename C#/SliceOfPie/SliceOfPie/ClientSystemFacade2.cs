@@ -12,6 +12,9 @@ namespace SliceOfPie
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ClientSystemFacade2" in both code and config file together.
     public class ClientSystemFacade2 : IClientSystemFacade2
     {
+        private UserAuth userAuth = UserAuth.GetInstance();
+        private Engine engine = new Engine();
+
         private static ClientSystemFacade2 instance;
 
 
@@ -59,8 +62,8 @@ namespace SliceOfPie
 
         public string[][] Synchronize(string username, string password, string[][] files)
         {
-            Console.WriteLine("ClientSystemFacade2 - Synchronize() - files: " + files[0][2]);
-            return null;
+            return Synchronize(files, Authenticate(username, password));
+            
         }
 
         public User Authenticate(string username, string password)
@@ -68,6 +71,47 @@ namespace SliceOfPie
             User user = UserAuth.GetInstance().Authenticate(username, password);
             Console.WriteLine(user);
             return user;
+        }
+
+        public string[][] Synchronize(string[][] documents, User user)
+        {
+            //authenticate?
+
+            List<Document> usersDocuments = new List<Document>();
+            List<Document> updatedList = new List<Document>();
+
+            //reads all of the array-"documents" in the input 2D-array
+            foreach (string[] sarray in documents) 
+            {
+                Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, sarray[1], Permission.Permissions.Edit);
+                tmpDocument.path = sarray[2];
+
+                usersDocuments.Add(tmpDocument);
+            }
+
+            //list of users documents after "OflineSynchonization"
+            updatedList = engine.userhandler.docHandler.OfflineSynchronization(usersDocuments, user);
+
+            //makes the reutrn array with the sice of the numbers of documents
+            string[][] returnDocuments =  new string [updatedList.Count()][];
+
+            int counting = 0;
+
+            //creates and fills the array-"Document"s in the return 2D-array
+            foreach (Document d in updatedList)
+            {
+                string[] documentArray = new string[3];
+
+                documentArray[0] = d.owner.username;
+                documentArray[1] = d.content;
+                documentArray[2] = d.path;
+
+                returnDocuments[counting] = documentArray;
+                counting++;
+            }
+            Console.WriteLine("Client got "+ (counting) +" documents back");
+                
+            return returnDocuments;
         }
     }
 }
