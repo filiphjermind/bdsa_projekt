@@ -17,6 +17,7 @@ namespace DesktopUI
 
         private TcpClient client;
         private NetworkStream clientStream;
+        private string rootDirectoryPath;
 
         public static Model GetInstance()
         {
@@ -40,52 +41,52 @@ namespace DesktopUI
             
         }
 
-        internal string MessageServer()
-        {
-            client = new TcpClient();
+        //internal string MessageServer()
+        //{
+        //    client = new TcpClient();
 
-            //localhost
-            IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000);
+        //    //localhost
+        //    IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000);
 
-            client.Connect(serverEndPoint);
+        //    client.Connect(serverEndPoint);
 
-            NetworkStream clientStream = client.GetStream();
+        //    NetworkStream clientStream = client.GetStream();
 
-            ASCIIEncoding encoder = new ASCIIEncoding();
-            byte[] buffer = encoder.GetBytes("Hello Server!");
+        //    ASCIIEncoding encoder = new ASCIIEncoding();
+        //    byte[] buffer = encoder.GetBytes("Hello Server!");
 
-            clientStream.Write(buffer, 0, buffer.Length);
-            clientStream.Flush();
+        //    clientStream.Write(buffer, 0, buffer.Length);
+        //    clientStream.Flush();
 
-            return RecieveMessage();
-        }
+        //    return RecieveMessage();
+        //}
 
-        internal string RecieveMessage()
-        {
-            NetworkStream clientStream = client.GetStream();
-            ASCIIEncoding encoder = new ASCIIEncoding();
+        //internal string RecieveMessage()
+        //{
+        //    NetworkStream clientStream = client.GetStream();
+        //    ASCIIEncoding encoder = new ASCIIEncoding();
 
-            byte[] message = new byte[4096];
-            int bytesRead;
+        //    byte[] message = new byte[4096];
+        //    int bytesRead;
 
-            while (true)
-            {
-                bytesRead = 0;
+        //    while (true)
+        //    {
+        //        bytesRead = 0;
 
-                try
-                {
-                    //blocks until it recieves a message
-                    bytesRead = clientStream.Read(message, 0, 4096);
-                }
-                catch{return null;}
+        //        try
+        //        {
+        //            //blocks until it recieves a message
+        //            bytesRead = clientStream.Read(message, 0, 4096);
+        //        }
+        //        catch{return null;}
 
-                if (bytesRead == 0)return null;
+        //        if (bytesRead == 0)return null;
 
 
-                return encoder.GetString(message, 0, bytesRead);
+        //        return encoder.GetString(message, 0, bytesRead);
 
-            }
-        }
+        //    }
+        //}
 
         internal void CreateDocument(string file)
         {
@@ -124,7 +125,47 @@ namespace DesktopUI
 
         internal void Synchronize()
         {
-            
+            string[][] files = GetAllFilesFromDisk().ToArray();
+            using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
+            {
+                files = proxy.Synchronize(username, password, files);
+            }
+            SaveAllFilesToDisk(files);
+        }
+
+        private List<string[]> GetAllFilesFromDisk()
+        {
+            List<string[]> files = getFilesInDirectory(rootDirectoryPath);
+            return files;
+        }
+
+        private List<string[]> getFilesInDirectory(string path)
+        {
+            List<string[]> result = new List<string[]>();
+            DirectoryInfo di = new DirectoryInfo(path);
+            FileInfo[] files = di.GetFiles();
+            foreach(FileInfo fi in files)
+            {
+                //owner, content, path
+                string[] s = new string[3];
+                s[0] = username;
+                s[1] = ReadFile(fi.FullName);
+                s[2] = fi.FullName.Substring(fi.FullName.IndexOf("SliceOfPie")+10);
+                result.Add(s);
+            }
+            foreach (DirectoryInfo di2 in di.GetDirectories())
+            {
+                result.AddRange(getFilesInDirectory(di2.FullName));
+            }
+            return result;
+        }
+
+        private void SaveAllFilesToDisk(string[][] files)
+        {
+            foreach (string[] file in files)
+            {
+                SaveFile(file[2], file[1]);
+            }
         }
 
         internal void ShareDocuments(string[] users, string[] documents, string permission)
@@ -174,6 +215,11 @@ namespace DesktopUI
         internal void IgnoreInvitaions(string[] ignorations)
         {
             
+        }
+
+        internal void SetRootDirectory(string p)
+        {
+            rootDirectoryPath = p;
         }
     }
 }

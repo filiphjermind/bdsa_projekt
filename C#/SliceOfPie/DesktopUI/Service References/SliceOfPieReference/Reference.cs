@@ -26,6 +26,9 @@ namespace DesktopUI.SliceOfPieReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientSystemFacade2/AcceptInvitations", ReplyAction="http://tempuri.org/IClientSystemFacade2/AcceptInvitationsResponse")]
         void AcceptInvitations(string username, string password, string[] accepts);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientSystemFacade2/Synchronize", ReplyAction="http://tempuri.org/IClientSystemFacade2/SynchronizeResponse")]
+        string[][] Synchronize(string username, string password, string[][] files);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -69,6 +72,10 @@ namespace DesktopUI.SliceOfPieReference {
         
         public void AcceptInvitations(string username, string password, string[] accepts) {
             base.Channel.AcceptInvitations(username, password, accepts);
+        }
+        
+        public string[][] Synchronize(string username, string password, string[][] files) {
+            return base.Channel.Synchronize(username, password, files);
         }
     }
 }

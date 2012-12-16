@@ -57,6 +57,12 @@ namespace SliceOfPie
             Console.WriteLine("ClientSystemFacade2 - GetInvitations");
         }
 
+        public string[][] Synchronize(string username, string password, string[][] files)
+        {
+            Console.WriteLine("ClientSystemFacade2 - Synchronize() - files: " + files[0][2]);
+            return null;
+        }
+
         public User Authenticate(string username, string password)
         {
             User user = UserAuth.GetInstance().Authenticate(username, password);

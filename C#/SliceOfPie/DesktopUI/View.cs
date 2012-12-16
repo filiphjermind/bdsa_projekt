@@ -33,7 +33,15 @@ namespace DesktopUI
             ShowNoFileMessage();
             staticDocumentText = DocumentContent;
             initComponents();
+            AutomaticSettingUpdate();
 
+        }
+
+        private void AutomaticSettingUpdate()
+        {
+            passwordTextBox.Text = "1234";
+            usernameTextBox.Text = "Hvass";
+            onClickUpdateSettings(null,null);
         }
 
         /// <summary>
@@ -161,6 +169,7 @@ namespace DesktopUI
         {
             PopulateTreeView();
             Controller.GetInstance().SetCredentials(usernameTextBox.Text,passwordTextBox.Text);
+            Controller.GetInstance().SetRootDirectory(rootDirectory.Text);
         }
 
 
