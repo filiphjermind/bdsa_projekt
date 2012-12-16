@@ -92,10 +92,6 @@ namespace SliceOfPie
 
         public string[][] Synchronize(string username, string password, string[][] files)
         {
-<<<<<<< HEAD
-            //Console.WriteLine("ClientSystemFacade2 - Synchronize() - files: " + files[0][3]);
-=======
->>>>>>> 13fc4a78b52da2b802ac6f6a2c8da758f4a1c0c3
             return Synchronize(files, Authenticate(username, password));
 
         }
