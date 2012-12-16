@@ -225,6 +225,10 @@ namespace SliceOfPie
 
             if (!path.Equals("") && !path.Equals(" ") && path != null)
             {
+                if (!File.Exists(path)) 
+                {
+                    File.Create(path);
+                }
                 // Read the file, line by line, into an array.
                 try
                 {
