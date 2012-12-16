@@ -12,6 +12,9 @@ namespace SliceOfPie
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ClientSystemFacade2" in both code and config file together.
     public class ClientSystemFacade2 : IClientSystemFacade2
     {
+        private UserAuth userAuth = UserAuth.GetInstance();
+        private Engine engine = new Engine();
+
         private static ClientSystemFacade2 instance;
 
 
@@ -62,6 +65,50 @@ namespace SliceOfPie
             User user = UserAuth.GetInstance().Authenticate(username, password);
             Console.WriteLine(user);
             return user;
+        }
+
+        public string[][] Synchronize(string[][] documents, User user)
+        {
+            //authenticate?
+
+            List<Document> usersDocuments = new List<Document>();
+            List<Document> updatedList = new List<Document>();
+
+            //reads all of the array-"documents" in the input 2D-array
+            foreach (string[] sarray in documents) 
+            {
+                //if (sarray.Length < 3) { Console.WriteLine("ERROR, array is to small"); break; }
+                string tmpOwner = sarray[0];
+                string tmpContent = sarray[1];
+                string tmpFilePath = sarray[2];
+
+                Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, tmpContent, Permission.Permissions.Edit);
+
+                usersDocuments.Add(tmpDocument);
+            }
+
+            //list of users documents after "OflineSynchonization"
+            updatedList = engine.userhandler.docHandler.OfflineSynchronization(usersDocuments, user);
+
+            string[][] returnDocuments =  new string [updatedList.Count()][];
+
+            int counting = 0;
+
+            //creates and fills the array-"Document"s in the return 2D-array
+            foreach (Document d in updatedList)
+            {
+                string[] documentArray = new string[3];
+
+                documentArray[0] = d.owner.username;
+                documentArray[1] = d.content;
+                documentArray[2] = d.path;
+
+                returnDocuments[counting] = documentArray;
+                counting++;
+            }
+            Console.WriteLine("Client got "+ (counting-1) +" documents back");
+                
+            return returnDocuments;
         }
     }
 }
