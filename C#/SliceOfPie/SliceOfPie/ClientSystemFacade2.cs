@@ -53,15 +53,14 @@ namespace SliceOfPie
         /// [2] = filePath
         /// </param>
         /// <param name="permission"></param>
-        public void ShareDocuments(string username, string password, string[] users, string[] userDoc, string permission)
+        public void ShareDocuments(string username, string password, string[] users, string userDoc, string permission)
         {
             User authUser = engine.dbCon.AuthenticateUser(username, password);
-
             if (authUser != null)
             {
-                Console.WriteLine("ClientSystemFacade2 - ShareDocuments");
+                
                 User user = engine.userhandler.GetUserByUsername(username);
-                Document tmpDocument = engine.userhandler.docHandler.GetDocumentByPath(user, userDoc[2]);
+                Document tmpDocument = engine.userhandler.docHandler.GetDocumentByPath(user, userDoc);
 
                 User[] newUsers = new User[users.Length];
 
@@ -69,7 +68,7 @@ namespace SliceOfPie
                 {
                     newUsers[i] = engine.userhandler.GetUserByUsername(users[i]);
                 }
-
+                Console.WriteLine("ClientSystemFacade2 - ShareDocuments");
                 engine.userhandler.docHandler.ShareDocument(user, tmpDocument, Permission.Permissions.Edit, tmpDocument.path, newUsers);
             }
         }
@@ -92,10 +91,6 @@ namespace SliceOfPie
 
         public string[][] Synchronize(string username, string password, string[][] files)
         {
-<<<<<<< HEAD
-            //Console.WriteLine("ClientSystemFacade2 - Synchronize() - files: " + files[0][3]);
-=======
->>>>>>> 13fc4a78b52da2b802ac6f6a2c8da758f4a1c0c3
             return Synchronize(files, Authenticate(username, password));
 
         }
@@ -130,7 +125,8 @@ namespace SliceOfPie
             {
                 Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, sarray[1], Permission.Permissions.Edit);
                 string[] fileinput = sarray[2].Split('\\');
-                string path = "root/" + user.username;
+                //string path = "root/" + user.username;
+                string path = user.username;
                 for (int i = 2; i < fileinput.Length; i++)
                 {
                     path += "/" + fileinput[i];

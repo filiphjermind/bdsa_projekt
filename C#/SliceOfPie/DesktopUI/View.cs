@@ -226,9 +226,11 @@ namespace DesktopUI
             string[] documents = new string[listView1.SelectedItems.Count];
             for (int i = 0; i < listView1.SelectedItems.Count; i++)
             {
-                documents[i] = CurrentDirectoryInfo.FullName + @"\" + listView1.SelectedItems[i].Text;
+                //This cuts the first part of the path which is related to the specific user
+                string trimedPath = CurrentDirectoryInfo.FullName.Substring(CurrentDirectoryInfo.FullName.IndexOf("SliceOfPie") + 10);
+                documents[i] = trimedPath + @"\" + listView1.SelectedItems[i].Text;
             }
-            Controller.GetInstance().ShareDocuments(users,documents,comboBoxShareDocument.Text);
+            Controller.GetInstance().ShareDocuments(users, documents, comboBoxShareDocument.Text);
             shareDocumentText.Text = "";
         }
 

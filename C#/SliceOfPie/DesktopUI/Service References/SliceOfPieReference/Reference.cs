@@ -16,7 +16,7 @@ namespace DesktopUI.SliceOfPieReference {
     public interface IClientSystemFacade2 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientSystemFacade2/ShareDocuments", ReplyAction="http://tempuri.org/IClientSystemFacade2/ShareDocumentsResponse")]
-        void ShareDocuments(string username, string password, string[] users, string[] documents, string permission);
+        void ShareDocuments(string username, string password, string[] users, string document, string permission);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IClientSystemFacade2/ShareFolder", ReplyAction="http://tempuri.org/IClientSystemFacade2/ShareFolderResponse")]
         void ShareFolder(string username, string password, string[] users, string folder, string permission);
@@ -58,8 +58,8 @@ namespace DesktopUI.SliceOfPieReference {
                 base(binding, remoteAddress) {
         }
         
-        public void ShareDocuments(string username, string password, string[] users, string[] documents, string permission) {
-            base.Channel.ShareDocuments(username, password, users, documents, permission);
+        public void ShareDocuments(string username, string password, string[] users, string document, string permission) {
+            base.Channel.ShareDocuments(username, password, users, document, permission);
         }
         
         public void ShareFolder(string username, string password, string[] users, string folder, string permission) {
