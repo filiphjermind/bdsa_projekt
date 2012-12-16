@@ -136,11 +136,12 @@ namespace SliceOfPie
             //creates and fills the array-"Document"s in the return 2D-array
             foreach (Document d in updatedList)
             {
-                string[] documentArray = new string[3];
+                string[] documentArray = new string[4];
 
                 documentArray[0] = d.owner.username;
                 documentArray[1] = d.content;
                 documentArray[2] = d.path;
+                documentArray[3] = d.lastChanged.ToString();
 
                 returnDocuments[counting] = documentArray;
                 counting++;
