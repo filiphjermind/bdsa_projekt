@@ -158,7 +158,11 @@ namespace SliceOfPie
         public Document GetDocumentByPath(User user, string path)
         {
             return engine.userhandler.docHandler.GetDocumentByPath(user, path);
-            
+        }
+
+        public List<string> GetDocumentHistory(User user, string filePath)
+        {
+            return engine.userhandler.docHandler.GetDocumentHistory(user, filePath);
         }
     }
 }

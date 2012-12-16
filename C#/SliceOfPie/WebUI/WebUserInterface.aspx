@@ -44,6 +44,7 @@
             <asp:Button ID="ShareButton" runat="server" Text="Share Document" OnClick="ShareDocument" />
             <asp:TextBox ID="ShareBox" runat="server" />
             <asp:Button ID="ShowDocButton" runat="server" Text="Show Document" OnClick="ShowDocument" />
+            <asp:Button ID="DocHistoryButton" runat="server" Text="Document History" OnClick="GetDocumentHistory" />
             <%--<asp:Button ID="saveDocButton" runat="server" Text="Save Document" />
             <asp:Button ID="openDocButton" runat="server" OnClick="OpenDocument" Text="Open Document" />
             <asp:Button id="Button1" onclick="Button1_Click" runat="server" Text="Go!" />--%>
