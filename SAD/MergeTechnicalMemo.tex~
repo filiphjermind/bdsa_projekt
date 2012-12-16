@@ -1,0 +1,45 @@
+% Created 2012-12-16 Sun 03:21
+\documentclass[11pt]{article}
+\usepackage[AUTO]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{MergeTechnicalMemo}
+\author{Bergar Simonsen}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.11}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+\section{Unresolved issues:}
+\label{sec-1}
+
+\begin{itemize}
+\item Our algorithm doesn't 100\% solve the conflict. In the end the user must manually chose which
+     version to keep, and which version to discard.
+\item If two identical lines exists in both versions but the lines is at another line number in the old
+     document, this might cause a conflict (<<< TEXT >>>) that could be avoided.
+\end{itemize}
+
+\end{document}

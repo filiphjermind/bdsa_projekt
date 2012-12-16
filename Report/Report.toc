@@ -3,16 +3,26 @@
 \contentsline {subsection}{\numberline {1.2}Problem statement}{2}
 \contentsline {subsection}{\numberline {1.3}Summary of system features}{2}
 \contentsline {section}{\numberline {2}Use cases}{2}
-\contentsline {section}{\numberline {3}Glossary}{9}
-\contentsline {section}{\numberline {4}Supplementary Specification (FURPS+)}{9}
-\contentsline {section}{\numberline {5}Domain Model}{11}
-\contentsline {section}{\numberline {6}Logical Architecture}{11}
-\contentsline {section}{\numberline {7}System Sequence Diagram}{12}
-\contentsline {section}{\numberline {8}Operation Contracts}{12}
-\contentsline {section}{\numberline {9}Use Case Diagram}{13}
-\contentsline {section}{\numberline {10}UML Package Diagram}{14}
-\contentsline {section}{\numberline {11}UML Class Diagram}{14}
-\contentsline {section}{\numberline {12}Communication Diagram}{15}
-\contentsline {section}{\numberline {13}Technical Memo}{15}
-\contentsline {section}{\numberline {14}ER-Diagram}{16}
-\contentsline {section}{\numberline {15}Revision Table}{16}
+\contentsline {section}{\numberline {3}Glossary}{11}
+\contentsline {section}{\numberline {4}Supplementary Specification (FURPS+)}{12}
+\contentsline {section}{\numberline {5}Domain Model}{13}
+\contentsline {section}{\numberline {6}Logical Architecture}{13}
+\contentsline {section}{\numberline {7}System Sequence Diagram}{14}
+\contentsline {section}{\numberline {8}Operation Contracts}{14}
+\contentsline {section}{\numberline {9}Use Case Diagram}{15}
+\contentsline {section}{\numberline {10}UML Package Diagram}{15}
+\contentsline {section}{\numberline {11}UML Class Diagram}{16}
+\contentsline {section}{\numberline {12}Communication Diagram}{16}
+\contentsline {section}{\numberline {13}Technical Memo}{17}
+\contentsline {section}{\numberline {14}ER-Diagram}{19}
+\contentsline {section}{\numberline {15}Slice of Pie user manual}{19}
+\contentsline {subsection}{\numberline {15.1}Starting the application}{19}
+\contentsline {subsubsection}{\numberline {15.1.1}Running the application from Visual Studio}{19}
+\contentsline {subsubsection}{\numberline {15.1.2}Signing up}{20}
+\contentsline {subsubsection}{\numberline {15.1.3}Logging in}{20}
+\contentsline {subsection}{\numberline {15.2}Using the system}{20}
+\contentsline {subsubsection}{\numberline {15.2.1}Create a new document.}{20}
+\contentsline {subsubsection}{\numberline {15.2.2}Deleting a document}{20}
+\contentsline {subsubsection}{\numberline {15.2.3}Sharing a document}{21}
+\contentsline {subsubsection}{\numberline {15.2.4}Showing a document}{21}
+\contentsline {section}{\numberline {16}Revision Table}{21}

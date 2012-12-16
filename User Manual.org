@@ -1,0 +1,58 @@
+* Slice of Pie user manual
+** Starting the application
+*** Running the application from Visual Studio
+    Before starting the application, you need to start Visual Studio with administration priviledges.
+    The reason for this is that the application will need to create files and folders for the documents
+    and in order to do so the program needs to be run with administrator priviledges which will give the 
+    application write access.
+
+    Since the web client runs in the browser, the browser needs to allow pop up windows for localhost.
+    This can be done when the application is run for the first time.
+
+    When starting the application, you need to set the WebClient project as startup project (if it's not
+    already set), and then run the program (f5 for debug mode, ctrl + f5 for the release version).
+
+    The web client will start up with your default internet browser. 
+    When the main page has loaded, you are ready to use the application.
+*** Signing up
+    As a first time user there won't be any user registered in the system, so the first time you need
+    to do is to sign up to use the system.
+
+    To sign up, click the "Sign up" button. This will open up a new window with the sign up form.
+
+    Fill out the form and click the "Sign up" button. A message will appear to say if the signup
+    was successfull or not.
+
+    If the signup was successfull you are now registered in the system, and are ready to use it. 
+    Close the sign up window and go back to the main window.
+*** Logging in
+    On the main screen there are two text boxes at the top of the window named "username" and "password".
+    Enter the newly created username and password into the boxes and click the "Login" button.
+** Using the system
+   After you have logged in, press the "Get Files" button on the left page of the window. 
+   This will show you all the files that belong to the current user. Since you are a new user you don't 
+   have any documents, so you should only see the root folder (the one with your username).
+*** Create a new document.
+    To create a new document, click the "New Document". This will clear all text boxes, and you are ready
+    to write a new document.
+
+    Creating a new document doesn't save the document, so before you go too far you should save your document.
+    Write a filename in the filename box, and click the "Save Document" button.
+    If you wish to save the document in a sub folder, just write the: "foldername/filename.html" in the filebox.
+
+    The system doesn't require that you save the document as a HTML file, but the system is built around it. Not 
+    doing so won't make it able to add images to you document.
+*** Deleting a document
+    Deleting a document is very simple.
+    Select a document from the list on the left. Make sure that the filename of the file is entered into the 
+    filename box (this can also be done manually). Delete the document by clicking the "Delete Document" button.
+*** Sharing a document
+    Sharing a document is very simple as well.
+    Open the document you wish to share. Enter the username of the user you wish to share the document with in
+    the text box next to the "Share Document" button, and click the share document button.
+*** Showing a document
+    Since the document is built around the HTML format, the text area can't show any images or text formatting.
+    In order to see the document (with images, formatting etc) you need to open it in another page in the 
+    browser.
+    Select the document you wish to view and click the "Show Document" button. This will open a new window 
+    with your document in parsed HTML.

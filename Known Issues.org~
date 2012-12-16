@@ -1,0 +1,7 @@
+* Known Issues
+** Web Client
+   - File Tree doesn't update after a change has been made. The user has to click the 
+     Get Files button everytime a document is created or deleted.
+   - Since the File Tree doesn't update itself it won't remove it self either. Clicking
+     the Get Files button won't remove the existing File Tree but makes a new one. 
+     The old one can then be ignored.

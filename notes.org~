@@ -2,3 +2,6 @@
 ** Web client
    - Allow pop up windows for sign up.
    - Line break when saving document.
+   - Saving a shared document isn't optimal.
+   - Repeatably press "get files"
+   - [ ] Populate empty user tree

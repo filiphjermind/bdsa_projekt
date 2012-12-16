@@ -8,11 +8,13 @@
 ** Usability
    - The system must be easy to use.
      - Have a clean user interface.
-     - The "average" user must be able to use the system without any training.
+     - 8 out of 10 users must be able to use the system without any training.
    - The system must be easily visible for people with "not perfect" vision. 
      E.g no graphics that blurs the view of the core system functionality.
+   - The web client must be easy and quick to navigate. No function should 
+     be more than 3 clicks (windows/sub-windows) away.
+     - Not counting navigating a users files.
 ** Reliability
-   - The system must be able to recover from crashes.
    - It must be possible to use the system without any internet connection.
      - With some limitations.
 ** Performance
