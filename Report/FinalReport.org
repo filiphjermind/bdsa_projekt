@@ -55,8 +55,12 @@ using the same text editing system this can lead to formatting issues in the doc
 ** Domain Model
    *INSERT DIAGRAM HERE*
 ** Logical Architecture
+   The logical architecture diagram shows a rough sketch off how the structure of the application
+   will be like. This is by no means a complete diagram, but should give an idea off how
+   the application will look like.
    *INSERT DIAGRAM HERE*
 ** System Sequence Diagram
+   The diagram shows all the operations that are available to a regular user.
    *INSERT DIAGRAM HERE*
 ** Operation Contracts
    *INSERT DIAGRAM HERE*
@@ -64,43 +68,12 @@ using the same text editing system this can lead to formatting issues in the doc
 ** Class Diagram
    *INSERT DIAGRAM HERE* 
 ** Interaction Diagrams
+*** Sequence Diagram
+   The SaveDocument() Sequence Diagram shows how the system communicates internally
+   when the SaveDocument() method is called.
+   For other related methods (OpenDocument() ShareDocument() etc.. ) the program flow
+   is the same (though they vary on some parameters and other details).
    *INSERT DIAGRAM HERE*  
-** Technical Memos
-*** File Format
-    *Issue:* Files format - Which file format to use
-    *Solution:* Summary: Use HTML for our file format.
-    *Factors:*
-    - Must be able to contain both text and 
-    *Solution:*
-    We chose to use HTML for our file format because it's simple to construct, and can contain text and images seamlessly. 
-    *Motivation:*
-    We needed a file format that can contain images and text as well as being easy to construct. in addition, HTML can easily be extended to other content. 
-    Lastly, HTML can be opened with any browser, so the users isn't tied to SliceOfPie if he just want's to view the content of a file.
-    *Alternatives considered:*
-    We considered using a .txt file format, but .txt can only contain plain text.
-    We also considered using our own file format (since the format itself isn't important to the application). But if we use our own format the user is stuck
-    with using SliceOfPie, so he can't view the content of a file with any other application.
-*** Document Merge
-    *Issue:* Merging two versions of the same document.
-    *Solution Summary:* Git-hub inspired merge.
-    *Factors:*
-    - Merging two versions of the same document without overwriting existing changes.
-    *Solution:*
-    Our merging algorithm reads the two documents and stores them, line by line in an array. 
-    Then the algorithm compares each line in the two arrays, if the lines are the same, insert the line into a new array. If the two lines aren't identical, 
-    insert the new line into the new array + insert the line from the old array in the next line. This line will be encapsulated with $<<<$ TEXT $>>>$ which 
-    shows the user where there is a conflict which the user can solve later on. 
-    If the new version of the document contains lines that aren't in the old array, they are simply added to the new array. 
-    *Motivation:*
-    There are other, more advanced, merging algorithms available. Because of time constraint we chose to use this one. It isn't the most advanced/complete algorithm 
-    but it does the job quite well considered it's simplicity.
-    *Unresolved issues:*
-    - Our algorithm doesn't 100\% solve the conflict. In the end the user must manually chose which
-      version to keep, and which version to discard.
-    - If two identical lines exists in both versions but the lines is at another line number in the old
-      document, this might cause a conflict $<<<$ TEXT $>>$ that could be avoided.
-    *Alternatives considered:*
-    An algorithm that analyses every line in the file keeps the one that the user wants.
 ** ER-Diagram
    *INSERT DIAGRAM HERE*
 ** User manual
@@ -163,4 +136,67 @@ using the same text editing system this can lead to formatting issues in the doc
      with your document in parsed HTML.
 
 * Implementation
+** Software Architecture Document
+*** Architectural Representation
+The SAD summarizes the architecture of the Slice of Pie application from multple views. These views include:
+   - Logical view
+   - Deployment view
+   - Process view
+   - Data view
+   - Use-case view
+*** Architectural Factors
+    - Suplementary specifications.
+*** Architectural Decisions
+**** Technical Memos
+***** File Format
+      *Issue:* Files format - Which file format to use
+      *Solution:* Summary: Use HTML for our file format.
+      *Factors:*
+      - Must be able to contain both text and 
+      *Solution:*
+      We chose to use HTML for our file format because it's simple to construct, and can contain text and images seamlessly. 
+      *Motivation:*
+      We needed a file format that can contain images and text as well as being easy to construct. in addition, HTML can easily be extended to other content. 
+      Lastly, HTML can be opened with any browser, so the users isn't tied to SliceOfPie if he just want's to view the content of a file.
+      *Alternatives considered:*
+      We considered using a .txt file format, but .txt can only contain plain text.
+      We also considered using our own file format (since the format itself isn't important to the application). But if we use our own format the user is stuck
+      with using SliceOfPie, so he can't view the content of a file with any other application.
+
+***** Document Merge
+      *Issue:* Merging two versions of the same document.
+      *Solution Summary:* Git-hub inspired merge.
+      *Factors:*
+      - Merging two versions of the same document without overwriting existing changes.
+      *Solution:*
+      Our merging algorithm reads the two documents and stores them, line by line in an array. 
+      Then the algorithm compares each line in the two arrays, if the lines are the same, insert the line into a new array. If the two lines aren't identical, 
+      insert the new line into the new array + insert the line from the old array in the next line. This line will be encapsulated with $<<<$ TEXT $>>>$ which 
+      shows the user where there is a conflict which the user can solve later on. 
+      If the new version of the document contains lines that aren't in the old array, they are simply added to the new array. 
+      *Motivation:*
+      There are other, more advanced, merging algorithms available. Because of time constraint we chose to use this one. It isn't the most advanced/complete algorithm 
+      but it does the job quite well considered it's simplicity.
+      *Unresolved issues:*
+      - Our algorithm doesn't 100\% solve the conflict. In the end the user must manually chose which
+       	version to keep, and which version to discard.
+      - If two identical lines exists in both versions but the lines is at another line number in the old
+       	document, this might cause a conflict $<<<$ TEXT $>>$ that could be avoided.
+      *Alternatives considered:*
+      An algorithm that analyses every line in the file keeps the one that the user wants.
+
+*** Logical View
+    - Logical diagrams etc ..
+*** Deployment View
+    - Delpoyment diagrams etc ...
+*** Process View
+    - Interction diagrams etc ..
+    - Class diagrams
+
+    Comment on how the interprocess communitacion works.
+*** Use-Case View
+    - Use cases
+    - Use case diagrams
+*** Other Views ...
+
 * Project Management
