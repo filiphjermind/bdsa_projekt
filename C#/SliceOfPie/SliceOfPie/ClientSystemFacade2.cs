@@ -21,7 +21,7 @@ namespace SliceOfPie
 
         public static ClientSystemFacade2 GetInstance()
         {
-            Console.WriteLine("ClientSystemFacade2 - GetInstance()");
+            
             if (instance == null)
             {
                 instance = new ClientSystemFacade2();
@@ -88,6 +88,13 @@ namespace SliceOfPie
         public void AcceptInvitations(string username, string password, string[] accepts)
         {
             Console.WriteLine("ClientSystemFacade2 - GetInvitations");
+        }
+
+        public string[][] Synchronize(string username, string password, string[][] files)
+        {
+            Console.WriteLine("ClientSystemFacade2 - Synchronize() - files: " + files[0][3]);
+            return Synchronize(files, Authenticate(username, password));
+            
         }
 
         public User Authenticate(string username, string password)

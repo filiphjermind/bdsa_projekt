@@ -125,5 +125,10 @@ namespace DesktopUI
         {
             Model.GetInstance().IgnoreInvitaions(ignorations);
         }
+
+        internal void SetRootDirectory(string p)
+        {
+            Model.GetInstance().SetRootDirectory(p);
+        }
     }
 }
