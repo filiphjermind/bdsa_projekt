@@ -1,0 +1,68 @@
+% Created 2012-12-16 Sun 16:00
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{FinalReport}
+\author{Bergar Simonsen}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.11}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+\section{Business Modeling}
+\label{sec-1}
+\subsection{Vision}
+\label{sec-1-1}
+\subsubsection{Introduction}
+\label{sec-1-1-1}
+
+Our goal is to make an interactive document sharing system, Slice of Pie,  which allows multiple users to easily share and edit documents both online and 
+\subsubsection{Problem statement}
+\label{sec-1-1-2}
+
+Sharing and editing documents can be cumbersome. 
+Sending a document back and forth between multiple users can lead to a lot of errors. Users can overwrite what another user has done, and if they aren't all
+using the same text editing system this can lead to formatting issues in the document.
+\subsubsection{Summary of system features}
+\label{sec-1-1-3}
+
+\begin{itemize}
+\item Multiple users must be able to share and edit documents online.
+\item Synchronization for offline usage.
+\item Merging of documents.
+\item History. Which allows the user to see all recent changes made to the document.
+\item Documents can be categorized into folders or projects in order to get a better overview when working on a larger project with multiple files.
+\end{itemize}
+\section{Requirements / Analysis}
+\label{sec-2}
+\section{Design}
+\label{sec-3}
+\section{Implementation}
+\label{sec-4}
+\section{Project Management}
+\label{sec-5}
+
+\end{document}

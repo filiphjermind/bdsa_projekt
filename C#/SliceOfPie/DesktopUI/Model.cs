@@ -178,6 +178,8 @@ namespace DesktopUI
         /// <param name="permission"></param>
         internal void ShareDocuments(string[] users, string[] documents, string permission)
         {
+            Synchronize();
+
             using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
             {
                 foreach (string doc in documents)

@@ -6,3 +6,28 @@
    - Repeatably press "get files"
    - [ ] Populate empty user tree
    - [ ] Show document history
+** System
+   - Title property in Document class is never used.
+   - Connect the database very often
+** Report
+   - [X] ClientSystemFacade.cs
+   - [ ] ClientSystemFacade2.cs
+   - [ ] DBConnector.cs
+   - [X] Document.cs
+   - [ ] DocumentHandler.cs
+   - [X] Engine.cs
+   - [X] Folder.cs
+   - [ ] IClientSystemFacade2.cs
+   - [X] Permission.cs
+   - [X] User.cs
+   - [X] UserAuth.cs
+   - [X] UserHandler.cs
+*** WebUI
+    - [X] ShowDocument.aspx.cs
+    - [X] ShowDocumentHistory.aspx.cs
+    - [X] Signup.aspx.cs
+    - [X] WebUserInterface.aspx.cs
+** StandAlone-client
+   - Sync crashes first time because file and folder don't exist.
+     The reason is that the system works faster than it takes the system to write a 
+     file to the disk.
