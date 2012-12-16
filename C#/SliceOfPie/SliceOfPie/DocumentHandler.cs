@@ -251,7 +251,8 @@ namespace SliceOfPie
                     Console.WriteLine(e.StackTrace);
                 }
             }
-            
+            //Document tmp = dbCon.GetDocumentById(id);
+
             return null;
         }
 

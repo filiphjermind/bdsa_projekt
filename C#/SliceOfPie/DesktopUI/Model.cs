@@ -11,14 +11,18 @@ namespace DesktopUI
 {
     class Model
     {
+        //the instance used for singleton
         private static Model instance;
+        //the users credentials
         private string password;
         private string username;
-
-        private TcpClient client;
-        private NetworkStream clientStream;
+        //the path to the local root directory
         private string rootDirectoryPath;
 
+        /// <summary>
+        /// Method to get the singleton instance
+        /// </summary>
+        /// <returns></returns>
         public static Model GetInstance()
         {
             if (instance == null)
@@ -28,77 +32,29 @@ namespace DesktopUI
             return instance;
         }
 
-        public Model()
-        {
-
-            
-
-            /*IPEndPoint ipe = new IPEndPoint(Dns.GetHostEntry("localhost").AddressList[0],8080);
-            Socket s = new Socket(ipe.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-            s.Connect(ipe);
-            s.Send(Encoding.ASCII.GetBytes("Hello world"));*/
-            //View.WriteToDocumentTextBox("Model - constructor");
-            
-        }
-
-        //internal string MessageServer()
-        //{
-        //    client = new TcpClient();
-
-        //    //localhost
-        //    IPEndPoint serverEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), 3000);
-
-        //    client.Connect(serverEndPoint);
-
-        //    NetworkStream clientStream = client.GetStream();
-
-        //    ASCIIEncoding encoder = new ASCIIEncoding();
-        //    byte[] buffer = encoder.GetBytes("Hello Server!");
-
-        //    clientStream.Write(buffer, 0, buffer.Length);
-        //    clientStream.Flush();
-
-        //    return RecieveMessage();
-        //}
-
-        //internal string RecieveMessage()
-        //{
-        //    NetworkStream clientStream = client.GetStream();
-        //    ASCIIEncoding encoder = new ASCIIEncoding();
-
-        //    byte[] message = new byte[4096];
-        //    int bytesRead;
-
-        //    while (true)
-        //    {
-        //        bytesRead = 0;
-
-        //        try
-        //        {
-        //            //blocks until it recieves a message
-        //            bytesRead = clientStream.Read(message, 0, 4096);
-        //        }
-        //        catch{return null;}
-
-        //        if (bytesRead == 0)return null;
-
-
-        //        return encoder.GetString(message, 0, bytesRead);
-
-        //    }
-        //}
-
+        /// <summary>
+        /// Creates a document on the useres computer
+        /// </summary>
+        /// <param name="file"></param>
         internal void CreateDocument(string file)
         {
             System.IO.File.WriteAllText(file,"");
         }
 
+        /// <summary>
+        /// Creates a folder on the users computer
+        /// </summary>
+        /// <param name="folder"></param>
         internal void CreateFolder(string folder)
         {
             System.IO.Directory.CreateDirectory(folder);
         }
 
-
+        /// <summary>
+        /// Reads a file from the users computer
+        /// </summary>
+        /// <param name="currentPath"></param>
+        /// <returns></returns>
         internal string ReadFile(string currentPath)
         {
             StreamReader streamReader = new StreamReader(currentPath);
@@ -107,22 +63,41 @@ namespace DesktopUI
             return text;
         }
 
+        /// <summary>
+        /// Saves a file on the users computer
+        /// </summary>
+        /// <param name="currentPath"></param>
+        /// <param name="text"></param>
         internal void SaveFile(string currentPath, string text)
         {
             //deletes all existing text and writes the new text
             File.WriteAllText(currentPath,text);
         }
 
+        /// <summary>
+        /// Deletes a file on the users computer
+        /// </summary>
+        /// <param name="file"></param>
         internal void DeleteFile(string file)
         {
             File.Delete(file);
         }
 
+        /// <summary>
+        /// Deletes a folder on the users computer
+        /// </summary>
+        /// <param name="CurrentDirectoryInfo"></param>
         internal void DeleteFolder(DirectoryInfo CurrentDirectoryInfo)
         {
             Directory.Delete(CurrentDirectoryInfo.FullName, true);
         }
 
+        /// <summary>
+        /// This method takes care of synchronizing the users local files with 
+        /// the files on the server. First it reads the files from the disk, then
+        /// it sends them to the server and at last it saves the retrieved files from
+        /// the server to the local disk.
+        /// </summary>
         internal void Synchronize()
         {
             string[][] files = GetAllFilesFromDisk().ToArray();
@@ -133,12 +108,23 @@ namespace DesktopUI
             SaveAllFilesToDisk(files);
         }
 
+        /// <summary>
+        /// This method takes care of retrieving all local files in the root directory and
+        /// all subdirectories
+        /// </summary>
+        /// <returns></returns>
         private List<string[]> GetAllFilesFromDisk()
         {
             List<string[]> files = getFilesInDirectory(rootDirectoryPath);
             return files;
         }
 
+        /// <summary>
+        /// This method returns all the files in a directory. It is called recursivly
+        /// so all the files in the subdirectories are also added to the list.
+        /// </summary>
+        /// <param name="path"></param>
+        /// <returns></returns>
         private List<string[]> getFilesInDirectory(string path)
         {
             List<string[]> result = new List<string[]>();
@@ -146,7 +132,9 @@ namespace DesktopUI
             FileInfo[] files = di.GetFiles();
             foreach(FileInfo fi in files)
             {
-                //owner, content, path
+                //The different propperties of the file is added to an array in
+                //the following order:
+                // 0. owner,1. content, 2. path, 3. date modified
                 string[] s = new string[4];
                 s[0] = username;
                 s[1] = ReadFile(fi.FullName);
@@ -161,14 +149,25 @@ namespace DesktopUI
             return result;
         }
 
+        /// <summary>
+        /// This method saves all the files that is passed as argument to the local disk.
+        /// </summary>
+        /// <param name="files"></param>
         private void SaveAllFilesToDisk(string[][] files)
         {
             foreach (string[] file in files)
             {
-                SaveFile(file[2], file[1]);
+                System.IO.File.WriteAllText(rootDirectoryPath + @"\" + file[2].Substring(0),file[1]);
+                
             }
         }
 
+        /// <summary>
+        /// This method takes care of sharing documents
+        /// </summary>
+        /// <param name="users"></param>
+        /// <param name="documents"></param>
+        /// <param name="permission"></param>
         internal void ShareDocuments(string[] users, string[] documents, string permission)
         {
             using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
@@ -178,6 +177,12 @@ namespace DesktopUI
             }
         }
 
+        /// <summary>
+        /// This method takes care of sharing a folder by calling the server.
+        /// </summary>
+        /// <param name="users"></param>
+        /// <param name="folder"></param>
+        /// <param name="permission"></param>
         internal void ShareFolder(string[] users, string folder, string permission)
         {
             using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
@@ -187,6 +192,10 @@ namespace DesktopUI
             }
         }
 
+        /// <summary>
+        /// This method takes care of retriving the current invitations to the user.
+        /// </summary>
+        /// <returns></returns>
         internal string[] GetInvitations()
         {
             string[] result;
@@ -198,6 +207,12 @@ namespace DesktopUI
             return result;
         }
 
+
+        /// <summary>
+        /// This method takes care of letting the user accept invitations by calling the
+        /// server.
+        /// </summary>
+        /// <param name="accepts"></param>
         internal void AcceptInvitations(string[] accepts)
         {
             using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
@@ -207,6 +222,11 @@ namespace DesktopUI
             }
         }
 
+        /// <summary>
+        /// This method saves the credintials of the current user
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="pass"></param>
         internal void SetCredentials(string user, string pass)
         {
             username = user;
@@ -218,6 +238,10 @@ namespace DesktopUI
             
         }
 
+        /// <summary>
+        /// THis method sets the path of the root directory.
+        /// </summary>
+        /// <param name="p"></param>
         internal void SetRootDirectory(string p)
         {
             rootDirectoryPath = p;
