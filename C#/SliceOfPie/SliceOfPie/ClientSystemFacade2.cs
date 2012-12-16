@@ -21,7 +21,7 @@ namespace SliceOfPie
 
         public static ClientSystemFacade2 GetInstance()
         {
-            
+
             if (instance == null)
             {
                 instance = new ClientSystemFacade2();
@@ -92,9 +92,9 @@ namespace SliceOfPie
 
         public string[][] Synchronize(string username, string password, string[][] files)
         {
-            Console.WriteLine("ClientSystemFacade2 - Synchronize() - files: " + files[0][3]);
+            //Console.WriteLine("ClientSystemFacade2 - Synchronize() - files: " + files[0][3]);
             return Synchronize(files, Authenticate(username, password));
-            
+
         }
 
         public User Authenticate(string username, string password)
@@ -123,10 +123,18 @@ namespace SliceOfPie
             List<Document> updatedList = new List<Document>();
 
             //reads all of the array-"documents" in the input 2D-array
-            foreach (string[] sarray in documents) 
+            foreach (string[] sarray in documents)
             {
                 Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, sarray[1], Permission.Permissions.Edit);
-                tmpDocument.path = sarray[2];
+                string[] fileinput = sarray[2].Split('\\');
+                string path = "root/" + user.username;
+                for (int i = 2; i < fileinput.Length; i++)
+                {
+                    path += "/" + fileinput[i];
+                }
+                tmpDocument.path = path;
+
+                Console.WriteLine(path);
 
                 tmpDocument.lastChanged = Convert.ToDateTime(sarray[3]);
                 usersDocuments.Add(tmpDocument);
@@ -136,7 +144,7 @@ namespace SliceOfPie
             updatedList = engine.userhandler.docHandler.OfflineSynchronization(usersDocuments, user);
 
             //makes the reutrn array with the sice of the numbers of documents
-            string[][] returnDocuments =  new string [updatedList.Count()][];
+            string[][] returnDocuments = new string[updatedList.Count()][];
 
             int counting = 0;
 
@@ -145,16 +153,20 @@ namespace SliceOfPie
             {
                 string[] documentArray = new string[4];
 
-                documentArray[0] = d.owner.username;
-                documentArray[1] = d.content;
-                documentArray[2] = d.path;
-                documentArray[3] = d.lastChanged.ToString();
+                try
+                {
+                    documentArray[0] = d.owner.username;
+                    documentArray[1] = d.content;
+                    documentArray[2] = d.path;
+                    documentArray[3] = d.lastChanged.ToString();
 
-                returnDocuments[counting] = documentArray;
-                counting++;
+                    returnDocuments[counting] = documentArray;
+                    counting++;
+                }
+                catch (NullReferenceException ex) { }
             }
-            Console.WriteLine("Client got "+ (counting) +" documents back");
-                
+            Console.WriteLine("Client got " + (counting) + " documents back");
+
             return returnDocuments;
         }
     }

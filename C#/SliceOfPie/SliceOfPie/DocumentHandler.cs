@@ -275,6 +275,11 @@ namespace SliceOfPie
                 // Read the file, line by line, into an array.
                 try
                 {
+                    if (!File.Exists(path))
+                    {
+                        File.Create(path);
+                    }
+
                     string[] lines = File.ReadAllLines(path);
 
                     // Save the content of the file.
@@ -459,6 +464,11 @@ namespace SliceOfPie
         public Document GetDocumentByPath(User user, string path)
         {
             int id = dbCon.GetDocument(user.username, path);
+            if (id == 0)
+            { 
+                dbCon.InsertDocument(user.username, path);
+                return GetDocumentByPath(user, path);
+            }
             return OpenDocument(id, user);
         }
 
@@ -470,11 +480,36 @@ namespace SliceOfPie
         /// <returns>A list of all the newest documents the user either owns, have rights to watch or edit.</returns>
         public List<Document> OfflineSynchronization(List<Document> incDocuments, User user)
         {
+            List<Document> usersIncDocuments = new List<Document>();
+
+            foreach (Document d in incDocuments)
+            {
+                string pathTmp = d.path;
+
+                string[] folderPath = pathTmp.Split('/');
+                string folder = "";
+
+
+                for (int i = 0; i < folderPath.Length - 1; i++)
+                {
+                    folder += folderPath[i] + "/";
+                }
+
+                if (!Directory.Exists(folder)) Directory.CreateDirectory(folder);
+
+                if (!File.Exists(pathTmp)) File.Create(pathTmp);
+
+                dbCon.InsertSyncDocument(d.owner.username, d.path);
+                usersIncDocuments.Add(GetDocumentByPath(d.owner, d.path));
+            }
+
             List<Document> newDocumentList = new List<Document>();
             List<Document> usersDocumentOnServer = GetAllUsersDocuments(user);
 
+
+
             newDocumentList = usersDocumentOnServer;
-            CopyNewEntities(incDocuments, newDocumentList);
+            CopyNewEntities(usersIncDocuments, newDocumentList);
 
 
             return newDocumentList;
@@ -512,6 +547,7 @@ namespace SliceOfPie
         }
 
         /********************** PRIVATE HELPER METHODS ******************************/
+
 
         private string[] CompareDocumentsInArray(string[] largestArray, string[] smallestArray)
         {
@@ -555,9 +591,6 @@ namespace SliceOfPie
         {
             foreach (Document d in fromList)
             {
-                dbCon.InsertSyncDocument(d.owner.username, d.path);
-                GetDocumentByPath(d.owner, d.path);
-
                 Document tmp = CheckDocumentInList(d, toList);
                 if (tmp == null) toList.Add(d);
             }

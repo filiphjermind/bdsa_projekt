@@ -109,8 +109,12 @@ namespace DesktopUI
 
         internal void SaveFile(string currentPath, string text)
         {
-            //deletes all existing text and writes the new text
-            File.WriteAllText(currentPath,text);
+            try
+            {
+                //deletes all existing text and writes the new text
+                File.WriteAllText(currentPath, text);
+            }
+            catch(IOException ex){}
         }
 
         internal void DeleteFile(string file)
@@ -165,7 +169,11 @@ namespace DesktopUI
         {
             foreach (string[] file in files)
             {
-                SaveFile(file[2], file[1]);
+                try
+                {
+                    SaveFile(file[2], file[1]);
+                }
+                catch (NullReferenceException ex) { }
             }
         }
 
