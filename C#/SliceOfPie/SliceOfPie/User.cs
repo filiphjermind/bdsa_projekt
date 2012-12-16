@@ -35,6 +35,7 @@ namespace SliceOfPie
         }
 
         // Stores the users document objects.
+		// Deprecated
         public List<Document> documents = new List<Document>();
 
         // Used when creating a new user.
