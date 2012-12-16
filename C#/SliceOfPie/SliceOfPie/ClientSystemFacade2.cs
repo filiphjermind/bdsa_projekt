@@ -58,9 +58,9 @@ namespace SliceOfPie
             User authUser = engine.dbCon.AuthenticateUser(username, password);
             if (authUser != null)
             {
-                Console.WriteLine("ClientSystemFacade2 - ShareDocuments");
+                
                 User user = engine.userhandler.GetUserByUsername(username);
-                Document tmpDocument = engine.userhandler.docHandler.GetDocumentByPath(user, userDoc[2]);
+                Document tmpDocument = engine.userhandler.docHandler.GetDocumentByPath(user, userDoc);
 
                 User[] newUsers = new User[users.Length];
 
@@ -68,7 +68,7 @@ namespace SliceOfPie
                 {
                     newUsers[i] = engine.userhandler.GetUserByUsername(users[i]);
                 }
-
+                Console.WriteLine("ClientSystemFacade2 - ShareDocuments");
                 engine.userhandler.docHandler.ShareDocument(user, tmpDocument, Permission.Permissions.Edit, tmpDocument.path, newUsers);
             }
         }
@@ -125,7 +125,8 @@ namespace SliceOfPie
             {
                 Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, sarray[1], Permission.Permissions.Edit);
                 string[] fileinput = sarray[2].Split('\\');
-                string path = "root/" + user.username;
+                //string path = "root/" + user.username;
+                string path = user.username;
                 for (int i = 2; i < fileinput.Length; i++)
                 {
                     path += "/" + fileinput[i];
