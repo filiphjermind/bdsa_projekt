@@ -53,10 +53,9 @@ namespace SliceOfPie
         /// [2] = filePath
         /// </param>
         /// <param name="permission"></param>
-        public void ShareDocuments(string username, string password, string[] users, string[] userDoc, string permission)
+        public void ShareDocuments(string username, string password, string[] users, string userDoc, string permission)
         {
             User authUser = engine.dbCon.AuthenticateUser(username, password);
-
             if (authUser != null)
             {
                 Console.WriteLine("ClientSystemFacade2 - ShareDocuments");
@@ -92,10 +91,6 @@ namespace SliceOfPie
 
         public string[][] Synchronize(string username, string password, string[][] files)
         {
-<<<<<<< HEAD
-            //Console.WriteLine("ClientSystemFacade2 - Synchronize() - files: " + files[0][3]);
-=======
->>>>>>> 13fc4a78b52da2b802ac6f6a2c8da758f4a1c0c3
             return Synchronize(files, Authenticate(username, password));
 
         }

@@ -12,7 +12,7 @@ namespace SliceOfPie
     public interface IClientSystemFacade2
     {
         [OperationContract]
-        void ShareDocuments(string username, string password, string[] users, string[] documents, string permission);
+        void ShareDocuments(string username, string password, string[] users, string document, string permission);
 
         [OperationContract]
         void ShareFolder(string username, string password, string[] users, string folder, string permission);

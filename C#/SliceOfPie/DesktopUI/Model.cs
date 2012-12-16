@@ -161,16 +161,12 @@ namespace DesktopUI
         {
             foreach (string[] file in files)
             {
-<<<<<<< HEAD
                 try
                 {
-                    SaveFile(file[2], file[1]);
+                    System.IO.File.WriteAllText(rootDirectoryPath + @"\" + file[2].Substring(0), file[1]);
                 }
                 catch (NullReferenceException ex) { }
-=======
-                System.IO.File.WriteAllText(rootDirectoryPath + @"\" + file[2].Substring(0),file[1]);
-                
->>>>>>> 13fc4a78b52da2b802ac6f6a2c8da758f4a1c0c3
+
             }
         }
 
@@ -184,7 +180,11 @@ namespace DesktopUI
         {
             using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
             {
-                proxy.ShareDocuments(password,username,users,documents,permission);
+                foreach (string doc in documents)
+                {
+                    proxy.ShareDocuments(username, password, users, doc, permission);
+                }
+                
 
             }
         }
