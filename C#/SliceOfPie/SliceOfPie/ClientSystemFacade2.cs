@@ -104,6 +104,17 @@ namespace SliceOfPie
             return user;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="documents">
+        /// [0] = Owner
+        /// [1] = Content
+        /// [2] = Path
+        /// [3] = Last Changed
+        /// </param>
+        /// <param name="user"></param>
+        /// <returns></returns>
         public string[][] Synchronize(string[][] documents, User user)
         {
             //authenticate?
@@ -117,6 +128,7 @@ namespace SliceOfPie
                 Document tmpDocument = engine.userhandler.docHandler.NewDocument(user, sarray[1], Permission.Permissions.Edit);
                 tmpDocument.path = sarray[2];
 
+                tmpDocument.lastChanged = Convert.ToDateTime(sarray[3]);
                 usersDocuments.Add(tmpDocument);
             }
 
@@ -131,11 +143,12 @@ namespace SliceOfPie
             //creates and fills the array-"Document"s in the return 2D-array
             foreach (Document d in updatedList)
             {
-                string[] documentArray = new string[3];
+                string[] documentArray = new string[4];
 
                 documentArray[0] = d.owner.username;
                 documentArray[1] = d.content;
                 documentArray[2] = d.path;
+                documentArray[3] = d.lastChanged.ToString();
 
                 returnDocuments[counting] = documentArray;
                 counting++;
