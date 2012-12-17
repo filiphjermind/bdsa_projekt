@@ -42,8 +42,9 @@
 ** Report
    - Refer to the figures
    - Logical architecture image smaller
+   - Correct technical memos
 
 *** Intro text
-    - Domain model
-    - 2.5
-    - 3.2.2
+    - 4.1.2
+    - 4.1.7 (section 2)
+    - Go through all to set references
