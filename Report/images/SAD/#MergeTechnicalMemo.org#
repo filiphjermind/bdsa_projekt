@@ -1,0 +1,28 @@
+* Technical Memo
+** Issue: 
+   - Merging two versions of the same document.
+** Solution Summary:
+   - Git-hub inspired merge.
+** Factors:
+   - Merging two versions of the same document without overwriting existing changes.
+** Solution:
+   Our merging algorithm reads the two documents and stores them, line by line in
+   an array.
+   Then the algorithm compares each line in the two arrays, if the lines are the same, 
+   insert the line into a new array. If the two lines aren't identical, insert the new line
+   into the new array + insert the line from the old array in the next line. This line will
+   be encapsulated with <<< TEXT >>> which shows the user where there is a conflict which
+   the user can solve later on.
+   If the new version of the document contains lines that aren't in the old array, they are 
+   simply added to the new array.
+** Motivation:
+   There are other, more advanced, merging algorithms available. Because of time constraint
+   we chose to use this one. It isn't the most advanced/complete algorithm but it does the
+   job quite well considered it's simplicity.
+** Unresolved issues:
+   - Our algorithm doesn't 100% solve the conflict. In the end the user must manually chose which
+     version to keep, and which version to discard.
+   - If two identical lines exists in both versions but the lines is at another line number in the old
+     document, this might cause a conflict (<<< TEXT >>>) that could be avoided.
+** Alternatives considered:
+   An algorithm that analyses every line in the file keeps the one that the user wants.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  17 DEC 2012 04:18
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (TeX Live 2011) (format=pdflatex 2012.4.24)  17 DEC 2012 07:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -708,149 +708,262 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 (/usr/local/texlive/2011/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-(./FinalReport.toc)
+(./FinalReport.toc [1
+
+{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
 \tf@toc=\write4
 \openout4 = `FinalReport.toc'.
 
- [1
-
-{/usr/local/texlive/2011/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 72--75
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 74--77
 
  []
 
-<images/UpdatedUsecaseDiagram.jpg, id=74, 661.47125pt x 448.67625pt>
+[3] <images/UpdatedUsecaseDiagram.jpg, id=227, 661.47125pt x 448.67625pt>
 File: images/UpdatedUsecaseDiagram.jpg Graphic file (type jpg)
 
 <use images/UpdatedUsecaseDiagram.jpg>
-Package pdftex.def Info: images/UpdatedUsecaseDiagram.jpg used on input line 92
+Package pdftex.def Info: images/UpdatedUsecaseDiagram.jpg used on input line 94
 .
 (pdftex.def)             Requested size: 301.1261pt x 204.2507pt.
- [2] [3 <./images/UpdatedUsecaseDiagram.jpg>] <images/DomainModel.jpg, id=84, 4
-87.8225pt x 396.48125pt>
+ [4 <./images/UpdatedUsecaseDiagram.jpg>] <images/DomainModel.jpg, id=233, 487.
+8225pt x 396.48125pt>
 File: images/DomainModel.jpg Graphic file (type jpg)
 
 <use images/DomainModel.jpg>
-Package pdftex.def Info: images/DomainModel.jpg used on input line 143.
+Package pdftex.def Info: images/DomainModel.jpg used on input line 147.
 (pdftex.def)             Requested size: 301.1261pt x 244.74501pt.
- [4]
-<images/LogicalArchitecture.jpg, id=89, 480.79625pt x 837.1275pt>
+ [5]
+<images/LogicalArchitecture.jpg, id=238, 480.79625pt x 837.1275pt>
 File: images/LogicalArchitecture.jpg Graphic file (type jpg)
 
 <use images/LogicalArchitecture.jpg>
-Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 154.
+Package pdftex.def Info: images/LogicalArchitecture.jpg used on input line 158.
 
 (pdftex.def)             Requested size: 301.1261pt x 524.30193pt.
- [5 <./images/DomainModel.jpg>]
+ [6 <./images/DomainModel.jpg>]
 Overfull \vbox (8.63033pt too high) has occurred while \output is active []
 
 
-[6 <./images/LogicalArchitecture.jpg>]
-<images/Complete_SSQ.jpg, id=100, 748.7975pt x 582.175pt>
+[7 <./images/LogicalArchitecture.jpg>]
+<images/Complete_SSQ.jpg, id=250, 748.7975pt x 582.175pt>
 File: images/Complete_SSQ.jpg Graphic file (type jpg)
 
 <use images/Complete_SSQ.jpg>
-Package pdftex.def Info: images/Complete_SSQ.jpg used on input line 163.
+Package pdftex.def Info: images/Complete_SSQ.jpg used on input line 167.
 (pdftex.def)             Requested size: 301.1261pt x 234.11841pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--180
-
- []
-
-
-Overfull \hbox (6.79999pt too wide) in paragraph at lines 180--181
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 172--186
 [] 
  []
 
-<images/LatestClassDiagram.jpg, id=101, 909.3975pt x 394.47375pt>
+[8 <./images/Complete_SSQ.jpg>]
+<images/LatestClassDiagram.jpg, id=256, 909.3975pt x 394.47375pt>
 File: images/LatestClassDiagram.jpg Graphic file (type jpg)
 
 <use images/LatestClassDiagram.jpg>
-Package pdftex.def Info: images/LatestClassDiagram.jpg used on input line 189.
+Package pdftex.def Info: images/LatestClassDiagram.jpg used on input line 195.
 (pdftex.def)             Requested size: 301.1261pt x 130.62215pt.
- [7 <./images/Complete_SSQ.jpg>]
-<images/SequenceDiagram_SaveDocument.jpg, id=108, 1252.68pt x 536.0025pt>
+ [9 <./images/LatestClassDiagram.jpg>]
+<images/SequenceDiagram_SaveDocument.jpg, id=262, 1252.68pt x 536.0025pt>
 File: images/SequenceDiagram_SaveDocument.jpg Graphic file (type jpg)
 
 <use images/SequenceDiagram_SaveDocument.jpg>
 Package pdftex.def Info: images/SequenceDiagram_SaveDocument.jpg used on input 
-line 200.
+line 208.
 (pdftex.def)             Requested size: 301.1261pt x 128.84769pt.
 
-<images/CommunicationDiagram_Synchronize.jpg, id=109, 1163.34625pt x 330.23375p
+<images/CommunicationDiagram_Synchronize.jpg, id=263, 1163.34625pt x 330.23375p
 t>
 File: images/CommunicationDiagram_Synchronize.jpg Graphic file (type jpg)
  <use images/CommunicationDiagram_Synchronize.jpg>
 Package pdftex.def Info: images/CommunicationDiagram_Synchronize.jpg used on in
-put line 208.
+put line 217.
 (pdftex.def)             Requested size: 301.1261pt x 85.48082pt.
- [8 <./images/LatestClassDiagram.jpg> <./images/SequenceDiagram_SaveDocument.jp
-g>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 224.
 
-LaTeX Warning: File `images/New ER database.png' not found on input line 216.
 
-<images/New ER database.png, id=120, 713.66624pt x 479.7925pt>
+(/usr/local/texlive/2011/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+
+LaTeX Warning: File `images/New ER database.png' not found on input line 228.
+
+<images/New ER database.png, id=264, 713.66624pt x 479.7925pt>
 File: images/New ER database.png Graphic file (type png)
 
 <use images/New ER database.png>
-Package pdftex.def Info: images/New ER database.png used on input line 216.
+Package pdftex.def Info: images/New ER database.png used on input line 228.
 (pdftex.def)             Requested size: 301.1261pt x 202.44124pt.
- [9 <./images/CommunicationDiagram_Synchronize.jpg> <./images/New ER database.p
-ng>] [10] [11]
-Overfull \hbox (34.17505pt too wide) in paragraph at lines 331--332
+ [10 <./images/SequenceDiagram_SaveDocument.jpg> <./images/CommunicationDiagram
+_Synchronize.jpg>] [11 <./images/New ER database.png>] [12] [13]
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 358--359
 [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 353--353
-
- []
-
-
-Overfull \hbox (34.17505pt too wide) in paragraph at lines 353--354
+[14]
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 383--384
 [][] 
  []
 
-[12]
-Overfull \hbox (34.17505pt too wide) in paragraph at lines 370--371
+[15]
+Overfull \hbox (6.79999pt too wide) in paragraph at lines 403--404
 [][] 
  []
 
-[13] [14] [15] [16] [17]
-Overfull \hbox (25.51416pt too wide) in paragraph at lines 581--582
+[16] <images/SAD/LogicalView_UML.jpg, id=300, 460.72125pt x 655.44875pt>
+File: images/SAD/LogicalView_UML.jpg Graphic file (type jpg)
+
+<use images/SAD/LogicalView_UML.jpg>
+Package pdftex.def Info: images/SAD/LogicalView_UML.jpg used on input line 414.
+
+(pdftex.def)             Requested size: 301.1261pt x 428.39694pt.
+ [17]
+
+LaTeX Warning: File `images/Deployment Diagram.jpg' not found on input line 424
+.
+
+<images/Deployment Diagram.jpg, id=305, 722.7pt x 324.21124pt>
+File: images/Deployment Diagram.jpg Graphic file (type jpg)
+
+<use images/Deployment Diagram.jpg>
+Package pdftex.def Info: images/Deployment Diagram.jpg used on input line 424.
+(pdftex.def)             Requested size: 301.1261pt x 135.08932pt.
+ [18 <./images/SAD/LogicalView_UML.jpg>]
+<images/SAD/CommunicationDiagram_LogIn.jpg, id=311, 608.2725pt x 242.9075pt>
+File: images/SAD/CommunicationDiagram_LogIn.jpg Graphic file (type jpg)
+
+<use images/SAD/CommunicationDiagram_LogIn.jpg>
+Package pdftex.def Info: images/SAD/CommunicationDiagram_LogIn.jpg used on inpu
+t line 434.
+(pdftex.def)             Requested size: 301.1261pt x 120.25255pt.
+
+<images/SAD/SSQ_NewUser.jpg, id=312, 816.04875pt x 578.16pt>
+File: images/SAD/SSQ_NewUser.jpg Graphic file (type jpg)
+
+<use images/SAD/SSQ_NewUser.jpg>
+Package pdftex.def Info: images/SAD/SSQ_NewUser.jpg used on input line 440.
+(pdftex.def)             Requested size: 301.1261pt x 213.34242pt.
+ [19 <./images/Deployment Diagram.jpg> <./images/SAD/CommunicationDiagram_LogIn
+.jpg>]
+
+LaTeX Warning: File `images/CommunicationDiagrams/Delete Communication Diagram.
+jpg' not found on input line 446.
+
+
+<images/CommunicationDiagrams/Delete Communication Diagram.jpg, id=320, 816.048
+75pt x 435.6275pt>
+File: images/CommunicationDiagrams/Delete Communication Diagram.jpg Graphic fil
+e (type jpg)
+
+<use images/CommunicationDiagrams/Delete Communication Diagram.jpg>
+Package pdftex.def Info: images/CommunicationDiagrams/Delete Communication Diag
+ram.jpg used on input line 446.
+(pdftex.def)             Requested size: 301.1261pt x 160.74759pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 457--460
+
+ []
+
+[20 <./images/SAD/SSQ_NewUser.jpg> <./images/CommunicationDiagrams/Delete Commu
+nication Diagram.jpg>] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 506--509
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--513
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--519
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 520--524
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 548--554
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 577--582
+
+ []
+
+[24]
+
+LaTeX Warning: File `images/SCRUM/Sprint 1 burndown chart.png' not found on inp
+ut line 615.
+
+<images/SCRUM/Sprint 1 burndown chart.png, id=345, 602.25pt x 372.39125pt>
+File: images/SCRUM/Sprint 1 burndown chart.png Graphic file (type png)
+
+<use images/SCRUM/Sprint 1 burndown chart.png>
+Package pdftex.def Info: images/SCRUM/Sprint 1 burndown chart.png used on input
+ line 615.
+(pdftex.def)             Requested size: 301.1261pt x 186.20084pt.
+ [25 <./images/SCRUM/Sprint 1 burndown chart.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 632--634
+
+ []
+
+
+LaTeX Warning: File `images/SCRUM/Sprint 2 burndown chart.png' not found on inp
+ut line 639.
+
+<images/SCRUM/Sprint 2 burndown chart.png, id=352, 602.25pt x 372.39125pt>
+File: images/SCRUM/Sprint 2 burndown chart.png Graphic file (type png)
+
+<use images/SCRUM/Sprint 2 burndown chart.png>
+Package pdftex.def Info: images/SCRUM/Sprint 2 burndown chart.png used on input
+ line 639.
+(pdftex.def)             Requested size: 301.1261pt x 186.20084pt.
+ [26 <./images/SCRUM/Sprint 2 burndown chart.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 656--658
+
+ []
+
+
+LaTeX Warning: File `images/SCRUM/Sprint 3 burndown chart.png' not found on inp
+ut line 662.
+
+<images/SCRUM/Sprint 3 burndown chart.png, id=358, 602.25pt x 372.39125pt>
+File: images/SCRUM/Sprint 3 burndown chart.png Graphic file (type png)
+
+<use images/SCRUM/Sprint 3 burndown chart.png>
+Package pdftex.def Info: images/SCRUM/Sprint 3 burndown chart.png used on input
+ line 662.
+(pdftex.def)             Requested size: 301.1261pt x 186.20084pt.
+ [27 <./images/SCRUM/Sprint 3 burndown chart.png (PNG copy)>]
+Overfull \hbox (1.42413pt too wide) in paragraph at lines 687--688
 []\T1/cmr/m/n/10.95 All re-quired func-tion-al-ity com-pleted, though with smal
 l ``bugs/features'' 
  []
 
-[18]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 615.
- [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 615.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 721.
+[28]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 721.
  (./FinalReport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 615.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 615.
-
-
-Package rerunfilecheck Warning: File `FinalReport.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `FinalReport.out':
-(rerunfilecheck)             Before: 963CF648AC8522C27423706C469BAAC5;949
-(rerunfilecheck)             After:  7E191AB38740BEA95EF237CACF2978CF;2777.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 615.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 721.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 721.
+Package rerunfilecheck Info: File `FinalReport.out' has not changed.
+(rerunfilecheck)             Checksum: 491BF7F05209665A87B9FD6531262B34;2780.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 721.
  ) 
 Here is how much of TeX's memory you used:
- 7071 strings out of 493633
- 99508 string characters out of 3143377
- 173073 words of memory out of 3000000
- 10180 multiletter control sequences out of 15000+200000
- 17857 words of font info for 56 fonts, out of 3000000 for 9000
+ 7171 strings out of 493633
+ 102242 string characters out of 3143377
+ 176125 words of memory out of 3000000
+ 10250 multiletter control sequences out of 15000+200000
+ 18171 words of font info for 57 fonts, out of 3000000 for 9000
  831 hyphenation exceptions out of 8191
- 29i,6n,28p,400b,499s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,6n,28p,400b,431s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2011/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2011/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></
@@ -862,11 +975,12 @@ fb></usr/local/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb
 ></usr/local/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb><
 /usr/local/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></u
 sr/local/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfrm1728.pfb></usr
-/local/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb>
-Output written on FinalReport.pdf (19 pages, 412798 bytes).
+/local/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/l
+ocal/texlive/2011/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
+Output written on FinalReport.pdf (28 pages, 617683 bytes).
 PDF statistics:
- 249 PDF objects out of 1000 (max. 8388607)
- 207 compressed objects within 3 object streams
- 69 named destinations out of 1000 (max. 500000)
- 153 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 429 PDF objects out of 1000 (max. 8388607)
+ 368 compressed objects within 4 object streams
+ 86 named destinations out of 1000 (max. 500000)
+ 401 words of extra memory for PDF output out of 10000 (max. 10000000)
 

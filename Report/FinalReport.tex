@@ -40,7 +40,7 @@
 \subsubsection{Introduction}
 \label{sec-1-1-1}
 
-    Our goal is to make an interactive document sharing system, Slice of Pie,  which allows multiple users to easily share and edit documents both online and 
+Our goal is to make an interactive document sharing system, Slice of Pie,  which allows multiple users to easily share and edit documents both online and offline
 \subsubsection{Problem statement}
 \label{sec-1-1-2}
 
@@ -61,12 +61,14 @@
 \begin{itemize}
 \item \textbf{Response Time:} The time it takes for the system to respond to a request from the user.
 \item \textbf{Document:} A document refers to a complete document, not just a single file. A document contains a owner, id, content and a file.
-\item \textbf{Client:} A client can mean two things. A web client, operating directly on the server, and a stand-alone client, that runs offline, 
-     locally on the end users machine synchronizing with the server.
+\item \textbf{Client:} A client can mean two things. A web client, operating directly on the server, and a stand-alone client, that runs locally on the end users machine synchronizing with the server.
 \item \textbf{System:} Refers to the core of the application. This includes document handler, user handler etc ..
 \end{itemize}
 \section{Requirements / Analysis}
 \label{sec-2}
+Before starting on the application itself, some analysis had to be made in order to find out how the system will be build. \\
+This includes finding out the core functionality of the system as well as finding out some of the non functional requirements for the application. \\
+The following is a documentation of the analysis that was made before the development of the application began.
 \subsection{Use cases}
 \label{sec-2-1}
 Use cases show an overview of the features that are available in the system. Below are a list of all use cases that our system supports. \\
@@ -138,6 +140,8 @@ Supplementary specification, along with use cases, show all the requirements tha
 \end{itemize}
 \subsection{Domain Model}
 \label{sec-2-3}
+The domain model shows the domain that our application operates in. \\
+This isn't a complete diagram, but a rough sketch that gives us a platform to work from.
 \begin{figure}[H]
   		\centering
     	\includegraphics[width=300px]{images/DomainModel.jpg}
@@ -157,7 +161,7 @@ Supplementary specification, along with use cases, show all the requirements tha
 \subsection{System Sequence Diagram}
 \label{sec-2-5}
 
-   The diagram shows all the operations that are available to a regular user.
+   The system sequence diagram shows a quick overview of the core functionality available to a end user.
 \begin{figure}[H]
   		\centering
     	\includegraphics[width=300px]{images/Complete_SSQ.jpg}
@@ -165,13 +169,14 @@ Supplementary specification, along with use cases, show all the requirements tha
 \end{figure}
 \subsection{Operation Contracts}
 \label{sec-2-6}
-
+Operation contracts show more details on some of the non trivial use cases of the application. \\
+In our application there is only one use case that we thought isn't trivial to the reader. \\
 \fbox{\begin{minipage}{\columnwidth}
 		\textbf{Contract CO1:} Synchronize / Merge \\
 		\textbf{Operation:} Synchronize / Merge \\
 		\textbf{Cross References:} UC1, UC2, UC4, UC5 \\
 		\textbf{Preconditions:} Some documents and/or folders must have been created on the system. \\
-		\textbf{Postconditions:} \\
+		\textbf{Postconditions:}
 		\begin{itemize}
 		\item All documents and folders on the client must be uploaded to the server.
 		\item All documents and folders on the server must be downloaded to the client.
@@ -181,6 +186,7 @@ Supplementary specification, along with use cases, show all the requirements tha
 
 \section{Design}
 \label{sec-3}
+When the analysis had gotten well underway, we could start to design the application itself. This includes class diagrams, core architecture etc ..
 \subsection{Class Diagram}
 \label{sec-3-1}
 The class diagram show how our server side classes are connected. For a complete class diagram for all classes, along with methods and fields, see the \emph{appendix.}
@@ -191,6 +197,8 @@ The class diagram show how our server side classes are connected. For a complete
 \end{figure}
 \subsection{Interaction Diagrams}
 \label{sec-3-2}
+Interaction diagrams show how our application communicates internally in regards to some of our use cases. \\
+Not all use cases are covered here, but it should be enough to give an overview of the main features, and elaborate on some use cases that aren't trivial to understand.
 \subsubsection{Sequence Diagram}
 \label{sec-3-2-1}
 The SaveDocument() Sequence Diagram shows how the system communicates internally when the SaveDocument() method is called.
@@ -203,14 +211,18 @@ For other related methods (OpenDocument() ShareDocument() etc.. ) the program fl
 
 \subsubsection{Communication Diagram}
 \label{sec-3-2-2}
+The communication diagram below shows how our application communicates internally when the synchronize method is called from the stand alone client. 
 \begin{figure}[H]
   		\centering
     	\includegraphics[width=300px]{images/CommunicationDiagram_Synchronize.jpg}
-    	\caption{Communication Diagram}
+    	\caption{Communication Diagram - Synchronize}
 \end{figure}
 
 \subsection{ER-Diagram}
 \label{sec-3-3}
+The ER-Diagram shows the structure of our database design. \\
+Note that the \texttt{documenthistory} table isn't used in the final design, but instead we use the \texttt{document} table to store the document history. \\
+In a future update the \texttt{documenthistory} table will be implemented.
 \begin{figure}[H]
   		\centering
     	\includegraphics[width=300px]{images/New ER database.png}
@@ -218,11 +230,14 @@ For other related methods (OpenDocument() ShareDocument() etc.. ) the program fl
 \end{figure}
 \subsection{User manual}
 \label{sec-3-4}
+The application should be relatively easy to use but in case there is some confusion on some parts, we wrote a user manual to help the user to get started. \\
+This document isn't a complete user guide, but should only be used as a quick start guide to the application. \\
+The stand alone client is very trivial, so we neglected writing a manual for it. Therefore the following manual is based on the web client alone.
 \subsubsection{Starting the application}
 \label{sec-3-4-1}
 \begin{itemize}
 
-\item Running the application from Visual Studio\\
+\item \textbf{Running the application from Visual Studio}\\
 \label{sec-3-4-1-1}%
 Before starting the application, you need to start Visual Studio with administration privileges.
 The reason for this is that the application will need to create files and folders for the documents and in order to do so the program needs to be run with administrator privileges which will give the application write access.
@@ -230,65 +245,75 @@ The reason for this is that the application will need to create files and folder
 Since the web client runs in the browser, the browser needs to allow pop up windows for localhost.
 This can be done when the application is run for the first time.
 
-When starting the application, you need to set the WebClient project as startup project (if it's not already set), and then run the program (f5 for debug mode, ctrl + f5 for the release version).
+When starting the application, you need to set the \texttt{WebClient} project as startup project (if it's not already set), and then run the program (f5 for debug mode, ctrl + f5 for the release version).
 
 The web client will start up with your default internet browser. 
 When the main page has loaded, you are ready to use the application.
 
-\item Signing up\\
+\item \textbf{Signing up} \\
 \label{sec-3-4-1-2}%
 As a first time user there won't be any user registered in the system, so the first time you need to sign up to use the system.
 
-To sign up, click the "Sign up'' button. This will open up a new window with the sign up form.
+To sign up, click the \texttt{Sign up} button. This will open up a new window with the sign up form.
 
-Fill out the form and click the "Sign up'' button. A message will appear to say if the sign up was successful or not.
+Fill out the form and click the \texttt{Sign up} button. A message will appear to say if the sign up was successful or not.
 
 If the sign up was successful you are now registered in the system, and are ready to use it. 
 Close the sign up window and go back to the main window.
 
-\item Logging in\\
+\item \textbf{Logging in}\\
 \label{sec-3-4-1-3}%
 On the main screen there are two text boxes at the top of the window named "username'' and "password''.
-Enter the newly created username and password into the boxes and click the "Login'' button.
+Enter the newly created username and password into the boxes and click the \texttt{Login} button.
 \end{itemize} % ends low level
 \subsubsection{Using the Application}
 \label{sec-3-4-2}
 
-After you have logged in, press the "Get Files'' button on the left page of the window. 
+After you have logged in, press the \texttt{Get Files} button on the left page of the window. 
 This will show you all the files that belong to the current user. Since you are a new user you don't have any documents, so you should only see the root folder (the one with your username).
 \begin{itemize}
 
-\item Create a new document.\\
+\item \textbf{Create a new document}\\
 \label{sec-3-4-2-1}%
-To create a new document, click the "New Document''. This will clear all text boxes, and you are ready to write a new document.
+To create a new document, click the \texttt{New Document} button. This will clear all text boxes, and you are ready to write a new document.
 
 Creating a new document doesn't save the document, so before you go too far you should save your document.
-Write a file name in the file name box, and click the ``Save Document'' button.
+Write a file name in the file name box, and click the \texttt{Save Document} button.
 If you wish to save the document in a sub folder, just write: "folder name/file name.html'' in the file box.
 
 The system doesn't require that you save the document as a HTML file, but the system is built around it. Not doing so won't make it able to add images to you document.
 
-\item Deleting a document\\
+\item \textbf{Deleting a document} \\
 \label{sec-3-4-2-2}%
 Deleting a document is very simple.
-Select a document from the list on the left. Make sure that the filename of the file is entered into the file name box (this can also be done manually). Delete the document by clicking the "Delete Document'' button.
+Select a document from the list on the left. Make sure that the filename of the file is entered into the file name box (this can also be done manually). Delete the document by clicking the \texttt{Delete Document} button.
 
-\item Sharing a document\\
+\item \textbf{Sharing a document} \\
 \label{sec-3-4-2-3}%
-Sharing a document is very simple as well.
-Open the document you wish to share. Enter the user name of the user you wish to share the document with in the text box next to the "Share Document'' button, and click the share document button.
+Sharing a document is very simple as well. \\
+Open the document you wish to share. Enter the user name of the user you wish to share the document with in the text box next to the \texttt{Share Document} button, and click the \texttt{Share Document} button.
 
-\item Showing a document\\
+\item \textbf{Showing a document} \\
 \label{sec-3-4-2-4}%
 Since the document is built around the HTML format, the text area can't show any images or text formatting.
 In order to see the document (with images, formatting etc) you need to open it in another page in the browser.
-Select the document you wish to view and click the "Show Document'' button. This will open a new window with your document in parsed HTML.
+Select the document you wish to view and click the \texttt{Show Document} button. This will open a new window with your document in parsed HTML.
+
+\item \textbf{Showing a document's history} \\
+\label{sec-3-4-2-5}%
+When multiple users work on the same document it can be very useful to see a change log of the document. \\
+To see a log of all changes made to a document, select a document from the file list and click the \texttt{Show Document History} button. This will open up a new window which shows a log of when the system has been changed.
 
 \end{itemize} % ends low level
 \section{Implementation}
 \label{sec-4}
+The implementation part documents how we have implemented our application. \\
+The following sections show various diagrams and design choices we have made during the development of the application. \\
+These artifacts can be found in the Software Architecture Document.
 \subsection{Software Architecture Document}
 \label{sec-4-1}
+The Software Architecture Document (SAD) is meant for developers that want to learn about the different implementation of our system, or maybe want to extend our system. \\
+If you wish to read about the different design choices etc then please read on, otherwise you might want to skip this part.
 \subsubsection{Architectural Representation}
 \label{sec-4-1-1}
 
@@ -308,11 +333,13 @@ The SAD summarizes the architecture of the Slice of Pie application from multipl
 \end{itemize}
 \subsubsection{Architectural Decisions}
 \label{sec-4-1-3}
-\begin{itemize}
-\item Technical Memos
+Architectural decisions describe some of the decisions that we took in our design. Our decisions (and motivation for the decisions) are shown as technical memos.
 
 \label{sec-4-1-3-1}%
 \fbox{\begin{minipage}{\columnwidth}
+\begin{center}
+\textbf{Technical Memo} \\
+\end{center}
 \textbf{Issue:} Files format - Which file format to use \\
 \textbf{Solution Summary:} Use HTML for our file format. \\
 \textbf{Factors:}
@@ -331,6 +358,9 @@ with using SliceOfPie, so he can't view the content of a file with any other app
 \end{minipage}}
 
 \fbox{\begin{minipage}{\columnwidth}
+\begin{center}
+\textbf{Technical Memo} \\
+\end{center}
 \textbf{Issue:} Merging two versions of the same document. \\
 \textbf{Solution Summary:} Git-hub inspired merge. \\
 \textbf{Factors:}
@@ -338,12 +368,12 @@ with using SliceOfPie, so he can't view the content of a file with any other app
 \item Merging two versions of the same document without overwriting existing changes.
 \end{itemize}
 \textbf{Solution:}
-Our merging algorithm reads the two documents and stores them, line by line in an array. 
+Our merging algorithm reads the two documents and stores them, line by line in an array.  \\
 Then the algorithm compares each line in the two arrays, if the lines are the same, insert the line into a new array. If the two lines aren't identical, insert the new line into the new array + insert the line from the old array in the next line. This line will be encapsulated with $<<<$ TEXT $>>>$ which shows the user where there is a conflict which the user can solve later on. 
-If the new version of the document contains lines that aren't in the old array, they are simply added to the new array. 
+If the new version of the document contains lines that aren't in the old array, they are simply added to the new array. \\
 \textbf{Motivation:} \\
 There are other, more advanced, merging algorithms available. Because of time constraint we chose to use this one. It isn't the most advanced/complete algorithm but it does the job quite well considered it's simplicity. \\
-\textbf{Unresolved issues:} \\
+\textbf{Unresolved issues:} 
 \begin{itemize}
 \item Our algorithm doesn't 100\% solve the conflict. In the end the user must manually chose which version to keep, and which version to discard.
 \item If two identical lines exists in both versions but the lines is at another line number in the old document, this might cause a conflict $<<<$ TEXT $>>$ that could be avoided.
@@ -353,6 +383,9 @@ An algorithm that analyses every line in the file keeps the one that the user wa
 \end{minipage}}
 
 \fbox{\begin{minipage}{\columnwidth}
+\begin{center}
+\textbf{Technical Memo} \\
+\end{center}
 \textbf{Issue:} Choosing how to connect to the database \\
 \textbf{Solution Summary:} Simplest option due to time pressure \\
 \textbf{Factors:}
@@ -361,7 +394,7 @@ An algorithm that analyses every line in the file keeps the one that the user wa
 \item Easy to get working
 \end{itemize}
 \textbf{Solution:} \\
-Our way of connecting to the database, and executing queries on it is a series of methods close to hard coded SQL queries. they do not automatically update if a table/column/attribute were to change. \\
+Our way of connecting to the database, and executing queries on it is a series of methods close to hard coded SQL queries. They do not automatically update if a table/column/attribute were to change. \\
 \textbf{Motivation:} \\
 Early in the process we also designed a solid design for the database, which meant that we were able to make the "final'' outcast of the database rather quickly. \\
 And looking apart from the fact that the solution does not adapt to changes made on the database, it works perfectly and required minimal attention and time to get working. \\
@@ -369,59 +402,125 @@ And looking apart from the fact that the solution does not adapt to changes made
 Entity framework was a possibility from the start, but since entity framework had proven a challenge to get working for all of us in the past, we choose the, for us at the time, simpler solution to save time in the end
 \end{minipage}}
 
-\end{itemize} % ends low level
+
 
 \subsubsection{Logical View}
 \label{sec-4-1-4}
+The logical view shows the architectural structure of our application. \\
+Note that the "packages" not necessarily are programming packages/projects but should be thought of as subsystems or modules.
 
-\begin{itemize}
-\item Logical diagrams etc ..
-\end{itemize}
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/SAD/LogicalView_UML.jpg}
+    	\caption{Logical View}
+\end{figure}
+
 \subsubsection{Deployment View}
 \label{sec-4-1-5}
+The deployment view shows how our application is deployed when it's released. The actual application hasn't been released so this is to be thought of as the most likely structure when it is released.
 
-\begin{itemize}
-\item Delpoyment diagrams etc \ldots{}
-\end{itemize}
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/Deployment Diagram.jpg}
+    	\caption{Deployment Diagram}
+\end{figure}
 \subsubsection{Process View}
 \label{sec-4-1-6}
+Process view shows how our application communicates internally. It shows how the classes operate with each other when performing various functions. \\
+Note that not all process diagrams are shown here, see \emph{Section X - Communication Diagrams} for more diagrams
 
-\begin{itemize}
-\item Interction diagrams etc ..
-\item Class diagrams
-\end{itemize}
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/SAD/CommunicationDiagram_LogIn.jpg}
+    	\caption{Communication Diagram - Log in}
+\end{figure}
 
-    Comment on how the inter process communication works.
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/SAD/SSQ_NewUser.jpg}
+    	\caption{Sequence Diagram - New User}
+\end{figure}
+
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/CommunicationDiagrams/Delete Communication Diagram.jpg}
+    	\caption{Communication Diagram - Delete Document}
+\end{figure}
+
 \subsubsection{Use-Case View}
 \label{sec-4-1-7}
 
-\begin{itemize}
-\item Use cases
-\item Use case diagrams
-\end{itemize}
-\subsubsection{Other Views \ldots{}}
+See \emph{Section X - Use cases}
+
+\subsubsection{Known Issues}
 \label{sec-4-1-8}
+While our system isn't a finished product but a proof of concept or prototype of the finished product, there are some known issues or bugs that can occur in the application. \\
+Below is a list of some of the known issues currently in the application. \\ ~\\
+\textbf{Web Client} 
+\begin{itemize}
+\item The File Tree doesn't update after a change has been made. The user has to click the 
+     Get Files button every time a document is created or deleted.
+\item Since the File Tree doesn't update itself it won't remove it self either. Clicking
+     the Get Files button won't remove the existing File Tree but makes a new one. 
+     The old one can then be ignored.
+\item Saving a shared document isn't 100\% optimal. 
+     When saving a shared document, it creates a new document in the current users 
+     name. To allow the ``other'' user of the document to get the changes made to
+     the shared document, you need to share it again, with the changes.
+\item Every time a document is saved, and extra line break is added to each line. Since
+     the document is based on HTML this has no effect on the outcome of the final 
+     document, but can be annoying to look at.
+\item Getting files sometimes takes longer than we anticipated.
+\begin{itemize}
+\item The reason for this is because of the shared documents. We waited until the end 
+       to implement the shared documents. Because of this we had to make some ``hacks''
+       in order to get it done by the deadline.
+       If we had more time this would be implemented otherwise.
+\end{itemize}
+\end{itemize}
+\textbf{Stand-Alone Client} 
+\begin{itemize}
+\item Creating files in the ``root-root'' folder if no folder is selected, the 
+     ``create document'' method creates a document in a folder that should not 
+     be accessible at all
+\item ``Update settings'' creates new directory, even if user does not exist.
+     When calling the method, it takes the ``username'' and creates a new folder 
+     in currently selected directory
+\item No way to log in on the standalone client, if your credentials are in the 
+     ``username'' and ``password'' textboxes, this is considered logging in.
+\item When synchronizing, the document will not be successfully synchronized the first time
+     and the user will not be told when is is done, only the server can see if the
+     documents have been successfully synchronized.
+\item When synchronizing files that do not yet exist on the server, the server needs time 
+     to create the files, this blocks the client from receiving the files, this results in
+     the client only getting existing documents on server back.
+\item Synchronize() should return a boolean, describing whether the sync was successful or not
+     most times when not successful it is because of the above problem
+\item It is possible to synchronize but it often takes more than one attempt. You will get some errors in the console, they can safely be ignored. Just try again.
+\end{itemize}
+
 \section{Project Management}
 \label{sec-5}
 \subsection{SCRUM}
 \label{sec-5-1}
+For managing our work process, we have been using the SCRUM developing method. \\
+The next sections describe some documentation and artifacts that document how our process has developed when working on the project. \\
+Note that not all artifacts are shown here, some references are to the appendixes. \\
+
+Before our system is ready for release, we must have implemented all required features. \\
+In addition to implementing the features, we also must document every aspect of the system and the process. This includes diagrams, use cases etc \ldots{} \\
+Finally we have to test our system to make sure that it works as intended and doesn't break when run. \\
+
 \subsubsection{Definition of done}
 \label{sec-5-1-1}
 
-Before our system is ready for release, we must have implemented all required features.
-In addition to implementing the features, we also must document every aspect of the system
-and the process. This includes diagrams, use cases etc \ldots{}
-Finally we have to test our system to make sure that it works as intended and doesn't break 
-when receiving odd input etc..
+To keep track of how the system is coming along, and to decide when the application can be deemed done, we have written a definition of done. \\
+The definition of done acts as a checklist that shows how far along in the process we are, and how far we have yet to go. \\
 
-A more detailed explanation of the requirements can be found below.
-\begin{itemize}
-
-\item Development\\
+\textbf{Development} \\
 \label{sec-5-1-1-1}%
-The system must be able to handle all the requirements before it can be deemed done.
-These requirements include the assignment required requirements as well as our
-own requirements.
+The system must be able to handle all the requirements before it can be deemed done. \\
+These requirements include the assignment required requirements as well as our own requirements. \\
 
 These requirements include:
 \begin{itemize}
@@ -429,7 +528,7 @@ These requirements include:
 \begin{itemize}
 \item $\boxtimes$ Create a document that can handle both text and images.
 \item $\boxtimes$ Documents can be arranged into folders.
-\item $\Box$ Documents can be arranged into projects (optional).
+\item $\Box$ Documents can be arranged into projects (optional). (skipped)
 \item $\boxtimes$ Log of all changes to a document.
 \end{itemize}
 \item $\boxtimes$ System [4/4]
@@ -446,13 +545,12 @@ These requirements include:
 \end{itemize}
 \end{itemize}
 
-
-\item Documentation\\
+\textbf{Documentation} \\
 \label{sec-5-1-1-2}%
-All aspects of the system must be documented.
-The idea of the documentation is that the system is easy to understand based only on
-the documentation. In addition, an external actor must be able to see the development
-process from reading the documentation only.
+All aspects of the system must be documented. \\
+The idea of the documentation is that the system is easy to understand based only on the documentation. \\
+In addition, an external actor must be able to see the development
+process from reading the documentation only. \\
 
 These documents must be made before the documentation can be deemed as done:
 \begin{itemize}
@@ -465,8 +563,7 @@ These documents must be made before the documentation can be deemed as done:
 \item $\boxtimes$ Domain documentation [2/2]
 \begin{itemize}
 \item $\boxtimes$ A model must be made for describing the domain.
-\item $\boxtimes$ A sequence diagram must be made for understanding how to domain
-       interacts.
+\item $\boxtimes$ A sequence diagram must be made for understanding how the domain interacts.
 \end{itemize}
 \item $\boxtimes$ Software documentation [4/4]
 \begin{itemize}
@@ -477,48 +574,49 @@ These documents must be made before the documentation can be deemed as done:
 \end{itemize}
 \end{itemize}
 
-
-\item Testing\\
+\textbf{Testing} \\
 \label{sec-5-1-1-3}%
 Before the system can be declared done, all the core features of the system
-must be thoroughly tested.
-This includes testing all core features of the system.
+must be thoroughly tested.\\
+This includes testing all core features of the system. \\
 
 Testing checklist:
 \begin{itemize}
-\item $\Box$ System [0/8]
+\item $\boxtimes$ System [7/7]
 \begin{itemize}
-\item $\Box$ Document
-\item $\Box$ DocumentHandler
-\item $\Box$ Folder
-\item $\Box$ User
-\item $\Box$ UserAuth
-\item $\Box$ DBConnector
-\item $\Box$ ClientSystemFacade
-\item $\Box$ ServerSystemFacade
-\end{itemize}
-\item $\Box$ Client [0/2]
-\begin{itemize}
-\item $\Box$ Stand-Alone client
-\item $\Box$ Web-Client
+\item $\boxtimes$ Document
+\item $\boxtimes$ DocumentHandler
+\item $\boxtimes$ Folder
+\item $\boxtimes$ User
+\item $\boxtimes$ UserAuth
+\item $\boxtimes$ DBConnector
+\item $\boxtimes$ ClientSystemFacade
 \end{itemize}
 \end{itemize}
 
-\end{itemize} % ends low level
 \subsubsection{Product Backlog}
 \label{sec-5-1-2}
-\subsubsection{Intro}
+In order to save space, we have put our product back log in the appendixes. Please see appendix X to see the product backlog.
+\subsubsection{Sprint Intro}
 \label{sec-5-1-3}
+We divided the working process itself up into SCRUM sprints. \\
+Each sprint lasts for one week. At the end of  each sprint, the idea is to have a system, limited as it may be, that is ready to be released. \\
+In total we had 3 sprints + plus a smaller sprint at the end where we connected the remaining parts of the application and finished up some rough edges. \\
+Below is a documentation of our three sprints, along with burn down charts, that show how well the process is coming along in relation to the planned schedule.
 \subsubsection{Sprints}
 \label{sec-5-1-4}
-\begin{itemize}
 
-\item 1. sprint
-\label{sec-5-1-4-1}%
-\begin{itemize}
-\item Sprint backlog
-\item Burndown chart
-       \textbf{Review:}
+\textbf{- 1. sprint} \\
+%\label{sec-5-1-4-1}%
+\textbf{Sprint Backlog:} Please see \emph{Appendix X for the sprint backlog.}
+
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/SCRUM/Sprint 1 burndown chart.png}
+    	\caption{Sprint 1 burn down chart}
+\end{figure}
+
+\textbf{Review:}
 \begin{itemize}
 \item Items were completed easier than first anticipated
 \item To few items in sprint
@@ -527,23 +625,27 @@ Testing checklist:
 \textbf{Retrospective:}
 \begin{itemize}
 \item Group works together great
-\item Private lives (jobs, other classes, sports, etc.) interfeering with most available
+\item Private lives (jobs, other classes, sports, etc.) interfering with most available
          ``Work-days'', group members are trying to postpone future non-project related activities
 \end{itemize}
-\end{itemize}
 
-\item 2. sprint
-\label{sec-5-1-4-2}%
-\begin{itemize}
-\item Sprint backlog
-\item Burndown chart
-\end{itemize}
+\textbf{- 2. sprint} \\
+%\label{sec-5-1-4-2}%
+
+\textbf{Sprint Backlog:} Please see \emph{Appendix X for the sprint backlog.}
+
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/SCRUM/Sprint 2 burndown chart.png}
+    	\caption{Sprint 2 burn down chart}
+\end{figure}
+
      \textbf{Review:}
 \begin{itemize}
-\item Items were easier compleeted tha first anticipated
+\item Items were easier completed than first anticipated
 \item To few items in sprint
 \item Started coding for real
-\item Basic system arctitecture taking form
+\item Basic system architecture taking form
 \end{itemize}
      \textbf{Retrospective:}
 \begin{itemize}
@@ -551,17 +653,21 @@ Testing checklist:
        Getting more time from next sprint on
 \end{itemize}
 
-\item 3. sprint
-\label{sec-5-1-4-3}%
-\begin{itemize}
-\item Sprint backlog
-\item Burndown chart
-\end{itemize}
+\textbf{- 3. sprint} \\
+%\label{sec-5-1-4-3}%
+
+\textbf{Sprint Backlog:} Please see \emph{Appendix X for the sprint backlog.}
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/SCRUM/Sprint 3 burndown chart.png}
+    	\caption{Sprint 3 burn down chart}
+\end{figure}
+
      \textbf{Review:}
 \begin{itemize}
-\item Items took longer than expected to comlpete
-\item Finished building seperate code, started to implement main features using eachother
-       instead of test data, encountered more errors than expected and will take alot of
+\item Items took longer than expected to complete
+\item Finished building separate code, started to implement main features using each other
+       instead of test data, encountered more errors than expected and will take al ot of
        work to fix
 \end{itemize}
 
@@ -569,12 +675,12 @@ Testing checklist:
 \begin{itemize}
 \item Members had most time free to work on project, but due to unexpected errors
        sprint was not successfully finished
-\item Memebrs still working great together, despite the pressure
+\item Members still working great together, despite the pressure
 \end{itemize}
 
 
-\item Chaos sprint\\
-\label{sec-5-1-4-4}%
+\textbf{- Final Sprint} \\
+%\label{sec-5-1-4-4}%
 \textbf{Review:}
 \begin{itemize}
 \item Most optional functionality were not implemented due to the lack of time
@@ -584,12 +690,12 @@ Testing checklist:
      \textbf{Retrospective:}
 \begin{itemize}
 \item Members used all spare time they had on the project, but had to drop
-       alot of ``optional work'' to get the program done.
-\item Writing the report happened to late acording to plan (due to the program
-       not being done), but scrum has been followed up un every ``work-day''
+       a lot of ``optional work'' to get the program done.
+\item Writing the report happened to late according to plan (due to the program
+       not being done), but scrum has been followed up on every ``work-day''
        which made the report-writing quite easier.
 \end{itemize}
-\end{itemize} % ends low level
+
 \subsubsection{Review}
 \label{sec-5-1-5}
 
@@ -597,14 +703,14 @@ Testing checklist:
     took longer than expected, due to this no sprint backlog was created since 
     most work was getting individually coded function to cooperate.
     Had it not been for a slow start the team would have had a more descriptive
-    finishing sprint, and a more linear release burndown chart.
+    finishing sprint, and a more linear release burn down chart.
     
     Most of this is caused by the number of members in the team/group, and their 
     experience in being a ``SCRUM-Master'', since there were only 3 members, 
     there was not capacity for only one of the members to be SCRUM-Master.
     
     And without one single SCRUM-Master it was hard for the group to calculate
-    the efford of each backlog item. Most of the Team's problems could have been
+    the effort of each backlog item. Most of the Team's problems could have been
     solved by better planning more in the beginning of the project, and more time set 
     aside for the actual planning of each sprint.
     

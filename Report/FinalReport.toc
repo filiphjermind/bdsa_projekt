@@ -1,40 +1,40 @@
-\contentsline {section}{\numberline {1}Business Modeling}{1}{section.1}
-\contentsline {subsection}{\numberline {1.1}Vision}{1}{subsection.1.1}
-\contentsline {subsubsection}{\numberline {1.1.1}Introduction}{1}{subsubsection.1.1.1}
-\contentsline {subsubsection}{\numberline {1.1.2}Problem statement}{1}{subsubsection.1.1.2}
-\contentsline {subsubsection}{\numberline {1.1.3}Summary of system features}{1}{subsubsection.1.1.3}
-\contentsline {subsection}{\numberline {1.2}Glossary}{2}{subsection.1.2}
-\contentsline {section}{\numberline {2}Requirements / Analysis}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}Use cases}{2}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}Use case Diagram}{3}{subsubsection.2.1.1}
-\contentsline {subsection}{\numberline {2.2}Supplementary Specification (FURPS+)}{3}{subsection.2.2}
+\contentsline {section}{\numberline {1}Business Modeling}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1}Vision}{2}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Introduction}{2}{subsubsection.1.1.1}
+\contentsline {subsubsection}{\numberline {1.1.2}Problem statement}{2}{subsubsection.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.3}Summary of system features}{2}{subsubsection.1.1.3}
+\contentsline {subsection}{\numberline {1.2}Glossary}{3}{subsection.1.2}
+\contentsline {section}{\numberline {2}Requirements / Analysis}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1}Use cases}{3}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}Use case Diagram}{4}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}Supplementary Specification (FURPS+)}{4}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3}Domain Model}{5}{subsection.2.3}
-\contentsline {subsection}{\numberline {2.4}Logical Architecture}{5}{subsection.2.4}
-\contentsline {subsection}{\numberline {2.5}System Sequence Diagram}{7}{subsection.2.5}
-\contentsline {subsection}{\numberline {2.6}Operation Contracts}{7}{subsection.2.6}
-\contentsline {section}{\numberline {3}Design}{8}{section.3}
-\contentsline {subsection}{\numberline {3.1}Class Diagram}{8}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Interaction Diagrams}{8}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Sequence Diagram}{8}{subsubsection.3.2.1}
-\contentsline {subsubsection}{\numberline {3.2.2}Communication Diagram}{9}{subsubsection.3.2.2}
-\contentsline {subsection}{\numberline {3.3}ER-Diagram}{9}{subsection.3.3}
-\contentsline {subsection}{\numberline {3.4}User manual}{9}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Starting the application}{9}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Using the Application}{10}{subsubsection.3.4.2}
-\contentsline {section}{\numberline {4}Implementation}{11}{section.4}
-\contentsline {subsection}{\numberline {4.1}Software Architecture Document}{11}{subsection.4.1}
-\contentsline {subsubsection}{\numberline {4.1.1}Architectural Representation}{11}{subsubsection.4.1.1}
-\contentsline {subsubsection}{\numberline {4.1.2}Architectural Factors}{12}{subsubsection.4.1.2}
-\contentsline {subsubsection}{\numberline {4.1.3}Architectural Decisions}{12}{subsubsection.4.1.3}
-\contentsline {subsubsection}{\numberline {4.1.4}Logical View}{14}{subsubsection.4.1.4}
-\contentsline {subsubsection}{\numberline {4.1.5}Deployment View}{14}{subsubsection.4.1.5}
-\contentsline {subsubsection}{\numberline {4.1.6}Process View}{14}{subsubsection.4.1.6}
-\contentsline {subsubsection}{\numberline {4.1.7}Use-Case View}{14}{subsubsection.4.1.7}
-\contentsline {subsubsection}{\numberline {4.1.8}Other Views \dots {}}{15}{subsubsection.4.1.8}
-\contentsline {section}{\numberline {5}Project Management}{15}{section.5}
-\contentsline {subsection}{\numberline {5.1}SCRUM}{15}{subsection.5.1}
-\contentsline {subsubsection}{\numberline {5.1.1}Definition of done}{15}{subsubsection.5.1.1}
-\contentsline {subsubsection}{\numberline {5.1.2}Product Backlog}{17}{subsubsection.5.1.2}
-\contentsline {subsubsection}{\numberline {5.1.3}Intro}{17}{subsubsection.5.1.3}
-\contentsline {subsubsection}{\numberline {5.1.4}Sprints}{17}{subsubsection.5.1.4}
-\contentsline {subsubsection}{\numberline {5.1.5}Review}{18}{subsubsection.5.1.5}
+\contentsline {subsection}{\numberline {2.4}Logical Architecture}{6}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.5}System Sequence Diagram}{8}{subsection.2.5}
+\contentsline {subsection}{\numberline {2.6}Operation Contracts}{8}{subsection.2.6}
+\contentsline {section}{\numberline {3}Design}{9}{section.3}
+\contentsline {subsection}{\numberline {3.1}Class Diagram}{9}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Interaction Diagrams}{9}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Sequence Diagram}{10}{subsubsection.3.2.1}
+\contentsline {subsubsection}{\numberline {3.2.2}Communication Diagram}{10}{subsubsection.3.2.2}
+\contentsline {subsection}{\numberline {3.3}ER-Diagram}{11}{subsection.3.3}
+\contentsline {subsection}{\numberline {3.4}User manual}{11}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Starting the application}{11}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Using the Application}{12}{subsubsection.3.4.2}
+\contentsline {section}{\numberline {4}Implementation}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1}Software Architecture Document}{14}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Architectural Representation}{14}{subsubsection.4.1.1}
+\contentsline {subsubsection}{\numberline {4.1.2}Architectural Factors}{14}{subsubsection.4.1.2}
+\contentsline {subsubsection}{\numberline {4.1.3}Architectural Decisions}{14}{subsubsection.4.1.3}
+\contentsline {subsubsection}{\numberline {4.1.4}Logical View}{17}{subsubsection.4.1.4}
+\contentsline {subsubsection}{\numberline {4.1.5}Deployment View}{18}{subsubsection.4.1.5}
+\contentsline {subsubsection}{\numberline {4.1.6}Process View}{19}{subsubsection.4.1.6}
+\contentsline {subsubsection}{\numberline {4.1.7}Use-Case View}{20}{subsubsection.4.1.7}
+\contentsline {subsubsection}{\numberline {4.1.8}Known Issues}{21}{subsubsection.4.1.8}
+\contentsline {section}{\numberline {5}Project Management}{22}{section.5}
+\contentsline {subsection}{\numberline {5.1}SCRUM}{22}{subsection.5.1}
+\contentsline {subsubsection}{\numberline {5.1.1}Definition of done}{23}{subsubsection.5.1.1}
+\contentsline {subsubsection}{\numberline {5.1.2}Product Backlog}{25}{subsubsection.5.1.2}
+\contentsline {subsubsection}{\numberline {5.1.3}Sprint Intro}{25}{subsubsection.5.1.3}
+\contentsline {subsubsection}{\numberline {5.1.4}Sprints}{25}{subsubsection.5.1.4}
+\contentsline {subsubsection}{\numberline {5.1.5}Review}{28}{subsubsection.5.1.5}
