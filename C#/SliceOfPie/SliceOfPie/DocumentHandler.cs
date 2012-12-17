@@ -613,16 +613,20 @@ namespace SliceOfPie
             
             foreach (Document i in toList)
             {
-                if (d.documentId == i.documentId)
+                try
                 {
-                    //Document tmp = FindNewestDocument(i, d);
-                    //if (toList.Contains(i)) toList.Remove(i);
-                    //if (toList.Contains(d)) toList.Remove(d);
+                    if (d.documentId == i.documentId)
+                    {
+                        //Document tmp = FindNewestDocument(i, d);
+                        //if (toList.Contains(i)) toList.Remove(i);
+                        //if (toList.Contains(d)) toList.Remove(d);
 
-                    Document tmp = MergeDocuments(i, d);
+                        Document tmp = MergeDocuments(i, d);
 
-                    toList.Add(tmp); return tmp;
+                        toList.Add(tmp); return tmp;
+                    }
                 }
+                catch (NullReferenceException ex) { Console.WriteLine("Something weird happend, Please try again"); }
             }
             return null;
         }
