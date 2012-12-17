@@ -1,0 +1,79 @@
+﻿body {
+    background-color: grey;
+    margin-top: 30px;
+}
+#main {
+    width: 1000px;
+    height: 1000px;
+    border: 1px solid black;
+    margin: auto;
+    background-color: white;
+}
+#userBar {
+    width: 990px;
+    height: 30px;
+    margin: 0px;
+    padding-left: 10px;
+    background-color: #433A4F;
+    border-bottom: 1px solid black;
+}
+#menuBar {
+    width: 990px;
+    height: 30px;
+    margin: 0px;
+    padding-left: 10px;
+    background-color: #433A4F;
+    border-bottom: 1px solid black;
+}
+#fileBox {
+    padding-left: 10px;
+    width: 990px;
+    height: 30px;
+    background-color: #433A4F;
+}
+#fileExplorer {
+    float: left;
+    background-color: white;
+    padding: 0px;
+    margin: 0px;
+    width: 248px;
+    height: 1000px;
+    border-right: solid 1px black;
+}
+#textField {
+    float: right;
+    padding: 0px;
+    margin: 0px;
+    width: 750px;
+    height: 1000px;
+}
+a {
+    color: black;
+    text-decoration: none;
+}
+a:hover {
+    color: black;
+    text-decoration: underline;
+}
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+.rightButton {
+    float: right;
+}
+.label {
+    color: white;
+}
+.msgLabel {
+    color: white;
+    float: right;
+}
+
+/*SIGNUP WINDOW*/
+#signupMain {
+    background-color: white;
+}
+
+
+
