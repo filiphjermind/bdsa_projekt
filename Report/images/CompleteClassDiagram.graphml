@@ -45,16 +45,16 @@
       <data key="d5"/>
       <data key="d6">
         <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
-          <y:Geometry height="137.0" width="187.0" x="201.75" y="-308.5"/>
+          <y:Geometry height="137.0" width="209.0" x="201.75" y="-308.5"/>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
-          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="40.421875" x="73.2890625" y="4.0">Folder</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="102.9296875" modelName="custom" textColor="#000000" visible="true" width="182.927734375" x="2.0" y="30.1328125">+ CreateRootFolder(user)
-+ DeleteUserRootFolder(user)
-+ CreateNewFolder(user, path)
-+ DeleteFolder(user, path)
-+ DirHasSubfolder(path)
-+ DirHasFiles(path)
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="40.421875" x="84.2890625" y="4.0">Folder</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="102.9296875" modelName="custom" textColor="#000000" visible="true" width="191.59375" x="2.0" y="30.1328125">+ CreateRootFolder(User)
++ DeleteUserRootFolder(User)
++ CreateNewFolder(User, string)
++ DeleteFolder(User, string)
++ DirHasSubfolder(string)
++ DirHasFiles(string)
 + SetRootDirectory()<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
@@ -127,12 +127,12 @@ Permission</y:NodeLabel>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="57.689453125" x="116.6552734375" y="4.0">UserAuth</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="88.796875" modelName="custom" textColor="#000000" visible="true" width="284.828125" x="2.0" y="30.1328125">- DBcon: DBConnector
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="88.796875" modelName="custom" textColor="#000000" visible="true" width="281.734375" x="2.0" y="30.1328125">- DBcon: DBConnector
 + instance UserAuth
 ----------------------------------------
 + GetInstance()
-+ CheckUserAndPassword(username, password)
-+ Authenticate(username, password)<y:LabelModel>
++ CheckUserAndPassword(string, string)
++ Authenticate(string, string)<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -153,16 +153,16 @@ Permission</y:NodeLabel>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="75.537109375" x="100.3564453125" y="4.0">UserHandler</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="145.328125" modelName="custom" textColor="#000000" visible="true" width="271.251953125" x="2.0" y="30.1328125">- dbCon: DBConnector
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="145.328125" modelName="custom" textColor="#000000" visible="true" width="260.904296875" x="2.0" y="30.1328125">- dbCon: DBConnector
 - folder: Folder
 + docHandler: DocumentHandler
 -------------------------------------
-+ NewUser(name, username, password)
-+ GetUser(username, password)
-+ GetUserByUsername(username)
-+ DeleteUser(user)
-+ CheckEditUser(username)
-+ EditUser(name, oldPassword, newPassword)<y:LabelModel>
++ NewUser(string, string, string)
++ GetUser(string, string)
++ GetUserByUsername(string)
++ DeleteUser(User)
++ CheckEditUser(string)
++ EditUser(string, string, string)<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>
@@ -212,26 +212,190 @@ Permission</y:NodeLabel>
           <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
           <y:BorderStyle color="#000000" type="line" width="1.0"/>
           <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="119.16015625" x="140.544921875" y="4.0">ClientSystemFacade</y:NodeLabel>
-          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="286.65625" modelName="custom" textColor="#000000" visible="true" width="389.98046875" x="2.0" y="30.1328125">- userAuth: UserAuth
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="286.65625" modelName="custom" textColor="#000000" visible="true" width="371.998046875" x="2.0" y="30.1328125">- userAuth: UserAuth
 - engine: Engine
 - instance: ClientSystemFacade
 - socket: Socket
 -----------------------------------------------------
 + GetInstance()
-+ NewDocument(owner, content, path, permission)
-+ SaveDocument(user, doc, filename)
-+ OpenDocument(id, user)
-+ DeleteDocument(user, path)
-+ Authenticate(username, password)
-+ NewUser(name, username, password)
-+ GetUser(username, password)
-+ GetUser(username)
-+ ReadFile(path)
-+ GetAllUsersDocuments(user)
-+ GetAllSharedDocuments(user)
-+ ShareDocument(currentUser, doc, permission, filename, users[])
-+ GetDocumentByPath(user, path)
-+ GetDocumentHistory(user, filePath)<y:LabelModel>
++ NewDocument(User, string, string, Permission)
++ SaveDocument(User, Document, string)
++ OpenDocument(int, User)
++ DeleteDocument(User, string)
++ Authenticate(string, string)
++ NewUser(string, string, string)
++ GetUser(string, string)
++ GetUser(string)
++ ReadFile(string)
++ GetAllUsersDocuments(User)
++ GetAllSharedDocuments(User)
++ ShareDocument(User, Document, Permission, string, User[])
++ GetDocumentByPath(User, string)
++ GetDocumentHistory(User, string)<y:LabelModel>
+              <y:ErdAttributesNodeLabelModel/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:ErdAttributesNodeLabelModelParameter/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:StyleProperties>
+            <y:Property class="java.lang.Boolean" name="y.view.ShadowNodePainter.SHADOW_PAINTING" value="true"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n8">
+      <data key="d5"/>
+      <data key="d6">
+        <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
+          <y:Geometry height="468.9062499999999" width="400.25" x="2.25" y="598.25"/>
+          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="109.287109375" x="145.4814453125" y="4.0">DocumentHandler</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="427.984375" modelName="custom" textColor="#000000" visible="true" width="378.94140625" x="2.0" y="30.1328125">- dbCon: DBConnector
+- folder: Folder
+------------------------------------------------------
++ NewDocument(User, string, Permission)
++ SaveDocument(User, Document, string)
++ SaveDocument(User, Document, string)
++ OpenSharedDocument(int, User)
++ OpenDocument(int, User)
++ ReadFile(string)
++ ReadFile(Document)
++ GetAllUsersDocuments(User)
++ DeleteDocument(Document)
++ DeleteFile(User, string)
++ ShareDocument(User, Document, Permission, string, User[])
++ GetDocumentByPath(User, string)
++ OfflineSynchronization(List&lt;Document&gt;, User)
++ OfflineSynchronization(List&lt;Document&gt;, List&lt;Document&gt;)
++ MergeDocuments(Document, Document)
+- CompareDocumentsInArray(strin[], string[])
+- CompareLinesInDocument(string, string)
+- CopyNewEntities(List&lt;Document&gt;, List&lt;Document&gt;)
+- CheckDocumentInList(Document, List&lt;Document&gt;)
+- FindNewestDocument(Document, Document)
+- splitString(string)
+- AddDocToList(User, Document)
+- PrintDocList(List&lt;Document&gt;)
+- NewDocObject(User, int, string, path)
+- CreatePathToFile(User, string)
+- CreateFile(string)
+- WriteFile(string, string)
+<y:LabelModel>
+              <y:ErdAttributesNodeLabelModel/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:ErdAttributesNodeLabelModelParameter/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:StyleProperties>
+            <y:Property class="java.lang.Boolean" name="y.view.ShadowNodePainter.SHADOW_PAINTING" value="true"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n9">
+      <data key="d5"/>
+      <data key="d6">
+        <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
+          <y:Geometry height="534.5374999999999" width="333.5541666666667" x="702.6374999999998" y="-351.76874999999995"/>
+          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="80.060546875" x="126.74680989583334" y="4.0">DBConnector</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="498.6484375" modelName="custom" textColor="#000000" visible="true" width="325.78515625" x="2.0" y="30.1328125">- instance: DBConnector
+- connection: MySqlConnection
+- connectionString: string
+---------------------------------------------
++ instance: DBConnector
++ InsertDocument(string, string)
++ InsertSyncDocument(string, string)
++ DeleteDocumentByUserName(string)
++ DeleteDocumentById(int)
++ DeleteDocumentByPath(string)
++ UpdateDocumentById(int, string, string)
++ SelectDocumentsFromUser(User)
++ InsertUser(string, string, string)
++ DeleteUserByUserName(string)
++ UpdateUserByUsername(string, string, string, string,)
++ SelectUser(string)
++ GetDocumentHistory(string, string)
++ SelectAllUsers()
++ CheckForDocument(User, Document)
++ GetDocument(int, string)
++ GetDocumentById(int)
++ GetDocument(string, string)
++ InsertUserDocument(User, int, Permission)
++ DeleteUserDocument(User, Document)
++ UpdatePermission(User, Document, Permission)
++ GetUserDocumentsByUser(User)
++ CheckForUserDocument(User, Document)
++ CheckPermission(User, Document)
++ AuthenticateUser(string, string)
+- ExecuteQuery(string)
+- ExecuteReader(string)
+- ErrorMessage(string
+- Initialize()
+- OpenConnection()
+- CloseConnection()<y:LabelModel>
+              <y:ErdAttributesNodeLabelModel/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:ErdAttributesNodeLabelModelParameter/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:StyleProperties>
+            <y:Property class="java.lang.Boolean" name="y.view.ShadowNodePainter.SHADOW_PAINTING" value="true"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n10">
+      <data key="d5"/>
+      <data key="d6">
+        <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
+          <y:Geometry height="213.74999999999994" width="343.7499999999998" x="787.8671874999998" y="305.5351562499999"/>
+          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="18.1328125" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="126.748046875" x="108.50097656249989" y="4.0">ClientSystemFacade2</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="173.59375" modelName="custom" textColor="#000000" visible="true" width="337.28125" x="2.0" y="30.1328125">- userAuth: UserAuth
+- engine: Engine
+- instance: ClientSystemFacade2
+------------------------------------------------
++ ShareDocuments(string, string, string[], string, string)
++ ShareFolder(string, string, string[], string, string)
++ GetInvitations(string, string)
++ AcceptInvitations(string, string, string[])
++ Synchronize(string, string, string[][])
++ Authenticate(string, string)
++ Synchronize(string[][], User
+- Initialize()<y:LabelModel>
+              <y:ErdAttributesNodeLabelModel/>
+            </y:LabelModel>
+            <y:ModelParameter>
+              <y:ErdAttributesNodeLabelModelParameter/>
+            </y:ModelParameter>
+          </y:NodeLabel>
+          <y:StyleProperties>
+            <y:Property class="java.lang.Boolean" name="y.view.ShadowNodePainter.SHADOW_PAINTING" value="true"/>
+          </y:StyleProperties>
+        </y:GenericNode>
+      </data>
+    </node>
+    <node id="n11">
+      <data key="d5"/>
+      <data key="d6">
+        <y:GenericNode configuration="com.yworks.entityRelationship.big_entity">
+          <y:Geometry height="132.0" width="343.7499999999998" x="548.3031250000004" y="601.6945312499995"/>
+          <y:Fill color="#E8EEF7" color2="#B7C9E3" transparent="false"/>
+          <y:BorderStyle color="#000000" type="line" width="1.0"/>
+          <y:NodeLabel alignment="center" autoSizePolicy="content" backgroundColor="#B7C9E3" configuration="com.yworks.entityRelationship.label.name" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasLineColor="false" height="32.265625" modelName="internal" modelPosition="t" textColor="#000000" visible="true" width="130.205078125" x="106.77246093749989" y="4.0">&lt;&lt; Interface &gt;&gt;
+IClientSystemFacade2</y:NodeLabel>
+          <y:NodeLabel alignment="left" autoSizePolicy="content" configuration="com.yworks.entityRelationship.label.attributes" fontFamily="Dialog" fontSize="12" fontStyle="plain" hasBackgroundColor="false" hasLineColor="false" height="74.6640625" modelName="custom" textColor="#000000" visible="true" width="330.91796875" x="2.0" y="44.265625">+ ShareDocuments(string, string, string[], string, string)
++ ShareFolder(string, string, string[], string, string)
++ GetInvitations(string, string)
++ AcceptInvitations(string, string, string[])
++ Synchronize(string, string, string[][])<y:LabelModel>
               <y:ErdAttributesNodeLabelModel/>
             </y:LabelModel>
             <y:ModelParameter>

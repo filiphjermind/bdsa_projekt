@@ -1,11 +1,11 @@
 * Business Modeling
 ** Vision
 *** Introduction
-Our goal is to make an interactive document sharing system, Slice of Pie,  which allows multiple users to easily share and edit documents both online and 
+    Our goal is to make an interactive document sharing system, Slice of Pie,  which allows multiple users to easily share and edit documents both online and 
 *** Problem statement
-Sharing and editing documents can be cumbersome. 
-Sending a document back and forth between multiple users can lead to a lot of errors. Users can overwrite what another user has done, and if they aren't all
-using the same text editing system this can lead to formatting issues in the document.
+    Sharing and editing documents can be cumbersome. 
+    Sending a document back and forth between multiple users can lead to a lot of errors. Users can overwrite what another user has done, and if they aren't all
+    using the same text editing system this can lead to formatting issues in the document.
 *** Summary of system features
     - Multiple users must be able to share and edit documents online.
     - Synchronization for offline usage.
@@ -63,7 +63,14 @@ using the same text editing system this can lead to formatting issues in the doc
    The diagram shows all the operations that are available to a regular user.
    *INSERT DIAGRAM HERE*
 ** Operation Contracts
-   *INSERT DIAGRAM HERE*
+   *Contract CO1:* Synchronize / Merge
+   *Operation:* Synchronize / Merge
+   *Cross References:* UC1, UC2, UC4, UC5
+   *Preconditions:* Some documents and/or folders must have been created on the system.
+   *Postconditions:*
+   - All documents and folders on the client must be uploaded to the server.
+   - All documents and folders on the server must be downloaded to the client.
+   - Document version must be the same on the client and server.
 * Design
 ** Class Diagram
    *INSERT DIAGRAM HERE* 
@@ -185,6 +192,26 @@ The SAD summarizes the architecture of the Slice of Pie application from multple
       *Alternatives considered:*
       An algorithm that analyses every line in the file keeps the one that the user wants.
 
+***** Database Connection
+      *Issue:* Choosing how to connect to the database
+      *Solution Summary:* Simplest option due to time pressure
+      *Factors:*
+      - Simplicity
+      - Easy to get working
+      *Solution:*
+      Our way of connecting to the database, and executing queries on it is a series
+      of methods close to hardcoded SQL queries. they do not automatically update if a 
+      table/collumn/attribute were to change.
+      *Motivation:*
+      Early in the process we also designed a solid design for the database, which ment
+      that we were able to make the "final" outcast of the database rather quickly.
+
+      And looking apart from the fact that the solution does not adapt to changes made on 
+      the database, it works perfectly and requireded minimal attention and time to get working.
+      *Alternatives considered:*
+      Entity framework was a possability from the start, but since entity framework had prooven 
+      a challenge to get working for all of us in the past, we choose the, for us at the time,
+      simpler solution to save time in the end
 *** Logical View
     - Logical diagrams etc ..
 *** Deployment View
@@ -200,3 +227,95 @@ The SAD summarizes the architecture of the Slice of Pie application from multple
 *** Other Views ...
 
 * Project Management
+** SCRUM
+*** Definition of done
+Before our system is ready for release, we must have implemented all required features.
+In addition to implementing the features, we also must document every aspect of the system
+and the process. This includes diagrams, use cases etc ...
+Finally we have to test our system to make sure that it works as intended and doesn't break 
+when receiving odd input etc..
+
+A more detailed explanation of the requirements can be found below.
+
+**** Development
+The system must be able to handle all the requirements before it can be deemed done.
+These requirements include the assignment required requirements as well as our
+own requirements.
+
+These requirements include:
+   - [-] Document [3/4]
+     - [X] Create a document that can handle both text and images.
+     - [X] Documents can be arranged into folders.
+     - [ ] Documents can be arranged into projects (optional).
+     - [X] Log of all changes to a document.
+   - [X] System [4/4]
+     - [X] Synchronization for offline usage.
+     - [X] Sharing of documents to other users.
+     - [X] Authentication system for users.
+     - [X] Document storage in a database.
+   - [X] User Interface [2/2]
+     - [X] Web interface.
+     - [X] Stand-alone client (for offline usage).
+
+**** Documentation
+All aspects of the system must be documented.
+The idea of the documentation is that the system is easy to understand based only on
+the documentation. In addition, an external actor must be able to see the development
+process from reading the documentation only.
+
+These documents must be made before the documentation can be deemed as done:
+   - [-] Use cases [2/3]
+     - [X] All use cases must be documented (text form)
+     - [X] Use case diagram must be made for use cases that require it.
+     - [ ] Operation contracts must be made for use cases that are complex.
+   - [X] Domain documentation [2/2]
+     - [X] A model must be made for describing the domain.
+     - [X] A sequence diagram must be made for understanding how to domain
+       interacts.
+   - [X] Software documentation [4/4]
+     - [X] Static class diagram that explains the entire system.
+     - [X] Package diagram that shows a higher view of the system.
+     - [X] Interaction diagrams that describe the dynamic aspect of the system.
+     - [X] E-R diagram for the database structure.
+
+**** Testing
+Before the system can be declared done, all the core features of the system
+must be thoroughly tested.
+This includes testing all core features of the system.
+
+Testing checklist:
+   - [ ] System [0/8]
+     - [ ] Document
+     - [ ] DocumentHandler
+     - [ ] Folder
+     - [ ] User
+     - [ ] UserAuth
+     - [ ] DBConnector
+     - [ ] ClientSystemFacade
+     - [ ] ServerSystemFacade
+   - [ ] Client [0/2]
+     - [ ] Stand-Alone client
+     - [ ] Web-Client
+
+*** Product Backlog
+*** Intro
+*** Sprints
+**** 1. sprint
+     - Sprint backlog
+     - Burndown chart
+     - Eval
+**** 2. sprint
+     - Sprint backlog
+     - Burndown chart
+     - Eval
+**** 3. sprint
+     - Sprint backlog
+     - Burndown chart
+     - Eval
+**** Chaos sprint
+     - Description
+     - Release Burndown Chart
+
+*** Review
+    - Retrospect
+    - The other thing :)
