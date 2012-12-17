@@ -1,11 +1,11 @@
 * Business Modeling
 ** Vision
 *** Introduction
-Our goal is to make an interactive document sharing system, Slice of Pie,  which allows multiple users to easily share and edit documents both online and 
+    Our goal is to make an interactive document sharing system, Slice of Pie,  which allows multiple users to easily share and edit documents both online and 
 *** Problem statement
-Sharing and editing documents can be cumbersome. 
-Sending a document back and forth between multiple users can lead to a lot of errors. Users can overwrite what another user has done, and if they aren't all
-using the same text editing system this can lead to formatting issues in the document.
+    Sharing and editing documents can be cumbersome. 
+    Sending a document back and forth between multiple users can lead to a lot of errors. Users can overwrite what another user has done, and if they aren't all
+    using the same text editing system this can lead to formatting issues in the document.
 *** Summary of system features
     - Multiple users must be able to share and edit documents online.
     - Synchronization for offline usage.
@@ -55,52 +55,32 @@ using the same text editing system this can lead to formatting issues in the doc
 ** Domain Model
    *INSERT DIAGRAM HERE*
 ** Logical Architecture
+   The logical architecture diagram shows a rough sketch off how the structure of the application
+   will be like. This is by no means a complete diagram, but should give an idea off how
+   the application will look like.
    *INSERT DIAGRAM HERE*
 ** System Sequence Diagram
+   The diagram shows all the operations that are available to a regular user.
    *INSERT DIAGRAM HERE*
 ** Operation Contracts
-   *INSERT DIAGRAM HERE*
+   *Contract CO1:* Synchronize / Merge
+   *Operation:* Synchronize / Merge
+   *Cross References:* UC1, UC2, UC4, UC5
+   *Preconditions:* Some documents and/or folders must have been created on the system.
+   *Postconditions:*
+   - All documents and folders on the client must be uploaded to the server.
+   - All documents and folders on the server must be downloaded to the client.
+   - Document version must be the same on the client and server.
 * Design
 ** Class Diagram
    *INSERT DIAGRAM HERE* 
 ** Interaction Diagrams
+*** Sequence Diagram
+   The SaveDocument() Sequence Diagram shows how the system communicates internally
+   when the SaveDocument() method is called.
+   For other related methods (OpenDocument() ShareDocument() etc.. ) the program flow
+   is the same (though they vary on some parameters and other details).
    *INSERT DIAGRAM HERE*  
-** Technical Memos
-*** File Format
-    *Issue:* Files format - Which file format to use
-    *Solution:* Summary: Use HTML for our file format.
-    *Factors:*
-    - Must be able to contain both text and 
-    *Solution:*
-    We chose to use HTML for our file format because it's simple to construct, and can contain text and images seamlessly. 
-    *Motivation:*
-    We needed a file format that can contain images and text as well as being easy to construct. in addition, HTML can easily be extended to other content. 
-    Lastly, HTML can be opened with any browser, so the users isn't tied to SliceOfPie if he just want's to view the content of a file.
-    *Alternatives considered:*
-    We considered using a .txt file format, but .txt can only contain plain text.
-    We also considered using our own file format (since the format itself isn't important to the application). But if we use our own format the user is stuck
-    with using SliceOfPie, so he can't view the content of a file with any other application.
-*** Document Merge
-    *Issue:* Merging two versions of the same document.
-    *Solution Summary:* Git-hub inspired merge.
-    *Factors:*
-    - Merging two versions of the same document without overwriting existing changes.
-    *Solution:*
-    Our merging algorithm reads the two documents and stores them, line by line in an array. 
-    Then the algorithm compares each line in the two arrays, if the lines are the same, insert the line into a new array. If the two lines aren't identical, 
-    insert the new line into the new array + insert the line from the old array in the next line. This line will be encapsulated with $<<<$ TEXT $>>>$ which 
-    shows the user where there is a conflict which the user can solve later on. 
-    If the new version of the document contains lines that aren't in the old array, they are simply added to the new array. 
-    *Motivation:*
-    There are other, more advanced, merging algorithms available. Because of time constraint we chose to use this one. It isn't the most advanced/complete algorithm 
-    but it does the job quite well considered it's simplicity.
-    *Unresolved issues:*
-    - Our algorithm doesn't 100\% solve the conflict. In the end the user must manually chose which
-      version to keep, and which version to discard.
-    - If two identical lines exists in both versions but the lines is at another line number in the old
-      document, this might cause a conflict $<<<$ TEXT $>>$ that could be avoided.
-    *Alternatives considered:*
-    An algorithm that analyses every line in the file keeps the one that the user wants.
 ** ER-Diagram
    *INSERT DIAGRAM HERE*
 ** User manual
@@ -163,4 +143,179 @@ using the same text editing system this can lead to formatting issues in the doc
      with your document in parsed HTML.
 
 * Implementation
+** Software Architecture Document
+*** Architectural Representation
+The SAD summarizes the architecture of the Slice of Pie application from multple views. These views include:
+   - Logical view
+   - Deployment view
+   - Process view
+   - Data view
+   - Use-case view
+*** Architectural Factors
+    - Suplementary specifications.
+*** Architectural Decisions
+**** Technical Memos
+***** File Format
+      *Issue:* Files format - Which file format to use
+      *Solution:* Summary: Use HTML for our file format.
+      *Factors:*
+      - Must be able to contain both text and 
+      *Solution:*
+      We chose to use HTML for our file format because it's simple to construct, and can contain text and images seamlessly. 
+      *Motivation:*
+      We needed a file format that can contain images and text as well as being easy to construct. in addition, HTML can easily be extended to other content. 
+      Lastly, HTML can be opened with any browser, so the users isn't tied to SliceOfPie if he just want's to view the content of a file.
+      *Alternatives considered:*
+      We considered using a .txt file format, but .txt can only contain plain text.
+      We also considered using our own file format (since the format itself isn't important to the application). But if we use our own format the user is stuck
+      with using SliceOfPie, so he can't view the content of a file with any other application.
+
+***** Document Merge
+      *Issue:* Merging two versions of the same document.
+      *Solution Summary:* Git-hub inspired merge.
+      *Factors:*
+      - Merging two versions of the same document without overwriting existing changes.
+      *Solution:*
+      Our merging algorithm reads the two documents and stores them, line by line in an array. 
+      Then the algorithm compares each line in the two arrays, if the lines are the same, insert the line into a new array. If the two lines aren't identical, 
+      insert the new line into the new array + insert the line from the old array in the next line. This line will be encapsulated with $<<<$ TEXT $>>>$ which 
+      shows the user where there is a conflict which the user can solve later on. 
+      If the new version of the document contains lines that aren't in the old array, they are simply added to the new array. 
+      *Motivation:*
+      There are other, more advanced, merging algorithms available. Because of time constraint we chose to use this one. It isn't the most advanced/complete algorithm 
+      but it does the job quite well considered it's simplicity.
+      *Unresolved issues:*
+      - Our algorithm doesn't 100\% solve the conflict. In the end the user must manually chose which
+       	version to keep, and which version to discard.
+      - If two identical lines exists in both versions but the lines is at another line number in the old
+       	document, this might cause a conflict $<<<$ TEXT $>>$ that could be avoided.
+      *Alternatives considered:*
+      An algorithm that analyses every line in the file keeps the one that the user wants.
+
+***** Database Connection
+      *Issue:* Choosing how to connect to the database
+      *Solution Summary:* Simplest option due to time pressure
+      *Factors:*
+      - Simplicity
+      - Easy to get working
+      *Solution:*
+      Our way of connecting to the database, and executing queries on it is a series
+      of methods close to hardcoded SQL queries. they do not automatically update if a 
+      table/collumn/attribute were to change.
+      *Motivation:*
+      Early in the process we also designed a solid design for the database, which ment
+      that we were able to make the "final" outcast of the database rather quickly.
+
+      And looking apart from the fact that the solution does not adapt to changes made on 
+      the database, it works perfectly and requireded minimal attention and time to get working.
+      *Alternatives considered:*
+      Entity framework was a possability from the start, but since entity framework had prooven 
+      a challenge to get working for all of us in the past, we choose the, for us at the time,
+      simpler solution to save time in the end
+*** Logical View
+    - Logical diagrams etc ..
+*** Deployment View
+    - Delpoyment diagrams etc ...
+*** Process View
+    - Interction diagrams etc ..
+    - Class diagrams
+
+    Comment on how the interprocess communitacion works.
+*** Use-Case View
+    - Use cases
+    - Use case diagrams
+*** Other Views ...
+
 * Project Management
+** SCRUM
+*** Definition of done
+Before our system is ready for release, we must have implemented all required features.
+In addition to implementing the features, we also must document every aspect of the system
+and the process. This includes diagrams, use cases etc ...
+Finally we have to test our system to make sure that it works as intended and doesn't break 
+when receiving odd input etc..
+
+A more detailed explanation of the requirements can be found below.
+
+**** Development
+The system must be able to handle all the requirements before it can be deemed done.
+These requirements include the assignment required requirements as well as our
+own requirements.
+
+These requirements include:
+   - [-] Document [3/4]
+     - [X] Create a document that can handle both text and images.
+     - [X] Documents can be arranged into folders.
+     - [ ] Documents can be arranged into projects (optional).
+     - [X] Log of all changes to a document.
+   - [X] System [4/4]
+     - [X] Synchronization for offline usage.
+     - [X] Sharing of documents to other users.
+     - [X] Authentication system for users.
+     - [X] Document storage in a database.
+   - [X] User Interface [2/2]
+     - [X] Web interface.
+     - [X] Stand-alone client (for offline usage).
+
+**** Documentation
+All aspects of the system must be documented.
+The idea of the documentation is that the system is easy to understand based only on
+the documentation. In addition, an external actor must be able to see the development
+process from reading the documentation only.
+
+These documents must be made before the documentation can be deemed as done:
+   - [-] Use cases [2/3]
+     - [X] All use cases must be documented (text form)
+     - [X] Use case diagram must be made for use cases that require it.
+     - [ ] Operation contracts must be made for use cases that are complex.
+   - [X] Domain documentation [2/2]
+     - [X] A model must be made for describing the domain.
+     - [X] A sequence diagram must be made for understanding how to domain
+       interacts.
+   - [X] Software documentation [4/4]
+     - [X] Static class diagram that explains the entire system.
+     - [X] Package diagram that shows a higher view of the system.
+     - [X] Interaction diagrams that describe the dynamic aspect of the system.
+     - [X] E-R diagram for the database structure.
+
+**** Testing
+Before the system can be declared done, all the core features of the system
+must be thoroughly tested.
+This includes testing all core features of the system.
+
+Testing checklist:
+   - [ ] System [0/8]
+     - [ ] Document
+     - [ ] DocumentHandler
+     - [ ] Folder
+     - [ ] User
+     - [ ] UserAuth
+     - [ ] DBConnector
+     - [ ] ClientSystemFacade
+     - [ ] ServerSystemFacade
+   - [ ] Client [0/2]
+     - [ ] Stand-Alone client
+     - [ ] Web-Client
+
+*** Product Backlog
+*** Intro
+*** Sprints
+**** 1. sprint
+     - Sprint backlog
+     - Burndown chart
+     - Eval
+**** 2. sprint
+     - Sprint backlog
+     - Burndown chart
+     - Eval
+**** 3. sprint
+     - Sprint backlog
+     - Burndown chart
+     - Eval
+**** Chaos sprint
+     - Description
+     - Release Burndown Chart
+
+*** Review
+    - Retrospect
+    - The other thing :)
