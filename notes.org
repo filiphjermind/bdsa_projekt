@@ -38,3 +38,5 @@
    - Sync crashes first time because file and folder don't exist.
      The reason is that the system works faster than it takes the system to write a 
      file to the disk.
+** Report
+   - Refer to the figures

@@ -30,7 +30,8 @@
      CLOSED: [2012-12-16 Sun 01:27]
 *** DONE Use Case Model (UML)
     CLOSED: [2012-11-22 Thu 12:47]
-** TODO Supplementary specification (FURPS+)
+** DONE Supplementary specification (FURPS+)
+   CLOSED: [2012-12-17 Mon 03:09]
    - [ ] Functionality
    - [ ] Usability
    - [ ] Reliability
@@ -49,10 +50,12 @@
 
 ** DONE Operation contract
    CLOSED: [2012-11-22 Thu 12:47]
-** TODO Interaction Diagram
+** DONE Interaction Diagram
+   CLOSED: [2012-12-17 Mon 03:09]
 *** DONE Communication Diagram
     CLOSED: [2012-11-27 Tue 11:30]
-*** TODO Sequence Diagram
+*** DONE Sequence Diagram
+    CLOSED: [2012-12-17 Mon 03:09]
 ** TODO Software Attributes / Qualities
 ** DONE Package Diagram
    CLOSED: [2012-11-23 Fri 15:16]
@@ -82,8 +85,9 @@
    - [X] User table
    - [X] Document table
    - [X] User-Document table
-** TODO System architecture
-   - [ ] Implement GRASP
+** DONE System architecture
+   CLOSED: [2012-12-17 Mon 03:10]
+   - [X] Implement GRASP
    - [X] Create/Edit/Delete Document
    - [X] Create/Edit/Delete Folder
    - [X] Database Connection
@@ -93,26 +97,26 @@
 ** DONE User Directory
    CLOSED: [2012-12-16 Sun 01:42]
    - [X] Personal Root directory
-** TODO User Authentication
+** DONE User Authentication
+   CLOSED: [2012-12-17 Mon 03:10]
    - [X] Username and password relationship
 
    - [X] Storage of username and password
    - [X] Fetch and compare
-
-   - [ ] Encryption and decryption of password / username
 ** DONE Sharing documents / folders
    CLOSED: [2012-12-16 Sun 01:42]
    - [X] Server code
 
    - [X] Share with permissions (view/edit/delete)
    - [X] Permisions DB: Add permisions to userdocument
-** TODO Offline synchronization
+** DONE Offline synchronization
+   CLOSED: [2012-12-17 Mon 03:11]
    - [X] Client to server connection
-   - [ ] Server handling new data
-   - [ ] Client accepts all
+   - [X] Server handling new data
+   - [X] Client accepts all
 
-   - [ ] Server handling new data (Where permission meets requirements) (ice cold overwrite)
+   - [X] Server handling new data (Where permission meets requirements) (ice cold overwrite)
 
-   - [ ] Server simple comparision of document history
+   - [X] Server simple comparision of document history
 
-   - [ ] Server merge of documents
+   - [X] Server merge of documents

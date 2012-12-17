@@ -264,10 +264,10 @@ the documentation. In addition, an external actor must be able to see the develo
 process from reading the documentation only.
 
 These documents must be made before the documentation can be deemed as done:
-   - [-] Use cases [2/3]
+   - [X] Use cases [3/3]
      - [X] All use cases must be documented (text form)
      - [X] Use case diagram must be made for use cases that require it.
-     - [ ] Operation contracts must be made for use cases that are complex.
+     - [X] Operation contracts must be made for use cases that are complex.
    - [X] Domain documentation [2/2]
      - [X] A model must be made for describing the domain.
      - [X] A sequence diagram must be made for understanding how to domain
@@ -303,19 +303,66 @@ Testing checklist:
 **** 1. sprint
      - Sprint backlog
      - Burndown chart
-     - Eval
+       *Review:*
+       - Items were completed easier than first anticipated
+       - To few items in sprint
+       - Basic understanding of systems functionality is now documented in form of use cases
+       *Retrospective:*
+       - Group works together great
+       - Private lives (jobs, other classes, sports, etc.) interfeering with most available
+	 "Work-days", group members are trying to postpone future non-project related activities
 **** 2. sprint
      - Sprint backlog
      - Burndown chart
-     - Eval
+     *Review:*
+     - Items were easier compleeted tha first anticipated
+     - To few items in sprint
+     - Started coding for real
+     - Basic system arctitecture taking form
+     *Retrospective:*
+     - Members finishing their private arrangements (jobs, other classes, sports, etc.)
+       Getting more time from next sprint on
 **** 3. sprint
      - Sprint backlog
      - Burndown chart
-     - Eval
-**** Chaos sprint
-     - Description
-     - Release Burndown Chart
+     *Review:*
+     - Items took longer than expected to comlpete
+     - Finished building seperate code, started to implement main features using eachother
+       instead of test data, encountered more errors than expected and will take alot of
+       work to fix
 
+     *Retrospective:*
+     - Members had most time free to work on project, but due to unexpected errors
+       sprint was not successfully finished
+     - Memebrs still working great together, despite the pressure
+
+**** Chaos sprint
+     *Review:*
+     - Most optional functionality were not implemented due to the lack of time
+     - All required functionality completed, though with small "bugs/features"
+
+     *Retrospective:*
+     - Members used all spare time they had on the project, but had to drop
+       alot of "optional work" to get the program done.
+     - Writing the report happened to late acording to plan (due to the program
+       not being done), but scrum has been followed up un every "work-day"
+       which made the report-writing quite easier.
 *** Review
-    - Retrospect
-    - The other thing :)
+    The last sprint was chaotic for the members, since their last normal sprint 
+    took longer than expected, due to this no sprint backlog was created since 
+    most work was getting individually coded function to cooperate.
+    Had it not been for a slow start the team would have had a more descriptive
+    finishing sprint, and a more linear release burndown chart.
+    
+    Most of this is caused by the number of members in the team/group, and their 
+    experience in being a "SCRUM-Master", since there were only 3 members, 
+    there was not capacity for only one of the members to be SCRUM-Master.
+    
+    And without one single SCRUM-Master it was hard for the group to calculate
+    the efford of each backlog item. Most of the Team's problems could have been
+    solved by better planning more in the beginning of the project, and more time set 
+    aside for the actual planning of each sprint.
+    
+    Private lives also interfered in the project, and this could be avoided by each
+    member planning more carefully what they need to do in the project time period 
+    

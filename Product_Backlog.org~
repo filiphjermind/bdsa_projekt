@@ -4,34 +4,38 @@
    - Introduction
    - Problem statement
    - Summary of system features
-** TODO Use cases
-*** TODO  Use cases (text)
+** DONE Use cases
+   CLOSED: [2012-12-16 Sun 01:34]
+*** DONE Use cases (text)
+    CLOSED: [2012-12-16 Sun 01:34]
 **** DONE UC1: Create new document
      CLOSED: [2012-11-21 Wed 13:00]
 **** DONE UC2: Edit document
      CLOSED: [2012-11-21 Wed 13:00]
 **** DONE UC3: Delete document
      CLOSED: [2012-11-22 Thu 11:45]
-**** TODO UC4: Merging documents (resolve conflict)
+**** DONE UC4: Merging documents (resolve conflict)
+     CLOSED: [2012-12-16 Sun 01:21]
 **** DONE UC5: Offline sync
      CLOSED: [2012-11-22 Thu 11:45]
 **** DONE UC6: New folder
      CLOSED: [2012-11-22 Thu 12:47]
 **** DONE UC7: New project
      CLOSED: [2012-11-22 Thu 13:05]
-**** TODO UC8: Find old version of document
-**** TODO UC9: Share Document
-**** TODO UC10: Accept invite
-**** TODO UC11: Log in
+**** DONE UC8: Find old version of document
+     CLOSED: [2012-12-16 Sun 01:33]
+**** DONE UC9: Share Document
+     CLOSED: [2012-12-16 Sun 01:26]
+**** DONE UC10: Log in
+     CLOSED: [2012-12-16 Sun 01:27]
 *** DONE Use Case Model (UML)
     CLOSED: [2012-11-22 Thu 12:47]
-** DONE Supplementary specification (FURPS+)
-   CLOSED: [2012-11-21 Wed 13:00]
-   - Functionality
-   - Usability
-   - Reliability
-   - Performance
-   - Supportability
+** TODO Supplementary specification (FURPS+)
+   - [ ] Functionality
+   - [ ] Usability
+   - [ ] Reliability
+   - [ ] Performance
+   - [ ] Supportability
 ** DONE Glossary
    CLOSED: [2012-11-21 Wed 13:01]
 ** DONE System sequence diagram
@@ -72,7 +76,8 @@
     - Document
 ** DONE Client
    CLOSED: [2012-12-12 Wed 18:18]
-** TODO Database
+** DONE Database
+   CLOSED: [2012-12-16 Sun 01:42]
    - [X] ER-Diagram
    - [X] User table
    - [X] Document table
@@ -85,9 +90,9 @@
    - [X] GUI Client
 ** TODO Test
    - TEST EVERYTHING!!
-** TODO User Directory
+** DONE User Directory
+   CLOSED: [2012-12-16 Sun 01:42]
    - [X] Personal Root directory
-   - [ ] Shared Root Directory
 ** TODO User Authentication
    - [X] Username and password relationship
 
@@ -95,14 +100,14 @@
    - [X] Fetch and compare
 
    - [ ] Encryption and decryption of password / username
-** TODO Sharing documents / folders
-   - [ ] File input
-   - [ ] Server code
+** DONE Sharing documents / folders
+   CLOSED: [2012-12-16 Sun 01:42]
+   - [X] Server code
 
-   - [ ] Share with permissions (view/edit/delete)
-   - [ ] Permisions DB: Add permisions to userdocument
+   - [X] Share with permissions (view/edit/delete)
+   - [X] Permisions DB: Add permisions to userdocument
 ** TODO Offline synchronization
-   - [ ] Client to server connection
+   - [X] Client to server connection
    - [ ] Server handling new data
    - [ ] Client accepts all
 
