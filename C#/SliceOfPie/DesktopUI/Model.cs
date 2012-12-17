@@ -163,9 +163,10 @@ namespace DesktopUI
             {
                 try
                 {
-                    System.IO.File.WriteAllText(rootDirectoryPath + @"\" + file[2].Substring(0),file[1]);
+                    System.IO.File.WriteAllText(rootDirectoryPath + @"\" + file[2].Substring(0), file[1]);
                 }
                 catch (NullReferenceException ex) { }
+
             }
         }
 
@@ -181,7 +182,11 @@ namespace DesktopUI
 
             using (ClientSystemFacade2Client proxy = new ClientSystemFacade2Client())
             {
-                proxy.ShareDocuments(password,username,users,documents,permission);
+                foreach (string doc in documents)
+                {
+                    proxy.ShareDocuments(username, password, users, doc, permission);
+                }
+                
 
             }
         }
