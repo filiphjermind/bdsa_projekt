@@ -1,28 +1,8 @@
-ClassDiagramFirstDraft
-CommunicationDiagram_Synchronize
-Complete_SSQ
-Deployment Diagram
-DomainModel
-ER-Diagram
-LatestClassDiagram
-LogicalArchitecture
-New ER database
-PackageDiagramOverview
-SequenceDiagram_SaveDocument
+
+
 Sprint1_Table
 Sprint2_Table
 Sprint3_Table
-SSQ_NewDocument
-UpdatedUsecaseDiagram
-UseCaseDiagram
-Sprint 3 burndown chart
-Sprint 2 burndown chart
-Sprint 1 burndown chart
-release burn
-CommunicationDiagram_LogIn
-LogicalView_UML
-SSQ_NewUser
-Delete Communication Diagram
 
 
 
