@@ -1,0 +1,21 @@
+- Creating files in the "root-root" folder if no folder is selected, the 
+"create document" method creates a document in a folder that should not 
+be accessable at all
+
+- "update settings" creates new directory, even if user does not exist.
+When calling the method, it takes the "username" and creates a new folder 
+in currently selected directory
+
+- no way to log in on the standalone client, if your credentials are in the 
+"username" and "password" textboxes, this is considdered logging in.
+
+- when syncing, the document will not be successfull synched the first time
+and the user will not be told when is is done, only the server can see if the
+documents have been successfully synched.
+
+- When Synchonizing files that does not yet exist on the server, the server needs time 
+to create the files, this blocks the client from recieving the files, this results in
+the client only getting existing documents on server back.
+
+- syncronize() should return a bool, describing wehter the sync was successfull or not
+most times when not successful it is because og above problem
