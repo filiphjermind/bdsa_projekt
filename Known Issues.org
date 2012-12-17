@@ -17,3 +17,21 @@
        to implement the shared documents. Because of this we had to make some "hacks"
        in order to be done by the deadline.
        If we had more time this would be implemented otherwise.
+** Stand Alone Client
+   - Creating files in the "root-root" folder if no folder is selected, the 
+     "create document" method creates a document in a folder that should not 
+     be accessable at all
+   - "Update settings" creates new directory, even if user does not exist.
+     When calling the method, it takes the "username" and creates a new folder 
+     in currently selected directory
+   - No way to log in on the standalone client, if your credentials are in the 
+     "username" and "password" textboxes, this is considdered logging in.
+   - When syncing, the document will not be successfull synched the first time
+     and the user will not be told when is is done, only the server can see if the
+     documents have been successfully synched.
+   - When Synchonizing files that does not yet exist on the server, the server needs time 
+     to create the files, this blocks the client from recieving the files, this results in
+     the client only getting existing documents on server back.
+   - Syncronize() should return a bool, describing wehter the sync was successfull or not
+     most times when not successful it is because og above problem
+   - It is only possible to synchronize once pr. session due to a bug.

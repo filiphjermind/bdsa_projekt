@@ -1,0 +1,38 @@
+\contentsline {section}{\numberline {1}Report}{2}
+\contentsline {subsection}{\numberline {1.1}\textbf {DONE} Vision \& Business case}{2}
+\contentsline {subsection}{\numberline {1.2}\textbf {DONE} Use cases}{2}
+\contentsline {subsubsection}{\numberline {1.2.1}\textbf {DONE} Use cases (text)}{2}
+\contentsline {subsubsection}{\numberline {1.2.2}\textbf {DONE} Use Case Model (UML)}{3}
+\contentsline {subsection}{\numberline {1.3}\textbf {DONE} Supplementary specification (FURPS+)}{3}
+\contentsline {subsection}{\numberline {1.4}\textbf {DONE} Glossary}{3}
+\contentsline {subsection}{\numberline {1.5}\textbf {DONE} System sequence diagram}{3}
+\contentsline {subsection}{\numberline {1.6}\textbf {DONE} Domain Model}{3}
+\contentsline {subsection}{\numberline {1.7}\textbf {DONE} Logical architecture}{3}
+\contentsline {subsection}{\numberline {1.8}\textbf {DONE} Operation contract}{3}
+\contentsline {subsection}{\numberline {1.9}\textbf {DONE} Interaction Diagram}{3}
+\contentsline {subsubsection}{\numberline {1.9.1}\textbf {DONE} Communication Diagram}{3}
+\contentsline {subsubsection}{\numberline {1.9.2}\textbf {DONE} Sequence Diagram}{3}
+\contentsline {subsection}{\numberline {1.10}\textbf {DONE} Software Attributes / Qualities}{4}
+\contentsline {subsection}{\numberline {1.11}\textbf {DONE} Package Diagram}{4}
+\contentsline {subsection}{\numberline {1.12}\textbf {DONE} Class diagram}{4}
+\contentsline {subsection}{\numberline {1.13}\textbf {DONE} SAD}{4}
+\contentsline {subsection}{\numberline {1.14}\textbf {DONE} N+1}{4}
+\contentsline {subsection}{\numberline {1.15}\textbf {DONE} ER-Diagram}{4}
+\contentsline {subsection}{\numberline {1.16}\textbf {DONE} Document GRASP}{4}
+\contentsline {subsection}{\numberline {1.17}\textbf {DONE} HTML Format}{4}
+\contentsline {section}{\numberline {2}C\#}{4}
+\contentsline {subsection}{\numberline {2.1}\textbf {DONE} C\# Basic architecture}{4}
+\contentsline {subsection}{\numberline {2.2}\textbf {DONE} System}{4}
+\contentsline {subsubsection}{\numberline {2.2.1}\textbf {DONE} Define central methods.}{4}
+\contentsline {subsection}{\numberline {2.3}\textbf {DONE} Client}{5}
+\contentsline {subsection}{\numberline {2.4}\textbf {DONE} Database}{5}
+\contentsline {subsection}{\numberline {2.5}\textbf {DONE} System architecture}{5}
+\contentsline {subsection}{\numberline {2.6}\textbf {DONE} Test}{5}
+\contentsline {subsection}{\numberline {2.7}\textbf {DONE} User Directory}{5}
+\contentsline {subsection}{\numberline {2.8}\textbf {DONE} User Authentication}{5}
+\contentsline {subsection}{\numberline {2.9}\textbf {DONE} Sharing documents / folders}{6}
+\contentsline {subsection}{\numberline {2.10}\textbf {DONE} Offline synchronization}{6}
+\contentsline {section}{\numberline {3}Class Diagrams}{7}
+\contentsline {section}{\numberline {4}Package diagram}{10}
+\contentsline {section}{\numberline {5}Sprint tables}{10}
+\contentsline {section}{\numberline {6}Use Cases}{12}

@@ -33,6 +33,23 @@
 \setcounter{tocdepth}{3}
 \tableofcontents
 \vspace*{1cm}
+\newpage
+\section{Introduction}
+\label{sec-0}
+This application and report was made at the end of year 2012 at the IT-University of Copenhagen in the context of the final project of the Analysis, Design and Software Architecture course. The project was made under the guidance of our teachers Jakob Eyvind Bardram and Dario Pacino along with our TA's Mads Mærsk Frost and Simon Bang Terkildsen. \\
+
+The solution consists of an application, written in C\# and ASP.NET. Followed by a report, document the application. \\
+
+The report divided into four main parts: \\
+
+The first is the Business Model. The business model gives a short introduction and a quick overview of the system and it's core features. \\
+The business model is then followed by the Requirements / Analysis part. This part consists of all the analysis that was in order to make the application. \\
+The third part is the Design part. This parts consists of documentation on how we would go about designing our application. \\
+The fourth is the implementation part. This part contains specific documentation on our application, along with some design choices made along the way. This part is primarily meant for developers. \\
+The final part is the project management part. This part documents how our work process has gone. Document our progress and work flow.
+
+\newpage
+
 \section{Business Modeling}
 \label{sec-1}
 \subsection{Vision}
@@ -138,6 +155,7 @@ Supplementary specification, along with use cases, show all the requirements tha
 \end{itemize}
 \end{itemize}
 \end{itemize}
+\newpage
 \subsection{Domain Model}
 \label{sec-2-3}
 The domain model shows the domain that our application operates in. \\
@@ -147,6 +165,7 @@ This isn't a complete diagram, but a rough sketch that gives us a platform to wo
     	\includegraphics[width=300px]{images/DomainModel.jpg}
     	\caption{Domain Model}
 \end{figure}
+\newpage
 \subsection{Logical Architecture}
 \label{sec-2-4}
 
@@ -155,7 +174,7 @@ This isn't a complete diagram, but a rough sketch that gives us a platform to wo
    the application will look like.
 \begin{figure}[H]
   		\centering
-    	\includegraphics[width=300px]{images/LogicalArchitecture.jpg}
+    	\includegraphics[width=100px]{images/LogicalArchitecture.jpg}
     	\caption{Logical Architecture}
 \end{figure}
 \subsection{System Sequence Diagram}
@@ -217,7 +236,7 @@ The communication diagram below shows how our application communicates internall
     	\includegraphics[width=300px]{images/CommunicationDiagram_Synchronize.jpg}
     	\caption{Communication Diagram - Synchronize}
 \end{figure}
-
+\newpage
 \subsection{ER-Diagram}
 \label{sec-3-3}
 The ER-Diagram shows the structure of our database design. \\
@@ -303,7 +322,7 @@ Select the document you wish to view and click the \texttt{Show Document} button
 \label{sec-3-4-2-5}%
 When multiple users work on the same document it can be very useful to see a change log of the document. \\
 To see a log of all changes made to a document, select a document from the file list and click the \texttt{Show Document History} button. This will open up a new window which shows a log of when the system has been changed.
-
+\newpage
 \end{itemize} % ends low level
 \section{Implementation}
 \label{sec-4}
@@ -327,10 +346,7 @@ The SAD summarizes the architecture of the Slice of Pie application from multipl
 \end{itemize}
 \subsubsection{Architectural Factors}
 \label{sec-4-1-2}
-
-\begin{itemize}
-\item Supplementary specifications.
-\end{itemize}
+\emph{See section 2.2 - Supplementary requirements}
 \subsubsection{Architectural Decisions}
 \label{sec-4-1-3}
 Architectural decisions describe some of the decisions that we took in our design. Our decisions (and motivation for the decisions) are shown as technical memos.
@@ -498,7 +514,7 @@ Below is a list of some of the known issues currently in the application. \\ ~\\
      most times when not successful it is because of the above problem
 \item It is possible to synchronize but it often takes more than one attempt. You will get some errors in the console, they can safely be ignored. Just try again.
 \end{itemize}
-
+\newpage
 \section{Project Management}
 \label{sec-5}
 \subsection{SCRUM}
@@ -691,10 +707,17 @@ Below is a documentation of our three sprints, along with burn down charts, that
 \begin{itemize}
 \item Members used all spare time they had on the project, but had to drop
        a lot of ``optional work'' to get the program done.
-\item Writing the report happened to late according to plan (due to the program
+\item Writing the report happened too late according to plan (due to the program
        not being done), but scrum has been followed up on every ``work-day''
        which made the report-writing quite easier.
 \end{itemize}
+Figure 17 below shows the final release burn chart. \\
+As you can see, the ends don't quite meet each other but they were connected the days following the final sprint.
+\begin{figure}[H]
+  		\centering
+    	\includegraphics[width=300px]{images/SCRUM/release burn.png}
+    	\caption{Sprint 2 burn down chart}
+\end{figure}
 
 \subsubsection{Review}
 \label{sec-5-1-5}

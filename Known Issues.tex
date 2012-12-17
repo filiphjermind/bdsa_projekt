@@ -1,0 +1,84 @@
+% Created 2012-12-17 Mon 05:01
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{fixltx2e}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{wrapfig}
+\usepackage{soul}
+\usepackage{textcomp}
+\usepackage{marvosym}
+\usepackage{wasysym}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{hyperref}
+\tolerance=1000
+\providecommand{\alert}[1]{\textbf{#1}}
+
+\title{Known Issues}
+\author{Bergar Simonsen}
+\date{\today}
+\hypersetup{
+  pdfkeywords={},
+  pdfsubject={},
+  pdfcreator={Emacs Org-mode version 7.8.11}}
+
+\begin{document}
+
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+\vspace*{1cm}
+\section{Known Issues}
+\label{sec-1}
+\subsection{Web Client}
+\label{sec-1-1}
+
+\begin{itemize}
+\item The File Tree doesn't update after a change has been made. The user has to click the 
+     Get Files button every time a document is created or deleted.
+\item Since the File Tree doesn't update itself it won't remove it self either. Clicking
+     the Get Files button won't remove the existing File Tree but makes a new one. 
+     The old one can then be ignored.
+\item Saving a shared document isn't 100\% optimal. 
+     When saving a shared document, it creates a new document in the current users 
+     name. To allow the ``other'' user of the document to get the changes made to
+     the shared document, you need to share it again, with the changes.
+\item Every time a document is saved, and extra line break is added to each line. Since
+     the document is based on HTML this has no effect on the outcome of the final 
+     document, but can be annoying to look at.
+\item Getting files sometimes takes longer than we anticipated.
+\begin{itemize}
+\item The reason for this is because of the shared documents. We waited till the end 
+       to implement the shared documents. Because of this we had to make some ``hacks''
+       in order to be done by the deadline.
+       If we had more time this would be implemented otherwise.
+\end{itemize}
+\end{itemize}
+\subsection{Stand Alone Client}
+\label{sec-1-2}
+
+\begin{itemize}
+\item Creating files in the ``root-root'' folder if no folder is selected, the 
+     ``create document'' method creates a document in a folder that should not 
+     be accessable at all
+\item ``Update settings'' creates new directory, even if user does not exist.
+     When calling the method, it takes the ``username'' and creates a new folder 
+     in currently selected directory
+\item No way to log in on the standalone client, if your credentials are in the 
+     ``username'' and ``password'' textboxes, this is considdered logging in.
+\item When syncing, the document will not be successfull synched the first time
+     and the user will not be told when is is done, only the server can see if the
+     documents have been successfully synched.
+\item When Synchonizing files that does not yet exist on the server, the server needs time 
+     to create the files, this blocks the client from recieving the files, this results in
+     the client only getting existing documents on server back.
+\item Syncronize() should return a bool, describing wehter the sync was successfull or not
+     most times when not successful it is because og above problem
+\item It is only possible to synchronize once pr. session due to a bug.
+\end{itemize}
+
+\end{document}

@@ -1,40 +1,41 @@
-\BOOKMARK [1][-]{section.1}{Business Modeling}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Vision}{section.1}% 2
-\BOOKMARK [3][-]{subsubsection.1.1.1}{Introduction}{subsection.1.1}% 3
-\BOOKMARK [3][-]{subsubsection.1.1.2}{Problem statement}{subsection.1.1}% 4
-\BOOKMARK [3][-]{subsubsection.1.1.3}{Summary of system features}{subsection.1.1}% 5
-\BOOKMARK [2][-]{subsection.1.2}{Glossary}{section.1}% 6
-\BOOKMARK [1][-]{section.2}{Requirements / Analysis}{}% 7
-\BOOKMARK [2][-]{subsection.2.1}{Use cases}{section.2}% 8
-\BOOKMARK [3][-]{subsubsection.2.1.1}{Use case Diagram}{subsection.2.1}% 9
-\BOOKMARK [2][-]{subsection.2.2}{Supplementary Specification \(FURPS+\)}{section.2}% 10
-\BOOKMARK [2][-]{subsection.2.3}{Domain Model}{section.2}% 11
-\BOOKMARK [2][-]{subsection.2.4}{Logical Architecture}{section.2}% 12
-\BOOKMARK [2][-]{subsection.2.5}{System Sequence Diagram}{section.2}% 13
-\BOOKMARK [2][-]{subsection.2.6}{Operation Contracts}{section.2}% 14
-\BOOKMARK [1][-]{section.3}{Design}{}% 15
-\BOOKMARK [2][-]{subsection.3.1}{Class Diagram}{section.3}% 16
-\BOOKMARK [2][-]{subsection.3.2}{Interaction Diagrams}{section.3}% 17
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Sequence Diagram}{subsection.3.2}% 18
-\BOOKMARK [3][-]{subsubsection.3.2.2}{Communication Diagram}{subsection.3.2}% 19
-\BOOKMARK [2][-]{subsection.3.3}{ER-Diagram}{section.3}% 20
-\BOOKMARK [2][-]{subsection.3.4}{User manual}{section.3}% 21
-\BOOKMARK [3][-]{subsubsection.3.4.1}{Starting the application}{subsection.3.4}% 22
-\BOOKMARK [3][-]{subsubsection.3.4.2}{Using the Application}{subsection.3.4}% 23
-\BOOKMARK [1][-]{section.4}{Implementation}{}% 24
-\BOOKMARK [2][-]{subsection.4.1}{Software Architecture Document}{section.4}% 25
-\BOOKMARK [3][-]{subsubsection.4.1.1}{Architectural Representation}{subsection.4.1}% 26
-\BOOKMARK [3][-]{subsubsection.4.1.2}{Architectural Factors}{subsection.4.1}% 27
-\BOOKMARK [3][-]{subsubsection.4.1.3}{Architectural Decisions}{subsection.4.1}% 28
-\BOOKMARK [3][-]{subsubsection.4.1.4}{Logical View}{subsection.4.1}% 29
-\BOOKMARK [3][-]{subsubsection.4.1.5}{Deployment View}{subsection.4.1}% 30
-\BOOKMARK [3][-]{subsubsection.4.1.6}{Process View}{subsection.4.1}% 31
-\BOOKMARK [3][-]{subsubsection.4.1.7}{Use-Case View}{subsection.4.1}% 32
-\BOOKMARK [3][-]{subsubsection.4.1.8}{Known Issues}{subsection.4.1}% 33
-\BOOKMARK [1][-]{section.5}{Project Management}{}% 34
-\BOOKMARK [2][-]{subsection.5.1}{SCRUM}{section.5}% 35
-\BOOKMARK [3][-]{subsubsection.5.1.1}{Definition of done}{subsection.5.1}% 36
-\BOOKMARK [3][-]{subsubsection.5.1.2}{Product Backlog}{subsection.5.1}% 37
-\BOOKMARK [3][-]{subsubsection.5.1.3}{Sprint Intro}{subsection.5.1}% 38
-\BOOKMARK [3][-]{subsubsection.5.1.4}{Sprints}{subsection.5.1}% 39
-\BOOKMARK [3][-]{subsubsection.5.1.5}{Review}{subsection.5.1}% 40
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Business Modeling}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Vision}{section.2}% 3
+\BOOKMARK [3][-]{subsubsection.2.1.1}{Introduction}{subsection.2.1}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.2}{Problem statement}{subsection.2.1}% 5
+\BOOKMARK [3][-]{subsubsection.2.1.3}{Summary of system features}{subsection.2.1}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Glossary}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Requirements / Analysis}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Use cases}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Use case Diagram}{subsection.3.1}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Supplementary Specification \(FURPS+\)}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Domain Model}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.4}{Logical Architecture}{section.3}% 13
+\BOOKMARK [2][-]{subsection.3.5}{System Sequence Diagram}{section.3}% 14
+\BOOKMARK [2][-]{subsection.3.6}{Operation Contracts}{section.3}% 15
+\BOOKMARK [1][-]{section.4}{Design}{}% 16
+\BOOKMARK [2][-]{subsection.4.1}{Class Diagram}{section.4}% 17
+\BOOKMARK [2][-]{subsection.4.2}{Interaction Diagrams}{section.4}% 18
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Sequence Diagram}{subsection.4.2}% 19
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Communication Diagram}{subsection.4.2}% 20
+\BOOKMARK [2][-]{subsection.4.3}{ER-Diagram}{section.4}% 21
+\BOOKMARK [2][-]{subsection.4.4}{User manual}{section.4}% 22
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Starting the application}{subsection.4.4}% 23
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Using the Application}{subsection.4.4}% 24
+\BOOKMARK [1][-]{section.5}{Implementation}{}% 25
+\BOOKMARK [2][-]{subsection.5.1}{Software Architecture Document}{section.5}% 26
+\BOOKMARK [3][-]{subsubsection.5.1.1}{Architectural Representation}{subsection.5.1}% 27
+\BOOKMARK [3][-]{subsubsection.5.1.2}{Architectural Factors}{subsection.5.1}% 28
+\BOOKMARK [3][-]{subsubsection.5.1.3}{Architectural Decisions}{subsection.5.1}% 29
+\BOOKMARK [3][-]{subsubsection.5.1.4}{Logical View}{subsection.5.1}% 30
+\BOOKMARK [3][-]{subsubsection.5.1.5}{Deployment View}{subsection.5.1}% 31
+\BOOKMARK [3][-]{subsubsection.5.1.6}{Process View}{subsection.5.1}% 32
+\BOOKMARK [3][-]{subsubsection.5.1.7}{Use-Case View}{subsection.5.1}% 33
+\BOOKMARK [3][-]{subsubsection.5.1.8}{Known Issues}{subsection.5.1}% 34
+\BOOKMARK [1][-]{section.6}{Project Management}{}% 35
+\BOOKMARK [2][-]{subsection.6.1}{SCRUM}{section.6}% 36
+\BOOKMARK [3][-]{subsubsection.6.1.1}{Definition of done}{subsection.6.1}% 37
+\BOOKMARK [3][-]{subsubsection.6.1.2}{Product Backlog}{subsection.6.1}% 38
+\BOOKMARK [3][-]{subsubsection.6.1.3}{Sprint Intro}{subsection.6.1}% 39
+\BOOKMARK [3][-]{subsubsection.6.1.4}{Sprints}{subsection.6.1}% 40
+\BOOKMARK [3][-]{subsubsection.6.1.5}{Review}{subsection.6.1}% 41

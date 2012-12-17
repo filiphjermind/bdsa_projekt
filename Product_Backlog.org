@@ -56,16 +56,20 @@
     CLOSED: [2012-11-27 Tue 11:30]
 *** DONE Sequence Diagram
     CLOSED: [2012-12-17 Mon 03:09]
-** TODO Software Attributes / Qualities
+** DONE Software Attributes / Qualities
+   CLOSED: [2012-12-17 Mon 08:28]
 ** DONE Package Diagram
    CLOSED: [2012-11-23 Fri 15:16]
 ** DONE Class diagram
    CLOSED: [2012-11-23 Fri 15:17]
-** TODO SAD
-** TODO N+1
+** DONE SAD
+   CLOSED: [2012-12-17 Mon 08:28]
+** DONE N+1
+   CLOSED: [2012-12-17 Mon 08:28]
 ** DONE ER-Diagram
    CLOSED: [2012-12-12 Wed 18:17]
-** TODO Document GRASP
+** DONE Document GRASP
+   CLOSED: [2012-12-17 Mon 08:28]
 ** DONE HTML Format
    CLOSED: [2012-12-12 Wed 18:17]
 * C#
@@ -92,7 +96,8 @@
    - [X] Create/Edit/Delete Folder
    - [X] Database Connection
    - [X] GUI Client
-** TODO Test
+** DONE Test
+   CLOSED: [2012-12-17 Mon 08:28]
    - TEST EVERYTHING!!
 ** DONE User Directory
    CLOSED: [2012-12-16 Sun 01:42]

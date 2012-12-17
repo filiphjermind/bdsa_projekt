@@ -1,7 +1,19 @@
 * Known Issues
 ** Web Client
-   - File Tree doesn't update after a change has been made. The user has to click the 
-     Get Files button everytime a document is created or deleted.
+   - The File Tree doesn't update after a change has been made. The user has to click the 
+     Get Files button every time a document is created or deleted.
    - Since the File Tree doesn't update itself it won't remove it self either. Clicking
      the Get Files button won't remove the existing File Tree but makes a new one. 
      The old one can then be ignored.
+   - Saving a shared document isn't 100% optimal. 
+     When saving a shared document, it creates a new document in the current users 
+     name. To allow the "other" user of the document to get the changes made to
+     the shared document, you need to share it again, with the changes.
+   - Every time a document is saved, and extra line break is added to each line. Since
+     the document is based on HTML this has no effect on the outcome of the final 
+     document, but can be annoying to look at.
+   - Getting files sometimes takes longer than we anticipated.
+     - The reason for this is because of the shared documents. We waited till the end 
+       to implement the shared documents. Because of this we had to make some "hacks"
+       in order to be done by the deadline.
+       If we had more time this would be implemented otherwise.
